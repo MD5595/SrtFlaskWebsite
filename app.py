@@ -17,7 +17,7 @@ def article_homepage():
 def index_page():
     return render_template('syllabus.html')
 
-@app.route("/Articles/Unit1/u1.1")
+@app.route("u1.1")
 def u11_page():
     return render_template('u1.1.html')
 
