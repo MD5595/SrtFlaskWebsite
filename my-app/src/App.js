@@ -1,15 +1,18 @@
-import React from 'react';
+import "./App.css";
+import Home from "./pages/HomePage";
+import NavBar from "./components/Navbar"
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
-  const homePageContent = `
-    <h1>Welcome to My Home Page</h1>
-   
-  `;
 
   return (
-    <div dangerouslySetInnerHTML={{ __html: homePageContent }} />
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route index path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
-
