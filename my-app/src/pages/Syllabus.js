@@ -2,7 +2,7 @@ import React from 'react';
 
 function Syllabus() {
     return (
-        <div className="container">
+        <div>
             <head><title>Syllabus</title></head>
             <h1>SRT Research Project</h1>
 
