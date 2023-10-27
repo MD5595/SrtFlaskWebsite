@@ -8,7 +8,8 @@ export default function Navigation() {
       </Link>
       <ul>
         <CustomLink to="/Syllabus">Syllabus</CustomLink>
-        <CustomLink to="/articles">Articles</CustomLink>
+        <CustomLink to="/ArticleHome">Articles</CustomLink>
+        <li><a href="/Syllabus">Syllabus</a></li>
       </ul>
     </nav>
   )
