@@ -5,7 +5,7 @@ function ArticleHome() {
   return (
     <div className="container">
       <h1>Article!</h1>
-      <CustomLink to="/u1_5">u1_5</CustomLink>
+        <a href="/u1.1">1.1</a>
     </div>
   );
 }
