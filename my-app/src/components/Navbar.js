@@ -9,7 +9,7 @@ export default function Navigation() {
       <ul>
         <CustomLink to="/Syllabus">Syllabus</CustomLink>
         <CustomLink to="/ArticleHome">Articles</CustomLink>
-        <li><a href="/Syllabus">Syllabus</a></li>
+
       </ul>
     </nav>
   )
