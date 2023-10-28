@@ -5,9 +5,6 @@ import {Link, useMatch, useResolvedPath} from "react-router-dom"
 function u1_1() {
     return (
         <div className="container">
-
-
-            <body>
             <h1>1.1 Hello World</h1>
             <p><strong>What is Python?</strong> Python is a programming language that is used for a variety of purposes
                 such as automation of tasks, data analysis, and website creation. Python is known for its simplicity;
@@ -17,8 +14,8 @@ function u1_1() {
 
             <p>Here is a simple program:</p>
             <pre>
-# Prints "Hello world"
-print("Hello World!")
+            # Prints "Hello world"
+            print("Hello World!")
     </pre>
 
             <p>Python code like this can be created in an Integrated Development Environment (IDE) or a code editor. For
@@ -36,7 +33,6 @@ Hello World!
 
             <p>Now that you understand the basics of the “Hello World!” program, we will
                 go over how to properly set up Python programs.</p>
-            </body>
         </div>
     );
 }
