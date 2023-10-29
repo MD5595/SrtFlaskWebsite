@@ -18,7 +18,30 @@ function ArticleHome() {
       <br />
         <br/>
         <p>Unit 2</p>
-
+        <Link to="/u2_1">2.1</Link>
+        <br />
+        <Link to="/u2_2">2.2</Link>
+        <br />
+        <Link to="/u2_3">2.3</Link>
+        <br />
+        <p>Unit 3</p>
+        <Link to="/u3_1">3.1</Link>
+        <br />
+        <Link to="/u3_2">3.2</Link>
+        <br />
+         <p>Unit 4</p>
+        <Link to="/u4_1">4.1</Link>
+        <br />
+        <Link to="/u4_2">4.2</Link>
+        <br />
+        <p>Unit 5</p>
+        <Link to="/u5_1">5.1</Link>
+        <br />
+        <p>Unit 6</p>
+        <Link to="/u6_1">6.1</Link>
+        <br />
+        <Link to="/u6_2">6.2</Link>
+        <br />
     </div>
   );
 }

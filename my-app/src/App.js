@@ -9,6 +9,16 @@ import Unit12 from "./pages/Articles/Unit1/u1_2";
 import Unit13 from "./pages/Articles/Unit1/u1_3";
 import Unit14 from "./pages/Articles/Unit1/u1_4";
 import Unit15 from "./pages/Articles/Unit1/u1_5";
+import Unit21 from "./pages/Articles/Unit2/u2_1";
+import Unit22 from "./pages/Articles/Unit2/u2_2";
+import Unit23 from "./pages/Articles/Unit2/u2_3";
+import Unit31 from "./pages/Articles/Unit3/u3_1";
+import Unit32 from "./pages/Articles/Unit3/u3_2";
+import Unit41 from "./pages/Articles/Unit4/u4_1";
+import Unit42 from "./pages/Articles/Unit4/u4_2";
+import Unit51 from "./pages/Articles/Unit5/u5_1";
+import Unit61 from "./pages/Articles/Unit6/u6_1";
+import Unit62 from "./pages/Articles/Unit6/u6_2";
 
 function App() {
 
@@ -24,6 +34,16 @@ function App() {
                 <Route index path="/u1_3" element={<Unit13/>}/>
                 <Route index path="/u1_4" element={<Unit14/>}/>
                 <Route index path="/u1_5" element={<Unit15/>}/>
+                <Route index path="/u2_1" element={<Unit21/>}/>
+                <Route index path="/u2_2" element={<Unit22/>}/>
+                <Route index path="/u2_3" element={<Unit23/>}/>
+                <Route index path="/u3_1" element={<Unit31/>}/>
+                <Route index path="/u3_2" element={<Unit32/>}/>
+                <Route index path="/u4_1" element={<Unit41/>}/>
+                <Route index path="/u4_2" element={<Unit42/>}/>
+                <Route index path="/u5_1" element={<Unit51/>}/>
+                <Route index path="/u6_1" element={<Unit61/>}/>
+                <Route index path="/u6_2" element={<Unit62/>}/>
             </Routes>
         </BrowserRouter>
     );
