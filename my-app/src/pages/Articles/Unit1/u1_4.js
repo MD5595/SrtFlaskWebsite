@@ -1,6 +1,6 @@
 import React from 'react';
 
-function u1_4() {
+function u14() {
     return (
         <div className="container">
             <head>
@@ -81,9 +81,10 @@ Input your age: 17
             <p>Output:</p>
             <pre>
 You will be 27 in 10 years.
-            </pre> </body>
+            </pre>
+            </body>
         </div>
-);
+    );
 }
 
-export default u1_4;
+export default u14;

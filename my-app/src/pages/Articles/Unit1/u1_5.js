@@ -1,6 +1,6 @@
 import React from 'react';
 
-function u1_5() {
+function u15() {
     return (
         <div className="container">
             <head>
@@ -70,4 +70,4 @@ Boolean1 = 3 > 8
 );
 }
 
-export default u1_5();
+export default u15;
