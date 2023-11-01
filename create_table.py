@@ -1,10 +1,24 @@
 import sqlite3
-from flask import Flask
 
-conn = sqlite3.connect('database.db')
-print("Connected to database successfully")
+# Connecting to sqlite
+# connection object
+connection_obj = sqlite3.connect('database.db')
 
-conn.execute('CREATE TABLE students (username TEXT, sessionTime INTEGER, clickAmount INTEGER)')
-print("Created table successfully!")
+# cursor object
+cursor_obj = connection_obj.cursor()
 
-conn.close()
+
+
+# Creating table
+table = """ CREATE TABLE Students (
+            username TEXT,
+            sessionTime INTEGER,
+            clickAmount INTEGER
+        ); """
+
+cursor_obj.execute(table)
+
+print("Table is Ready")
+
+# Close the connection
+connection_obj.close()
