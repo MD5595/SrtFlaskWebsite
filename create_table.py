@@ -10,15 +10,23 @@ cursor_obj = connection_obj.cursor()
 
 
 # Creating table
-table = """ CREATE TABLE Students (
+table1 = """ CREATE TABLE Students (
             username TEXT,
             sessionTime INTEGER,
             clickAmount INTEGER
         ); """
 
-cursor_obj.execute(table)
+table2 = """ CREATE TABLE users (
+            username TEXT,
+            sessionTime INTEGER,
+            clickAmount INTEGER
+        ); """
+cursor_obj.execute(table1)
+
+
 
 print("Table is Ready")
-
+connection_obj.commit()
 # Close the connection
 connection_obj.close()
+
