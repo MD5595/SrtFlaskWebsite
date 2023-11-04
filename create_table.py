@@ -16,11 +16,7 @@ table1 = """ CREATE TABLE Students (
             clickAmount INTEGER
         ); """
 
-table2 = """ CREATE TABLE users (
-            username TEXT,
-            sessionTime INTEGER,
-            clickAmount INTEGER
-        ); """
+
 cursor_obj.execute(table1)
 
 
