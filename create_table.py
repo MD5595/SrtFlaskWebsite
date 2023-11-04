@@ -1,15 +1,10 @@
 import sqlite3
 
-# Connecting to sqlite
-# connection object
-connection_obj = sqlite3.connect('database.db')
+connection = sqlite3.connect('database.db')
 
-# cursor object
-cursor_obj = connection_obj.cursor()
+cursor= connection.cursor()
 
 
-
-# Creating table
 table1 = """ CREATE TABLE Students (
             username TEXT,
             sessionTime INTEGER,
@@ -17,12 +12,8 @@ table1 = """ CREATE TABLE Students (
         ); """
 
 
-cursor_obj.execute(table1)
-
-
-
+cursor.execute(table1)
 print("Table is Ready")
-connection_obj.commit()
-# Close the connection
-connection_obj.close()
+connection.commit()
+connection.close()
 
