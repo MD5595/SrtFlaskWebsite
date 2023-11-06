@@ -1,19 +1,15 @@
-import sqlite3
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
-connection = sqlite3.connect('database.db')
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+db = SQLAlchemy(app)
 
-cursor= connection.cursor()
+class Students(db.Model):
+    username = db.Column(db.String, primary_key=True)
+    sessionTime = db.Column(db.Integer)
+    clickAmount = db.Column(db.Integer)
 
-
-table1 = """ CREATE TABLE Students (
-            username TEXT,
-            sessionTime INTEGER,
-            clickAmount INTEGER
-        ); """
-
-
-cursor.execute(table1)
-print("Table is Ready")
-connection.commit()
-connection.close()
-
+with app.app_context():
+    db.create_all()
+    print("Table is Ready")
