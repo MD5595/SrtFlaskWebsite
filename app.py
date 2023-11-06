@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
+import sqlite3
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Keeey'
@@ -71,6 +72,11 @@ def Unit6_1():
 def Unit6_2():
     return render_template('Articles/Unit6/u6.2.html')
 
+def signup():
+    data1 = request.get_json()
+    username = data1['username']
+
+    
 
 if __name__ == '__main__':
     app.run(debug=True, port=8002)
