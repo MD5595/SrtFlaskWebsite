@@ -17,7 +17,7 @@ app_name = 'myapp'
 
 @app.route("/", defaults={'path': ''})
 def serve(path):
-    return send_from_directory(app.static_folder, 'index.html')
+    return send_from_directory(app.static_folder, 'home.html')
 
 
 api.add_resource(ApiHandler1, '/flask/hello')
