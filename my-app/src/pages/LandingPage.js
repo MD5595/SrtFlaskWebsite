@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 function LandingPage() {
   return (
@@ -15,5 +15,4 @@ function LandingPage() {
 
 export default LandingPage;
 
-<br />
-      <Link to="/u1_2">1.2</Link>
+
