@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Redirect,Navigate, useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
 function LandingPage() {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
@@ -23,7 +23,7 @@ function LandingPage() {
         <label htmlFor="name">Username:</label><br />
         <input type="text" id="name" name="name" value={username}
                onChange={(e) => setUsername(e.target.value)}/><br />
-        <input type="submit" id="submitButton" onClick={handleClick} />
+        <input type="submit" id="submitButton" value = "Submit" />
       </form>
     </div>
   );

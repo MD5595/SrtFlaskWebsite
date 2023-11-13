@@ -11,6 +11,7 @@ CORS(app)
 api = Api(app)
 app.config['SECRET_KEY'] = 'Keeey'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+db = SQLAlchemy(app)
 app_name = 'myapp'
 
 
