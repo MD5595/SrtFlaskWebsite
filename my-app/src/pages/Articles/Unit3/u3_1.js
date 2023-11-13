@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function u31() {
     return (
@@ -67,7 +68,8 @@ else:
 
             <p>Note how you can include multiple actions under one condition.</p>
             </body>
-
+<br/>
+            <Link to="/u3_2">3.2</Link>
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function u23() {
   return (
@@ -50,6 +51,9 @@ Num3 = random.choice(["Red", "Orange", "Yellow"]) # Picks a random value within 
     <p>It will be convenient for you to memorize these functions, but it is no problem if you forget the correct syntax.
         Consult the cheat sheet or Google to properly type out the functions/modules.</p>
 </body>
+        <br/>
+
+            <Link to="/u3_1">3.1</Link>
     </div>
   );
 }

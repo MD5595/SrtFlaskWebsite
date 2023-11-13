@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function u21() {
   return (
@@ -50,7 +51,10 @@ print(num4 / num5)
 7
 </pre>
 </body>
+        <br/>
+            <Link to="/u2_2">2.2</Link>
     </div>
+
   );
 }
 

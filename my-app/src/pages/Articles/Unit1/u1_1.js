@@ -32,7 +32,8 @@ Hello World!
                 to note a piece of information within your code.</p>
 
             <p>Now that you understand the basics of the “Hello World!” program, we will
-                go over how to properly set up Python programs.</p>
+                go over how to properly set up Python programs.</p><br/>
+            <Link to="/u1_2">1.2</Link>
         </div>
     );
 }

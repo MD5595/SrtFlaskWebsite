@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function u15() {
     return (
@@ -65,7 +66,8 @@ Boolean1 = 3 > 8
                 be added to
                 variables of the same data type but booleans can’t. Also, you can only use the modulus operator with the
                 int and
-                float data types.</p> </body>
+                float data types.</p> </body><br/>
+            <Link to="/u2_1">2.1</Link>
         </div>
 );
 }
