@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Redirect,Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { startTimer, stopTimer} from 'TimeManager';
 function LandingPage() {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
-
+  let signedin = false;
 
   const handleClick = async (e) => {
     e.preventDefault()
     try{
       const response = await axios.post('http://localhost:5000/students', { username });
       navigate("/HomePage");
+      let signedin = true
+      startTimer()
     } catch(error){
         console.error('Error submitting username:', error);
     }
