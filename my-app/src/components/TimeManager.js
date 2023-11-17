@@ -17,6 +17,17 @@ const stopTimer = () => {
   totalTime +=time
   return totalTime
 };
-
+const unloading=()=>{
+    uuseEffect(() => {
+    const handleUnload = () => {
+      stopTimer()
+    };
+    window.addEventListener('unload', handleUnload);
+    return () => {
+      window.removeEventListener('unload', handleUnload);
+    };
+  }, []);
+  return <div>My Component</div>;
+};
 
 export {startTimer, stopTimer};
