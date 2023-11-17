@@ -49,12 +49,20 @@ def signup():
 def index_page():
     return render_template('syllabus.html')
 
+@app.route('students', methods =['GET'])
+def get_students_time():
+    students = Students.query.all()
+    return jsonify({'Students': [{'totaltime': Students.sessionTime} for student in Students]})
 
-@app.route('/Students', methods=['GET'])
+@app.route('/students', methods=['POST'])
+def add_session_time():
+    data = request.get_json()
+
+
+@app.route('/students', methods=['GET'])
 def get_students():
     students = Students.query.all()
     return jsonify({'Students': [{'username': Students.username} for student in Students]})
-
 
 @app.route('/students', methods=['POST'])
 def add_student():
