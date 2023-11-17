@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, Redirect,Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+
+const [startTimer, setUsername] = useState('');
 let time = 0;
 let totalTime= 0
 let intervalStorage = null
@@ -29,5 +31,7 @@ const unloading=()=>{
   }, []);
   return <div>My Component</div>;
 };
+
+
 
 export {startTimer, stopTimer};

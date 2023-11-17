@@ -35,6 +35,16 @@ function App() {
         })
 
     }, [])
+    const [time, setGetTime]= useState({})
+    useEffect(()=>{
+        axios.get('http://localhost:5000/flask/hello').then(response => {
+            console.log("SUCCESS", response)
+            setGetTime(response)
+        }).catch(error => {
+            console.log(error)
+        })
+
+    }, [])
     return (
         <BrowserRouter>
             <NavBar/>

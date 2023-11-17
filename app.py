@@ -57,7 +57,9 @@ def get_students_time():
 @app.route('/students', methods=['POST'])
 def add_session_time():
     data = request.get_json()
+    old_time = data.get('sessionTime')
 
+    new_time=old_time+ totaltime
 
 @app.route('/students', methods=['GET'])
 def get_students():
