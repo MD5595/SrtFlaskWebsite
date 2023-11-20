@@ -49,17 +49,24 @@ def signup():
 def index_page():
     return render_template('syllabus.html')
 
-@app.route('students', methods =['GET'])
+@app.route('/students', methods =['GET'])
 def get_students_time():
+    username = request.json["username"]
+
     students = Students.query.all()
     return jsonify({'Students': [{'totaltime': Students.sessionTime} for student in Students]})
 
 @app.route('/students', methods=['POST'])
 def add_session_time():
+    conn = sqlite3.connect("database.db")
+    cursor = conn.cursor()
     data = request.get_json()
+
+    studentUsername = data.get('username')
+    cursor.execute('SELECT sessionTime From students WHERE username = studentUsername')
+
     old_time = data.get('sessionTime')
 
-    new_time=old_time+ totaltime
 
 @app.route('/students', methods=['GET'])
 def get_students():
