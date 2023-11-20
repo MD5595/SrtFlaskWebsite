@@ -22,14 +22,15 @@ import Unit42 from "./pages/Articles/Unit4/u4_2";
 import Unit51 from "./pages/Articles/Unit5/u5_1";
 import Unit61 from "./pages/Articles/Unit6/u6_1";
 import Unit62 from "./pages/Articles/Unit6/u6_2";
+import { startTimer, stopTimer, unloading} from 'TimeManager';
 
 function App() {
     const [getMessage, setGetMessage] = useState({})
 
     useEffect(() => {
         axios.get('http://localhost:5000/flask/hello').then(response => {
-            console.log("SUCCESS", response)
-            setGetMessage(response)
+            console.log("SUCCESS", response.data)
+            setGetMessage(response.data)
         }).catch(error => {
             console.log(error)
         })
@@ -45,6 +46,8 @@ function App() {
         })
 
     }, [])
+
+
     return (
         <BrowserRouter>
             <NavBar/>

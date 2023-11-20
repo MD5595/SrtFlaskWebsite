@@ -17,9 +17,7 @@ function LandingPage() {
     } catch(error){
         console.error('Error submitting username:', error);
     }
-
   };
-
   return (
     <div className="container">
       <form onSubmit={handleClick}>

@@ -63,9 +63,10 @@ def add_session_time():
     data = request.get_json()
 
     studentUsername = data.get('username')
-    cursor.execute('SELECT sessionTime From students WHERE username = studentUsername')
+    cursor.execute('SELECT sessionTime From students WHERE username = ?', (studentUsername,))
 
     old_time = data.get('sessionTime')
+
 
 
 @app.route('/students', methods=['GET'])
