@@ -49,9 +49,12 @@ function App() {
 
     const [usertime, updateTime] = useState({})
     useEffect(()=>{
-        axios.set('http://localhost:5000/flask/hello').then(response =>
-
-
+        axios.put('http://localhost:5000/flask/hello').then(response =>{
+            console.log("SUCCESS", response.data)
+            updateTime(response.data)
+        }).catch(error => {
+            console.log(error)
+        })
     })
 
     return (
