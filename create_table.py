@@ -10,6 +10,8 @@ class Students(db.Model):
     sessionTime = db.Column(db.Integer)
     clickAmount = db.Column(db.Integer)
 
+
+
 with app.app_context():
     db.create_all()
     print("Table is Ready")

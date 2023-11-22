@@ -47,11 +47,11 @@ function App() {
 
     }, [])
 
-    const [usertime, updateTime] = useState({})
+    const [usertime, uploadTime] = useState({})
     useEffect(()=>{
-        axios.put('http://localhost:5000/flask/hello').then(response =>{
+        axios.post('http://localhost:5000/flask/hello').then(response =>{
             console.log("SUCCESS", response.data)
-            updateTime(response.data)
+            uploadTime(response.data)
         }).catch(error => {
             console.log(error)
         })
