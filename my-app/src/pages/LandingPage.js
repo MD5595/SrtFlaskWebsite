@@ -19,7 +19,7 @@ function LandingPage() {
         }
     };
 
-    function updateCheckboxValue(checkbox) {
+    function updateCheckbox(checkbox) {
         if (checkbox.checked) {
             checkbox.value = true;
         } else {
@@ -36,8 +36,8 @@ function LandingPage() {
                        onChange={(e) => setUsername(e.target.value)}/><br/>
                 <input type="submit" id="submitButton" value="Submit"/>
             </form>
-            <label htmlFor="checkAcc">Coding</label>
-            <input type="checkbox" id="checkAcc" name="checkAcc" value="coding"/>
+            <label htmlFor="checkAcc">Create New Account</label>
+            <input type="checkbox" id="checkAcc" name="checkAcc" value="False"/>
 
         </div>
     );
