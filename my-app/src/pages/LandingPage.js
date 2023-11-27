@@ -19,11 +19,16 @@ function LandingPage() {
     };
 
     function updateCheckbox(checkbox) {
-        if (checkbox.checked) {
-            checkbox.value = true;
-        } else {
-            checkbox.value = false;
-        }
+        const isChecked = checkbox.checked;
+
+        // Assuming you're using Axios for the HTTP request
+        axios.post('http://localhost:5000/updateCheckbox', {isChecked})
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.error('Error updating checkbox on the server:', error);
+            });
     }
 
 

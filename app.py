@@ -45,6 +45,14 @@ def signup():
         return render_template('home.html')
 
 
+
+@app.route("/addTime", methods=["POST"])
+def addtTime():
+    username = request.json["username"]
+    user = Students.query.filter_by(username=username).first()
+
+
+
 @app.route('/syllabus')
 def index_page():
     return render_template('syllabus.html')
@@ -62,6 +70,14 @@ def add_student():
     new_username = data.get('username')
 
     if new_username:
+        class User(db.Model):
+            username = db.Column(db.String, primary_key=True)
+            sessionTime = db.Column(db.Integer, default=0)
+            quizTime = db.Column(db.Integer, default=0)
+            flashcardTime = db.Column(db.Integer, default=0)
+
+        User.__table__.name = f"user_{new_username}"
+
         new_student = Students(username=new_username)
         db.session.add(new_student)
         db.session.commit()
