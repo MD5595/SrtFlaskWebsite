@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Link, Redirect, Navigate, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
-function LandingPage() {
+function LandingPage1() {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
 
@@ -18,7 +18,7 @@ function LandingPage() {
 
     };
 
-    function updateCheckbox(checkbox) {
+    export function updateCheckbox(checkbox) {
         const isChecked = checkbox.checked;
 
         // Assuming you're using Axios for the HTTP request
@@ -47,5 +47,4 @@ function LandingPage() {
     );
 }
 
-export default LandingPage;
-
+export default LandingPage

@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from ApiHandler import ApiHandler1
 import sqlite3
 from create_table import db, Students
+from LandingPage import updateCheckbox
 
 app = Flask(__name__, static_url_path='', static_folder='my-app/src')
 CORS(app)
@@ -36,13 +37,14 @@ def signup():
     if existing_user is not None:
         session['user_id'] = existing_user.id
         return render_template('home.html')
-    else:
+    elif existing_user is None and updateCheckbox:
         new_user = Students(username=username, sessionTime=0, clickAmount=0)
         db.session.add(new_user)
         db.session.commit()
         session['user_id'] = new_user.id
 
         return render_template('home.html')
+
 
 
 
@@ -69,19 +71,19 @@ def add_student():
     data = request.get_json()
     new_username = data.get('username')
 
-    if new_username:
-        class User(db.Model):
-            username = db.Column(db.String, primary_key=True)
-            sessionTime = db.Column(db.Integer, default=0)
-            quizTime = db.Column(db.Integer, default=0)
-            flashcardTime = db.Column(db.Integer, default=0)
-
-        User.__table__.name = f"user_{new_username}"
-
+    if new_username and updateCheckbox:
         new_student = Students(username=new_username)
         db.session.add(new_student)
         db.session.commit()
+        class User(db.Model):
+            username = db.Column(db.String, primary_key=None)
+            page = db.Column(db.String, default=None)
+            date = db.Column(db.String, default=None)
+            time_start = db.Column(db.String, default=None)
+
+        User.__table__.name = f"{new_username}"
         return jsonify({'message': 'Student added successfully'}), 201
+
     else:
         return jsonify({'message': 'Invalid data provided'}), 400
 
