@@ -51,14 +51,18 @@ def add_student():
     data = request.get_json()
     new_username = data.get('username')
 
-    if new_username:
-        class User(db.Model):
-            username = db.Column(db.String, primary_key=True)
-            sessionTime = db.Column(db.Integer, default=0)
-            quizTime = db.Column(db.Integer, default=0)
-            flashcardTime = db.Column(db.Integer, default=0)
 
-        User.__table__.name = f"user_{new_username}"
+    if new_username:
+        user_db_uri = f'sqlite:///{new_username}_database.db'
+        user_db = SQLAlchemy(app)
+        user_db.app = app
+        user_db.init_app(app)
+        class User(user_db.Model):
+            __tablename__ = new_username
+            username = user_db.Column(user_db.String, primary_key=True)
+            sessionTime = user_db.Column(user_db.Integer, default=0)
+            quizTime = user_db.Column(user_db.Integer, default=0)
+            flashcardTime = user_db.Column(user_db.Integer, default=0)
 
         new_student = Students(username=new_username)
         db.session.add(new_student)
@@ -76,6 +80,7 @@ def get_locationTime():
     date = dateAndTime.strftime('%x')
 
 
+
 @app.route('/get_flashcards', methods=['POST'])
 def get_flashcards():
     unit = request.json['unit']
@@ -87,7 +92,7 @@ def get_flashcards():
     print(res)
     return res
 
-  
+
 @app.route('/get_units')
 def get_units():
     units = ['Unit 1', 'Unit 2']
