@@ -21,7 +21,6 @@ function LandingPage1() {
     export function updateCheckbox(checkbox) {
         const isChecked = checkbox.checked;
 
-        // Assuming you're using Axios for the HTTP request
         axios.post('http://localhost:5000/updateCheckbox', {isChecked})
             .then(response => {
                 console.log(response.data);

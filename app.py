@@ -5,6 +5,7 @@ from flask import Flask, render_template, request, jsonify, session, send_from_d
 from flask_restful import Api, Resource, reqparse
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
+import datetime
 
 app = Flask(__name__, static_url_path='', static_folder='my-app/src')
 cors = CORS(app, supports_credentials=True)
@@ -66,7 +67,15 @@ def add_student():
     else:
         return jsonify({'message': 'Invalid data provided'}), 400
 
-      
+@app.route('/locationTime', methods=['POST'])
+def get_locationTime():
+    data = request.get_json()
+    username = data.get('username')
+    dateAndTime = datetime.datetime.now()
+    time = dateAndTime.strftime('%X')
+    date = dateAndTime.strftime('%x')
+
+
 @app.route('/get_flashcards', methods=['POST'])
 def get_flashcards():
     unit = request.json['unit']
