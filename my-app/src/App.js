@@ -3,8 +3,11 @@ import FlashcardPage from './pages/FlashcardPage';
 import Home from "./pages/HomePage";
 import NavBar from "./components/Navbar"
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import axios from 'axios'
 import Syllabus from "./pages/Syllabus";
 import ArticleHome from "./pages/Articles/ArticleHome";
+import LandingPage from "./pages/LandingPage";
 import Unit11 from "./pages/Articles/Unit1/u1_1";
 import Unit12 from "./pages/Articles/Unit1/u1_2";
 import Unit13 from "./pages/Articles/Unit1/u1_3";
@@ -22,12 +25,23 @@ import Unit61 from "./pages/Articles/Unit6/u6_1";
 import Unit62 from "./pages/Articles/Unit6/u6_2";
 
 function App() {
+    const [getMessage, setGetMessage] = useState({})
 
+    useEffect(() => {
+        axios.get('http://localhost:5000/flask/hello').then(response => {
+            console.log("SUCCESS", response)
+            setGetMessage(response)
+        }).catch(error => {
+            console.log(error)
+        })
+
+    }, [])
     return (
         <BrowserRouter>
             <NavBar/>
             <Routes>
-                <Route index path="/" element={<Home/>}/>
+                <Route index path="/" element={<LandingPage/>}/>
+                <Route index path="/Home" element={<Home/>}/>
                 <Route index path="/Syllabus" element={<Syllabus/>}/>
                 <Route index path="/ArticleHome" element={<ArticleHome/>}/>
                 <Route index path="/u1_1" element={<Unit11/>}/>

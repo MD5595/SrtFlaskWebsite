@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function u14() {
     return (
@@ -82,7 +83,8 @@ Input your age: 17
             <pre>
 You will be 27 in 10 years.
             </pre>
-            </body>
+            </body><br/>
+            <Link to="/u1_5">1.5</Link>
         </div>
     );
 }

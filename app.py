@@ -15,6 +15,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db = SQLAlchemy(app)
 app_name = 'myapp'
 
+
 @app.route("/signup", methods=["POST"])
 def signup():
     username = request.json["username"]
@@ -31,7 +32,7 @@ def signup():
 
         return render_template('home.html')
 
-
+      
 @app.route("/addTime", methods=["POST"])
 def addtTime():
     username = request.json["username"]
@@ -43,6 +44,7 @@ def get_students():
     students = Students.query.all()
     return jsonify({'Students': [{'username': Students.username} for student in Students]})
 
+  
 @app.route('/students', methods=['POST'])
 def add_student():
     data = request.get_json()
@@ -63,8 +65,8 @@ def add_student():
         return jsonify({'message': 'Student added successfully'}), 201
     else:
         return jsonify({'message': 'Invalid data provided'}), 400
-    
 
+      
 @app.route('/get_flashcards', methods=['POST'])
 def get_flashcards():
     unit = request.json['unit']
@@ -76,6 +78,7 @@ def get_flashcards():
     print(res)
     return res
 
+  
 @app.route('/get_units')
 def get_units():
     units = ['Unit 1', 'Unit 2']
@@ -86,6 +89,7 @@ def get_units():
         count += 1
     res = json.dumps({'units': response})
     return res
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

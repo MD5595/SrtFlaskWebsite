@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function u22() {
     return (
@@ -41,7 +42,8 @@ print(X)
 
             <p>Python does basic math in the same order you would do on paper.</p>
             </body>
-
+<br/>
+            <Link to="/u2_3">2.3</Link>
         </div>
     );
 }
