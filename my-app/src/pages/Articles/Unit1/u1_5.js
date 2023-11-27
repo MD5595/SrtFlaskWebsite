@@ -1,13 +1,17 @@
-import {React, useRef} from 'react';
+import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
 import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_1_5() {
     const inputRef = useRef(null);
+    const [showAnswer, setShowAnswer] = useState(false);
+    const handleToggleAnswer = () => {
+        setShowAnswer(!showAnswer);
+    };
 
     function handleSubmit(event) {
         event.preventDefault();
-        if (inputRef.current.value == 'int'){
+        if (inputRef.current.value == 'int') {
             alert('Correct!');
         } else {alert('Incorrect - try again!');}
       }
@@ -77,26 +81,40 @@ export default function Unit_1_5() {
                 be added to
                 variables of the same data type but booleans can’t. Also, you can only use the modulus operator with the
                 int and
-                float data types.</p> </body><br/>
+                float data types.</p></body>
+            <br/>
 
-                <div className="container-exercise">
-            <form onSubmit={handleSubmit}>
+            <div className="container-exercise">
+                <form onSubmit={handleSubmit}>
                     <label>
                         <h2>Practice Exercise:</h2>
                         <p>Given the code below, fill in the blank to cast the variable to be an integer.</p>
                         <inter><code>
-                            num1 = "one" <br/>
-                            print(<input ref={inputRef} type="text" />(num1))
+                            num1 = "1" <br/>
+                            print(<input ref={inputRef} type="text"/>(num1))
                         </code></inter>
                         <br/>
-                        
-                    </label>
+
+                    </label><br/>
                     <button type="submit">Submit answer</button>
-            </form><br/></div>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <button onClick={handleToggleAnswer} type="button">
+                        {showAnswer ? 'Hide answer' : 'Show answer'}
+                    </button>
+                    {showAnswer && (
+                        <div className="answer-box">
+                            <p><pre><code>
+                            num1 = "1" <br/>
+                                print(<b>int</b>(num1))
+                        </code></pre>
+                                </p>
+                        </div>
+                    )}  </form>
+                <br/></div>
             <br/>
-        <Link to="/quiz1" className="btn-quiz">Take an optional quiz for additional practice!</Link>
-        <br/><br/><br/>
-        <Link to="/u1_4" className="btn btn-primary" >Back</Link>
-        &nbsp;<Link to="/u2_1" className="btn btn-primary" >Next</Link></div>
-);
+            <Link to="/quiz1" className="btn-quiz">Take an optional quiz for additional practice!</Link>
+            <br/><br/><br/>
+            <Link to="/u1_4" className="btn btn-primary">Back</Link>
+            &nbsp;<Link to="/u2_1" className="btn btn-primary">Next</Link></div>
+    );
 }

@@ -1,14 +1,18 @@
-import {React, useRef} from 'react';
+import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
 import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_1_4() {
     const inputRef = useRef(null);
+    const [showAnswer, setShowAnswer] = useState(false);
+    const handleToggleAnswer = () => {
+        setShowAnswer(!showAnswer);
+    };
 
     function handleSubmit(event) {
         event.preventDefault();
         const cleaned = inputRef.current.value.toLowerCase().replaceAll(' ', '');
-        if (cleaned == 'input("writeyourname")' || cleaned == "input('writeyourname')"){
+        if (cleaned == 'input("writeyourname")' || cleaned == "input('writeyourname')") {
             alert('Correct!');
         } else {alert('Incorrect - try again!');}
       }
@@ -23,7 +27,7 @@ export default function Unit_1_4() {
             <body>
             <h1>Unit 1.4: Printing and Inputting</h1>
             <p>As Unit 1.1 showed, code you write can be displayed on the console by
-                utilizing the print() function.</p>
+                utilizing <code>print()</code> functions.</p>
 
             <p>If you want to print a number or the contents of a variable, you simply place the number/variable inside
                 the
@@ -95,19 +99,31 @@ export default function Unit_1_4() {
             <pre><code>
                 You will be 27 in 10 years.
             </code></pre>
-            </body><br/>
+            </body>
+            <br/>
 
             <div className="container-exercise">
-            <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <label>
                         <h2>Practice Exercise:</h2>
                         <p>Write an input statement that asks the user to "Write your name"</p>
-                        <input ref={inputRef} type="text" />
-                    </label>
+                        <input ref={inputRef} type="text"/>
+                    </label><br/>
                     <button type="submit">Submit answer</button>
-            </form><br/></div><br/><br/>
-    <Link to="/u1_3" className="btn btn-primary" >Back</Link>
-    &nbsp;<Link to="/u1_5" className="btn btn-primary" >Next</Link>
-    </div>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <button onClick={handleToggleAnswer} type="button">
+                        {showAnswer ? 'Hide answer' : 'Show answer'}
+                    </button>
+                    {showAnswer && (
+                        <div className="answer-box">
+                            <p><pre><code>input("Write your name")<br/>
+                                </code></pre></p>
+                        </div>
+                    )} </form>
+                <br/></div>
+            <br/><br/>
+            <Link to="/u1_3" className="btn btn-primary">Back</Link>
+            &nbsp;<Link to="/u1_5" className="btn btn-primary">Next</Link>
+        </div>
     );
 }

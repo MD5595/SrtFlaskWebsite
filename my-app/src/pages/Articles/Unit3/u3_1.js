@@ -1,4 +1,4 @@
-import {React,useRef} from 'react';
+import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
 import {send_time} from '../../../components/AxiosCalls';
 
@@ -8,13 +8,17 @@ export default function Unit_3_1() {
     const secondIf = useRef(null);
     const firstElse = useRef(null);
     const secondElse = useRef(null);
+    const [showAnswer, setShowAnswer] = useState(false);
+    const handleToggleAnswer = () => {
+        setShowAnswer(!showAnswer);
+    };
 
     function handleSubmit(event) {
         event.preventDefault();
-        if(firstIf.current.value.replaceAll(' ', '') == 'ifx==y:' &&
-        secondIf.current.value.replaceAll(' ', '') == 'ifx==y:' &&
-        firstElse.current.value.replaceAll(' ', '') == 'else:' &&
-        secondElse.current.value.replaceAll(' ', '') == 'else:'){
+        if (firstIf.current.value.replaceAll(' ', '') == 'ifx==y:' &&
+            secondIf.current.value.replaceAll(' ', '') == 'ifx==y:' &&
+            firstElse.current.value.replaceAll(' ', '') == 'else:' &&
+            secondElse.current.value.replaceAll(' ', '') == 'else:') {
             alert('Correct!');
         } else {alert('Incorrect - try again!');}
       }
@@ -77,52 +81,80 @@ export default function Unit_3_1() {
             X = int(input("Enter a number"))<br/>
 
             if X &gt; 10:<br/>
-            &emsp;print("X is greater than 10.")<br/>
+                &emsp;print("X is greater than 10.")<br/>
             else: <br/>
-            &emsp;print("X is either less than 10")<br/>
-            &emsp;print("Or 10.")
+                &emsp;print("X is either less than 10")<br/>
+                &emsp;print("Or 10.")
     </code></pre>
 
             <p>Note how you can include multiple actions under one condition.</p>
             </body>
             <div className="container-exercise">
-            <h2>Practice Exercise:</h2>
-            <p>Finish the following code given the following prompt:<br/>
-            Write a program that receives a number and prints "Good Job!" if it has a whole square root.<br/>
-            If it doesn't, it gives the user another chance to input another number and try again. <br/>
-            If the user succeeds on the second try it prints "Good Job!", otherwise "Maybe next time!".</p>
-            <form onSubmit={handleSubmit}>
+                <h2>Practice Exercise:</h2>
+                <p>Finish the following code given the following prompt:<br/>
+                    Write a program that receives a number and prints "Good Job!" if it has a whole square root.<br/>
+                    If it doesn't, it gives the user another chance to input another number and try again. <br/>
+                    If the user succeeds on the second try it prints "Good Job!", otherwise "Maybe next time!".</p>
+                <form onSubmit={handleSubmit}>
 
-            <inter><code>
-            import math <br/>
-            num1 = int(input("Input a number: ")) <br/>
-            x = math.sqrt(num1) <br/>
-            y = math.floor(x) <br/><br/>
-            <label><input ref={firstIf} type="text" /></label><br/>
+                    <inter><code>
+                        import math <br/>
+                        num1 = int(input("Input a number: ")) <br/>
+                        x = math.sqrt(num1) <br/>
+                        y = math.floor(x) <br/><br/>
+                        <label><input ref={firstIf} type="text"/></label><br/>
 
-            print("Good job!") <br/><br/>
-            <label><input ref={firstElse} type="text" /></label><br/>
+                        &emsp;&emsp;print("Good job!") <br/>
+                        <label><input ref={firstElse} type="text"/></label><br/>
 
-            &emsp;print("Try one more time.") <br/>
-            &emsp;num1 = int(input(" Input a number: ")) <br/>
-            &emsp;x = math.sqrt(num1) <br/>
-            &emsp;y = math.floor(x) <br/><br/>
-            <label><input ref={secondIf} type="text" /></label><br/>
+                        &emsp;&emsp;print("Try one more time.") <br/>
+                        &emsp;&emsp;num1 = int(input(" Input a number: ")) <br/>
+                        &emsp;&emsp;x = math.sqrt(num1) <br/>
+                        &emsp;&emsp;y = math.floor(x) <br/><br/>
+                        <label><input ref={secondIf} type="text"/></label><br/>
 
-            
-            &emsp;&emsp; print("Good job!")<br/><br/>
-            <label><input ref={secondElse} type="text" /></label><br/>
 
-            &emsp;&emsp; print("Maybe next time!")<br/><br/>
-            </code></inter>
+                        &emsp;&emsp; print("Good job!")<br/>
+                        <label><input ref={secondElse} type="text"/></label><br/>
+
+                        &emsp;&emsp; print("Maybe next time!")<br/><br/>
+                    </code></inter>
+                    <br/>
+                    <button type="submit">Submit answer</button>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <button onClick={handleToggleAnswer} type="button">
+                        {showAnswer ? 'Hide answer' : 'Show answer'}
+                    </button>
+                    {showAnswer && (
+                        <div className="answer-box">
+                            <p> <pre><code>
+                        import math <br/>
+                        num1 = int(input("Input a number: ")) <br/>
+                        x = math.sqrt(num1) <br/>
+                        y = math.floor(x) <br/><br/>
+                                <b>if x == y:</b><br/>
+
+                        &emsp;&emsp;print("Good job!") <br/>
+                        <b>else:</b><br/>
+
+                        &emsp;&emsp;print("Try one more time.") <br/>
+                        &emsp;&emsp;num1 = int(input(" Input a number: ")) <br/>
+                        &emsp;&emsp;x = math.sqrt(num1) <br/>
+                        &emsp;&emsp;y = math.floor(x) <br/><br/>
+                       <b>if x == y:</b><br/>
+
+
+                        &emsp;&emsp; print("Good job!")<br/>
+                                <b>else:</b><br/>
+
+                        &emsp;&emsp; print("Maybe next time!")<br/><br/></code></pre></p>
+                        </div>
+                    )}  </form>
+
+                <br/></div>
             <br/>
-            <button type="submit">Submit answer</button>
-            </form>
-
-            <br/></div>
             <br/>
-<br/>
-<Link to="/u2_3" className="btn btn-primary" >Back</Link>
-&nbsp;<Link to="/u3_2" className="btn btn-primary" >Next</Link>        </div>
+            <Link to="/u2_3" className="btn btn-primary">Back</Link>
+            &nbsp;<Link to="/u3_2" className="btn btn-primary">Next</Link></div>
     );
 }
