@@ -1,0 +1,16 @@
+﻿Unit,Question,Answer
+Unit 1,What is the result of running the following piece of code: print('Hello World!'),Hello World!
+Unit 1,What does IDE stand for?,Integrated Development Environment
+Unit 1,What character is used to add a comment to the code?,#
+Unit 1,What is the most common error faced?,syntax errors
+Unit 1,What will be the result of this line of code: prnit('Hello'),an error
+Unit 1,What is a variable?,values or characters stored in a phrase
+Unit 1,What are examples of data types?,strings integars float list boolean
+Unit 1,What is wrong with this variable declaration: 333number = 21,variables cannot start with a number
+Unit 1,What does the input() function do?,allows a user to input a value
+Unit 1,What is a boolean?,true or false value
+Unit 1,What is a list?,a group of values stored in one variable
+Unit 1,What is an integar?,any whole number
+Unit 1,What is a float?,numbers with decimals
+Unit 1,What is a string?,any text
+Unit 2, Test Question, Test Answer

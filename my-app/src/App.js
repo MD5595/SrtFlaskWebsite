@@ -1,4 +1,5 @@
 import "./App.css";
+import FlashcardPage from './pages/FlashcardPage';
 import Home from "./pages/HomePage";
 import NavBar from "./components/Navbar"
 import {BrowserRouter, Routes, Route} from "react-router-dom";
@@ -58,6 +59,7 @@ function App() {
                 <Route index path="/u5_1" element={<Unit51/>}/>
                 <Route index path="/u6_1" element={<Unit61/>}/>
                 <Route index path="/u6_2" element={<Unit62/>}/>
+                <Route index path="/Flashcards" element={<FlashcardPage/>}/>
             </Routes>
         </BrowserRouter>
     );
