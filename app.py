@@ -1,31 +1,19 @@
+from flask_cors import CORS
+from utils import load_flashcards
+import json
 from flask import Flask, render_template, request, jsonify, session, send_from_directory
 from flask_restful import Api, Resource, reqparse
-from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
-from ApiHandler import ApiHandler1
 import sqlite3
-from create_table import db, Students
 
 app = Flask(__name__, static_url_path='', static_folder='my-app/src')
-CORS(app)
+cors = CORS(app, supports_credentials=True)
+
 api = Api(app)
 app.config['SECRET_KEY'] = 'Keeey'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db = SQLAlchemy(app)
 app_name = 'myapp'
-
-
-@app.route("/", defaults={'path': ''})
-def serve(path):
-    return send_from_directory(app.static_folder, 'home.html')
-
-
-api.add_resource(ApiHandler1, '/flask/hello')
-
-
-@app.route("/")
-def homepage():
-    return render_template('home.html')
 
 
 @app.route("/signup", methods=["POST"])
@@ -44,18 +32,11 @@ def signup():
 
         return render_template('home.html')
 
-
-
+      
 @app.route("/addTime", methods=["POST"])
 def addtTime():
     username = request.json["username"]
     user = Students.query.filter_by(username=username).first()
-
-
-
-@app.route('/syllabus')
-def index_page():
-    return render_template('syllabus.html')
 
 
 @app.route('/Students', methods=['GET'])
@@ -63,7 +44,7 @@ def get_students():
     students = Students.query.all()
     return jsonify({'Students': [{'username': Students.username} for student in Students]})
 
-
+  
 @app.route('/students', methods=['POST'])
 def add_student():
     data = request.get_json()
@@ -84,6 +65,30 @@ def add_student():
         return jsonify({'message': 'Student added successfully'}), 201
     else:
         return jsonify({'message': 'Invalid data provided'}), 400
+
+      
+@app.route('/get_flashcards', methods=['POST'])
+def get_flashcards():
+    unit = request.json['unit']
+    flashcards = load_flashcards('./flask-app/flashcards.csv')
+    results = []
+    for entry in flashcards[unit]:
+        results.append({'question': entry[0], 'answer': entry[1]})
+    res = json.dumps({'results': results})
+    print(res)
+    return res
+
+  
+@app.route('/get_units')
+def get_units():
+    units = ['Unit 1', 'Unit 2']
+    response = []
+    count = 1
+    for u in units:
+        response.append({'id': count, 'name': u})
+        count += 1
+    res = json.dumps({'units': response})
+    return res
 
 
 if __name__ == '__main__':
