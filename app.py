@@ -60,9 +60,9 @@ def add_student():
         class User(user_db.Model):
             __tablename__ = new_username
             username = user_db.Column(user_db.String, primary_key=True)
-            sessionTime = user_db.Column(user_db.Integer, default=0)
-            quizTime = user_db.Column(user_db.Integer, default=0)
-            flashcardTime = user_db.Column(user_db.Integer, default=0)
+            page = user_db.Column(user_db.Integer, default=0)
+            date = user_db.Column(user_db.Integer, default=0)
+            time = user_db.Column(user_db.Integer, default=0)
 
         new_student = Students(username=new_username)
         db.session.add(new_student)
@@ -76,8 +76,8 @@ def get_locationTime():
     data = request.get_json()
     username = data.get('username')
     dateAndTime = datetime.datetime.now()
-    time = dateAndTime.strftime('%X')
-    date = dateAndTime.strftime('%x')
+    time1 = dateAndTime.strftime('%X')
+    date1 = dateAndTime.strftime('%x')
 
 
 
