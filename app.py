@@ -73,8 +73,10 @@ def add_student():
     else:
         return jsonify({'message': 'Invalid data provided'}), 400
 
-@app.route('/locationTime', methods=['POST'])
-def get_locationTime():
+
+
+@app.route('/getlocation', methods=['POST'])
+def send_locationTime():
     data = request.get_json()
     username = data.get('username')
     dateAndTime = datetime.datetime.now()
@@ -84,6 +86,20 @@ def get_locationTime():
     entry = UserTime(time=time1, date = date1)
     db.session.add(entry)
     db.session.commit()
+
+@app.route('/sendlocationTime', methods=['POST'])
+def send_locationTime():
+    data = request.get_json()
+    username = data.get('username')
+    dateAndTime = datetime.datetime.now()
+    time1 = dateAndTime.strftime('%X')
+    date1 = dateAndTime.strftime('%x')
+
+    entry = UserTime(time=time1, date = date1)
+    db.session.add(entry)
+    db.session.commit()
+
+
 
 @app.route('/get_flashcards', methods=['POST'])
 def get_flashcards():

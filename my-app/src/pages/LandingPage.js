@@ -26,7 +26,7 @@ function LandingPage1() {
                 console.log(response.data);
             })
             .catch(error => {
-                console.error('Error updating checkbox on the server:', error);
+                console.error(error);
             });
     }
 
