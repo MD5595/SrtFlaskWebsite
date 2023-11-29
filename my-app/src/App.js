@@ -2,7 +2,7 @@ import "./App.css";
 import FlashcardPage from './pages/FlashcardPage';
 import Home from "./pages/HomePage";
 import NavBar from "./components/Navbar"
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
 import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import Syllabus from "./pages/Syllabus";
@@ -26,7 +26,12 @@ import Unit62 from "./pages/Articles/Unit6/u6_2";
 
 function App() {
     const [getMessage, setGetMessage] = useState({})
+    const [page, updatePage]= useState();
 
+    function updatePage(){
+        let page = useLocation();
+        page = page.pathname.substring(1);
+    }
     useEffect(() => {
         axios.get('http://localhost:5000/flask/hello').then(response => {
             console.log("SUCCESS", response)
@@ -40,6 +45,7 @@ function App() {
         useEffect(() => {
         axios.post('http://localhost:5000/getlocationTime').then(response => {
                 console.log("SUCCESS", response);
+                updatePage(response.data);
             })
             .catch(error => {
                 console.error(error);

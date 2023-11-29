@@ -17,12 +17,6 @@ db = SQLAlchemy(app)
 app_name = 'myapp'
 
 
-class UserTime(db.Model):
-    __tablename__ = 'UserTime'
-    username = db.Column(db.String, primary_key=True)
-    page = db.Column(db.Integer, default=0)
-    date = db.Column(db.Integer, default=0)
-    time = db.Column(db.Integer, default=0)
 
 @app.route("/signup", methods=["POST"])
 def signup():
@@ -90,12 +84,13 @@ def send_locationTime():
 @app.route('/sendlocationTime', methods=['POST'])
 def send_locationTime():
     data = request.get_json()
+    page = data.get('page')
     username = data.get('username')
     dateAndTime = datetime.datetime.now()
     time1 = dateAndTime.strftime('%X')
     date1 = dateAndTime.strftime('%x')
 
-    entry = UserTime(time=time1, date = date1)
+    entry = UserLocationTime(username = username, time=time1, date = date1, page= page)
     db.session.add(entry)
     db.session.commit()
 

@@ -7,9 +7,16 @@ db = SQLAlchemy(app)
 
 class Students(db.Model):
     username = db.Column(db.String, primary_key=True)
-    sessionTime = db.Column(db.Integer)
     clickAmount = db.Column(db.Integer)
+class UserLocationTime(db.Model):
+    __tablename__ = 'UserLocationTime'
+    username = db.Column(db.String, primary_key=True)
+    page = db.Column(db.Integer)
+    date = db.Column(db.Integer)
+    time = db.Column(db.Integer)
+
 
 with app.app_context():
     db.create_all()
-    print("Table is Ready")
+
+    print("Tables are Ready")
