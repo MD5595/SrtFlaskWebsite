@@ -37,6 +37,15 @@ function App() {
 
     }, [])
 
+        useEffect(() => {
+        axios.post('http://localhost:5000/locationTime').then(response => {
+                console.log("SUCCESS", response);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, );
+
 
 
     return (

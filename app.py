@@ -17,6 +17,13 @@ db = SQLAlchemy(app)
 app_name = 'myapp'
 
 
+class UserTime(db.Model):
+    __tablename__ = 'UserTime'
+    username = db.Column(db.String, primary_key=True)
+    page = db.Column(db.Integer, default=0)
+    date = db.Column(db.Integer, default=0)
+    time = db.Column(db.Integer, default=0)
+
 @app.route("/signup", methods=["POST"])
 def signup():
     username = request.json["username"]
@@ -57,12 +64,7 @@ def add_student():
         user_db = SQLAlchemy(app)
         user_db.app = app
         user_db.init_app(app)
-        class User(user_db.Model):
-            __tablename__ = new_username
-            username = user_db.Column(user_db.String, primary_key=True)
-            page = user_db.Column(user_db.Integer, default=0)
-            date = user_db.Column(user_db.Integer, default=0)
-            time = user_db.Column(user_db.Integer, default=0)
+
 
         new_student = Students(username=new_username)
         db.session.add(new_student)
@@ -79,7 +81,9 @@ def get_locationTime():
     time1 = dateAndTime.strftime('%X')
     date1 = dateAndTime.strftime('%x')
 
-
+    entry = UserTime(time=time1, date = date1)
+    db.session.add(entry)
+    db.session.commit()
 
 @app.route('/get_flashcards', methods=['POST'])
 def get_flashcards():

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {Link, useMatch, useResolvedPath} from "react-router-dom"
+import axios from "axios";
 
 function u1_1() {
+
+
     return (
         <div className="container">
             <h1>1.1 Hello World</h1>
@@ -28,12 +31,14 @@ function u1_1() {
 Hello World!
     </pre>
 
-            <p>The comment on the first line is not read by the computer due to the `#`. Comments are used when you want
+            <p>The comment on the first line is not read by the computer due to the `#`.
+                Comments are used when you want
                 to note a piece of information within your code.</p>
 
             <p>Now that you understand the basics of the “Hello World!” program, we will
                 go over how to properly set up Python programs.</p><br/>
-            <Link to="/u1_2">1.2</Link>
+            <Link to="/u1_2" className="btn btn-primary" >Next</Link>
+
         </div>
     );
 }
