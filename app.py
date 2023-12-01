@@ -1,4 +1,6 @@
 from flask_cors import CORS
+
+from create_table import UserLocationTime, Students
 from utils import load_flashcards
 import json
 from flask import Flask, render_template, request, jsonify, session, send_from_directory
@@ -35,10 +37,6 @@ def signup():
         return render_template('home.html')
 
       
-@app.route("/addTime", methods=["POST"])
-def addtTime():
-    username = request.json["username"]
-    user = Students.query.filter_by(username=username).first()
 
 
 @app.route('/Students', methods=['GET'])
@@ -77,7 +75,7 @@ def send_locationTime():
     time1 = dateAndTime.strftime('%X')
     date1 = dateAndTime.strftime('%x')
 
-    entry = UserTime(time=time1, date = date1)
+    entry = UserLocationTime(time=time1, date = date1)
     db.session.add(entry)
     db.session.commit()
 
