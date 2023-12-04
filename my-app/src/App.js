@@ -28,10 +28,7 @@ function App() {
     const [getMessage, setGetMessage] = useState({})
     const [page, updatePage]= useState();
 
-    function updatePage(){
-        let page = useLocation();
-        page = page.pathname.substring(1);
-    }
+
     useEffect(() => {
         axios.get('http://localhost:5000/flask/hello').then(response => {
             console.log("SUCCESS", response)
@@ -43,9 +40,13 @@ function App() {
     }, [])
 
         useEffect(() => {
-        axios.post('http://localhost:5000/getlocationTime').then(response => {
+
+            const page = useLocation();
+            const path = page.pathname.substring(1);
+
+        axios.post('http://localhost:5000/sendlocationTime').then(response => {
                 console.log("SUCCESS", response);
-                updatePage(response.data);
+                updatePage(path);
             })
             .catch(error => {
                 console.error(error);

@@ -9,6 +9,7 @@ from flask_sqlalchemy import SQLAlchemy
 import sqlite3
 import datetime
 
+
 app = Flask(__name__, static_url_path='', static_folder='my-app/src')
 cors = CORS(app, supports_credentials=True)
 
@@ -67,17 +68,7 @@ def add_student():
 
 
 
-@app.route('/getlocation', methods=['POST'])
-def send_locationTime():
-    data = request.get_json()
-    username = data.get('username')
-    dateAndTime = datetime.datetime.now()
-    time1 = dateAndTime.strftime('%X')
-    date1 = dateAndTime.strftime('%x')
 
-    entry = UserLocationTime(time=time1, date = date1)
-    db.session.add(entry)
-    db.session.commit()
 
 @app.route('/sendlocationTime', methods=['POST'])
 def send_locationTime():
