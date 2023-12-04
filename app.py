@@ -10,6 +10,7 @@ import sqlite3
 import datetime
 
 
+
 app = Flask(__name__, static_url_path='', static_folder='my-app/src')
 cors = CORS(app, supports_credentials=True)
 
@@ -50,13 +51,12 @@ def get_students():
 def add_student():
     data = request.get_json()
     new_username = data.get('username')
+    isChecked = data.get('isChecked')
 
-
-    if new_username:
-        user_db_uri = f'sqlite:///{new_username}_database.db'
-        user_db = SQLAlchemy(app)
-        user_db.app = app
-        user_db.init_app(app)
+    if new_username and isChecked:
+        new_student1 =UserLocationTime(username=new_username)
+        db.session.add(new_student1)
+        db.session.commit()
 
 
         new_student = Students(username=new_username)
@@ -65,9 +65,6 @@ def add_student():
         return jsonify({'message': 'Student added successfully'}), 201
     else:
         return jsonify({'message': 'Invalid data provided'}), 400
-
-
-
 
 
 @app.route('/sendlocationTime', methods=['POST'])

@@ -23,11 +23,14 @@ import Unit42 from "./pages/Articles/Unit4/u4_2";
 import Unit51 from "./pages/Articles/Unit5/u5_1";
 import Unit61 from "./pages/Articles/Unit6/u6_1";
 import Unit62 from "./pages/Articles/Unit6/u6_2";
+import PostTest from "./pages/PostTest";
+import PreTest from "./pages/PreTest";
 
 function App() {
     const [getMessage, setGetMessage] = useState({})
-    const [page, updatePage]= useState();
-
+    const [page, updatePage] = useState();
+    const location = useLocation();
+    const path = location.pathname.substring(1);
 
     useEffect(() => {
         axios.get('http://localhost:5000/flask/hello').then(response => {
@@ -39,20 +42,18 @@ function App() {
 
     }, [])
 
-        useEffect(() => {
+    useEffect(() => {
 
-            const page = useLocation();
-            const path = page.pathname.substring(1);
 
-        axios.post('http://localhost:5000/sendlocationTime').then(response => {
-                console.log("SUCCESS", response);
-                updatePage(path);
-            })
+
+        axios.post('http://localhost:5000/sendlocationTime', {path}).then(response => {
+            console.log("SUCCESS", response);
+            updatePage(path);
+        })
             .catch(error => {
                 console.error(error);
             });
-    }, );
-
+    },);
 
 
     return (
@@ -79,6 +80,7 @@ function App() {
                 <Route index path="/u6_1" element={<Unit61/>}/>
                 <Route index path="/u6_2" element={<Unit62/>}/>
                 <Route index path="/Flashcards" element={<FlashcardPage/>}/>
+
             </Routes>
         </BrowserRouter>
     );
