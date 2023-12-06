@@ -11,9 +11,9 @@ class Students(db.Model):
 class UserLocationTime(db.Model):
     __tablename__ = 'UserLocationTime'
     username = db.Column(db.String, primary_key=True)
-    page = db.Column(db.Integer)
-    date = db.Column(db.Integer)
-    time = db.Column(db.Integer)
+    page = db.Column(db.String)
+    date = db.Column(db.String)
+    time = db.Column(db.String)
 
 
 with app.app_context():

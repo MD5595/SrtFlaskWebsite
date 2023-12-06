@@ -2,7 +2,7 @@ import "./App.css";
 import FlashcardPage from './pages/FlashcardPage';
 import Home from "./pages/HomePage";
 import NavBar from "./components/Navbar"
-import {BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import Syllabus from "./pages/Syllabus";
@@ -29,8 +29,7 @@ import PreTest from "./pages/PreTest";
 function App() {
     const [getMessage, setGetMessage] = useState({})
     const [page, updatePage] = useState();
-    const location = useLocation();
-    const path = location.pathname.substring(1);
+
 
     useEffect(() => {
         axios.get('http://localhost:5000/flask/hello').then(response => {
@@ -43,8 +42,7 @@ function App() {
     }, [])
 
     useEffect(() => {
-
-
+        const path = window.location.pathname.substring(1);
 
         axios.post('http://localhost:5000/sendlocationTime', {path}).then(response => {
             console.log("SUCCESS", response);
