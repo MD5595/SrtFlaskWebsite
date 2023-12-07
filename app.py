@@ -71,7 +71,8 @@ def add_student():
 def send_locationTime():
     data = request.get_json()
     page = data.get('page')
-    username = data.get('username')
+
+
     dateAndTime = datetime.datetime.now()
     time1 = dateAndTime.strftime('%X')
     date1 = dateAndTime.strftime('%x')

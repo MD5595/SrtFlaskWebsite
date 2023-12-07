@@ -3,8 +3,8 @@ import {Link, Redirect, Navigate, useNavigate, useLocation} from 'react-router-d
 import axios from 'axios';
 
 function LandingPage1() {
-    const navigate = useNavigate();
-    const [username, setUsername] = useState('');
+    var navigate = useNavigate();
+    var [username, setUsername] = useState('');
     let [isChecked, updateCheckbox] = useState(false)
 
         const handleClick = async (e) => {
@@ -29,7 +29,7 @@ function LandingPage1() {
 
 
     const CheckboxChange = (e) => {
-        const checkbox = document.getElementById("checkAcc");
+        var checkbox = document.getElementById("checkAcc");
         isChecked = checkbox.checked;
     };
 

@@ -27,8 +27,8 @@ import PostTest from "./pages/PostTest";
 import PreTest from "./pages/PreTest";
 
 function App() {
-    const [getMessage, setGetMessage] = useState({})
-    const [page, updatePage] = useState();
+    var [getMessage, setGetMessage] = useState({})
+    var [page, updatePage] = useState();
 
 
     useEffect(() => {
@@ -42,7 +42,7 @@ function App() {
     }, [])
 
     useEffect(() => {
-        const path = window.location.pathname.substring(1);
+        var path = window.location.pathname.substring(1);
 
         axios.post('http://localhost:5000/sendlocationTime', {path}).then(response => {
             console.log("SUCCESS", response);
