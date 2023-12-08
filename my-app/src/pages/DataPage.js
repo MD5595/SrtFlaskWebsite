@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Home() {
+function DataPage() {
   return (
     <div className="container">
-      <h1>Welcome!</h1>
+      <h1>Data</h1>
     </div>
   );
 }
 
-export default Home;
+export default DataPage;

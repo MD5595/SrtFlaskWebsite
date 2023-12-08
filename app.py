@@ -83,7 +83,7 @@ def send_locationTime():
 
 
 
-@app.route('/get_flashcards', methods=['POST'])
+@app.route('/get_flashcard s', methods=['POST'])
 def get_flashcards():
     unit = request.json['unit']
     flashcards = load_flashcards('./flask-app/flashcards.csv')

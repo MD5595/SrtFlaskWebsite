@@ -11,6 +11,7 @@ export default function Navigation() {
         <CustomLink to="/ArticleHome">Articles</CustomLink>
         <CustomLink to="/Flashcards">Flashcards</CustomLink>
 
+
       </ul>
     </nav>
   )
