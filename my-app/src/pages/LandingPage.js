@@ -12,8 +12,7 @@ function LandingPage1() {
             try {
                 const checkbox = document.getElementById("checkAcc");
                 isChecked = checkbox.checked;
-                axios.post('http://localhost:5000/students', {isChecked, username}).then(response => {
-                    console.log("SUCCESS", response);
+                axios.post('http://localhost:5000/students', {isChecked, username}).then(response => {console.log("SUCCESS", response);
                     updateCheckbox(isChecked);
                     navigate("/HomePage");
                 })
