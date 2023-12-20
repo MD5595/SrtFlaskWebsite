@@ -22,6 +22,19 @@ app_name = 'myapp'
 
 
 
+
+
+@app.route("/time", methods=["POST"])
+def time():
+    data = request.get_json()
+    username = data.get()
+
+    time = request.json["time"]
+
+    student = Students.query.filter_by(username=username).first()
+    student.time += time
+    db.session.commit()
+
 @app.route("/signup", methods=["POST"])
 def signup():
     username = request.json["username"]
@@ -71,7 +84,7 @@ def add_student():
 def send_locationTime():
     data = request.get_json()
     page = data.get('page')
-
+    username = data.get()
 
     dateAndTime = datetime.datetime.now()
     time1 = dateAndTime.strftime('%X')

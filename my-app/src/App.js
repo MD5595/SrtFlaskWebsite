@@ -26,10 +26,12 @@ import Unit62 from "./pages/Articles/Unit6/u6_2";
 import DataPage from "./pages/DataPage";
 import PostTest from "./pages/PostTest";
 import PreTest from "./pages/PreTest";
+import Timer from "./components/Timer"
 
 function App() {
     var [getMessage, setGetMessage] = useState({})
     var [page, updatePage] = useState();
+    var [time, updateTime] = useState();
 
 
     useEffect(() => {
@@ -43,7 +45,18 @@ function App() {
     }, [])
 
     useEffect(() => {
-        var path = window.location.pathname.substring(1);
+        axios.get('http://localhost:5000/time').then(response => {
+            console.log("SUCCESS", response)
+            updateTime(time)
+        }).catch(error => {
+            console.log(error)
+        })
+
+    }, )
+
+
+    useEffect(() => {
+        let path = window.location.pathname.substring(1);
 
         axios.post('http://localhost:5000/sendlocationTime', {path}).then(response => {
             console.log("SUCCESS", response);
