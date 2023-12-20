@@ -10,7 +10,7 @@ export default function Navigation() {
         <CustomLink to="/Syllabus">Syllabus</CustomLink>
         <CustomLink to="/ArticleHome">Articles</CustomLink>
         <CustomLink to="/Flashcards">Flashcards</CustomLink>
-
+        <CustomLink to="/DataPage">DataPage</CustomLink>
 
       </ul>
     </nav>

@@ -52,7 +52,7 @@ function App() {
             .catch(error => {
                 console.error(error);
             });
-    },);
+    },[location.pathname]);
 
 
     return (
@@ -79,7 +79,7 @@ function App() {
                 <Route index path="/u6_1" element={<Unit61/>}/>
                 <Route index path="/u6_2" element={<Unit62/>}/>
                 <Route index path="/Flashcards" element={<FlashcardPage/>}/>
-                 <Route index path="/DataPage" element={<DataPage/>}/>
+                <Route index path="/DataPage" element={<DataPage/>}/>
             </Routes>
         </BrowserRouter>
     );
