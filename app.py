@@ -94,6 +94,9 @@ def send_locationTime():
     db.session.add(entry)
     db.session.commit()
 
+@app.route('/getUserData', methods =['GET'])
+def getUserData():
+
 
 
 @app.route('/get_flashcards', methods=['POST'])
