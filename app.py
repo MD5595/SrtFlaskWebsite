@@ -1,6 +1,6 @@
 from flask_cors import CORS
 
-from create_table import UserLocationTime, Students
+from create_table import UserLocationTime, Students, Scores
 from utils import load_flashcards
 import json
 from flask import Flask, render_template, request, jsonify, session, send_from_directory
@@ -94,8 +94,9 @@ def send_locationTime():
     db.session.add(entry)
     db.session.commit()
 
-@app.route('/getUserData', methods =['GET'])
-def getUserData():
+@app.route('/getUserScore', methods =['GET'])
+def getUserScore():
+    students = Scores.query.all()
 
 
 
