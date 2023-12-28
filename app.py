@@ -24,8 +24,8 @@ app_name = 'myapp'
 
 
 
-@app.route("/time", methods=["POST"])
-def time():
+@app.route("/totalTime", methods=["POST"])
+def totalTime():
     data = request.get_json()
     username = data.get()
 
@@ -44,7 +44,7 @@ def signup():
         session['user_id'] = existing_user.id
         return render_template('home.html')
     else:
-        new_user = Students(username=username, sessionTime=0, clickAmount=0)
+        new_user = Students(username=username, totalTime=0)
         db.session.add(new_user)
         db.session.commit()
         session['user_id'] = new_user.id
@@ -96,7 +96,7 @@ def send_locationTime():
 
 @app.route('/getUserScore', methods =['GET'])
 def getUserScore():
-    students = Scores.query.all()
+    scores = Scores.query.all()
 
 
 

@@ -45,7 +45,7 @@ function App() {
     }, [])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/time').then(response => {
+        axios.get('http://localhost:5000/totalTime').then(response => {
             console.log("SUCCESS", response)
             updateTime(time)
         }).catch(error => {
