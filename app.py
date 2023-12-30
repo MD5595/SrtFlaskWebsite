@@ -96,8 +96,16 @@ def send_locationTime():
 
 @app.route('/getUserScore', methods =['GET'])
 def getUserScore():
-    scores = Scores.query.all()
+    scores = Scores.query.filter_by(username=username).all()
 
+    score_list = []
+    for score in scores:
+        score_data = {
+            'test_name': score.test_name,
+            'test_score': score.test_score
+        }
+        score_list.append(score_data)
+    return jsonify({'scores': score_list})
 
 
 @app.route('/get_flashcards', methods=['POST'])
