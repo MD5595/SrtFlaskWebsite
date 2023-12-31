@@ -96,6 +96,7 @@ def send_locationTime():
 
 @app.route('/getUserScore', methods =['GET'])
 def getUserScore():
+
     scores = Scores.query.filter_by(username=username).all()
 
     score_list = []

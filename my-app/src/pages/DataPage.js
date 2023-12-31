@@ -1,9 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer,PieChart, Pie } from 'recharts';
+import axios from "axios";
 
 function DataPage() {
+    const [getUserScoreData, setGetUserScoreData] = useState([]);
 
-  const data = [
+  useEffect(() => {
+    axios.get('http://localhost:5000/getUserScore').then(response => {
+      console.log("SUCCESS", response);
+      setGetUserScoreData(response.data.scores); // assuming the structure of the response is {'scores': [...]}
+    }).catch(error => {
+      console.log(error);
+    });
+  }, []);
+
+    const data = getUserScoreData;
+
+  const data2 = [
     { name: 'Category 1', value: 10 },
     { name: 'Category 2', value: 15 },
     { name: 'Category 3', value: 8 },
@@ -22,7 +35,7 @@ function DataPage() {
       <p>Scores</p>
       <ResponsiveContainer width="50%" height={150}>
         <BarChart data={data}>
-          <XAxis dataKey="name" />
+          <XAxis dataKey="Test" />
           <YAxis />
           <Tooltip />
           <Legend />
