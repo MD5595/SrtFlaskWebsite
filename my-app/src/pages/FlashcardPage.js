@@ -12,7 +12,10 @@ function FlashcardPage() {
   var headers = {
     'Content-Type': 'application/json',
   }
+  useEffect(() => {
+  }, [])
 
+  
   useEffect(() => {
     axios
       .get('http://127.0.0.1:5000/get_units',headers=headers)
@@ -21,13 +24,11 @@ function FlashcardPage() {
       })
   }, [])
 
-  useEffect(() => {
-  }, [])
-
   function handleSubmit(e) {
     e.preventDefault()
     axios
-    .post('http://127.0.0.1:5000/get_flashcards', {unit: unit.current.value}, headers=headers)
+    .post('http://127.0.0.1:5000/get_flashcards', {unit: unit.current.value},
+    headers=headers)
     .then(res => {
       setFlashcards(res.data.results.map((questionItem, index) => {
         const answer = questionItem.answer
