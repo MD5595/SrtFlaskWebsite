@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer,PieChart, Pie } from 'recharts';
 import axios from "axios";
+import { LandingPage1, exportedUsername } from './LandingPage1';
 
 function DataPage() {
     const [getUserScoreData, setGetUserScoreData] = useState([]);
@@ -39,7 +40,7 @@ function DataPage() {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="value" fill="#8884d8" />
+          <Bar dataKey="Test Score" fill="#8884d8" />
         </BarChart>
       </ResponsiveContainer>
 

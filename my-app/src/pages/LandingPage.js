@@ -6,12 +6,15 @@ function LandingPage1() {
     var navigate = useNavigate();
     var [username, setUsername] = useState('');
     let [isChecked, updateCheckbox] = useState(false)
+    let exportedUsername = '';
 
         const handleClick = async (e) => {
             e.preventDefault();
             try {
                 const checkbox = document.getElementById("checkAcc");
                 isChecked = checkbox.checked;
+                exportedUsername= username;
+
                 axios.post('http://localhost:5000/students', {isChecked, username}).then(response => {console.log("SUCCESS", response);
                     updateCheckbox(isChecked);
                     navigate("/HomePage");
@@ -47,6 +50,5 @@ function LandingPage1() {
     );
 }
 
-export default LandingPage1;
-
+export { LandingPage1, exportedUsername };
 
