@@ -13,4 +13,24 @@ Unit 1,What is a list?,a group of values stored in one variable
 Unit 1,What is an integar?,any whole number
 Unit 1,What is a float?,numbers with decimals
 Unit 1,What is a string?,any text
-Unit 2, Test Question, Test Answer
+Unit 2,What does this symbol mean %?,remainder - number left after division
+Unit 2,What does this symbol mean **?,exponents - base is on the left and power is on the right
+Unit 2,What does this symbol mean //?, floor division - removes decimals from division
+Unit 2,Is () or // done first?,()
+Unit 2,Is / or % done first?,same precendence - solved left to right
+Unit 2,What are modules?,module is a section of code that covers functions for repeatability
+Unit 3,What is an if/else statement?,executes a block of code if a specified condition is true. if false another block of code is executed
+Unit 3,What is and an example of?,logical operator
+Unit 3,What is an else/if statement?,similar to if/else but has 2 or more statements
+Unit 3,Does an else/if always have to have an else statement?,no
+Unit 4,How does one exit a while loop?,the condition must be met to exit
+Unit 4,When are while loops used?,when you don't know how many iterations your statement will have
+Unit 4,When do you use a for loop?,when you know how many iterations are needed
+Unit 4,What are the three parameters in a range statement?,start|stop|step
+Unit 5,What is a list?,data type that stores multiple values in one variable
+Unit 5,What index does a list start on?,0
+Unit 6,What is a function?,a block of code made to decrease the amount of repetitive code you have to write
+Unit 6,Functions perform a ____ task.,predefined
+Unit 6,What keyword allows you to define a function?,def
+Unit 6,What are parameters?,values passed into a function
+Unit 6,T/F: When you call a function you don't need the same number of parameters within the parentheses.,False
