@@ -8,7 +8,7 @@ function DataPage() {
   useEffect(() => {
     axios.get('http://localhost:5000/getUserScore').then(response => {
       console.log("SUCCESS", response);
-      setGetUserScoreData(response.data.scores); // assuming the structure of the response is {'scores': [...]}
+      setGetUserScoreData(response.data.scores);
     }).catch(error => {
       console.log(error);
     });
