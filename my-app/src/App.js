@@ -7,7 +7,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import Syllabus from "./pages/Syllabus";
 import ArticleHome from "./pages/Articles/ArticleHome";
-import LandingPage from "./pages/LandingPage";
+import {LandingPage, UserProvider} from "./pages/LandingPage";
 import Unit11 from "./pages/Articles/Unit1/u1_1";
 import Unit12 from "./pages/Articles/Unit1/u1_2";
 import Unit13 from "./pages/Articles/Unit1/u1_3";
@@ -52,7 +52,7 @@ function App() {
             console.log(error)
         })
 
-    }, )
+    },)
 
 
     useEffect(() => {
@@ -65,7 +65,7 @@ function App() {
             .catch(error => {
                 console.error(error);
             });
-    },[location.pathname]);
+    },);
 
 
     return (
@@ -93,8 +93,18 @@ function App() {
                 <Route index path="/u6_2" element={<Unit62/>}/>
                 <Route index path="/Flashcards" element={<FlashcardPage/>}/>
                 <Route index path="/DataPage" element={<DataPage/>}/>
+                <Route index path="/PreTest" element={<PreTest/>}/>
+                <Route index path="/PostTest" element={<PostTest/>}/>
+
             </Routes>
+            <UserProvider>
+                <div>
+                    <LandingPage1/>
+                    <DataPage/>
+                </div>
+            </UserProvider>
         </BrowserRouter>
+
     );
 }
 

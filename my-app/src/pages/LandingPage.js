@@ -1,20 +1,41 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect,createContext,useContext} from 'react';
 import {Link, Redirect, Navigate, useNavigate, useLocation} from 'react-router-dom';
 import axios from 'axios';
 
+const UserContext = createContext();
+
+const UserProvider = ({ children }) => {
+  const [username, setUsername] = useState('');
+
+  const updateUsername = (newUsername) => {
+    setUsername(newUsername);
+  };
+
+  return (
+    <UserContext.Provider value={{ username, updateUsername }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
+
+const useUser = () => {
+  const context = useContext(UserContext);
+  if (!context) {
+    throw new Error('UseContext used outside of scope');
+  }
+  return context;
+};
 function LandingPage1() {
     var navigate = useNavigate();
-    var [username, setUsername] = useState('');
+    var [username, updateUsername] = useUser();
     let [isChecked, updateCheckbox] = useState(false)
-    let exportedUsername = '';
 
         const handleClick = async (e) => {
             e.preventDefault();
             try {
-                const checkbox = document.getElementById("checkAcc");
+                var checkbox = document.getElementById("checkAcc");
                 isChecked = checkbox.checked;
-                exportedUsername= username;
-
+                updateUsername(username);
                 axios.post('http://localhost:5000/students', {isChecked, username}).then(response => {console.log("SUCCESS", response);
                     updateCheckbox(isChecked);
                     navigate("/HomePage");
@@ -41,7 +62,7 @@ function LandingPage1() {
             <form onSubmit={handleClick}>
                 <label htmlFor="name">Username:</label><br/>
                 <input type="text" id="name" name="name" value={username}
-                       onChange={(e) => setUsername(e.target.value)}/><br/>
+                       onChange={(e) => updateUsername(e.target.value)}/><br/>
                 <input type="submit" id="submitButton" value="Submit"/>
             </form>
             <label htmlFor="checkAcc">Create New Account</label>
@@ -50,5 +71,5 @@ function LandingPage1() {
     );
 }
 
-export { LandingPage1, exportedUsername };
+export default {LandingPage1, UserContext, UserProvider};
 

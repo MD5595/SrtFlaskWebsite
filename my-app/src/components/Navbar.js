@@ -11,6 +11,8 @@ export default function Navigation() {
         <CustomLink to="/ArticleHome">Articles</CustomLink>
         <CustomLink to="/Flashcards">Flashcards</CustomLink>
         <CustomLink to="/DataPage">DataPage</CustomLink>
+          <CustomLink to="/PreTest">PreTest</CustomLink>
+        <CustomLink to="/PostTest">PostTest</CustomLink>
 
       </ul>
     </nav>
