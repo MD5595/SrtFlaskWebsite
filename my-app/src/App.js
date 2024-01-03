@@ -33,6 +33,8 @@ function App() {
     var [page, updatePage] = useState();
     var [time, updateTime] = useState(0);
     const [totalTime, setTotalTime] = useState(null);
+    const {username} = useUser();
+
 
 
     useEffect(() => {
@@ -112,6 +114,7 @@ function App() {
                 <div>
                     <LandingPage1/>
                     <DataPage/>
+                    <Timer/>
                 </div>
             </UserProvider>
         </BrowserRouter>

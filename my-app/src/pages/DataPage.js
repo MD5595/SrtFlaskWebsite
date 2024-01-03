@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer,PieChart, Pie } from 'recharts';
 import axios from "axios";
-import {LandingPage, UserProvider} from "./pages/LandingPage";
+import {LandingPage, UserProvider, useUser} from "./pages/LandingPage";
 
 function DataPage() {
+    const {username} = useUser();
     const [score, setScore] = useState([]);
 
   useEffect(() => {
