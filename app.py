@@ -22,12 +22,6 @@ app_name = 'myapp'
 
 
 
-
-@app.route("/getTotalTime", methods=['GET'])
-def getTotalTime():
-
-
-
 @app.route("/totalTime", methods=["POST"])
 def totalTime():
     data = request.get_json()

@@ -7,7 +7,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import Syllabus from "./pages/Syllabus";
 import ArticleHome from "./pages/Articles/ArticleHome";
-import {LandingPage, UserProvider} from "./pages/LandingPage";
+import {LandingPage, UserProvider, UserContext} from "./pages/LandingPage";
 import Unit11 from "./pages/Articles/Unit1/u1_1";
 import Unit12 from "./pages/Articles/Unit1/u1_2";
 import Unit13 from "./pages/Articles/Unit1/u1_3";
@@ -31,8 +31,6 @@ import Timer from "./components/Timer"
 function App() {
     var [getMessage, setGetMessage] = useState({})
     var [page, updatePage] = useState();
-    var [time, updateTime] = useState(0);
-    const [totalTime, setTotalTime] = useState(null);
     const {username} = useUser();
 
 
@@ -46,26 +44,6 @@ function App() {
         })
 
     }, [])
-
-    useEffect(() => {
-        axios.get(`http://localhost:5000/getTotalTime/${username}`).then(response => {
-            console.log("SUCCESS", response.data.getTotalTime)
-            setTotalTime(response.data.getTotalTime);
-        }).catch(error => {
-            console.log(error)
-        })
-
-    },)
-
-    useEffect(() => {
-        axios.post(`http://localhost:5000/totalTime/${username}`,{time,username}).then(response => {
-            console.log("SUCCESS", response)
-            updateTime(time)
-        }).catch(error => {
-            console.log(error)
-        })
-
-    },)
 
 
     useEffect(() => {
