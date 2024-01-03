@@ -31,7 +31,8 @@ import Timer from "./components/Timer"
 function App() {
     var [getMessage, setGetMessage] = useState({})
     var [page, updatePage] = useState();
-    var [time, updateTime] = useState();
+    var [time, updateTime] = useState(0);
+    const [totalTime, setTotalTime] = useState(null);
 
 
     useEffect(() => {
@@ -45,7 +46,17 @@ function App() {
     }, [])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/totalTime').then(response => {
+        axios.get(`http://localhost:5000/getTotalTime/${username}`).then(response => {
+            console.log("SUCCESS", response.data.getTotalTime)
+            setTotalTime(response.data.getTotalTime);
+        }).catch(error => {
+            console.log(error)
+        })
+
+    },)
+
+    useEffect(() => {
+        axios.post(`http://localhost:5000/totalTime/${username}`,{time,username}).then(response => {
             console.log("SUCCESS", response)
             updateTime(time)
         }).catch(error => {
@@ -58,7 +69,7 @@ function App() {
     useEffect(() => {
         let path = window.location.pathname.substring(1);
 
-        axios.post('http://localhost:5000/sendlocationTime', {path}).then(response => {
+        axios.post('http://localhost:5000/sendlocationTime', {path,username}).then(response => {
             console.log("SUCCESS", response);
             updatePage(path);
         })

@@ -1,21 +1,21 @@
 import React, {useEffect} from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer,PieChart, Pie } from 'recharts';
 import axios from "axios";
-import {useUser} from "./pages/LandingPage";
+import {LandingPage, UserProvider} from "./pages/LandingPage";
 
 function DataPage() {
-    const [getUserScoreData, setGetUserScoreData] = useState([]);
+    const [score, setScore] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/getUserScore').then(response => {
+    axios.get(`http://localhost:5000/getUserScore?username=${username}`).then(response => {
       console.log("SUCCESS", response);
-      setGetUserScoreData(response.data.scores);
+      setScore(response.data.scores);
     }).catch(error => {
       console.log(error);
     });
   }, []);
 
-    const data = getUserScoreData;
+    const data = score;
 
   const data2 = [
     { name: 'Category 1', value: 10 },

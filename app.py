@@ -23,11 +23,15 @@ app_name = 'myapp'
 
 
 
+@app.route("/getTotalTime", methods=['GET'])
+def getTotalTime():
+
+
 
 @app.route("/totalTime", methods=["POST"])
 def totalTime():
     data = request.get_json()
-    username = data.get()
+    username = request.json['username']
 
     time = request.json["time"]
 
@@ -96,7 +100,7 @@ def send_locationTime():
 
 @app.route('/getUserScore', methods =['GET'])
 def getUserScore():
-    username = current_user.username
+    username = request.args.get('username')
     scores = Scores.query.filter_by(username=username).all()
 
     score_list = []
