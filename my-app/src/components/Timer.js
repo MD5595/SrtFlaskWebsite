@@ -4,7 +4,7 @@ import axios from 'axios'
 
 
 function Timer() {
-    const {username} = useUser();
+    const {username, updateUsername} = useUser();
     const [seconds, setSeconds] = useState(0);
 
     useEffect(() => {

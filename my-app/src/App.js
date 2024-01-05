@@ -7,7 +7,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import Syllabus from "./pages/Syllabus";
 import ArticleHome from "./pages/Articles/ArticleHome";
-import {LandingPage, UserProvider, UserContext} from "./pages/LandingPage";
+import {LandingPage1, UserProvider, UserContext} from "./pages/LandingPage";
 import Unit11 from "./pages/Articles/Unit1/u1_1";
 import Unit12 from "./pages/Articles/Unit1/u1_2";
 import Unit13 from "./pages/Articles/Unit1/u1_3";
