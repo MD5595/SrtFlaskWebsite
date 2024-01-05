@@ -1,31 +1,9 @@
-import React, {useState, useEffect,createContext,useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link, Redirect, Navigate, useNavigate, useLocation} from 'react-router-dom';
 import axios from 'axios';
+import { useUser, UserProvider } from './UserContext';
 
-const UserContext = createContext();
-
-const UserProvider = ({ children }) => {
-  const [username, setUsername] = useState('');
-
-  const updateUsername = (newUsername) => {
-    setUsername(newUsername);
-  };
-
-  return (
-    <UserContext.Provider value={{ username, updateUsername }}>
-      {children}
-    </UserContext.Provider>
-  );
-};
-
-const useUser = () => {
-  const context = useContext(UserContext);
-  if (!context) {
-    throw new Error('UseContext used outside of scope');
-  }
-  return context;
-};
-function LandingPage1() {
+function LandingPage() {
     var navigate = useNavigate();
     var [username, updateUsername] = useUser();
     let [isChecked, updateCheckbox] = useState(false)
@@ -71,5 +49,5 @@ function LandingPage1() {
     );
 }
 
-export default {LandingPage1, UserContext, UserProvider};
+export default LandingPage;
 

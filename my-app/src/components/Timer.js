@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {LandingPage, UserProvider, useUser} from "./pages/LandingPage";
+import React, {useState, useEffect,createContext,useContext} from 'react';
+import {UserProvider, useUser} from "./components/UserContext";
 import axios from 'axios'
 
 
