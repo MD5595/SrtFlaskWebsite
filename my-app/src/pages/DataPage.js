@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer,PieChart, Pie } from 'recharts';
 import axios from "axios";
-import {LandingPage, UserProvider, useUser} from "./pages/LandingPage";
+import {LandingPage1, UserProvider, useUser} from "./pages/LandingPage";
 
 function DataPage() {
     const {username} = useUser();

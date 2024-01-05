@@ -71,5 +71,5 @@ function LandingPage1() {
     );
 }
 
-export default {LandingPage, LandingPage1, UserContext, UserProvider};
+export default {LandingPage1, UserContext, UserProvider};
 
