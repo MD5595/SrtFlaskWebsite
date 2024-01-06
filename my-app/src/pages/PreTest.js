@@ -10,17 +10,13 @@ function PreTest() {
     }
   }
 
-  function gradeTest() {
-    const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = `Your score: ${userScore} out of 10`;
-  }
 
   return (
     <div className="container">
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>JavaScript Pre-Test</title>
+        <title>Pre-Test</title>
       </head>
       <body>
         <form id="moduleQuestionForm">
@@ -40,8 +36,8 @@ function PreTest() {
           <label htmlFor="answer3">
             3. Fill in the blank
             num = int(input("Enter a number"))
-            if (num > 0 && num < 100){
-                console.log("This number is between 0 and 100.")}
+            if (num > 0 and num < 100):
+                print("This number is between 0 and 100.")
           </label>
           <input type="text" id="answer3" name="answer3" />
           <br />
@@ -84,7 +80,7 @@ function PreTest() {
           <br />
 
           {/* Question 9 */}
-          <label htmlFor="answer9">9. Create a list that has flats, integers, and strings stored within it.</label>
+          <label htmlFor="answer9">9. In one line, create a list that stores 3 values. that has floats, integers, and strings.</label>
           <input type="text" id="answer9" name="answer9" />
           <br />
 
