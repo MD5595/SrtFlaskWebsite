@@ -1,10 +1,8 @@
 import React, {useEffect, useState,createContext,useContext} from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer,PieChart, Pie } from 'recharts';
 import axios from "axios";
-import {UserProvider, useUser} from "./components/UserContext";
-
+import {username} from "./LandingPage"
 function DataPage() {
-    const {username} = useUser();
     const [score, setScore] = useState([]);
 
   useEffect(() => {

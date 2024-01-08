@@ -14,6 +14,11 @@ class UserLocationTime(db.Model):
     page = db.Column(db.String)
     date = db.Column(db.String)
     time = db.Column(db.String)
+class Scores(db.Model):
+    __tablename__ = 'Scores'
+    username = db.Column(db.String, primary_key=True)
+    test = db.Column(db.String)
+    score = db.Column(db.Interger)
 
 
 with app.app_context():

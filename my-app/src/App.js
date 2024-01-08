@@ -7,7 +7,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import Syllabus from "./pages/Syllabus";
 import ArticleHome from "./pages/Articles/ArticleHome";
-import LandingPage from "./pages/LandingPage";
+import LandingPage, { username } from './pages/LandingPage';
 import Unit11 from "./pages/Articles/Unit1/u1_1";
 import Unit12 from "./pages/Articles/Unit1/u1_2";
 import Unit13 from "./pages/Articles/Unit1/u1_3";
@@ -27,12 +27,10 @@ import DataPage from "./pages/DataPage";
 import PostTest from "./pages/PostTest";
 import PreTest from "./pages/PreTest";
 import Timer from "./components/Timer";
-import  {UserProvider, useUser} from "./components/UserContext";
 
 function App() {
     var [getMessage, setGetMessage] = useState({})
     var [page, updatePage] = useState();
-    const {username} = useUser();
 
 
 
@@ -56,6 +54,7 @@ function App() {
         })
             .catch(error => {
                 console.error(error);
+
             });
     },);
 
@@ -89,13 +88,7 @@ function App() {
                 <Route index path="/PostTest" element={<PostTest/>}/>
 
             </Routes>
-            <UserProvider>
-                <div>
-                    <LandingPage/>
-                    <DataPage/>
-                    <Timer/>
-                </div>
-            </UserProvider>
+
         </BrowserRouter>
 
     );

@@ -1,3 +1,5 @@
+from sqlite3 import IntegrityError
+
 from flask_cors import CORS
 
 from create_table import UserLocationTime, Students, Scores
@@ -79,10 +81,10 @@ def add_student():
 
 
 @app.route('/sendlocationTime', methods=['POST'])
-def send_locationTime():
+def sendlocationTime():
     data = request.get_json()
     page = data.get('page')
-    username = data.get()
+    username = data.get('username')
 
     dateAndTime = datetime.datetime.now()
     time1 = dateAndTime.strftime('%X')
@@ -106,7 +108,19 @@ def getUserScore():
         score_list.append(score_data)
     return jsonify({'scores': score_list})
 
+@app.route('/postUserScore', methods=['POST'])
+def postUserScore():
+    data = request.get_json()
+    username = data.get('username')
+    test = data.get('test')
+    score= data.get('score')
 
+    entry = Scores(username=username, test=test, score=score)
+    try:
+        db.session.add(entry)
+        db.session.commit()
+    except IntegrityError:
+        pass
 @app.route('/get_flashcards', methods=['POST'])
 def get_flashcards():
     unit = request.json['unit']

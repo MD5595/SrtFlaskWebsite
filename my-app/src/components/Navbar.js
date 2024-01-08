@@ -6,6 +6,7 @@ export default function Navigation() {
       <Link to="/" className="site-title">
         SRT 4
       </Link>
+        <p> </p>
       <ul>
         <CustomLink to="/Syllabus">Syllabus</CustomLink>
         <CustomLink to="/ArticleHome">Articles</CustomLink>
