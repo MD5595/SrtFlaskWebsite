@@ -162,7 +162,7 @@ function PreTest() {
                     statement that hinges on an expression being equal to a specific number?</label>
                 <input type="text" id="answer25"/>
 
-                {/* Add a button for grading */}
+                {/* Add a button fo grading */}
                 <button type="button" onClick={() => gradeTest()}>
                     Submit
                 </button>
