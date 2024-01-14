@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import gradeTest from './gradingUtils';
+import Pre  from './components/PreTestGrader';
 
 function PreTest() {
     const [userScore, setUserScore] = useState(0);
@@ -9,9 +9,7 @@ function PreTest() {
             <h1>JavaScript Pre-Test</h1>
             <form>
                 {/* Question 1 */}
-                <label htmlFor="answer1">1. Make a user input-based number guessing game that keeps looping until the
-                    user gets the right answer.</label>
-                <input type="text" id="answer1"/>
+
 
                 {/* Question 2 */}
                 <label htmlFor="answer2">2. What module would you use if you wanted to use the sqrt() function?</label>
@@ -162,7 +160,6 @@ function PreTest() {
                     statement that hinges on an expression being equal to a specific number?</label>
                 <input type="text" id="answer25"/>
 
-                {/* Add a button fo grading */}
                 <button type="button" onClick={() => gradeTest()}>
                     Submit
                 </button>
