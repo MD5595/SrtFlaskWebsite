@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import LandingPage, { username } from './pages/LandingPage';
+import axios from "axios";
 
 function PreTestGrader() {
 
@@ -107,7 +109,7 @@ function PreTestGrader() {
 
   // Question 22
   const q22_answer = document.getElementById('answer22').value.toLowerCase();
-  if (q22_answer === '//') {
+  if (q22_answer.includes('//')) {
     score++;
   }
 
@@ -118,22 +120,24 @@ function PreTestGrader() {
   }
 
   // Question 24
-  const q24_answer = document.getElementById('answer24').value.toLowerCase();
-  let numberList = [1, 2, 3];
-  function addNumberToList(number) {
-    numberList.push(number + 45);
-  }
-  addNumberToList(45);
-  if (numberList.length === 4 && numberList.includes(46)) {
-    score++;
-  }
+
 
   // Question 25
   const q25_answer = document.getElementById('answer25').value.toLowerCase();
   if (q25_answer === '==') {
     score++;
   }
+useEffect(() => {
+    let test = "PreTest"
+        axios.post('http://localhost:5000/postUserScore', {username,test, score}).then(response => {
+            console.log("SUCCESS", response);
+            updatePage(path);
+        })
+            .catch(error => {
+                console.error(error);
 
+            });
+    },);
 
 }
 export default PreTestGrader;

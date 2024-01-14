@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
-import Pre  from './components/PreTestGrader';
+import PreTestGrader  from './components/PreTestGrader';
+import LandingPage, { username } from './pages/LandingPage';
+import React, {useEffect, useState} from 'react';
+
 
 function PreTest() {
     const [userScore, setUserScore] = useState(0);
