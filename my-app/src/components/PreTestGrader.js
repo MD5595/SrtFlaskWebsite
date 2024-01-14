@@ -91,19 +91,11 @@ function PreTestGrader() {
   }
 
   // Question 19
-  const q19_answer = document.getElementById('answer19').value.toLowerCase();
-  let num1 = 2;
-  let num2 = 3;
-  while (num1 < num2) {
-    num2 += 1;
-  }
-  if (num2 === 3) {
-    score++;
-  }
+
 
   // Question 20
   const q20_answer = document.getElementById('answer20').value.toLowerCase();
-  if (q20_answer === 'do-while') {
+  if (q20_answer.includes('while')) {
     score++;
   }
 

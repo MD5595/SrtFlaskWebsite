@@ -124,15 +124,16 @@ function PreTest() {
                 <input type="text" id="answer20"/>
 
                 {/* Question 21 */}
-                <label htmlFor="answer21">21. Select all of the variable names that would not work in Python.
-                    <ol>
-                        <li>--Hi</li>
-                        <li>33number</li>
-                        <li>Car1%</li>
-                        <li>My age</li>
-                    </ol>
-                </label>
-                <input type="text" id="answer21"/>
+                <label htmlFor="answer21">
+  21. Select all of the variable names that would not work in Python.
+  <ul>
+    <li><input type="checkbox" id="option1" name="answer21" value="--Hi"/> <label htmlFor="option1">--Hi</label></li>
+    <li><input type="checkbox" id="option2" name="answer21" value="33number"/> <label htmlFor="option2">33number</label></li>
+    <li><input type="checkbox" id="option3" name="answer21" value="Car1%"/> <label htmlFor="option3">Car1%</label></li>
+    <li><input type="checkbox" id="option4" name="answer21" value="My age"/> <label htmlFor="option4">My age</label></li>
+  </ul>
+</label>
+
 
                 {/* Question 22 */}
                 <label htmlFor="answer22">22. What operator would you first use if you wanted to determine how many
