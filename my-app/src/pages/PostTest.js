@@ -2,7 +2,109 @@ import React from 'react';
 
 function PostTest() {
     const username = localStorage.getItem('username');
+    function PostTestGrader() {
+    let score = 0;
 
+    // Question 1
+    const q1_answer = document.getElementById('answer1').value.toLowerCase();
+
+
+    // Question 2
+    const q2_answer = document.getElementById('answer2').value.toLowerCase();
+    if (q2_answer.includes("module")) {
+        score++;
+    }
+
+    // Question 3
+    const q3_answer = document.getElementById('answer3').value.toLowerCase();
+    if (q3_answer.includes("0") && q3_answer.includes("100")) {
+        score++;
+    }
+
+    const q4_answer = document.getElementById('answer4').value.toLowerCase();
+// Check if the answer is correct
+if (q4_answer.includes("placeholder") && q4_answer.includes("variables")) {
+    score++;
+}
+
+// Question 5
+const q5_answer = document.getElementById('answer5').value.toLowerCase();
+// Check if the answer is correct
+if (q5_answer.includes("inclusive")) {
+    score++;
+}
+
+// Question 6
+const q6_answer = document.getElementById('answer6').value.toLowerCase();
+// Check if the answer is correct
+if (q6_answer.includes("math") && q6_answer.includes("fabs")) {
+    score++;
+}
+
+// Question 7
+const q7_answer = document.getElementById('answer7').value.toLowerCase();
+// Check if the answer is correct
+if (q7_answer.includes("48 46 44 42 40")) {
+    score++;
+}
+
+// Question 8
+const q8_answer = document.getElementById('answer8').value.toLowerCase();
+// Check if the answer is correct
+// (Assuming the correct answer is to randomly choose a number from a list)
+if (q8_answer.includes("random") && q8_answer.includes("list")) {
+    score++;
+}
+
+// Question 9
+const q9_answer = document.getElementById('answer9').value.toLowerCase();
+// Check if the answer is correct
+// (Assuming the correct answer is A, B, C, D)
+if (q9_answer.includes("a") && q9_answer.includes("b") && q9_answer.includes("c") && q9_answer.includes("d")) {
+    score++;
+}
+
+// Question 10
+const q10_answer = document.getElementById('answer10').value.toLowerCase();
+// Check if the answer is correct
+if (q10_answer.includes("symbol") && q10_answer.includes("ignore")) {
+    score++;
+}
+
+// Question 11
+const q11_answer = document.getElementById('answer11').value.toLowerCase();
+// Check if the answer is correct
+// (Assuming the correct answers are 0, 1, 2, 3)
+if (q11_answer.includes("0") && q11_answer.includes("1") && q11_answer.includes("2") && q11_answer.includes("3")) {
+    score++;
+}
+
+// Question 12
+const q12_answer = document.getElementById('answer12').value.toLowerCase();
+
+if (q12_answer.includes("5^^5") || q12_answer.includes("5.pow(5)")) {
+    score++;
+}
+
+// Question 13
+const q13_answer = document.getElementById('answer13').value.toLowerCase();
+// Check if the answer is correct
+if (q13_answer.includes("25")) {
+    score++;
+}
+
+// Question 14
+const q14_answer = document.getElementById('answer14').value.toLowerCase();
+
+if (q14_answer.includes("b ")) {
+    score++;
+}
+
+// Question 15
+const q15_answer = document.getElementById('answer15').value.toLowerCase();
+ if (q15_answer.includes("0")) {
+    score++;
+}
   return (
      <div className="container">
             {/* Question 1 */}
