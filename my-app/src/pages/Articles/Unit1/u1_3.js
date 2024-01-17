@@ -80,8 +80,8 @@ my age = "17"  # A space
 
     <p>Making your variables descriptive is vital to creating readable code that is easily decipherable.</p>
 </body><br/>
-            <Link to="/u1_4">1.4</Link>
-    </div>
+<Link to="/u1_2" className="btn btn-primary" >Back</Link>
+    <Link to="/u1_4" className="btn btn-primary" >Next</Link>    </div>
   );
 }
 

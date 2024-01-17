@@ -52,8 +52,8 @@ print(num4 / num5)
 </pre>
 </body>
         <br/>
-            <Link to="/u2_2">2.2</Link>
-    </div>
+<Link to="/u1_5" className="btn btn-primary" >Back</Link>
+    <Link to="/u2_2" className="btn btn-primary" >Next</Link> </div>
 
   );
 }

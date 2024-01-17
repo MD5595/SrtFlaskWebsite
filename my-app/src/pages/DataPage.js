@@ -4,6 +4,7 @@ import axios from "axios";
 import {username} from "./LandingPage"
 function DataPage() {
     const [score, setScore] = useState([]);
+        const username = localStorage.getItem('username');
 
   useEffect(() => {
     axios.get(`http://localhost:5000/getUserScore?username=${username}`).then(response => {
@@ -12,10 +13,10 @@ function DataPage() {
     }).catch(error => {
       console.log(error);
     });
-  }, []);
+  }, [username]);
 
     const data = score;
-
+    console.log(score)
   const data2 = [
     { name: 'Category 1', value: 10 },
     { name: 'Category 2', value: 15 },
@@ -32,7 +33,7 @@ function DataPage() {
   return (
     <div className="container">
       <h1>Data</h1>
-      <p>Scores</p>
+      <p>{score}</p>
       <ResponsiveContainer width="50%" height={150}>
         <BarChart data={data}>
           <XAxis dataKey="Test" />
@@ -45,10 +46,11 @@ function DataPage() {
 
       
       <h1>Time</h1>
-
+`     <h2>{username}</h2>
+      <h3>{data}</h3>
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
-          <Pie dataKey="value" data={datatime} cx="50%" cy="50%" outerRadius={80} fill="#8884d8" label />
+          <Pie dataKey="value" data={data} cx="50%" cy="50%" outerRadius={80} fill="#8884d8" label />
           <Tooltip />
           <Legend />
         </PieChart>

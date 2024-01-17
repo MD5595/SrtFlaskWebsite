@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function u42() {
   return (
@@ -23,6 +24,8 @@ for x in range(10):
         required. When the start argument is included, the for loop will start iterating at that value. For example, if
         range(5, 10) was used instead of range(10), an error message would appear on the terminal.</p>
 </body>
+        <Link to="/u4_2" className="btn btn-primary" >Back</Link>
+    <Link to="/u5_1" className="btn btn-primary" >Next</Link>
     </div>
   );
 }

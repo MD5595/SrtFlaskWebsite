@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function u41() {
   return (
@@ -23,6 +24,8 @@ function u41() {
 
     <p>While loops are generally used when you do not know how many iterations your statement will have.</p>
 </body>
+        <Link to="/u3_2" className="btn btn-primary" >Back</Link>
+    <Link to="/u4_2" className="btn btn-primary" >Next</Link>
     </div>
   );
 }

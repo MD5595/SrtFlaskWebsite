@@ -3,9 +3,7 @@ import {Link, Redirect, Navigate, useNavigate, useLocation} from 'react-router-d
 import axios from 'axios';
 
 let username = '';
-export const setUsername = (newUsername) => {
-    username = newUsername;
-};
+
 
 function LandingPage() {
     var navigate = useNavigate();
@@ -14,7 +12,8 @@ function LandingPage() {
     const handleClick = async (e) => {
         e.preventDefault();
         try {
-            setUsername(localUsername);
+            localStorage.setItem('username', localUsername);
+            setLocalUsername(localUsername);
             var checkbox = document.getElementById("checkAcc");
             isChecked = checkbox.checked;
 

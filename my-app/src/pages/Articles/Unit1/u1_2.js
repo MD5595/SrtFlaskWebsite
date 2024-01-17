@@ -33,7 +33,7 @@ print("Hi.")
 
             <p>Ensure you include the correct spelling, spacing, and indents within your code.</p>
             <br/>
-            <Link to="/u1_3">1.3</Link>
+           <Link to="/u1_3" className="btn btn-primary" >1.3</Link>
         </div>
 
     );

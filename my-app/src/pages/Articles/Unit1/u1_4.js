@@ -84,8 +84,8 @@ Input your age: 17
 You will be 27 in 10 years.
             </pre>
             </body><br/>
-            <Link to="/u1_5">1.5</Link>
-        </div>
+<Link to="/u1_3" className="btn btn-primary" >Back</Link>
+    <Link to="/u1_5" className="btn btn-primary" >Next</Link>       </div>
     );
 }
 

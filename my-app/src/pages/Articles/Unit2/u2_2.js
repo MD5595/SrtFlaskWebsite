@@ -43,8 +43,8 @@ print(X)
             <p>Python does basic math in the same order you would do on paper.</p>
             </body>
 <br/>
-            <Link to="/u2_3">2.3</Link>
-        </div>
+            <Link to="/u2_1" className="btn btn-primary" >Back</Link>
+<Link to="/u2_3" className="btn btn-primary" >Next</Link>        </div>
     );
 }
 

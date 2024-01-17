@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function u62() {
   return (
@@ -48,7 +49,8 @@ Unclicked
 
     <p>By returning the value the function produces, the product can be printed or used in operations.</p>
 </body>
-    </div>
+        <Link to="/u6_1" className="btn btn-primary" >Back</Link>
+     </div>
   );
 }
 

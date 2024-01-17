@@ -67,8 +67,8 @@ Boolean1 = 3 > 8
                 variables of the same data type but booleans can’t. Also, you can only use the modulus operator with the
                 int and
                 float data types.</p> </body><br/>
-            <Link to="/u2_1">2.1</Link>
-        </div>
+<Link to="/u1_4" className="btn btn-primary" >Back</Link>
+    <Link to="/u2_1" className="btn btn-primary" >Next</Link>      </div>
 );
 }
 

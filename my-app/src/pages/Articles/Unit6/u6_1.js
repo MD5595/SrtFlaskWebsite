@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 function u61() {
   return (
@@ -39,6 +40,8 @@ count_down()
         name, the parameters (optional), a colon, the action the function performs, and the <code>return</code> keyword
         (optional and typically only present when there are parameters), in that order.</p>
 </body>
+        <Link to="/u5_1" className="btn btn-primary" >Back</Link>
+    <Link to="/u6_2" className="btn btn-primary" >Next</Link>
     </div>
   );
 }

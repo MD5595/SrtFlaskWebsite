@@ -35,7 +35,8 @@ elif x == "June":
                 conditionals.</p>
             </body>
             <br/>
-            <Link to="/u4_1">4.1</Link>
+             <Link to="/u3_1" className="btn btn-primary" >Back</Link>
+    <Link to="/u4_1" className="btn btn-primary" >Next</Link>
         </div>
     );
 }

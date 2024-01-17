@@ -69,8 +69,8 @@ else:
             <p>Note how you can include multiple actions under one condition.</p>
             </body>
 <br/>
-            <Link to="/u3_2">3.2</Link>
-        </div>
+<Link to="/u2_3" className="btn btn-primary" >Back</Link>
+    <Link to="/u3_2" className="btn btn-primary" >Next</Link>        </div>
     );
 }
 

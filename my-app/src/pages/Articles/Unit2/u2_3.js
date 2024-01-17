@@ -53,8 +53,8 @@ Num3 = random.choice(["Red", "Orange", "Yellow"]) # Picks a random value within 
 </body>
         <br/>
 
-            <Link to="/u3_1">3.1</Link>
-    </div>
+<Link to="/u2_2" className="btn btn-primary" >Back</Link>
+    <Link to="/u3_1" className="btn btn-primary" >Next</Link></div>
   );
 }
 
