@@ -183,7 +183,6 @@ function PreTest() {
                 {/* Question 8 */}
                 <label htmlFor="answer8">8. What does the append() function do?</label>
                 <select id="answer8">
-                    <option value="none">Select an option</option>
                     <option value="adds_element">Adds an element to the end of a list</option>
                     <option value="adds_number">Adds a number to the end of a variable</option>
                     <option value="varies">Varies based on what is placed within it</option>
@@ -200,7 +199,6 @@ function PreTest() {
                 <label htmlFor="answer10">10. Which symbol has the highest precedence in mathematical
                     operations?</label>
                 <select id="answer10">
-                    <option value="none">Select an option</option>
                     <option value="double_slash">//</option>
                     <option value="double_star">**</option>
                     <option value="minus">-</option>
