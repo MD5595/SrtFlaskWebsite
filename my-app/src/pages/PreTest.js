@@ -5,6 +5,7 @@ import axios from "axios";
 function PreTest() {
     const [userScore, setUserScore] = useState(0);
     const username = localStorage.getItem('username');
+
     function PreTestGrader() {
         let score = 0;
 
@@ -151,14 +152,14 @@ function PreTest() {
                 {/* Question 2 */}
                 <label htmlFor="answer2">2. What module would you use if you wanted to use the sqrt() function?</label>
                 <input type="text" id="answer2"/>
-
-                {/* <label htmlFor="answer3">
+                <br/><br/>
+                <label htmlFor="answer3">
                     3. Fill in the blank: num = int(input("Enter a number"))
-                    if num > 0 _ num < 100:
+                    if num &gt; 0 _ num &lt; 100:
                     print("Your number is between 0 and 100")
                 </label>
                 <input type="text" id="answer3"/>
-                Question 3 */}
+                {/*Question 3 */}
                 <br/>
                 {/* Question 4 */}
                 <label htmlFor="answer4">4. Write a program that contains a function that simulates a pen being clicked
@@ -204,118 +205,149 @@ function PreTest() {
                     <option value="minus">-</option>
                     <option value="parentheses">( )</option>
                 </select>
-<br/>
+                <br/>
                 <br/>
                 {/* Question 11 */}
                 <label htmlFor="answer11">11. What kind of data type is most commonly associated with
                     conditionals?</label>
-                <input type="text" id="answer11"/>
-<br/>
+                <select id="answer11">
+                    <option value="strings">Strings</option>
+                    <option value="booleans">Booleans</option>
+                    <option value="lists">Lists</option>
+                    <option value="floats">Floats</option>
+                </select>
+
+                <br/>
                 <br/>
                 {/* Question 12 */}
                 <label htmlFor="answer12">12. Write a program that randomly chooses between 4 numbers, then prints the
                     chosen number.</label>
                 <input type="text" id="answer12"/>
-<br/>
+                <br/>
                 <br/>
                 {/* Question 13 */}
                 <label htmlFor="answer13">13. What would the following code print? for _ in range(48, 38, -2): print(_,
                     end=" ")</label>
-                <input type="text" id="answer13"/>
-<br/>
+                <select id="answer13">
+                    <option value="option1">46 44 42 40 38</option>
+                    <option value="option2">48 46 44 42 40</option>
+                    <option value="option3">46 44 42 40</option>
+                    <option value="option4">48 46 44 42 40 38</option>
+                </select>
+                <br/>
                 <br/>
                 {/* Question 14 */}
                 <label htmlFor="answer14">14. Which variable name below is valid? 333number, –hi-, __Num__,
                     (age)</label>
-                <input type="text" id="answer14"/>
-<br/>
+                <select id="answer14">
+                    <option value="option1">333number</option>
+                    <option value="option2">–hi-</option>
+                    <option value="option3">__Num__</option>
+                    <option value="option4">(age)</option>
+                </select>
+                <br/>
                 <br/>
                 {/* Question 15 */}
                 <label htmlFor="answer15">15. Input the code that would allow the user to input a number, cast the input
                     as a float, and assign the value to the variable “num1”</label>
                 <input type="text" id="answer15"/>
-<br/>
+                <br/>
                 <br/>
                 {/* Question 16 */}
                 <label htmlFor="answer16">16. What will print(10//4) display on the terminal?</label>
-                <input type="text" id="answer16"/>
-<br/>
+                <select id="answer16">
+                    <option value="option1">2.0</option>
+                    <option value="option2">2.5</option>
+                    <option value="option3">2</option>
+                    <option value="option4">10//4</option>
+                </select>
+                <br/>
                 <br/>
                 {/* Question 17 */}
                 <label htmlFor="answer17">17. When to use = instead of ==?</label>
-                <input type="text" id="answer17"/>
-<br/>
+                <select id="answer17">
+                    <option value="option1">When you want to assign a value to a variable</option>
+                    <option value="option2">When you want to make a logical statement that hinges on values being equal
+                        to each other
+                    </option>
+                    <option value="option3">== is not present in Python</option>
+                    <option value="option4">For mathematical equations</option>
+                </select>
+                <br/>
                 <br/>
                 {/* Question 18 */}
                 <label htmlFor="answer18">18. Which line of code will not return an error?
-                    <ol>
-                        <li>print(The answer is 10)</li>
-                        <li>print("The answer is" + 10)</li>
-                        <li>print("The answer is + str(10)")</li>
-                        <li>print("The answer is " + str(10))</li>
-                    </ol>
+                    <select id="answer18">
+                        <option value="option1">print(The answer is 10)</option>
+                        <option value="option2">print("The answer is" + 10)</option>
+                        <option value="option3">print("The answer is + str(10)")</option>
+                        <option value="option4">print("The answer is " + str(10))</option>
+                    </select>
                 </label>
-                <input type="text" id="answer18"/>
-<br/>
+                <br/>
                 <br/>
                 {/* Question 19 */}
                 <label htmlFor="answer19">19. Write a program which has 2 variables, one of which equals 2 and the other
                     equals. There should be a while loop that only stops when...</label>
                 <input type="text" id="answer19"/>
-<br/>
+                <br/>
                 <br/>
                 {/* Question 20 */}
                 <label htmlFor="answer20">20. What type of loop would you use if you wanted to make it stop after
                     receiving a certain input?</label>
                 <input type="text" id="answer20"/>
-<br/>
+                <br/>
                 <br/>
                 {/* Question 21 */}
                 <label htmlFor="answer21">
                     21. Select all of the variable names that would not work in Python.
                     <ul>
-                        <li><input type="checkbox" id="option1" name="answer21" value="--Hi"/> <label
+                        <li><input type="checkbox" id="option1" name="answer21" value="option1"/> <label
                             htmlFor="option1">--Hi</label></li>
-                        <li><input type="checkbox" id="option2" name="answer21" value="33number"/> <label
+                        <li><input type="checkbox" id="option2" name="answer21" value="option2"/> <label
                             htmlFor="option2">33number</label></li>
-                        <li><input type="checkbox" id="option3" name="answer21" value="Car1%"/> <label
+                        <li><input type="checkbox" id="option3" name="answer21" value="option3"/> <label
                             htmlFor="option3">Car1%</label></li>
-                        <li><input type="checkbox" id="option4" name="answer21" value="My age"/> <label
+                        <li><input type="checkbox" id="option4" name="answer21" value="option4"/> <label
                             htmlFor="option4">My age</label></li>
                     </ul>
                 </label>
-<br/>
+                <br/>
                 <br/>
 
                 {/* Question 22 */}
                 <label htmlFor="answer22">22. What operator would you first use if you wanted to determine how many
                     quarters would fit inside an amount of money a user inputted?</label>
                 <input type="text" id="answer22"/>
-<br/>
+                <br/>
                 <br/>
                 {/* Question 23 */}
-                <label htmlFor="answer23">23. Select all values that could be picked by random.randint(20, 49)
-                    <ol>
-                        <li>49</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li>48</li>
-                    </ol>
+                <label htmlFor="answer23">
+                    23. Select all values that could be picked by random.randint(20, 49).
+                    <ul>
+                        <li><input type="checkbox" id="option1" name="answer23" value="option1"/> <label
+                            htmlFor="option1">49</label></li>
+                        <li><input type="checkbox" id="option2" name="answer23" value="option2"/> <label
+                            htmlFor="option2">19</label></li>
+                        <li><input type="checkbox" id="option3" name="answer23" value="option3"/> <label
+                            htmlFor="option3">20</label></li>
+                        <li><input type="checkbox" id="option4" name="answer23" value="option4"/> <label
+                            htmlFor="option4">48</label></li>
+                    </ul>
                 </label>
-                <input type="text" id="answer23"/>
-<br/>
+                <br/>
                 <br/>
                 {/* Question 24 */}
                 <label htmlFor="answer24">24. Write a program that has a list with 3 numbers within it. Use a function
                     to add 45 to the list.</label>
                 <input type="text" id="answer24"/>
-<br/>
+                <br/>
                 <br/>
                 {/* Question 25 */}
                 <label htmlFor="answer25">25. What comparison operator would be used if you wanted to make a logical
                     statement that hinges on an expression being equal to a specific number?</label>
                 <input type="text" id="answer25"/>
-<br/>
+                <br/>
                 <br/>
                 <button type="button" onClick={() => PreTestGrader()}>
                     Submit
