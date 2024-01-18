@@ -142,7 +142,7 @@ function PreTest() {
 
     return (
         <div className="container">
-            <h1>JavaScript Pre-Test</h1>
+            <h1> Pre-Test</h1>
             <p>{username}</p>
             <form>
                 {/* Question 1 */}

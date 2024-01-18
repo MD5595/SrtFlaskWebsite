@@ -103,9 +103,10 @@ function PostTest() {
         const q15_answer = document.getElementById('answer15').value.toLowerCase();
         if (q15_answer.includes("0")) {
             score++;
-        }
+        }}
         return (
             <div className="container">
+                <p>Hi</p>
                 {/* Question 1 */}
                 <label htmlFor="answer1">1. Make a user input-based number guessing game that keeps looping until the
                     user gets the right answer. If the user gets the answer wrong 5 times, make the game stop and print,
@@ -325,6 +326,6 @@ function PostTest() {
             </div>
         );
     }
-    }
+
 
     export default PostTest;
