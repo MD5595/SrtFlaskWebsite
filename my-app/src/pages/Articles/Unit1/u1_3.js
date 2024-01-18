@@ -17,10 +17,10 @@ function u13() {
     <p>Making a variable and giving it a value is called variable declaration. Some examples are shown below:</p>
 
     <pre>
-A = 28
-My_name = "John"
-Number1 = 1
-_car_ = "F-150"
+A = 28<br/>
+My_name = "John"<br/>
+Number1 = 1<br/>
+_car_ = "F-150"<br/>
     </pre>
 
     <p>Note the use of an equal sign to assign values to the variables. In Unit 3.1, we will go over Python's equal
@@ -31,13 +31,13 @@ _car_ = "F-150"
     <p>Below is the code for a program:</p>
 
     <pre>
-import random
+import random<br/>
+<br/>
+num1 = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])<br/>
+animal = random.choice(["Cow", "Pig", "Sheep", "Dog", "Whale"])<br/>
 
-num1 = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-animal = random.choice(["Cow", "Pig", "Sheep", "Dog", "Whale"])
-
-your_random_password = str(animal) + str(num1)
-print(your_random_password)
+your_random_password = str(animal) + str(num1)<br/><br/>
+print(your_random_password)<br/>
     </pre>
 
     <p>Even if you don't understand some parts such as <code>random.choice</code> and <code>str()</code>, you can reasonably
@@ -50,11 +50,11 @@ print(your_random_password)
 
     <pre>
 import random
-
-dwq = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-ejd = random.choice(["Cow", "Pig", "Sheep", "Dog", "Whale"])
-qua = str(ejd) + str(dwq)
-print(qua)
+<br/>
+dwq = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])<br/>
+ejd = random.choice(["Cow", "Pig", "Sheep", "Dog", "Whale"])<br/>
+qua = str(ejd) + str(dwq)<br/><br/>
+print(qua)<br/>
     </pre>
 
     <p>As you can see, this code is much harder to understand compared to its descriptive version.</p>
@@ -72,10 +72,10 @@ print(qua)
     <p>Some examples of incorrect variable names, along with reasoning as to why the code is incorrect:</p>
 
     <pre>
---hi = "hi"  # A non-letter/underscore character is at the front of the variable name
-333number = 21  # A number starts off the variable
-%&$*() = "Word"  # Illegal characters
-my age = "17"  # A space
+--hi = "hi"  # A non-letter/underscore character is at the front of the variable name<br/>
+333number = 21  # A number starts off the variable<br/>
+%&$*() = "Word"  # Illegal characters<br/>
+my age = "17"  # A space<br/>
     </pre>
 
     <p>Making your variables descriptive is vital to creating readable code that is easily decipherable.</p>

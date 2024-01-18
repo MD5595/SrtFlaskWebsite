@@ -11,21 +11,21 @@ function u14() {
             <body>
             <h1>Unit 1.4: Printing and Inputting</h1>
             <p>As Unit 1.1 showed, code you write can be displayed on the console by
-                utilizing <code>print()</code> functions.</p>
+                utilizing the print() function.</p>
 
             <p>If you want to print a number or the contents of a variable, you simply place the number/variable inside
                 the
                 parentheses as shown below:</p>
 
             <pre>
-Name = "Jesse"
-print(Name)
+Name = "Jesse"<br/>
+print(Name)<br/>
 print(16)
     </pre>
 
             <p>Output:</p>
             <pre>
-Jesse
+Jesse<br/>
 16
     </pre>
 
@@ -44,7 +44,7 @@ Hello, it’s nice to meet you.
                 <code>input()</code> function. A variable will be assigned the text that the user inputs:</p>
 
             <pre>
-Age = input("Input your age: ")
+Age = input("Input your age: ")<br/>
 print("You are " + Age)
     </pre>
 
@@ -69,9 +69,9 @@ You are 17
                 statement:</p>
 
             <pre>
-Age = int(input("Input your age: "))
-Age_plus_ten = Age + 10
-print("You will be " + str(Age_plus_ten) + " in 10 years.")
+Age = int(input("Input your age: "))<br/>
+Age_plus_ten = Age + 10<br/>
+print("You will be " + str(Age_plus_ten) + " in 10 years.")<br/>
     </pre>
 
             <p>Input:</p>

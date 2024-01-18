@@ -25,7 +25,7 @@ function u12() {
                 code will not work due to the unnecessary indent:</p>
 
             <pre>
-print("Hi.")
+print("Hi.")<br/>
     print("Hi.")
     </pre>
 
@@ -33,8 +33,8 @@ print("Hi.")
 
             <p>Ensure you include the correct spelling, spacing, and indents within your code.</p>
             <br/>
-           <Link to="/u1_3" className="btn btn-primary" >1.3</Link>
-        </div>
+<Link to="/u1_1" className="btn btn-primary" >Back</Link>
+    <Link to="/u1_3" className="btn btn-primary" >Next</Link>         </div>
 
     );
 }
