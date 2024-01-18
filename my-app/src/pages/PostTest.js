@@ -151,11 +151,11 @@ function PostTest() {
                     <br/>
                     &emsp;print("A")
                     <br/>
-                    if x >= 10:
+                    if x &gt;= 10:
                     <br/>
                     &emsp;print("B")
                     <br/>
-                    if x < 10:
+                    if x &lt;10:
                     <br/>
                     &emsp;print("C")
                     <br/>
