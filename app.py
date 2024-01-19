@@ -95,8 +95,14 @@ def sendlocationTime():
     db.session.commit()
 
 @app.route('/pretestProgram', methods=['POST'])
-def pretestProgram
+def pretestProgram():
+    data = request.get_json()
+    code = data.get('code')
+    username = data.get('username')
 
+    #answer = PreTest(username=username,code = code)
+    #db.session.add(answer)
+    #db.session.commit()
 @app.route('/getUserScore', methods =['GET'])
 def getUserScore():
     username = request.args.get('username')
