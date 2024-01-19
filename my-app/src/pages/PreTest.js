@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import {username} from "./LandingPage";
 
 
 function PreTest() {
@@ -12,7 +13,16 @@ function PreTest() {
         // Question 1
         const q1_answer = document.getElementById('answer1').value.toLowerCase();
 
+        useEffect(() => {
+        let code = q1_answer;
+        axios.post('http://localhost:5000/pretestProgram', {username,code}).then(response => {
+            console.log("SUCCESS", response);
+        })
+            .catch(error => {
+                console.error(error);
 
+            });
+    },);
         // Question 2
         const q2_answer = document.getElementById('answer2').value.toLowerCase();
         if (q2_answer === 'math') {
