@@ -26,19 +26,19 @@ function PreTest() {
         }
 
         // Question 4
-
+const q4_answer = document.getElementById('answer4').value;
 
         // Question 5
-
+const q5_answer = document.getElementById('answer5').value;
 
         // Question 6
-
+const q6_answer = document.getElementById('answer6').value;
 
         // Question 7
-
+const q7_answer = document.getElementById('answer7').value;
 
         // Question 8
-        const q8_answer = document.getElementById('answer8').value.toLowerCase();
+        const q8_answer = document.getElementById('answer8').value;
         if (q8_answer === 'adds an element to the end of a list') {
             score++;
         }
