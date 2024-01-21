@@ -6,23 +6,23 @@ import {username} from "./LandingPage";
 function PreTest() {
     const [userScore, setUserScore] = useState(0);
     const username = localStorage.getItem('username');
+    const [x, setX] = useState(0);
 
     function PreTestGrader() {
         let score = 0;
-
+        setX(x + 1);
         // Question 1
         const q1_answer = document.getElementById('answer1').value.toLowerCase();
 
         useEffect(() => {
-        let code = q1_answer;
-        axios.post('http://localhost:5000/pretestProgram', {username,code}).then(response => {
-            console.log("SUCCESS", response);
-        })
-            .catch(error => {
-                console.error(error);
-
-            });
-    },);
+            let code = q1_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+                console.log("SUCCESS", response);
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
         // Question 2
         const q2_answer = document.getElementById('answer2').value.toLowerCase();
         if (q2_answer === 'math') {
@@ -36,17 +36,49 @@ function PreTest() {
         }
 
         // Question 4
-const q4_answer = document.getElementById('answer4').value;
-
+        const q4_answer = document.getElementById('answer4').value;
+        useEffect(() => {
+            let code = q4_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+                console.log("SUCCESS", response);
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
         // Question 5
-const q5_answer = document.getElementById('answer5').value;
-
+        const q5_answer = document.getElementById('answer5').value;
+        useEffect(() => {
+            let code = q5_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+                console.log("SUCCESS", response);
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
         // Question 6
-const q6_answer = document.getElementById('answer6').value;
-
+        const q6_answer = document.getElementById('answer6').value;
+        useEffect(() => {
+            let code = q6_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+                console.log("SUCCESS", response);
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
         // Question 7
-const q7_answer = document.getElementById('answer7').value;
-
+        const q7_answer = document.getElementById('answer7').value;
+        useEffect(() => {
+            let code = q7_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+                console.log("SUCCESS", response);
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
         // Question 8
         const q8_answer = document.getElementById('answer8').value;
         if (q8_answer === 'adds an element to the end of a list') {
@@ -238,10 +270,14 @@ const q7_answer = document.getElementById('answer7').value;
                 <label htmlFor="answer13">13. What would the following code print? for _ in range(48, 38, -2): print(_,
                     end=" ")</label>
                 <select id="answer13"><br/>
-                    <option value="option1">46 44 42 40 38</option><br/>
-                    <option value="option2">48 46 44 42 40</option><br/>
-                    <option value="option3">46 44 42 40</option><br/>
-                    <option value="option4">48 46 44 42 40 38</option><br/>
+                    <option value="option1">46 44 42 40 38</option>
+                    <br/>
+                    <option value="option2">48 46 44 42 40</option>
+                    <br/>
+                    <option value="option3">46 44 42 40</option>
+                    <br/>
+                    <option value="option4">48 46 44 42 40 38</option>
+                    <br/>
                 </select>
                 <br/>
                 <br/>
@@ -249,10 +285,14 @@ const q7_answer = document.getElementById('answer7').value;
                 <label htmlFor="answer14">14. Which variable name below is valid? 333number, –hi-, __Num__,
                     (age)</label>
                 <select id="answer14"><br/>
-                    <option value="option1">333number</option><br/>
-                    <option value="option2">–hi-</option><br/>
-                    <option value="option3">__Num__</option><br/>
-                    <option value="option4">(age)</option><br/>
+                    <option value="option1">333number</option>
+                    <br/>
+                    <option value="option2">–hi-</option>
+                    <br/>
+                    <option value="option3">__Num__</option>
+                    <br/>
+                    <option value="option4">(age)</option>
+                    <br/>
                 </select>
                 <br/>
                 <br/>
@@ -298,7 +338,7 @@ const q7_answer = document.getElementById('answer7').value;
                 {/* Question 19 */}
                 <label htmlFor="answer19">19. Write a program which has 2 variables, one of which equals 2 and the other
                     equals. There should be a while loop that only stops when...</label>
-                 <br/> <textarea id="answe19" style={{width: '200px', height: '100px'}}/>
+                <br/> <textarea id="answe19" style={{width: '200px', height: '100px'}}/>
                 <br/>
                 <br/>
                 {/* Question 20 */}

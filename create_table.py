@@ -18,7 +18,7 @@ class Scores(db.Model):
     __tablename__ = 'Scores'
     username = db.Column(db.String, primary_key=True)
     test = db.Column(db.String)
-    score = db.Column(db.Interger)
+    score = db.Column(db.Integer)
 
 class PreTest(db.Model):
     __tablename__ = 'PreTest'
