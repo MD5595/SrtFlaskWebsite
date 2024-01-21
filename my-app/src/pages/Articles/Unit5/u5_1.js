@@ -46,6 +46,8 @@ print(First_from_List1)
 
     <p>You simply type out the list name and place the element location within brackets.</p>
 </body>
+<Link to="/quiz5" className="btn-quiz">Take an optional quiz for additional practice!</Link>
+<br/><br/><br/>
         <Link to="/u4_2" className="btn btn-primary" >Back</Link>
     <Link to="/u6_1" className="btn btn-primary" >Next</Link>
     </div>

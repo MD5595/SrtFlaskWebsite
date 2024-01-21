@@ -17,7 +17,7 @@ function u12() {
                 spell
                 something incorrectly your program will not function. Computers are good at following instructions but
                 mistakes
-                as minor as writing <code>rint("Hello")</code> instead of <code>print("Hello")</code> will trip up the
+                as minor as writing <pre><code>rint("Hello")</code></pre> instead of <pre><code>print("Hello")</code></pre> will trip up the
                 computer.</p>
 
             <p>Indentation indicates a line/block of code is related to the non-indented code directly above it. The
@@ -25,9 +25,11 @@ function u12() {
                 code will not work due to the unnecessary indent:</p>
 
             <pre>
-print("Hi.")<br/>
-    print("Hi.")
-    </pre>
+                <code>
+                    print("Hi.")<br/>
+                    &emsp; print("Hi.")
+                </code>
+            </pre>
 
             <p>Starting in Unit 3, cases where indentation is required will appear.</p>
 
