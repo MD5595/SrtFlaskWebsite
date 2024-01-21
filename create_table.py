@@ -20,6 +20,10 @@ class Scores(db.Model):
     test = db.Column(db.String)
     score = db.Column(db.Interger)
 
+class PreTest(db.Model):
+    __tablename__ = 'PreTest'
+    username = db.Column(db.String, primary_key=True)
+    code = db.Column(db.String)
 
 with app.app_context():
     db.create_all()
