@@ -52,7 +52,8 @@ Num3 = random.choice(["Red", "Orange", "Yellow"]) # Picks a random value within 
         Consult the cheat sheet or Google to properly type out the functions/modules.</p>
 </body>
         <br/>
-
+        <Link to="/quiz2" className="btn-quiz">Take an optional quiz for additional practice!</Link>
+<br/><br/><br/>
 <Link to="/u2_2" className="btn btn-primary" >Back</Link>
     <Link to="/u3_1" className="btn btn-primary" >Next</Link></div>
   );
