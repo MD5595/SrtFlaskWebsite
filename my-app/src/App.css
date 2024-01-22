@@ -134,6 +134,12 @@ pre code {
   border: 1px solid #999;
   display: block;
   padding: 10px;
+  font-family: "Courier New";
+  width: min-content;
+}
+
+code {
+  font-family: "Courier New";
 }
 
 .btn-quiz {

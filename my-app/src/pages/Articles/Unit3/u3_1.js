@@ -40,13 +40,12 @@ function u31() {
                 condition will get executed.</p>
 
             <p>The <code>if</code> statement below is made up of a conditional (is x greater than 10) statement then
-                performs an
-                action if it is met (prints “Hello”):</p>
+                performs an action if it is met (prints “Hello”):</p>
 
-            <pre>
-if x &gt; 10 or x != 10:
-    print("Hello")
-</pre>
+            <pre><code>
+                if x &gt; 10 or x != 10: <br/>
+                &emsp;print("Hello")
+            </code></pre>
 
             <p>Note the indented portion of the code and the colon at the end of the condition that signifies that
                 everything
@@ -56,21 +55,21 @@ if x &gt; 10 or x != 10:
                 is
                 not fulfilled, another action will occur:</p>
 
-            <pre>
-X = int(input("Enter a number"))
+            <pre><code>
+            X = int(input("Enter a number"))<br/>
 
-if X &gt; 10:
-    print("X is greater than 10.")
-else:
-    print("X is either less than 10")
-    print("Or 10.")
-</pre>
+            if X &gt; 10:<br/>
+            &emsp;print("X is greater than 10.")<br/>
+            else: <br/>
+            &emsp;print("X is either less than 10")<br/>
+            &emsp;print("Or 10.")
+    </code></pre>
 
             <p>Note how you can include multiple actions under one condition.</p>
             </body>
 <br/>
 <Link to="/u2_3" className="btn btn-primary" >Back</Link>
-    <Link to="/u3_2" className="btn btn-primary" >Next</Link>        </div>
+&nbsp;<Link to="/u3_2" className="btn btn-primary" >Next</Link>        </div>
     );
 }
 
