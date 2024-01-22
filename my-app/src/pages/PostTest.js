@@ -119,22 +119,21 @@ function PostTest() {
 
     return (
         <div className="container">
-            <p>Hi</p>
-            {/* Question 1 */}
-            <label htmlFor="answer1">1. Make a user input-based number guessing game that keeps looping until the
+             {/* Question 1 */}
+                <label htmlFor="answer1">1. Make a user input-based number guessing game that keeps looping until the
                 user gets the right answer. If the user gets the answer wrong 5 times, make the game stop and print,
-                “Better luck next time.”</label>
-            <input type="text" id="answer1"/>
-            <br/><br/>
+                “Better luck next time.”</label><br/>
+                <textarea id="answer1" style={{width: '200px', height: '100px'}}/>
+                <br/><br/>
             {/* Question 2 */}
             <label htmlFor="answer2">2. What are Math and Random?</label>
             <input type="text" id="answer2"/>
             <br/><br/>
             {/* Question 3 */}
-            <label htmlFor="answer3">3. Write a program that asks the user to input a number, then prints, "Your
-                number is between 0 and 100" if the number is between 0 and 100 (inclusive).</label>
-            <input type="text" id="answer3"/>
-            <br/><br/>
+            <label htmlFor="answer1">3. Write a program that asks the user to input a number, then prints, "Your
+                number is between 0 and 100" if the number is between 0 and 100 (inclusive).</label><br/>
+                <textarea id="answer3" style={{width: '200px', height: '100px'}}/>
+                <br/><br/>
             {/* Question 4 */}
             <label htmlFor="answer4">4. What are the placeholder variables within a function called?</label>
             <input type="text" id="answer4"/>
@@ -153,9 +152,10 @@ function PostTest() {
             <input type="text" id="answer7"/>
             <br/><br/>
             {/* Question 8 */}
-            <label htmlFor="answer8">8. Write a program that randomly chooses a number from a list and prints the
-                chosen number.</label>
-            <input type="text" id="answer8"/>
+            <label htmlFor="answer1">8. Write a program that randomly chooses a number from a list and prints the
+                chosen number.</label><br/>
+                <textarea id="answer8" style={{width: '200px', height: '100px'}}/>
+   <br/><br/>
             <br/><br/>
             {/* Question 9 */}
             <label htmlFor="answer9">9. What would the code below print if the user enters 10? (multiple choice)
@@ -193,19 +193,13 @@ function PostTest() {
             <label htmlFor="answer11">11. When using the modular operator, what are the only possible answers when
                 the divisor is 4?
                 <br/>
-                A) 0 1 2 3
-                <br/>
-                B) 0 1 2 3 4
-                <br/>
-                C) 1 2 3 4 5 6 7 8
-                <br/>
-                D) 1 2 3 4
+
             </label>
             <select id="answer11">
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
+                <option value="A">0, 1, 2, and 3</option>
+                <option value="B">0, 1, 2, 3, and 4</option>
+                <option value="C">1, 2, 3, 4, 5, 6, 7, and 8</option>
+                <option value="D">1, 2, 3, and 4</option>
             </select>
             <br/><br/>
             {/* Question 12 */}
@@ -242,9 +236,10 @@ function PostTest() {
             <input type="text" id="answer15"/>
             <br/><br/>
             {/* Question 16 */}
-            <label htmlFor="answer16">16. Write a program that simulates a coin flipping 100 times. The program
-                should print the average amount of times heads and tails land.</label>
-            <input type="text" id="answer16"/>
+            <label htmlFor="answer1">16. Write a program that simulates a coin flipping 100 times. The program
+                should print the average amount of times heads and tails land.</label><br/>
+                <textarea id="answer16" style={{width: '200px', height: '100px'}}/>
+   <br/><br/>
             <br/><br/>
             {/* Question 17 */}
             <label htmlFor="answer17">17. What is the following code’s output if 100 then 50 are entered?
@@ -274,16 +269,18 @@ function PostTest() {
             </label>
             <br/><br/>
             {/* Question 19 */}
-            <label htmlFor="answer19">19. Write code that receives 3 numbers (label your variables a, b, and c) and
+            <label htmlFor="answer1">19. Write code that receives 3 numbers (label your variables a, b, and c) and
                 determines if a triangle can exist with the side lengths inputted. Use the formula a^2 + b^2 =
-                c^2</label>
-            <input type="text" id="answer19"/>
+                c^2</label><br/>
+                <textarea id="answer19" style={{width: '200px', height: '100px'}}/>
+
             <br/><br/>
             {/* Question 20 */}
-            <label htmlFor="answer20">20. Create a function that has 3 parameters and prints, “All good!”, if all
+            <label htmlFor="answer1">20. Create a function that has 3 parameters and prints, “All good!”, if all
                 parameters have an even square root, and “Not all good.” if they don't all have even square
-                roots.</label>
-            <input type="text" id="answer20"/>
+                roots.</label><br/>
+                <textarea id="answer20" style={{width: '200px', height: '100px'}}/>
+
             <br/><br/>
             {/* Question 21 */}
             <label htmlFor="answer21">21. What type of loop would you use if you wanted to make it stop after
@@ -307,11 +304,11 @@ function PostTest() {
             </label>
             <br/><br/>
             {/* Question 23 */}
-            <label htmlFor="answer23">23. Write a program that receives a monetary amount ranging from .01 cents to
-                1.00 dollar. Have your program print out the same value in the least amount of coins, starting from
-                quarters and going down to dimes.</label>
-            <input type="text" id="answer23"/>
-            <br/><br/>
+            <label htmlFor="answer1">23. Write a program that receives a monetary amount ranging from 1 cent to
+                100 cents. Have your program print out the same value in the least amount of coins, starting from
+                quarters and going down to pennies.</label><br/>
+                <textarea id="answer23" style={{width: '200px', height: '100px'}}/>
+   <br/><br/>
             {/* Question 24 */}
             <label htmlFor="answer24">24. Select all values that could be picked by random.randint(20,49)
                 <br/>
@@ -329,10 +326,11 @@ function PostTest() {
             </label>
             <br/><br/>
             {/* Question 25 */}
-            <label htmlFor="answer25">25. Write a program that has a while loop that stops once the user inputs a
-                number that is divisible not by 2 and has a remainder of 3 when divided by 4.</label>
-            <input type="text" id="answer25"/>
-            <br/><br/>
+            <label htmlFor="answer1">25. Write a program that has a while loop that stops once the user inputs a
+                number that is divisible not by 2 and has a remainder of 3 when divided by 4.</label><br/>
+                <textarea id="answer25" style={{width: '200px', height: '100px'}}/>
+   <br/><br/>
+
             <button type="button" onClick={() => PostTestGrader()}>
                 Submit
             </button>
