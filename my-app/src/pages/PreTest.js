@@ -81,16 +81,24 @@ function PreTest() {
         }, [x]);
         // Question 8
         const q8_answer = document.getElementById('answer8').value;
-        if (q8_answer === 'adds an element to the end of a list') {
+        if (q8_answer.includes('a')) {
             score++;
         }
 
         // Question 9
-
+        const q9_answer = document.getElementById('answer9').value;
+        useEffect(() => {
+            let code = q9_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
 
         // Question 10
         const q10_answer = document.getElementById('answer10').value.toLowerCase();
-        if (q10_answer === '**') {
+        if (q10_answer.includes('d')) {
             score++;
         }
 
@@ -108,36 +116,55 @@ function PreTest() {
 
         // Question 13
         const q13_answer = document.getElementById('answer13').value;
-        if (q13_answer === '48 46 44 42 40') {
+        if (q13_answer.includes('b')) {
             score++;
         }
 
         // Question 14
         const q14_answer = document.getElementById('answer14').value.toLowerCase();
-        if (q14_answer === '__num__') {
+        if (q14_answer === 'c') {
             score++;
         }
 
         // Question 15
-
+        const q15_answer = document.getElementById('answer15').value;
+        useEffect(() => {
+            let code = q15_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
 
         // Question 16
         const q16_answer = document.getElementById('answer16').value.toLowerCase();
-        if (q16_answer === '2') {
+        if (q16_answer.includes('c')) {
             score++;
         }
 
         // Question 17
-
+        const q17_answer = document.getElementById('answer17').value.toLowerCase();
+        if (q17_answer.includes('a')) {
+            score++;
+        }
 
         // Question 18
         const q18_answer = document.getElementById('answer18').value.toLowerCase();
-        if (q18_answer === 'print("The answer is " + str(10))') {
+        if (q18_answer.includes("d")) {
             score++;
         }
 
         // Question 19
-
+        const q19_answer = document.getElementById('answer19').value;
+        useEffect(() => {
+            let code = q19_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
 
         // Question 20
         const q20_answer = document.getElementById('answer20').value.toLowerCase();
@@ -147,7 +174,7 @@ function PreTest() {
 
         // Question 21
         const q21_answer = document.getElementById('answer21').value.toLowerCase();
-        if (q21_answer === '-hi-' || q21_answer === 'car1%' || q21_answer === '(age)') {
+        if (q21_answer.includes("a") && q21_answer.includes("b") && q21_answer.includes("c") && q21_answer.includes("d")) {
             score++;
         }
 
@@ -159,8 +186,8 @@ function PreTest() {
 
         // Question 23
         const q23_answer = document.getElementById('answer23').value.toLowerCase();
-        if (q23_answer === '20' || q23_answer === '21' || q23_answer === '22' || q23_answer === '23' || q23_answer === '24' || q23_answer === '25' || q23_answer === '26' || q23_answer === '27' || q23_answer === '28' || q23_answer === '29' || q23_answer === '30' || q23_answer === '31' || q23_answer === '32' || q23_answer === '33' || q23_answer === '34' || q23_answer === '35' || q23_answer === '36' || q23_answer === '37' || q23_answer === '38' || q23_answer === '39' || q23_answer === '40' || q23_answer === '41' || q23_answer === '42' || q23_answer === '43' || q23_answer === '44' || q23_answer === '45' || q23_answer === '46' || q23_answer === '47' || q23_answer === '48') {
-            score++;
+        if (q23_answer.includes("a")) {
+            score++
         }
 
         // Question 24
@@ -226,10 +253,10 @@ function PreTest() {
                 {/* Question 8 */}
                 <label htmlFor="answer8">8. What does the append() function do?</label><br/>
                 <select id="answer8">
-                    <option value="adds_element">Adds an element to the end of a list</option>
-                    <option value="adds_number">Adds a number to the end of a variable</option>
-                    <option value="varies">Varies based on what is placed within it</option>
-                    <option value="adds_variable">Adds a variable to the start of a list</option>
+                    <option value="a">Adds an element to the end of a list</option>
+                    <option value="b">Adds a number to the end of a variable</option>
+                    <option value="c">Varies based on what is placed within it</option>
+                    <option value="d">Adds a variable to the start of a list</option>
                 </select>
                 <br/><br/>
                 {/* Question 9 */}
@@ -242,10 +269,10 @@ function PreTest() {
                 <label htmlFor="answer10">10. Which symbol has the highest precedence in mathematical
                     operations?</label><br/>
                 <select id="answer10">
-                    <option value="double_slash">//</option>
-                    <option value="double_star">**</option>
-                    <option value="minus">-</option>
-                    <option value="parentheses">( )</option>
+                    <option value="a">//</option>
+                    <option value="b">**</option>
+                    <option value="c">-</option>
+                    <option value="d">( )</option>
                 </select>
                 <br/>
                 <br/>
@@ -253,10 +280,10 @@ function PreTest() {
                 <label htmlFor="answer11">11. What kind of data type is most commonly associated with
                     conditionals?</label><br/>
                 <select id="answer11">
-                    <option value="strings">Strings</option>
-                    <option value="booleans">Booleans</option>
-                    <option value="lists">Lists</option>
-                    <option value="floats">Floats</option>
+                    <option value="a">Strings</option>
+                    <option value="b">Booleans</option>
+                    <option value="c">Lists</option>
+                    <option value="d">Floats</option>
                 </select>
 
                 <br/>
@@ -270,28 +297,27 @@ function PreTest() {
                 <label htmlFor="answer13">13. What would the following code print? for _ in range(48, 38, -2): print(_,
                     end=" ")</label><br/>
                 <select id="answer13"><br/>
-                    <option value="option1">46 44 42 40 38</option>
+                    <option value="a">46 44 42 40 38</option>
                     <br/>
-                    <option value="option2">48 46 44 42 40</option>
+                    <option value="b">48 46 44 42 40</option>
                     <br/>
-                    <option value="option3">46 44 42 40</option>
+                    <option value="c">46 44 42 40</option>
                     <br/>
-                    <option value="option4">48 46 44 42 40 38</option>
+                    <option value="d">48 46 44 42 40 38</option>
                     <br/>
                 </select>
                 <br/>
                 <br/>
                 {/* Question 14 */}
-                <label htmlFor="answer14">14. Which variable name below is valid? 333number, –hi-, __Num__,
-                    (age)</label><br/>
+                <label htmlFor="answer14">14. Which variable name below is valid? </label><br/>
                 <select id="answer14"><br/>
-                    <option value="option1">333number</option>
+                    <option value="a">333number</option>
                     <br/>
-                    <option value="option2">–hi-</option>
+                    <option value="b">–hi-</option>
                     <br/>
-                    <option value="option3">__Num__</option>
+                    <option value="c">__Num__</option>
                     <br/>
-                    <option value="option4">(age)</option>
+                    <option value="d">(age)</option>
                     <br/>
                 </select>
                 <br/>
@@ -305,32 +331,32 @@ function PreTest() {
                 {/* Question 16 */}
                 <label htmlFor="answer16">16. What will print(10//4) display on the terminal?</label><br/>
                 <select id="answer16">
-                    <option value="option1">2.0</option>
-                    <option value="option2">2.5</option>
-                    <option value="option3">2</option>
-                    <option value="option4">10//4</option>
+                    <option value="a">2.0</option>
+                    <option value="b">2.5</option>
+                    <option value="c">2</option>
+                    <option value="d">10//4</option>
                 </select>
                 <br/>
                 <br/>
                 {/* Question 17 */}
                 <label htmlFor="answer17">17. When to use = instead of ==?</label><br/>
                 <select id="answer17">
-                    <option value="option1">When you want to assign a value to a variable</option>
-                    <option value="option2">When you want to make a logical statement that hinges on values being equal
+                    <option value="a">When you want to assign a value to a variable</option>
+                    <option value="b">When you want to make a logical statement that hinges on values being equal
                         to each other
                     </option>
-                    <option value="option3">== is not present in Python</option>
-                    <option value="option4">For mathematical equations</option>
+                    <option value="c">== is not present in Python</option>
+                    <option value="d">For mathematical equations</option>
                 </select>
                 <br/>
                 <br/>
                 {/* Question 18 */}
                 <label htmlFor="answer18">18. Which line of code will not return an error?<br/>
                     <select id="answer18">
-                        <option value="option1">print(The answer is 10)</option>
-                        <option value="option2">print("The answer is" + 10)</option>
-                        <option value="option3">print("The answer is + str(10)")</option>
-                        <option value="option4">print("The answer is " + str(10))</option>
+                        <option value="a">print(The answer is 10)</option>
+                        <option value="b">print("The answer is" + 10)</option>
+                        <option value="c">print(The answer is + str(10))</option>
+                        <option value="d">print("The answer is " + str(10))</option>
                     </select>
                 </label>
                 <br/>
@@ -351,13 +377,13 @@ function PreTest() {
                 <label htmlFor="answer21">
                     21. Select all of the variable names that would not work in Python.
                     <ul>
-                        <li><input type="checkbox" id="option1" name="answer21" value="option1"/> <label
+                        <li><input type="checkbox" id="option1" name="answer21" value="a"/> <label
                             htmlFor="option1">--Hi</label></li>
-                        <li><input type="checkbox" id="option2" name="answer21" value="option2"/> <label
+                        <li><input type="checkbox" id="option2" name="answer21" value="b"/> <label
                             htmlFor="option2">33number</label></li>
-                        <li><input type="checkbox" id="option3" name="answer21" value="option3"/> <label
+                        <li><input type="checkbox" id="option3" name="answer21" value="c"/> <label
                             htmlFor="option3">Car1%</label></li>
-                        <li><input type="checkbox" id="option4" name="answer21" value="option4"/> <label
+                        <li><input type="checkbox" id="option4" name="answer21" value="d"/> <label
                             htmlFor="option4">My age</label></li>
                     </ul>
                 </label>
@@ -372,24 +398,13 @@ function PreTest() {
                 <br/>
                 <label htmlFor="answer23">
                     23. Select the value that could be picked by random.randint(20, 49).
-                    <ul>
-                        <li>
-                            <input type="radio" id="option1" name="answer23" value="option1"/>
-                            <label htmlFor="option1">49</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="option2" name="answer23" value="option2"/>
-                            <label htmlFor="option2">19</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="option3" name="answer23" value="option3"/>
-                            <label htmlFor="option3">20</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="option4" name="answer23" value="option4"/>
-                            <label htmlFor="option4">48</label>
-                        </li>
-                    </ul>
+                    <select id="answer23" name="answer23">
+                        <option value="">Select an option</option>
+                        <option value="a">49</option>
+                        <option value="b">50</option>
+                        <option value="c">20.5</option>
+                        <option value="d">19.6</option>
+                    </select>
                 </label>
 
                 <br/>
