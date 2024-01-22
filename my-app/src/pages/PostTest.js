@@ -29,7 +29,7 @@ function PostTest() {
 
         // Question 3
         const q3_answer = document.getElementById('answer3').value;
-         useEffect(() => {
+        useEffect(() => {
             let code = q3_answer;
             axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
                 console.log("SUCCESS", response);
@@ -46,7 +46,7 @@ function PostTest() {
 
 // Question 5
         const q5_answer = document.getElementById('answer5').value.toLowerCase();
-         if (q5_answer.includes("inclusive")) {
+        if (q5_answer.includes("inclusive")) {
             score++;
         }
 // Question 6
@@ -57,12 +57,12 @@ function PostTest() {
 
 // Question 7
         const q7_answer = document.getElementById('answer7').value.toLowerCase();
-         if (q7_answer.includes("48 46 44 42 40")) {
+        if (q7_answer.includes("48 46 44 42 40")) {
             score++;
         }
 
 // Question 8
-        const q8_answer = document.getElementById('answer8').value.toLowerCase();
+        const q8_answer = document.getElementById('answer8').value;
         useEffect(() => {
             let code = q8_answer;
             axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
@@ -94,7 +94,7 @@ function PostTest() {
 // Question 12
         const q12_answer = document.getElementById('answer12').value.toLowerCase();
 
-        if (q12_answer.includes("5**3") || q12_answer.includes("pow(5,3)")|| q12_answer.includes("math.pow(5,3)")) {
+        if (q12_answer.includes("5**3") || q12_answer.includes("pow(5,3)") || q12_answer.includes("math.pow(5,3)")) {
             score++;
         }
 
@@ -116,17 +116,89 @@ function PostTest() {
         if (q15_answer.includes("3")) {
             score++;
         }
+// Question 16
+        const q16_answer = document.getElementById('answer16').value.toLowerCase();
+        useEffect(() => {
+            let code = q16_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
+// Question 17
+        const q17_answer = document.getElementById('answer17').value.toLowerCase();
+        if (q17_answer.includes("b")) {
+            score++;
+        }
+// Question 18
+        const q18_answer = document.getElementById('answer18').value.toLowerCase();
+        if (q18_answer.includes("c")) {
+            score++;
+        }
+// Question 19
+        const q19_answer = document.getElementById('answer19').value;
+        useEffect(() => {
+            let code = q19_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
 
+// Question 20
+        const q20_answer = document.getElementById('answer20').value;
+        useEffect(() => {
+            let code = q20_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
+        // Question 21
+        const q21_answer = document.getElementById('answer21').value.toLowerCase();
+        if (q21_answer.includes("while")) {
+            score++;
+        }
+        // Question 22
+        const q22_answer = document.getElementById('answer22').value.toLowerCase();
+        if (q18_answer.includes("c")) {
+            score++;
+        }
+        // Question 23
+        const q23_answer = document.getElementById('answer23').value;
+        useEffect(() => {
+            let code = q23_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
+
+        // Question 25
+        const q25_answer = document.getElementById('answer25').value;
+        useEffect(() => {
+            let code = q25_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
     }
 
     return (
         <div className="container">
-             {/* Question 1 */}
-                <label htmlFor="answer1">1. Make a user input-based number guessing game that keeps looping until the
+            {/* Question 1 */}
+            <h1>PostTest</h1>
+            <label htmlFor="answer1">1. Make a user input-based number guessing game that keeps looping until the
                 user gets the right answer. If the user gets the answer wrong 5 times, make the game stop and print,
                 “Better luck next time.”</label><br/>
-                <textarea id="answer1" style={{width: '200px', height: '100px'}}/>
-                <br/><br/>
+            <textarea id="answer1" style={{width: '200px', height: '100px'}}/>
+            <br/><br/>
             {/* Question 2 */}
             <label htmlFor="answer2">2. What are Math and Random?</label>
             <input type="text" id="answer2"/>
@@ -134,8 +206,8 @@ function PostTest() {
             {/* Question 3 */}
             <label htmlFor="answer1">3. Write a program that asks the user to input a number, then prints, "Your
                 number is between 0 and 100" if the number is between 0 and 100 (inclusive).</label><br/>
-                <textarea id="answer3" style={{width: '200px', height: '100px'}}/>
-                <br/><br/>
+            <textarea id="answer3" style={{width: '200px', height: '100px'}}/>
+            <br/><br/>
             {/* Question 4 */}
             <label htmlFor="answer4">4. What are the placeholder variables within a function called?</label>
             <input type="text" id="answer4"/>
@@ -156,12 +228,12 @@ function PostTest() {
             {/* Question 8 */}
             <label htmlFor="answer1">8. Write a program that randomly chooses a number from a list and prints the
                 chosen number.</label><br/>
-                <textarea id="answer8" style={{width: '200px', height: '100px'}}/>
-   <br/><br/>
+            <textarea id="answer8" style={{width: '200px', height: '100px'}}/>
+            <br/><br/>
 
             {/* Question 9 */}
             <label htmlFor="answer9">9. What would the code below print if the user enters 10?
-               <br/> x = int(input("Enter a number: "))
+                <br/> x = int(input("Enter a number: "))
                 <br/>
                 if x != 7:
                 <br/>
@@ -206,17 +278,18 @@ function PostTest() {
             </select>
             <br/><br/>
             {/* Question 12 */}
-            <label htmlFor="answer12">12. Input one way you can raise 5 to the 3rd power (If you use a function, do not worry about importing).</label>
+            <label htmlFor="answer12">12. Input one way you can raise 5 to the 3rd power (If you use a function, do not
+                worry about importing).</label>
             <input type="text" id="answer12"/>
             <br/><br/>
             {/* Question 13 */}
-            <label htmlFor="answer13">13. What is the output of the code below:
+            <label htmlFor="answer13">13. What is the output of the code below?
                 <br/>c = 1
                 <br/>sum = 0
                 <br/>while (c &lt; 10):
                 <br/>c = c + 2
                 <br/>sum = sum + c
-                <br/>print(sum)</label>
+                <br/>print(sum)</label><br/>
             <input type="text" id="answer13"/>
             <br/><br/>
             {/* Question 14 */}
@@ -234,40 +307,50 @@ function PostTest() {
             <br/><br/>
             {/* Question 15 */}
             <label htmlFor="answer15">15. How many times does the function below print 'Hi'?
-                for i in range (14, 45, 15):
-                print("Hi")</label>
+                <br/>for i in range (14, 45, 15):<br/>
+                &emsp;print("Hi")</label><br/>
             <input type="text" id="answer15"/>
             <br/><br/>
             {/* Question 16 */}
             <label htmlFor="answer1">16. Write a program that simulates a coin flipping 100 times. The program
                 should print the average amount of times heads and tails land.</label><br/>
-                <textarea id="answer16" style={{width: '200px', height: '100px'}}/>
+            <textarea id="answer16" style={{width: '200px', height: '100px'}}/>
 
             <br/><br/>
             {/* Question 17 */}
-            <label htmlFor="answer17">17. What is the following code’s output if 100 then 50 are entered?
+            <label htmlFor="answer17">17.
+                What is the following code’s output if 5 then 123 are entered?<br/><br/>
+
+                start = int(input("Enter a number: "))<br/>
+                stop = int(input("Enter another number: "))<br/>
                 <br/>
-                <input type="checkbox" id="answer17_a" value="a"/>
-                <label htmlFor="answer17_a">a) 350</label>
+                x = 6<br/>
+                list = []<br/>
                 <br/>
-                <input type="checkbox" id="answer17_b" value="b"/>
-                <label htmlFor="answer17_b">b) 150</label>
+                for i in range (start, stop, x):<br/>
+                &emsp;list.append(x)<br/>
+                &emsp;x+=i<br/>
+                print(list[5])<br/>
+
                 <br/>
-                <input type="checkbox" id="answer17_c" value="c"/>
-                <label htmlFor="answer17_c">c) 255</label>
-                <br/>
-                <input type="checkbox" id="answer17_d" value="d"/>
-                <label htmlFor="answer17_d">d) 310</label>
+
+                <select id="answer14">
+                    <option value="a">120</option>
+                    <option value="b">126</option>
+                    <option value="c">132</option>
+                    <option value="d">133</option>
+                </select>
             </label>
             <br/><br/>
             {/* Question 18 */}
             <label htmlFor="answer18">18. What shows the range of r’s possible value?
+                r = random.random() + 1
                 <br/>
                 <select id="answer18">
-                    <option value="a">a) 1.0 &lt; r &lt;= 2.0</option>
-                    <option value="b">b) 1.0 &lt;= r &lt;= 2.0</option>
-                    <option value="c">c) 1.0 &lt;= r &lt; 2.0</option>
-                    <option value="d">d) 1.0 &lt; r &lt; 2.0</option>
+                    <option value="a">1.0 &lt; r &lt;= 2.0</option>
+                    <option value="b">1.0 &lt;= r &lt;= 2.0</option>
+                    <option value="c">1.0 &lt;= r &lt; 2.0</option>
+                    <option value="d">1.0 &lt; r &lt; 2.0</option>
                 </select>
             </label>
             <br/><br/>
@@ -275,14 +358,14 @@ function PostTest() {
             <label htmlFor="answer1">19. Write code that receives 3 numbers (label your variables a, b, and c) and
                 determines if a triangle can exist with the side lengths inputted. Use the formula a^2 + b^2 =
                 c^2</label><br/>
-                <textarea id="answer19" style={{width: '200px', height: '100px'}}/>
+            <textarea id="answer19" style={{width: '200px', height: '100px'}}/>
 
             <br/><br/>
             {/* Question 20 */}
             <label htmlFor="answer1">20. Create a function that has 3 parameters and prints, “All good!”, if all
                 parameters have an even square root, and “Not all good.” if they don't all have even square
                 roots.</label><br/>
-                <textarea id="answer20" style={{width: '200px', height: '100px'}}/>
+            <textarea id="answer20" style={{width: '200px', height: '100px'}}/>
 
             <br/><br/>
             {/* Question 21 */}
@@ -291,7 +374,7 @@ function PostTest() {
             <input type="text" id="answer21"/>
             <br/><br/>
             {/* Question 22 */}
-            <label htmlFor="answer22">22. Select all of the variable names that would not work in Python.
+            <label htmlFor="answer22">22. Select all invalid variable names.
                 <br/>
                 <input type="checkbox" id="a" name="answer22" value="a"/>
                 <label htmlFor="a">a) _</label>
@@ -307,11 +390,12 @@ function PostTest() {
             </label>
             <br/><br/>
             {/* Question 23 */}
-            <label htmlFor="answer1">23. Write a program that recieves an amount of cents ranging from 1 to 100 from a user,
+            <label htmlFor="answer1">23. Write a program that recieves an amount of cents ranging from 1 to 100 from a
+                user,
                 then prints out the number of quarters, dimes, nickels, and pennies would make up this value in the
-            least amount of coins. </label><br/>
-                <textarea id="answer23" style={{width: '200px', height: '100px'}}/>
-   <br/><br/>
+                least amount of coins. </label><br/>
+            <textarea id="answer23" style={{width: '200px', height: '100px'}}/>
+            <br/><br/>
             {/* Question 24 */}
             <label htmlFor="answer24">24. Select all values that could be picked by random.randint(20,49)
                 <br/>
@@ -331,8 +415,8 @@ function PostTest() {
             {/* Question 25 */}
             <label htmlFor="answer1">25. Write a program that has a while loop that stops once the user inputs a
                 number that is divisible not by 2 and has a remainder of 3 when divided by 4.</label><br/>
-                <textarea id="answer25" style={{width: '200px', height: '100px'}}/>
-   <br/><br/>
+            <textarea id="answer25" style={{width: '200px', height: '100px'}}/>
+            <br/><br/>
 
             <button type="button" onClick={() => PostTestGrader()}>
                 Submit
