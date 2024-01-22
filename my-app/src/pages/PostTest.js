@@ -28,78 +28,79 @@ function PostTest() {
         }
 
         // Question 3
-        const q3_answer = document.getElementById('answer3').value.toLowerCase();
-        if (q3_answer.includes("0") && q3_answer.includes("100")) {
-            score++;
-        }
+        const q3_answer = document.getElementById('answer3').value;
+         useEffect(() => {
+            let code = q3_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+                console.log("SUCCESS", response);
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
 
         const q4_answer = document.getElementById('answer4').value.toLowerCase();
-        if (q4_answer.includes("placeholder") && q4_answer.includes("variables")) {
+        if (q4_answer.includes("parameter")) {
             score++;
         }
 
 // Question 5
         const q5_answer = document.getElementById('answer5').value.toLowerCase();
-// Check if the answer is correct
-        if (q5_answer.includes("inclusive")) {
+         if (q5_answer.includes("inclusive")) {
             score++;
         }
-
 // Question 6
         const q6_answer = document.getElementById('answer6').value.toLowerCase();
-// Check if the answer is correct
-        if (q6_answer.includes("math") && q6_answer.includes("fabs")) {
+        if (q6_answer.includes("math")) {
             score++;
         }
 
 // Question 7
         const q7_answer = document.getElementById('answer7').value.toLowerCase();
-// Check if the answer is correct
-        if (q7_answer.includes("48 46 44 42 40")) {
+         if (q7_answer.includes("48 46 44 42 40")) {
             score++;
         }
 
 // Question 8
         const q8_answer = document.getElementById('answer8').value.toLowerCase();
-// Check if the answer is correct
-// (Assuming the correct answer is to randomly choose a number from a list)
-        if (q8_answer.includes("random") && q8_answer.includes("list")) {
-            score++;
-        }
+        useEffect(() => {
+            let code = q8_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
 
 // Question 9
         const q9_answer = document.getElementById('answer9').value.toLowerCase();
-// Check if the answer is correct
-// (Assuming the correct answer is A, B, C, D)
-        if (q9_answer.includes("a") && q9_answer.includes("b") && q9_answer.includes("c") && q9_answer.includes("d")) {
+        if (q9_answer.includes("a")) {
             score++;
         }
 
 // Question 10
         const q10_answer = document.getElementById('answer10').value.toLowerCase();
-        if (q10_answer.includes("symbol") && q10_answer.includes("ignore")) {
+        if (q10_answer.includes("#")) {
             score++;
         }
 
 // Question 11
         const q11_answer = document.getElementById('answer11').value.toLowerCase();
-// Check if the answer is correct
-// (Assuming the correct answers are 0, 1, 2, 3)
-        if (q11_answer.includes("0") && q11_answer.includes("1") && q11_answer.includes("2") && q11_answer.includes("3")) {
+
+        if (q11_answer.includes("a")) {
             score++;
         }
 
 // Question 12
         const q12_answer = document.getElementById('answer12').value.toLowerCase();
 
-        if (q12_answer.includes("5^^5") || q12_answer.includes("5.pow(5)")) {
+        if (q12_answer.includes("5**3") || q12_answer.includes("pow(5,3)")|| q12_answer.includes("math.pow(5,3)")) {
             score++;
         }
 
 // Question 13
         const q13_answer = document.getElementById('answer13').value.toLowerCase();
-// Check if the answer is correct
-        if (q13_answer.includes("25")) {
+        if (q13_answer.includes("35")) {
             score++;
         }
 
@@ -112,9 +113,10 @@ function PostTest() {
 
 // Question 15
         const q15_answer = document.getElementById('answer15').value.toLowerCase();
-        if (q15_answer.includes("0")) {
+        if (q15_answer.includes("3")) {
             score++;
         }
+
     }
 
     return (
@@ -158,22 +160,22 @@ function PostTest() {
    <br/><br/>
 
             {/* Question 9 */}
-            <label htmlFor="answer9">9. What would the code below print if the user enters 10? (multiple choice)
-                x = int(input("Enter a number: "))
+            <label htmlFor="answer9">9. What would the code below print if the user enters 10?
+               <br/> x = int(input("Enter a number: "))
                 <br/>
                 if x != 7:
                 <br/>
                 &emsp;print("A")
                 <br/>
-                if x &gt;= 10:
+                elif x &gt;= 10:
                 <br/>
                 &emsp;print("B")
                 <br/>
-                if x &lt;10:
+                elif x &lt;10:
                 <br/>
                 &emsp;print("C")
                 <br/>
-                if x % 2 == 0:
+                elif x % 2 == 0:
                 <br/>
                 &emsp;print("D")
             </label>
@@ -191,7 +193,7 @@ function PostTest() {
             <input type="text" id="answer10"/>
             <br/><br/>
             {/* Question 11 */}
-            <label htmlFor="answer11">11. When using the modular operator, what are the only possible answers when
+            <label htmlFor="answer11">11. When using the modular operator, what are the only possible results when
                 the divisor is 4?
                 <br/>
 
@@ -204,17 +206,17 @@ function PostTest() {
             </select>
             <br/><br/>
             {/* Question 12 */}
-            <label htmlFor="answer12">12. Input one way you can raise 5 to the 3rd power</label>
+            <label htmlFor="answer12">12. Input one way you can raise 5 to the 3rd power (If you use a function, do not worry about importing).</label>
             <input type="text" id="answer12"/>
             <br/><br/>
             {/* Question 13 */}
             <label htmlFor="answer13">13. What is the output of the code below:
-                c = 1
-                sum = 0
-                while (c &lt; 10):
-                c = c + 2
-                sum = sum + c
-                print(sum)</label>
+                <br/>c = 1
+                <br/>sum = 0
+                <br/>while (c &lt; 10):
+                <br/>c = c + 2
+                <br/>sum = sum + c
+                <br/>print(sum)</label>
             <input type="text" id="answer13"/>
             <br/><br/>
             {/* Question 14 */}
@@ -223,15 +225,15 @@ function PostTest() {
                 (inclusive)?
                 <br/>
                 <select id="answer14">
-                    <option value="a">a) range(8,42)</option>
-                    <option value="b">b) range(8,44,2)</option>
-                    <option value="c">c) range(2,8,44)</option>
-                    <option value="d">d) range(8,42,2)</option>
+                    <option value="a">range(8,42)</option>
+                    <option value="b">range(8,44,2)</option>
+                    <option value="c">range(2,8,44)</option>
+                    <option value="d">range(8,42,2)</option>
                 </select>
             </label>
             <br/><br/>
             {/* Question 15 */}
-            <label htmlFor="answer15">15. How many times is 'Hi' printed?
+            <label htmlFor="answer15">15. How many times does the function below print 'Hi'?
                 for i in range (14, 45, 15):
                 print("Hi")</label>
             <input type="text" id="answer15"/>
@@ -305,25 +307,25 @@ function PostTest() {
             </label>
             <br/><br/>
             {/* Question 23 */}
-            <label htmlFor="answer1">23. Write a program that receives a monetary amount ranging from 1 cent to
-                100 cents. Have your program print out the same value in the least amount of coins, starting from
-                quarters and going down to pennies.</label><br/>
+            <label htmlFor="answer1">23. Write a program that recieves an amount of cents ranging from 1 to 100 from a user,
+                then prints out the number of quarters, dimes, nickels, and pennies would make up this value in the
+            least amount of coins. </label><br/>
                 <textarea id="answer23" style={{width: '200px', height: '100px'}}/>
    <br/><br/>
             {/* Question 24 */}
             <label htmlFor="answer24">24. Select all values that could be picked by random.randint(20,49)
                 <br/>
                 <input type="checkbox" id="a" name="answer24" value="a"/>
-                <label htmlFor="a">a) 49</label>
+                <label htmlFor="a">49</label>
                 <br/>
                 <input type="checkbox" id="b" name="answer24" value="b"/>
-                <label htmlFor="b">b) 19</label>
+                <label htmlFor="b">19</label>
                 <br/>
                 <input type="checkbox" id="c" name="answer24" value="c"/>
-                <label htmlFor="c">c) 20</label>
+                <label htmlFor="c">20</label>
                 <br/>
                 <input type="checkbox" id="d" name="answer24" value="d"/>
-                <label htmlFor="d">d) 48</label>
+                <label htmlFor="d">48</label>
             </label>
             <br/><br/>
             {/* Question 25 */}

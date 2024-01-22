@@ -7,7 +7,7 @@ const KeyPage = () => {
 
     const handleClick = () => {
         if (inputValue.toLowerCase() === 'blank') {
-            navigate("/HomePage");
+            navigate("/PostTest");
         } else {
             navigate("/KeyPage");
         }
@@ -16,14 +16,11 @@ const KeyPage = () => {
     return (
         <div>
             <p>Enter the key to access the Post-Test</p>
-
             <input
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-
             />
-
             <button type="button" onClick={handleClick}>
                 Submit
             </button>
