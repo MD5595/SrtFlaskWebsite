@@ -16,7 +16,7 @@ function PostTest() {
 
         useEffect(() => {
             let code = q1_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            axios.post('http://localhost:5000/posttestProgram', {username, code}).then(response => {
                 console.log("SUCCESS", response);
             })
                 .catch(error => {
@@ -33,7 +33,7 @@ function PostTest() {
         const q3_answer = document.getElementById('answer3').value;
         useEffect(() => {
             let code = q3_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            axios.post('http://localhost:5000/posttestProgram', {username, code}).then(response => {
                 console.log("SUCCESS", response);
             })
                 .catch(error => {
@@ -67,7 +67,7 @@ function PostTest() {
         const q8_answer = document.getElementById('answer8').value;
         useEffect(() => {
             let code = q8_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            axios.post('http://localhost:5000/posttestProgram', {username, code}).then(response => {
             })
                 .catch(error => {
                     console.error(error);
@@ -122,7 +122,7 @@ function PostTest() {
         const q16_answer = document.getElementById('answer16').value.toLowerCase();
         useEffect(() => {
             let code = q16_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            axios.post('http://localhost:5000/posttestProgram', {username, code}).then(response => {
             })
                 .catch(error => {
                     console.error(error);
@@ -142,7 +142,7 @@ function PostTest() {
         const q19_answer = document.getElementById('answer19').value;
         useEffect(() => {
             let code = q19_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            axios.post('http://localhost:5000/posttestProgram', {username, code}).then(response => {
             })
                 .catch(error => {
                     console.error(error);
@@ -153,7 +153,7 @@ function PostTest() {
         const q20_answer = document.getElementById('answer20').value;
         useEffect(() => {
             let code = q20_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            axios.post('http://localhost:5000/posttestProgram', {username, code}).then(response => {
             })
                 .catch(error => {
                     console.error(error);
@@ -173,7 +173,7 @@ function PostTest() {
         const q23_answer = document.getElementById('answer23').value;
         useEffect(() => {
             let code = q23_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            axios.post('http://localhost:5000/posttestProgram', {username, code}).then(response => {
             })
                 .catch(error => {
                     console.error(error);
@@ -188,7 +188,7 @@ function PostTest() {
         const q25_answer = document.getElementById('answer25').value;
         useEffect(() => {
             let code = q25_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            axios.post('http://localhost:5000/posttestProgram', {username, code}).then(response => {
             })
                 .catch(error => {
                     console.error(error);
