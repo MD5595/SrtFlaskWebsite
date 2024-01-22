@@ -7,7 +7,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import Syllabus from "./pages/Syllabus";
 import ArticleHome from "./pages/Articles/ArticleHome";
-import LandingPage, { username } from './pages/LandingPage';
+import LandingPage, {username} from './pages/LandingPage';
 import Unit11 from "./pages/Articles/Unit1/u1_1";
 import Unit12 from "./pages/Articles/Unit1/u1_2";
 import Unit13 from "./pages/Articles/Unit1/u1_3";
@@ -27,11 +27,11 @@ import DataPage from "./pages/DataPage";
 import PostTest from "./pages/PostTest";
 import PreTest from "./pages/PreTest";
 import Timer from "./components/Timer";
+import KeyPage from "./pages/KeyPage"
 
 function App() {
     var [getMessage, setGetMessage] = useState({})
     var [page, updatePage] = useState();
-
 
 
     useEffect(() => {
@@ -48,7 +48,7 @@ function App() {
     useEffect(() => {
         let path = window.location.pathname.substring(1);
 
-        axios.post('http://localhost:5000/sendlocationTime', {path,username}).then(response => {
+        axios.post('http://localhost:5000/sendlocationTime', {path, username}).then(response => {
             console.log("SUCCESS", response);
             updatePage(path);
         })
@@ -86,7 +86,7 @@ function App() {
                 <Route index path="/DataPage" element={<DataPage/>}/>
                 <Route index path="/PreTest" element={<PreTest/>}/>
                 <Route index path="/PostTest" element={<PostTest/>}/>
-
+                <Route index path="/KeyPage" element={<KeyPage/>}/>
             </Routes>
 
         </BrowserRouter>
