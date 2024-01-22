@@ -197,9 +197,9 @@ function PreTest() {
                 <input type="text" id="answer2"/>
                 <br/><br/>
                 <label htmlFor="answer3">
-                    3. Fill in the blank: <br/>num = int(input("Enter a number"))<br/>
+                    3. Fill in the blank.<br/> <br/>num = int(input("Enter a number"))<br/>
                     if num &gt; 0 ____ num &lt; 100:<br/>
-                    print("Your number is between 0 and 100")<br/>
+                    &emsp;print("Your number is between 0 and 100")<br/>
                 </label>
                 <input type="text" id="answer3"/>
                 {/*Question 3 */}
@@ -224,14 +224,14 @@ function PreTest() {
                     variable that is the first variable casted to a float.</label><br/>
                 <textarea id="answer1" style={{width: '200px', height: '100px'}}/> <br/>
                 {/* Question 8 */}
-                <label htmlFor="answer8">8. What does the append() function do?</label>
+                <label htmlFor="answer8">8. What does the append() function do?</label><br/>
                 <select id="answer8">
                     <option value="adds_element">Adds an element to the end of a list</option>
                     <option value="adds_number">Adds a number to the end of a variable</option>
                     <option value="varies">Varies based on what is placed within it</option>
                     <option value="adds_variable">Adds a variable to the start of a list</option>
                 </select>
-                <br/>
+                <br/><br/>
                 {/* Question 9 */}
                 <label htmlFor="answer9">9. Create a list that has floats, integers, and strings stored within
                     it.</label>
@@ -240,7 +240,7 @@ function PreTest() {
                 <br/>
                 {/* Question 10 */}
                 <label htmlFor="answer10">10. Which symbol has the highest precedence in mathematical
-                    operations?</label>
+                    operations?</label><br/>
                 <select id="answer10">
                     <option value="double_slash">//</option>
                     <option value="double_star">**</option>
@@ -251,7 +251,7 @@ function PreTest() {
                 <br/>
                 {/* Question 11 */}
                 <label htmlFor="answer11">11. What kind of data type is most commonly associated with
-                    conditionals?</label>
+                    conditionals?</label><br/>
                 <select id="answer11">
                     <option value="strings">Strings</option>
                     <option value="booleans">Booleans</option>
@@ -268,7 +268,7 @@ function PreTest() {
                 <br/>
                 {/* Question 13 */}
                 <label htmlFor="answer13">13. What would the following code print? for _ in range(48, 38, -2): print(_,
-                    end=" ")</label>
+                    end=" ")</label><br/>
                 <select id="answer13"><br/>
                     <option value="option1">46 44 42 40 38</option>
                     <br/>
@@ -283,7 +283,7 @@ function PreTest() {
                 <br/>
                 {/* Question 14 */}
                 <label htmlFor="answer14">14. Which variable name below is valid? 333number, –hi-, __Num__,
-                    (age)</label>
+                    (age)</label><br/>
                 <select id="answer14"><br/>
                     <option value="option1">333number</option>
                     <br/>
@@ -303,7 +303,7 @@ function PreTest() {
                 <br/>
                 <br/>
                 {/* Question 16 */}
-                <label htmlFor="answer16">16. What will print(10//4) display on the terminal?</label>
+                <label htmlFor="answer16">16. What will print(10//4) display on the terminal?</label><br/>
                 <select id="answer16">
                     <option value="option1">2.0</option>
                     <option value="option2">2.5</option>
@@ -313,7 +313,7 @@ function PreTest() {
                 <br/>
                 <br/>
                 {/* Question 17 */}
-                <label htmlFor="answer17">17. When to use = instead of ==?</label>
+                <label htmlFor="answer17">17. When to use = instead of ==?</label><br/>
                 <select id="answer17">
                     <option value="option1">When you want to assign a value to a variable</option>
                     <option value="option2">When you want to make a logical statement that hinges on values being equal
@@ -325,7 +325,7 @@ function PreTest() {
                 <br/>
                 <br/>
                 {/* Question 18 */}
-                <label htmlFor="answer18">18. Which line of code will not return an error?
+                <label htmlFor="answer18">18. Which line of code will not return an error?<br/>
                     <select id="answer18">
                         <option value="option1">print(The answer is 10)</option>
                         <option value="option2">print("The answer is" + 10)</option>
@@ -402,7 +402,7 @@ function PreTest() {
                 <br/>
                 {/* Question 25 */}
                 <label htmlFor="answer25">25. What comparison operator would be used if you wanted to make a logical
-                    statement that hinges on an expression being equal to a specific number?</label>
+                    statement that hinges on an expression being equal to a specific number?</label><br/>
                 <input type="text" id="answer25"/>
                 <br/>
                 <br/>
