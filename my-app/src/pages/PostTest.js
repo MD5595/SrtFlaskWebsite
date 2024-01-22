@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import {Link, Redirect, Navigate, useNavigate, useLocation} from 'react-router-dom';
 
 
 function PostTest() {
     const username = localStorage.getItem('username');
     const [x, setX] = useState(0);
+    var navigate = useNavigate();
 
     function PostTestGrader() {
         let score = 0;
@@ -164,7 +166,7 @@ function PostTest() {
         }
         // Question 22
         const q22_answer = document.getElementById('answer22').value.toLowerCase();
-        if (q18_answer.includes("c")) {
+        if (!q22_answer.includes("a") && q22_answer.includes("b") && q22_answer.includes("c") && q22_answer.includes("d")) {
             score++;
         }
         // Question 23
@@ -177,7 +179,11 @@ function PostTest() {
                     console.error(error);
                 });
         }, [x]);
-
+//Question 24
+        const q24_answer = document.getElementById('answer24').value;
+        if (q24_answer.includes("a") && q24_answer.includes("c") && q24_answer.includes("d") && !q24_answer.includes("b")) {
+            score++
+        }
         // Question 25
         const q25_answer = document.getElementById('answer25').value;
         useEffect(() => {
@@ -188,6 +194,18 @@ function PostTest() {
                     console.error(error);
                 });
         }, [x]);
+        navigate("/HomePage");
+
+
+        useEffect(() => {
+            const test = "Post-Test"
+            axios.post('http://localhost:5000/postUserScore', {username, test, score}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
+
     }
 
     return (
