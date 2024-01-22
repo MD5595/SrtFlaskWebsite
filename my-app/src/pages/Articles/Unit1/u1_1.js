@@ -14,22 +14,22 @@ function u1_1() {
                 writing code in Python is often like writing in plain English. It is often recommended as the first
                 programming language for beginners. Many of Python's features are intuitive and straightforward to
                 implement.</p>
-
+      
             <p>Here is a simple program:</p>
-            <pre>
-            # Prints "Hello world"
+            <pre><code>
+            # Prints "Hello world"<br/>
             print("Hello World!")
-    </pre>
+            </code> </pre>
 
             <p>Python code like this can be created in an Integrated Development Environment (IDE) or a code editor. For
                 this course, the PyCharm IDE will be used.</p>
 
-            <p>In the program above, there are three components: the comment, the `print()` function, and the text
+            <p>In the program above, there are three components: the comment, the `print()` <b>function</b>, and the text
                 within it. By putting this code into a text editor and running it, the following code will be outputted
                 to the console:</p>
-            <pre>
-Hello World!
-    </pre>
+            <pre><code>
+            Hello World!
+            </code></pre>
 
             <p>The comment on the first line is not read by the computer due to the `#`.
                 Comments are used when you want

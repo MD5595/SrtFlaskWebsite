@@ -16,23 +16,23 @@ function u61() {
     <p>Functions are generally made to decrease the amount of repetitive code you have to write, shortening your program
         and lowering its complexity.</p>
 
-    <pre>
-def count_down():
-    print("3")
-    print("2")
-    print("1")
-    print("0")
-
-count_down()
-</pre>
+    <pre><code>
+        def count_down(): <br/>
+        &emsp;print("3") <br/>
+        &emsp;print("2") <br/>
+        &emsp;print("1") <br/>
+        &emsp;print("0") <br/>
+            <br/>
+        count_down() <br/>
+    </code></pre>
 
     <p>Output:</p>
-    <pre>
-3
-2
-1
-0
-</pre>
+    <pre><code>
+        3 <br/>
+        2 <br/>
+        1 <br/>
+        0 <br/>
+    </code></pre>
 
     <p>Functions like this perform a predefined task without the option of customization.</p>
 
@@ -41,7 +41,7 @@ count_down()
         (optional and typically only present when there are parameters), in that order.</p>
 </body>
         <Link to="/u5_1" className="btn btn-primary" >Back</Link>
-    <Link to="/u6_2" className="btn btn-primary" >Next</Link>
+        &nbsp;<Link to="/u6_2" className="btn btn-primary" >Next</Link>
     </div>
   );
 }

@@ -14,20 +14,20 @@ function u42() {
     <p>For loops are used when you know how many iterations your bit of code will have. The above for loop uses the range()
         function to cycle through the numbers 0-9 (programming languages start at 0 instead of 1 for lists)</p>
 
-    <pre>
-for x in range(10):
-    print("X is less than eleven")
-    X += 1
-    </pre>
+    <pre><code>
+    for x in range(10): <br/>
+    &emsp;print("X is less than eleven") <br/>
+    &emsp;x += 1
+    </code></pre>
 
-    <p>Range(start, stop, step) is the format the range() function follows, with only the stop parameter/argument being
+    <p>Range(start, stop, step) is the format the <code>range()</code> function follows, with only the stop parameter/argument being
         required. When the start argument is included, the for loop will start iterating at that value. For example, if
         range(5, 10) was used instead of range(10), an error message would appear on the terminal.</p>
 </body>
 <Link to="/quiz4" className="btn-quiz">Take an optional quiz for additional practice!</Link>
 <br/><br/><br/>
         <Link to="/u4_2" className="btn btn-primary" >Back</Link>
-    <Link to="/u5_1" className="btn btn-primary" >Next</Link>
+        &nbsp;<Link to="/u5_1" className="btn btn-primary" >Next</Link>
     </div>
   );
 }

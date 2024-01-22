@@ -28,32 +28,32 @@ function u21() {
         directly place the equation in a print statement, or place an equation using variables inside a print
         statement.</p>
 
-    <pre>
-num1 = 10 % 3
-num2 = 3 ** 2
-num3 = 5 // 2
-num4 = 2
-num5 = 14
-
-print(num1)
-print(num2)
-print(num3)
-print(3 // 10)
-print(num4 / num5)
-</pre>
+    <pre><code>
+      num1 = 10 % 3 <br/>
+      num2 = 3 ** 2 <br/>
+      num3 = 5 // 2 <br/>
+      num4 = 2 <br/>
+      num5 = 14 <br/>
+      <br/>
+      print(num1) <br/>
+      print(num2) <br/>
+      print(num3) <br/>
+      print(3 // 10) <br/>
+      print(num4 / num5) <br/>
+    </code></pre>
 
     <p>Outputs:</p>
-    <pre>
-1
-9
-2
-0
-7
-</pre>
+    <pre><code>
+      1 <br/>
+      9 <br/>
+      2 <br/>
+      0 <br/>
+      7 <br/>
+    </code></pre>
 </body>
         <br/>
 <Link to="/u1_5" className="btn btn-primary" >Back</Link>
-    <Link to="/u2_2" className="btn btn-primary" >Next</Link> </div>
+&nbsp;<Link to="/u2_2" className="btn btn-primary" >Next</Link> </div>
 
   );
 }

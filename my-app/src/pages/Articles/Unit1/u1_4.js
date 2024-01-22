@@ -17,46 +17,46 @@ function u14() {
                 the
                 parentheses as shown below:</p>
 
-            <pre>
-Name = "Jesse"<br/>
-print(Name)<br/>
-print(16)
-    </pre>
+            <pre><code>
+                Name = "Jesse"<br/>
+                print(Name)<br/>
+                print(16)
+            </code></pre>
 
             <p>Output:</p>
-            <pre>
-Jesse<br/>
-16
-    </pre>
+            <pre><code>
+                Jesse<br/>
+                16
+            </code></pre>
 
             <p>When printing a statement, you surround your text with quotation marks:</p>
 
-            <pre>
-print("Hello, it’s nice to meet you.")
-    </pre>
+            <pre><code>
+                print("Hello, it’s nice to meet you.")
+            </code></pre>
 
             <p>Output:</p>
-            <pre>
-Hello, it’s nice to meet you.
-    </pre>
+            <pre><code>
+                Hello, it’s nice to meet you.
+            </code></pre>
 
             <p>Oftentimes, you will be required to make your programs interactive. This will be done by utilizing the
                 <code>input()</code> function. A variable will be assigned the text that the user inputs:</p>
 
-            <pre>
-Age = input("Input your age: ")<br/>
-print("You are " + Age)
-    </pre>
+            <pre><code>
+                Age = input("Input your age: ")<br/>
+                print("You are " + Age)
+            </code></pre>
 
             <p>Input:</p>
-            <pre>
-Input your age: 17
-    </pre>
+            <pre><code>
+                Input your age: 17
+            </code></pre>
 
             <p>Output:</p>
-            <pre>
-You are 17
-    </pre>
+            <pre><code>
+                You are 17
+            </code> </pre>
 
             <p>Inputs are automatically seen as words/text. In order to have an input that's a number be seen as one by
                 the
@@ -68,24 +68,24 @@ You are 17
                 the <code>print</code>
                 statement:</p>
 
-            <pre>
-Age = int(input("Input your age: "))<br/>
-Age_plus_ten = Age + 10<br/>
-print("You will be " + str(Age_plus_ten) + " in 10 years.")<br/>
-    </pre>
+            <pre><code>
+                Age = int(input("Input your age: "))<br/>
+                Age_plus_ten = Age + 10<br/>
+                print("You will be " + str(Age_plus_ten) + " in 10 years.")<br/>
+            </code></pre>
 
             <p>Input:</p>
-            <pre>
-Input your age: 17
-    </pre>
+            <pre><code>
+                Input your age: 17
+            </code></pre>
 
             <p>Output:</p>
-            <pre>
-You will be 27 in 10 years.
-            </pre>
+            <pre><code>
+                You will be 27 in 10 years.
+            </code></pre>
             </body><br/>
-<Link to="/u1_3" className="btn btn-primary" >Back</Link>
-    <Link to="/u1_5" className="btn btn-primary" >Next</Link>       </div>
+    <Link to="/u1_3" className="btn btn-primary" >Back</Link>
+    &nbsp;<Link to="/u1_5" className="btn btn-primary" >Next</Link>       </div>
     );
 }
 

@@ -54,23 +54,23 @@ function u15() {
 
             <p>Below are some examples.</p>
 
-            <pre>
-Tree = "Oak"
-Number1 = 13
-Float1 = 3.2838
-List1 = ["Iphone", "Android", "Google Pixel"]
-Boolean1 = 3 > 8
-    </pre>
+            <pre><code>
+                Tree = "Oak" <br/>
+                Number1 = 13 <br/>
+                Float1 = 3.2838 <br/>
+                List1 = ["Iphone", "Android", "Google Pixel"] <br/>
+                Boolean1 = 3 > 8
+            </code></pre>
 
             <p>Different data types can be used in different statements. For example, integers, floats, and strings can
                 be added to
                 variables of the same data type but booleans can’t. Also, you can only use the modulus operator with the
                 int and
                 float data types.</p> </body><br/>
-<Link to="/quiz1" className="btn-quiz">Take an optional quiz for additional practice!</Link>
-<br/><br/><br/>
-<Link to="/u1_4" className="btn btn-primary" >Back</Link>
-<Link to="/u2_1" className="btn btn-primary" >Next</Link></div>
+        <Link to="/quiz1" className="btn-quiz">Take an optional quiz for additional practice!</Link>
+        <br/><br/><br/>
+        <Link to="/u1_4" className="btn btn-primary" >Back</Link>
+        &nbsp;<Link to="/u2_1" className="btn btn-primary" >Next</Link></div>
 );
 }
 

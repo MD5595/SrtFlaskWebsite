@@ -14,16 +14,16 @@ function u32() {
                 statements. Below is
                 a program that utilizes the else if statements.</p>
 
-            <pre>
-Name = input("Enter your name")
-
-if x == "Tom":
-    print("Hi")
-elif x == "John":
-    print("Hi John")
-elif x == "June":
-    print("Hi June")
-    </pre>
+            <pre><code>
+            Name = input("Enter your name")<br/>
+            <br/>
+            if x == "Tom": <br/>
+            &emsp;print("Hi")<br/>
+            elif x == "John":<br/>
+            &emsp;print("Hi John")<br/>
+            elif x == "June":<br/>
+            &emsp;print("Hi June")<br/>
+            </code></pre>
 
             <p>Any number of conditions can be placed within if/elif statements, and there can be any number of elif
                 statements
@@ -38,7 +38,7 @@ elif x == "June":
             <Link to="/quiz3" className="btn-quiz">Take an optional quiz for additional practice!</Link>
 <br/><br/><br/>
              <Link to="/u3_1" className="btn btn-primary" >Back</Link>
-    <Link to="/u4_1" className="btn btn-primary" >Next</Link>
+             &nbsp;<Link to="/u4_1" className="btn btn-primary" >Next</Link>
         </div>
     );
 }

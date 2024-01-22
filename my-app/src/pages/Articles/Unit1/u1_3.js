@@ -16,12 +16,12 @@ function u13() {
 
     <p>Making a variable and giving it a value is called variable declaration. Some examples are shown below:</p>
 
-    <pre>
-A = 28<br/>
-My_name = "John"<br/>
-Number1 = 1<br/>
-_car_ = "F-150"<br/>
-    </pre>
+    <pre><code>
+        A = 28<br/>
+        My_name = "John"<br/>
+        Number1 = 1<br/>
+        _car_ = "F-150"<br/>
+    </code></pre>
 
     <p>Note the use of an equal sign to assign values to the variables. In Unit 3.1, we will go over Python's equal
         symbol.</p>
@@ -30,15 +30,15 @@ _car_ = "F-150"<br/>
 
     <p>Below is the code for a program:</p>
 
-    <pre>
-import random<br/>
-<br/>
-num1 = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])<br/>
-animal = random.choice(["Cow", "Pig", "Sheep", "Dog", "Whale"])<br/>
+    <pre><code>
+        import random<br/>
+        <br/>
+        num1 = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])<br/>
+        animal = random.choice(["Cow", "Pig", "Sheep", "Dog", "Whale"])<br/>
 
-your_random_password = str(animal) + str(num1)<br/><br/>
-print(your_random_password)<br/>
-    </pre>
+        your_random_password = str(animal) + str(num1)<br/><br/>
+        print(your_random_password)<br/>
+    </code></pre>
 
     <p>Even if you don't understand some parts such as <code>random.choice</code> and <code>str()</code>, you can reasonably
         figure out that this is the code for a random password generator. As you progress through this course, you will
@@ -48,14 +48,14 @@ print(your_random_password)<br/>
 
     <p>Below is the same code but with non-descriptive names:</p>
 
-    <pre>
-import random
-<br/>
-dwq = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])<br/>
-ejd = random.choice(["Cow", "Pig", "Sheep", "Dog", "Whale"])<br/>
-qua = str(ejd) + str(dwq)<br/><br/>
-print(qua)<br/>
-    </pre>
+    <pre><code>
+        import random
+        <br/>
+        dwq = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])<br/>
+        ejd = random.choice(["Cow", "Pig", "Sheep", "Dog", "Whale"])<br/>
+        qua = str(ejd) + str(dwq)<br/><br/>
+        print(qua)<br/>
+    </code></pre>
 
     <p>As you can see, this code is much harder to understand compared to its descriptive version.</p>
 
@@ -71,17 +71,17 @@ print(qua)<br/>
 
     <p>Some examples of incorrect variable names, along with reasoning as to why the code is incorrect:</p>
 
-    <pre>
---hi = "hi"  # A non-letter/underscore character is at the front of the variable name<br/>
-333number = 21  # A number starts off the variable<br/>
-%&$*() = "Word"  # Illegal characters<br/>
-my age = "17"  # A space<br/>
-    </pre>
+    <pre><code>
+        --hi = "hi"  # A non-letter/underscore character is at the front of the variable name<br/>
+        333number = 21  # A number starts off the variable<br/>
+        %&$*() = "Word"  # Illegal characters<br/>
+        my age = "17"  # A space<br/>
+    </code></pre>
 
     <p>Making your variables descriptive is vital to creating readable code that is easily decipherable.</p>
-</body><br/>
-<Link to="/u1_2" className="btn btn-primary" >Back</Link>
-    <Link to="/u1_4" className="btn btn-primary" >Next</Link>    </div>
+    </body><br/>
+    <Link to="/u1_2" className="btn btn-primary" >Back</Link>
+    &nbsp;<Link to="/u1_4" className="btn btn-primary" >Next</Link>    </div>
   );
 }
 

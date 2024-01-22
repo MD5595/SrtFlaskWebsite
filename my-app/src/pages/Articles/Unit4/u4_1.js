@@ -16,16 +16,16 @@ function u41() {
 
     <pre>
     <code>
-    <p>While x > 29:</p>
-    <p>    print("x is greater than 29")</p>
-    <p>    x += 1</p>
+      While x > 29: <br/>
+      &emsp;print("x is greater than 29") <br/>
+      &emsp;x += 1
     </code>
     </pre>
 
     <p>While loops are generally used when you do not know how many iterations your statement will have.</p>
 </body>
         <Link to="/u3_2" className="btn btn-primary" >Back</Link>
-    <Link to="/u4_2" className="btn btn-primary" >Next</Link>
+        &nbsp;<Link to="/u4_2" className="btn btn-primary" >Next</Link>
     </div>
   );
 }

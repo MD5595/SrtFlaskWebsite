@@ -35,8 +35,9 @@ function u12() {
 
             <p>Ensure you include the correct spelling, spacing, and indents within your code.</p>
             <br/>
-<Link to="/u1_1" className="btn btn-primary" >Back</Link>
-    <Link to="/u1_3" className="btn btn-primary" >Next</Link>         </div>
+            <Link to="/u1_1" className="btn btn-primary" >Back</Link>
+            &nbsp;<Link to="/u1_3" className="btn btn-primary" >Next</Link>         
+            </div>
 
     );
 }
