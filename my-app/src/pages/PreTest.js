@@ -192,7 +192,15 @@ function PreTest() {
 
         // Question 24
 
-
+const q24_answer = document.getElementById('answer19').value;
+        useEffect(() => {
+            let code = q24_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
         // Question 25
         const q25_answer = document.getElementById('answer25').value.toLowerCase();
         if (q25_answer === '==') {
@@ -206,7 +214,7 @@ function PreTest() {
                     console.error(error);
 
                 });
-        },);
+        },[x]);
     }
 
     return (
@@ -397,7 +405,7 @@ function PreTest() {
                 <br/>
                 <br/>
                 <label htmlFor="answer23">
-                    23. Select the value that could be picked by random.randint(20, 49).
+                    23. Select the value that could be picked by random.randint(20, 49).<br/>
                     <select id="answer23" name="answer23">
                         <option value="">Select an option</option>
                         <option value="a">49</option>
