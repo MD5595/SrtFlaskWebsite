@@ -147,8 +147,8 @@ function PostTest() {
             <input type="text" id="answer6"/>
             <br/><br/>
             {/* Question 7 */}
-            <label htmlFor="answer7">7. What would the following code print: for _ in range(48,38,-2): print(_,
-                end=" ")</label>
+            <label htmlFor="answer7">7. What would the following code print: <br/>for _ in range(48,38,-2): <br/>print(_,
+                end=" ")</label><br/>
             <input type="text" id="answer7"/>
             <br/><br/>
             {/* Question 8 */}
@@ -156,7 +156,7 @@ function PostTest() {
                 chosen number.</label><br/>
                 <textarea id="answer8" style={{width: '200px', height: '100px'}}/>
    <br/><br/>
-            <br/><br/>
+
             {/* Question 9 */}
             <label htmlFor="answer9">9. What would the code below print if the user enters 10? (multiple choice)
                 x = int(input("Enter a number: "))
@@ -177,6 +177,7 @@ function PostTest() {
                 <br/>
                 &emsp;print("D")
             </label>
+            <br/>
             <select id="answer9">
                 <option value="A">A</option>
                 <option value="B">B</option>
@@ -217,7 +218,7 @@ function PostTest() {
             <input type="text" id="answer13"/>
             <br/><br/>
             {/* Question 14 */}
-            {/* Question 14 */}
+
             <label htmlFor="answer14">14. Which range function will go through every even number through 8-42
                 (inclusive)?
                 <br/>
@@ -239,7 +240,7 @@ function PostTest() {
             <label htmlFor="answer1">16. Write a program that simulates a coin flipping 100 times. The program
                 should print the average amount of times heads and tails land.</label><br/>
                 <textarea id="answer16" style={{width: '200px', height: '100px'}}/>
-   <br/><br/>
+
             <br/><br/>
             {/* Question 17 */}
             <label htmlFor="answer17">17. What is the following code’s output if 100 then 50 are entered?
