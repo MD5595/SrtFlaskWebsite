@@ -408,9 +408,9 @@ function PostTest() {
             </label>
             <br/><br/>
             {/* Question 23 */}
-            <label htmlFor="answer1">23. Write a program that recieves an amount of cents ranging from 1 to 100 from a
+            <label htmlFor="answer1">23. Write a program that receives an amount of cents ranging from 1 to 100 from a
                 user,
-                then prints out the number of quarters, dimes, nickels, and pennies would make up this value in the
+                then prints out the number of quarters, dimes, nickels, and pennies that would make up this value in the
                 least amount of coins. </label><br/>
             <textarea id="answer23" style={{width: '200px', height: '100px'}}/>
             <br/><br/>
