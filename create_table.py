@@ -7,7 +7,7 @@ db = SQLAlchemy(app)
 
 class Students(db.Model):
     username = db.Column(db.String, primary_key=True)
-    clickAmount = db.Column(db.Integer)
+    time = db.Column(db.Integer)
 class UserLocationTime(db.Model):
     __tablename__ = 'UserLocationTime'
     username = db.Column(db.String, primary_key=True)
@@ -24,8 +24,15 @@ class PreTest(db.Model):
     __tablename__ = 'PreTest'
     username = db.Column(db.String, primary_key=True)
     code = db.Column(db.String)
+class PostTest(db.Model):
+    __tablename__ = 'PostTest'
+    username = db.Column(db.String, primary_key=True)
+    code = db.Column(db.String)
 
-with app.app_context():
-    db.create_all()
+def init_db():
+    with app.app_context():
+        db.create_all()
+        print("Tables are Ready")
 
-    print("Tables are Ready")
+if __name__ == "__main__":
+    init_db()
