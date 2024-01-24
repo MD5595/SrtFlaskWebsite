@@ -3,6 +3,7 @@ import axios from "axios";
 
 function PreTestGrader() {
     let score = 0;
+    const username = localStorage.getItem('username');
 
 
     // Question 2
@@ -73,16 +74,6 @@ function PreTestGrader() {
         score++;
     }
 
-    // Question 19
-    const q19_answer = document.getElementById('answer19').value;
-    useEffect(() => {
-        let code = q19_answer;
-        axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
-        })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [x]);
 
     // Question 20
     const q20_answer = document.getElementById('answer20').value.toLowerCase();
@@ -97,7 +88,7 @@ function PreTestGrader() {
     }
 
     // Question 22
-    const q22_answer = document.getElementById('answer22').value.toLowerCase();
+    const q22_answer = document.getElementById('answer22').value;
     if (q22_answer.includes('//')) {
         score++;
     }
@@ -108,21 +99,17 @@ function PreTestGrader() {
         score++
     }
 
-
+    let num = 0;
     // Question 25
-    const q25_answer = document.getElementById('answer25').value.toLowerCase();
-    if (q25_answer === '==') {
+    const q25_answer = document.getElementById('answer25').value;
+    if (q25_answer.includes('==')) {
         score++;
+        num += 1;
+    } else {
+        num += 1
     }
-    useEffect(() => {
-        let test = "PreTest";
-        axios.post('http://localhost:5000/postUserScore', {username, test, score}).then(response => {
-        })
-            .catch(error => {
-                console.error(error);
+    return score
 
-            });
-    }, [x]);
 }
 
 function PreTest() {
@@ -130,12 +117,21 @@ function PreTest() {
     const [userScore, setUserScore] = useState(0);
     const username = localStorage.getItem('username');
     const [x, setX] = useState(0);
+    const [q1Answer, setQ1Answer] = useState('');
+    const [q4Answer, setQ4Answer] = useState('');
+    const [q5Answer, setQ5Answer] = useState('');
+    const [q6Answer, setQ6Answer] = useState('');
+    const [q7Answer, setQ7Answer] = useState('');
+    const [q9Answer, setQ9Answer] = useState('');
+    const [q15Answer, setQ15Answer] = useState('');
+    const [q19Answer, setQ19Answer] = useState('');
+    const [q24Answer, setQ24Answer] = useState('');
+    const [score, setScore] = useState('');
 
-      // Question 1
-    const q1_answer = document.getElementById('answer1').value.toLowerCase();
+    // Question 1
 
     useEffect(() => {
-        let code = q1_answer;
+        let code = q1Answer;
         axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
             console.log("SUCCESS", response);
         })
@@ -145,9 +141,8 @@ function PreTest() {
     }, [x]);
 
     // Question 4
-    const q4_answer = document.getElementById('answer4').value;
     useEffect(() => {
-        let code = q4_answer;
+        let code = q4Answer;
         axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
             console.log("SUCCESS", response);
         })
@@ -156,9 +151,8 @@ function PreTest() {
             });
     }, [x]);
     // Question 5
-    const q5_answer = document.getElementById('answer5').value;
     useEffect(() => {
-        let code = q5_answer;
+        let code = q5Answer;
         axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
             console.log("SUCCESS", response);
         })
@@ -167,9 +161,8 @@ function PreTest() {
             });
     }, [x]);
     // Question 6
-    const q6_answer = document.getElementById('answer6').value;
     useEffect(() => {
-        let code = q6_answer;
+        let code = q6Answer;
         axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
             console.log("SUCCESS", response);
         })
@@ -178,9 +171,8 @@ function PreTest() {
             });
     }, [x]);
     // Question 7
-    const q7_answer = document.getElementById('answer7').value;
     useEffect(() => {
-        let code = q7_answer;
+        let code = q7Answer;
         axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
             console.log("SUCCESS", response);
         })
@@ -190,19 +182,26 @@ function PreTest() {
     }, [x]);
 
     // Question 9
-    const q9_answer = document.getElementById('answer9').value;
     useEffect(() => {
-        let code = q9_answer;
+        let code = q9Answer;
         axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
         })
             .catch(error => {
                 console.error(error);
             });
     }, [x]);
-      // Question 15
-    const q15_answer = document.getElementById('answer15').value;
+    // Question 15
     useEffect(() => {
-        let code = q15_answer;
+        let code = q15Answer;
+        axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+        })
+            .catch(error => {
+                console.error(error);
+            });
+    }, [x]);
+    // Question 19
+    useEffect(() => {
+        let code = q19Answer;
         axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
         })
             .catch(error => {
@@ -211,16 +210,23 @@ function PreTest() {
     }, [x]);
     // Question 24
 
-    const q24_answer = document.getElementById('answer19').value;
     useEffect(() => {
-        let code = q24_answer;
+        let code = q24Answer;
         axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
         })
             .catch(error => {
                 console.error(error);
             });
     }, [x]);
+ useEffect(() => {
+        let test = "PreTest";
+        axios.post('http://localhost:5000/postUserScore', {username, test, score}).then(response => {
+        })
+            .catch(error => {
+                console.error(error);
 
+            });
+    }, [score]);
     return (
         <div className="container">
             <h1> Pre-Test</h1>
@@ -229,7 +235,9 @@ function PreTest() {
                 {/* Question 1 */}
                 <label htmlFor="answer1">1. Make a user input-based number guessing game that keeps looping until the
                     user gets the right answer. </label>
-                <textarea id="answer1" style={{width: '200px', height: '100px'}}/>
+                <textarea id="answer1" style={{width: '200px', height: '100px'}}
+                          value={q1Answer}
+                          onChange={(e) => setQ1Answer(e.target.value)}/>
                 <br/>
                 {/* Question 2 */}
                 <label htmlFor="answer2">2. What module would you use if you wanted to use the sqrt() function?</label>
@@ -246,22 +254,30 @@ function PreTest() {
                 {/* Question 4 */}
                 <label htmlFor="answer4">4. Write a program that contains a function that simulates a pen being clicked
                     every time it is called, and call the function 3 times.</label>
-                <br/> <textarea id="answer4" style={{width: '200px', height: '100px'}}/>
+                <br/> <textarea id="answer4" style={{width: '200px', height: '100px'}}
+                                value={q4Answer}
+                                onChange={(e) => setQ4Answer(e.target.value)}/>
                 <br/>
                 {/* Question 5 */}
                 <label htmlFor="answer5">5. Write a function that allows variables to be cast as strings.</label>
-                <br/> <textarea id="answer5" style={{width: '200px', height: '100px'}}/>
+                <br/> <textarea id="answer5" style={{width: '200px', height: '100px'}}
+                                value={q5Answer}
+                                onChange={(e) => setQ5Answer(e.target.value)}/>
                 <br/>
                 {/* Question 6 */}
                 <label htmlFor="answer6">6. Write a program that has a number a user has to guess. The user will be
                     asked to enter a number between 0 and 10 (inclusive), and the computer will print, “Correct!”, if
                     correct or, “Nope, better luck next time”, if incorrect.</label>
-                <textarea id="answer6" style={{width: '200px', height: '100px'}}/>
+                <textarea id="answer6" style={{width: '200px', height: '100px'}}
+                          value={q6Answer}
+                          onChange={(e) => setQ6Answer(e.target.value)}/>
                 <br/>
                 {/* Question 7 */}
                 <label htmlFor="answer7">7. Write a program that has a variable that contains an integer, and a second
                     variable that is the first variable casted to a float.</label><br/>
-                <textarea id="answer7" style={{width: '200px', height: '100px'}}/> <br/>
+                <textarea id="answer7" style={{width: '200px', height: '100px'}}
+                          value={q7Answer}
+                          onChange={(e) => setQ7Answer(e.target.value)}/> <br/>
                 {/* Question 8 */}
                 <label htmlFor="answer8">8. What does the append() function do?</label><br/>
                 <select id="answer8">
@@ -274,7 +290,8 @@ function PreTest() {
                 {/* Question 9 */}
                 <label htmlFor="answer9">9. Create a list that has floats, integers, and strings stored within
                     it.</label>
-                <input type="text" id="answer9"/>
+                <input type="text" id="answer9"value={q9Answer}
+                          onChange={(e) => setQ9Answer(e.target.value)}/>/>
                 <br/>
                 <br/>
                 {/* Question 10 */}
@@ -337,7 +354,8 @@ function PreTest() {
                 {/* Question 15 */}
                 <label htmlFor="answer15">15. Input the code that would allow the user to input a number, cast the input
                     as a float, and assign the value to the variable “num1”</label>
-                <br/> <textarea id="answer15" style={{width: '200px', height: '100px'}}/>
+                <br/> <textarea id="answer15" style={{width: '200px', height: '100px'}} value={q15Answer}
+                                onChange={(e) => setQ15Answer(e.target.value)}/>
                 <br/>
                 <br/>
                 {/* Question 16 */}
@@ -376,7 +394,8 @@ function PreTest() {
                 {/* Question 19 */}
                 <label htmlFor="answer19">19. Write a program which has 2 variables, one of which equals 2 and the other
                     equals. There should be a while loop that only stops when...</label>
-                <br/> <textarea id="answe19" style={{width: '200px', height: '100px'}}/>
+                <br/> <textarea id="answe19" style={{width: '200px', height: '100px'}} value={q19Answer}
+                                onChange={(e) => setQ19Answer(e.target.value)}/>
                 <br/>
                 <br/>
                 {/* Question 20 */}
@@ -424,7 +443,8 @@ function PreTest() {
                 {/* Question 24 */}
                 <label htmlFor="answer24">24. Write a program that has a list with 3 numbers within it. Use a function
                     to add 45 to the list.</label>
-                <br/> <textarea id="answer24" style={{width: '200px', height: '100px'}}/>
+                <br/> <textarea id="answer24" style={{width: '200px', height: '100px'}} value={q24Answer}
+                                onChange={(e) => setQ24Answer(e.target.value)}/>
                 <br/>
                 <br/>
                 {/* Question 25 */}
@@ -434,8 +454,8 @@ function PreTest() {
                 <br/>
                 <br/>
                 <button type="button" onClick={() => {
-                    PreTestGrader()
-                    setX(x+1)
+                    setScore(PreTestGrader())
+                    setX(x + 1)
                 }}>
                     Submit
                 </button>
