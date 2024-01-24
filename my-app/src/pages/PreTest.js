@@ -89,7 +89,7 @@ function PreTestGrader() {
 
     // Question 22
     const q22_answer = document.getElementById('answer22').value;
-    if (q22_answer.includes('//')) {
+    if (q22_answer.includes('//') ||q22_answer.includes('%') ) {
         score++;
     }
 
@@ -127,6 +127,23 @@ function PreTest() {
     const [q19Answer, setQ19Answer] = useState('');
     const [q24Answer, setQ24Answer] = useState('');
     const [score, setScore] = useState('');
+
+    const [q2Answer, setQ2Answer] = useState('');
+    const [q8Answer, setQ8Answer] = useState('');
+    const [q10Answer, setQ10Answer] = useState('');
+    const [q11Answer, setQ11Answer] = useState('');
+    const [q12Answer, setQ12Answer] = useState('');
+    const [q13Answer, setQ13Answer] = useState('');
+    const [q14Answer, setQ14Answer] = useState('');
+    const [q16Answer, setQ16Answer] = useState('');
+    const [q17Answer, setQ17Answer] = useState('');
+    const [q18Answer, setQ18Answer] = useState('');
+    const [q20Answer, setQ20Answer] = useState('');
+    const [q21Answer, setQ21Answer] = useState('');
+    const [q22Answer, setQ22Answer] = useState('');
+    const [q23Answer, setQ23Answer] = useState('');
+    const [q25Answer, setQ25Answer] = useState('');
+
 
     // Question 1
 
@@ -241,7 +258,8 @@ function PreTest() {
                 <br/>
                 {/* Question 2 */}
                 <label htmlFor="answer2">2. What module would you use if you wanted to use the sqrt() function?</label>
-                <input type="text" id="answer2"/>
+                <input type="text" id="answer2"value={q2Answer}
+                                onChange={(e) => setQ2Answer(e.target.value)}/>
                 <br/><br/>
                 {/*Question 3 */}
                 <label htmlFor="answer3">
@@ -249,7 +267,8 @@ function PreTest() {
                     if num &gt; 0 ____ num &lt; 100:<br/>
                     &emsp;print("Your number is between 0 and 100")<br/>
                 </label>
-                <input type="text" id="answer3"/>
+                <input type="text" id="answer3"value={q3Answer}
+                                onChange={(e) => setQ3Answer(e.target.value)}/>
                 <br/>
                 {/* Question 4 */}
                 <label htmlFor="answer4">4. Write a program that contains a function that simulates a pen being clicked
@@ -290,8 +309,9 @@ function PreTest() {
                 {/* Question 9 */}
                 <label htmlFor="answer9">9. Create a list that has floats, integers, and strings stored within
                     it.</label>
-                <input type="text" id="answer9"value={q9Answer}
-                          onChange={(e) => setQ9Answer(e.target.value)}/>/>
+                <textarea id="answer9" style={{width: '200px', height: '100px'}}
+                          value={q9Answer}
+                          onChange={(e) => setQ9Answer(e.target.value)}/> <br/>
                 <br/>
                 <br/>
                 {/* Question 10 */}
@@ -319,7 +339,8 @@ function PreTest() {
                 <br/>
                 {/* Question 12 */}
                 <label htmlFor="answer12">12. What module would you import to use the choice() function?</label>
-                <input type="text" id="answer12"/>
+                <input type="text" id="answer12" value={q12Answer}
+                                onChange={(e) => setQ12Answer(e.target.value)}/>
                 <br/>
                 <br/>
                 {/* Question 13 */}
@@ -339,7 +360,8 @@ function PreTest() {
                 <br/>
                 {/* Question 14 */}
                 <label htmlFor="answer14">14. Which variable name below is valid? </label><br/>
-                <select id="answer14"><br/>
+                <select id="answer14"value={q14Answer}
+                                onChange={(e) => setQ14Answer(e.target.value)}><br/>
                     <option value="a">333number</option>
                     <br/>
                     <option value="b">–hi-</option>
@@ -422,8 +444,8 @@ function PreTest() {
                 <br/>
 
                 {/* Question 22 */}
-                <label htmlFor="answer22">22. What operator would you first use if you wanted to determine how many
-                    quarters would fit inside an amount of money a user inputted?</label>
+                <label htmlFor="answer22">22. What operator would be the best choice if you wanted to determine how many
+                    quarters would fit inside an amount of money a user inputted?(There are two possible answers. Input the symbol to answer.)</label>
                 <br/> <input type="text" id="answer22"/>
                 <br/>
                 <br/>
