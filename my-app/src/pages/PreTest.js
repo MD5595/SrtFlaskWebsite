@@ -6,8 +6,6 @@ function PreTestGrader() {
     const username = localStorage.getItem('username');
 
 
-
-
     // Question 3
     const q3_answer = document.getElementById('answer3').value.toLowerCase();
     if (q3_answer.includes('and')) {
@@ -85,7 +83,7 @@ function PreTestGrader() {
 
     // Question 22
     const q22_answer = document.getElementById('answer22').value;
-    if (q22_answer.includes('//') ||q22_answer.includes('%') ) {
+    if (q22_answer.includes('//') || q22_answer.includes('%')) {
         score++;
     }
 
@@ -231,7 +229,7 @@ function PreTest() {
                 console.error(error);
             });
     }, [x]);
- useEffect(() => {
+    useEffect(() => {
         let test = "PreTest";
         axios.post('http://localhost:5000/postUserScore', {username, test, score}).then(response => {
         })
@@ -242,12 +240,14 @@ function PreTest() {
     }, [score]);
 
 
+     useEffect(() => {
+        if (q2Answer.includes('math') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [q2Answer]);
 
- if (x==0){
-     if (q2Answer.includes('math')) {
-        setScore(score++);
-    }
- }
+
+
     return (
         <div className="container">
             <h1> Pre-Test</h1>
@@ -262,8 +262,8 @@ function PreTest() {
                 <br/>
                 {/* Question 2 */}
                 <label htmlFor="answer2">2. What module would you use if you wanted to use the sqrt() function?</label>
-                <input type="text" id="answer2"value={q2Answer}
-                                onChange={(e) => setQ2Answer(e.target.value)}/>
+                <input type="text" id="answer2" value={q2Answer}
+                       onChange={(e) => setQ2Answer(e.target.value)}/>
                 <br/><br/>
                 {/*Question 3 */}
                 <label htmlFor="answer3">
@@ -271,8 +271,8 @@ function PreTest() {
                     if num &gt; 0 ____ num &lt; 100:<br/>
                     &emsp;print("Your number is between 0 and 100")<br/>
                 </label>
-                <input type="text" id="answer3"value={q3Answer}
-                                onChange={(e) => setQ3Answer(e.target.value)}/>
+                <input type="text" id="answer3" value={q3Answer}
+                       onChange={(e) => setQ3Answer(e.target.value)}/>
                 <br/>
                 {/* Question 4 */}
                 <label htmlFor="answer4">4. Write a program that contains a function that simulates a pen being clicked
@@ -322,7 +322,7 @@ function PreTest() {
                 <label htmlFor="answer10">10. Which symbol has the highest precedence in mathematical
                     operations?</label><br/>
                 <select id="answer10" value={q10Answer}
-                          onChange={(e) => setQ10Answer(e.target.value)}>
+                        onChange={(e) => setQ10Answer(e.target.value)}>
                     <option value="a">//</option>
                     <option value="b">**</option>
                     <option value="c">-</option>
@@ -345,7 +345,7 @@ function PreTest() {
                 {/* Question 12 */}
                 <label htmlFor="answer12">12. What module would you import to use the choice() function?</label>
                 <input type="text" id="answer12" value={q12Answer}
-                                onChange={(e) => setQ12Answer(e.target.value)}/>
+                       onChange={(e) => setQ12Answer(e.target.value)}/>
                 <br/>
                 <br/>
                 {/* Question 13 */}
@@ -365,8 +365,8 @@ function PreTest() {
                 <br/>
                 {/* Question 14 */}
                 <label htmlFor="answer14">14. Which variable name below is valid? </label><br/>
-                <select id="answer14"value={q14Answer}
-                                onChange={(e) => setQ14Answer(e.target.value)}><br/>
+                <select id="answer14" value={q14Answer}
+                        onChange={(e) => setQ14Answer(e.target.value)}><br/>
                     <option value="a">333number</option>
                     <br/>
                     <option value="b">–hi-</option>
@@ -433,28 +433,29 @@ function PreTest() {
                 <br/>
                 {/* Question 21 */}
                 <label htmlFor="answer21">
-                    21.  What line of code will make the variable `str` hold the string "here, T"?<br/>
-    <select id="answer18" value={q18Answer} onChange={(e) => setQ18Answer(e.target.value)}>
-        <option value="a">str[::2]</option>
-        <option value="b">str[1:7]</option>
-        <option value="c">str[6:1:-1]</option>
-        <option value="d">str[:7]</option>
-    </select>
-</label>
+                    21. What line of code will make the variable `str` hold the string "here, T"?<br/>
+                    <select id="answer18" value={q18Answer} onChange={(e) => setQ18Answer(e.target.value)}>
+                        <option value="a">str[::2]</option>
+                        <option value="b">str[1:7]</option>
+                        <option value="c">str[6:1:-1]</option>
+                        <option value="d">str[:7]</option>
+                    </select>
+                </label>
                 <br/>
                 <br/>
 
                 {/* Question 22 */}
                 <label htmlFor="answer22">22. What operator would be the best choice if you wanted to determine how many
-                    quarters would fit inside an amount of money a user inputted?(There are two possible answers. Input the symbol to answer.)</label>
+                    quarters would fit inside an amount of money a user inputted?(There are two possible answers. Input
+                    the symbol to answer.)</label>
                 <br/> <input type="text" id="answer22" value={q22Answer}
-                          onChange={(e) => setQ22Answer(e.target.value)}/>
+                             onChange={(e) => setQ22Answer(e.target.value)}/>
                 <br/>
                 <br/>
                 <label htmlFor="answer23">
                     23. Select the value that could be picked by random.randint(20, 49).<br/>
                     <select id="answer23" value={q23Answer}
-                          onChange={(e) => setQ23Answer(e.target.value)}>
+                            onChange={(e) => setQ23Answer(e.target.value)}>
                         <option value="">Select an option</option>
                         <option value="a">49</option>
                         <option value="b">50</option>
@@ -476,12 +477,12 @@ function PreTest() {
                 <label htmlFor="answer25">25. What comparison operator would be used if you wanted to make a logical
                     statement that hinges on an expression being equal to a specific number?</label><br/>
                 <input type="text" id="answer25" value={q25Answer}
-                          onChange={(e) => setQ25Answer(e.target.value)}/>
+                       onChange={(e) => setQ25Answer(e.target.value)}/>
                 <br/>
                 <br/>
                 <button type="button" onClick={() => {
                     setScore(PreTestGrader())
-                    setX(x + 1)
+                    setX( 1)
                 }}>
                     Submit
                 </button>
