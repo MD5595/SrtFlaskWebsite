@@ -129,6 +129,7 @@ function PreTest() {
     const [score, setScore] = useState('');
 
     const [q2Answer, setQ2Answer] = useState('');
+    const [q3Answer, setQ3Answer] = useState('');
     const [q8Answer, setQ8Answer] = useState('');
     const [q10Answer, setQ10Answer] = useState('');
     const [q11Answer, setQ11Answer] = useState('');
@@ -428,30 +429,28 @@ function PreTest() {
                 <br/>
                 {/* Question 21 */}
                 <label htmlFor="answer21">
-                    21. Select all of the variable names that would not work in Python.
-                    <ul>
-                        <li><input type="checkbox" id="option1" name="answer21" value="a"/> <label
-                            htmlFor="option1">--Hi</label></li>
-                        <li><input type="checkbox" id="option2" name="answer21" value="b"/> <label
-                            htmlFor="option2">33number</label></li>
-                        <li><input type="checkbox" id="option3" name="answer21" value="c"/> <label
-                            htmlFor="option3">Car1%</label></li>
-                        <li><input type="checkbox" id="option4" name="answer21" value="d"/> <label
-                            htmlFor="option4">My age</label></li>
-                    </ul>
-                </label>
+                    21.  What line of code will make the variable `str` hold the string "here, T"?<br/>
+    <select id="answer18" value={q18Answer} onChange={(e) => setQ18Answer(e.target.value)}>
+        <option value="a">str[::2]</option>
+        <option value="b">str[1:7]</option>
+        <option value="c">str[6:1:-1]</option>
+        <option value="d">str[:7]</option>
+    </select>
+</label>
                 <br/>
                 <br/>
 
                 {/* Question 22 */}
                 <label htmlFor="answer22">22. What operator would be the best choice if you wanted to determine how many
                     quarters would fit inside an amount of money a user inputted?(There are two possible answers. Input the symbol to answer.)</label>
-                <br/> <input type="text" id="answer22"/>
+                <br/> <input type="text" id="answer22" value={q22Answer}
+                          onChange={(e) => setQ22Answer(e.target.value)}/>
                 <br/>
                 <br/>
                 <label htmlFor="answer23">
                     23. Select the value that could be picked by random.randint(20, 49).<br/>
-                    <select id="answer23" name="answer23">
+                    <select id="answer23" value={q23Answer}
+                          onChange={(e) => setQ23Answer(e.target.value)}>
                         <option value="">Select an option</option>
                         <option value="a">49</option>
                         <option value="b">50</option>
@@ -472,7 +471,8 @@ function PreTest() {
                 {/* Question 25 */}
                 <label htmlFor="answer25">25. What comparison operator would be used if you wanted to make a logical
                     statement that hinges on an expression being equal to a specific number?</label><br/>
-                <input type="text" id="answer25"/>
+                <input type="text" id="answer25" value={q25Answer}
+                          onChange={(e) => setQ25Answer(e.target.value)}/>
                 <br/>
                 <br/>
                 <button type="button" onClick={() => {
