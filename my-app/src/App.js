@@ -8,7 +8,6 @@ import axios from 'axios'
 import Syllabus from "./pages/Syllabus";
 import ArticleHome from "./pages/Articles/ArticleHome";
 import LandingPage, { username } from './pages/LandingPage';
-
 import Unit11 from "./pages/Articles/Unit1/u1_1";
 import Unit12 from "./pages/Articles/Unit1/u1_2";
 import Unit13 from "./pages/Articles/Unit1/u1_3";
@@ -24,14 +23,6 @@ import Unit42 from "./pages/Articles/Unit4/u4_2";
 import Unit51 from "./pages/Articles/Unit5/u5_1";
 import Unit61 from "./pages/Articles/Unit6/u6_1";
 import Unit62 from "./pages/Articles/Unit6/u6_2";
-import Quiz1 from "./pages/Quizzes/quiz1";
-import Quiz2 from "./pages/Quizzes/quiz2";
-import Quiz3 from "./pages/Quizzes/quiz3";
-import Quiz4 from "./pages/Quizzes/quiz4";
-import Quiz5 from "./pages/Quizzes/quiz5";
-import Quiz6 from "./pages/Quizzes/quiz6";
-
-
 import DataPage from "./pages/DataPage";
 import PostTest from "./pages/PostTest";
 import PreTest from "./pages/PreTest";
@@ -91,12 +82,6 @@ function App() {
                 <Route index path="/u5_1" element={<Unit51/>}/>
                 <Route index path="/u6_1" element={<Unit61/>}/>
                 <Route index path="/u6_2" element={<Unit62/>}/>
-                <Route index path="/quiz1" element={<Quiz1/>}/>
-                <Route index path="/quiz2" element={<Quiz2/>}/>
-                <Route index path="/quiz3" element={<Quiz3/>}/>
-                <Route index path="/quiz4" element={<Quiz4/>}/>
-                <Route index path="/quiz5" element={<Quiz5/>}/>
-                <Route index path="/quiz6" element={<Quiz6/>}/>
                 <Route index path="/Flashcards" element={<FlashcardPage/>}/>
                 <Route index path="/DataPage" element={<DataPage/>}/>
                 <Route index path="/PreTest" element={<PreTest/>}/>
