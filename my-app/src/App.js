@@ -27,6 +27,7 @@ import DataPage from "./pages/DataPage";
 import PostTest from "./pages/PostTest";
 import PreTest from "./pages/PreTest";
 import Timer from "./components/Timer";
+import KeyPage from "./pages/KeyPage";
 
 function App() {
     var [getMessage, setGetMessage] = useState({})
@@ -86,6 +87,7 @@ function App() {
                 <Route index path="/DataPage" element={<DataPage/>}/>
                 <Route index path="/PreTest" element={<PreTest/>}/>
                 <Route index path="/PostTest" element={<PostTest/>}/>
+                <Route index path="/KeyPage" element={<KeyPage/>}/>
 
             </Routes>
 
