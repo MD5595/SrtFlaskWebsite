@@ -6,11 +6,7 @@ function PreTestGrader() {
     const username = localStorage.getItem('username');
 
 
-    // Question 2
-    const q2_answer = document.getElementById('answer2').value.toLowerCase();
-    if (q2_answer.includes('math')) {
-        score++;
-    }
+
 
     // Question 3
     const q3_answer = document.getElementById('answer3').value.toLowerCase();
@@ -114,7 +110,6 @@ function PreTestGrader() {
 
 function PreTest() {
 
-    const [userScore, setUserScore] = useState(0);
     const username = localStorage.getItem('username');
     const [x, setX] = useState(0);
     const [q1Answer, setQ1Answer] = useState('');
@@ -126,7 +121,7 @@ function PreTest() {
     const [q15Answer, setQ15Answer] = useState('');
     const [q19Answer, setQ19Answer] = useState('');
     const [q24Answer, setQ24Answer] = useState('');
-    const [score, setScore] = useState('');
+    const [score, setScore] = useState(0);
 
     const [q2Answer, setQ2Answer] = useState('');
     const [q3Answer, setQ3Answer] = useState('');
@@ -245,6 +240,14 @@ function PreTest() {
 
             });
     }, [score]);
+
+
+
+ if (x==0){
+     if (q2Answer.includes('math')) {
+        setScore(score++);
+    }
+ }
     return (
         <div className="container">
             <h1> Pre-Test</h1>
@@ -318,7 +321,8 @@ function PreTest() {
                 {/* Question 10 */}
                 <label htmlFor="answer10">10. Which symbol has the highest precedence in mathematical
                     operations?</label><br/>
-                <select id="answer10">
+                <select id="answer10" value={q10Answer}
+                          onChange={(e) => setQ10Answer(e.target.value)}>
                     <option value="a">//</option>
                     <option value="b">**</option>
                     <option value="c">-</option>
