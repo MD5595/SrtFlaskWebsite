@@ -1,17 +1,28 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import {username} from "./LandingPage";
 
 
 function PreTest() {
     const [userScore, setUserScore] = useState(0);
     const username = localStorage.getItem('username');
+    const [x, setX] = useState(0);
+
     function PreTestGrader() {
         let score = 0;
-
+        setX(x + 1);
         // Question 1
         const q1_answer = document.getElementById('answer1').value.toLowerCase();
 
-
+        useEffect(() => {
+            let code = q1_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+                console.log("SUCCESS", response);
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
         // Question 2
         const q2_answer = document.getElementById('answer2').value.toLowerCase();
         if (q2_answer === 'math') {
@@ -20,82 +31,140 @@ function PreTest() {
 
         // Question 3
         const q3_answer = document.getElementById('answer3').value.toLowerCase();
-        if (q3_answer === '&&') {
+        if (q3_answer === 'and') {
             score++;
         }
 
         // Question 4
-
-
+        const q4_answer = document.getElementById('answer4').value;
+        useEffect(() => {
+            let code = q4_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+                console.log("SUCCESS", response);
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
         // Question 5
-
-
+        const q5_answer = document.getElementById('answer5').value;
+        useEffect(() => {
+            let code = q5_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+                console.log("SUCCESS", response);
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
         // Question 6
-
-
+        const q6_answer = document.getElementById('answer6').value;
+        useEffect(() => {
+            let code = q6_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+                console.log("SUCCESS", response);
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
         // Question 7
-
-
+        const q7_answer = document.getElementById('answer7').value;
+        useEffect(() => {
+            let code = q7_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+                console.log("SUCCESS", response);
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
         // Question 8
-        const q8_answer = document.getElementById('answer8').value.toLowerCase();
-        if (q8_answer === 'adds an element to the end of a list') {
+        const q8_answer = document.getElementById('answer8').value;
+        if (q8_answer.includes('a')) {
             score++;
         }
 
         // Question 9
-
+        const q9_answer = document.getElementById('answer9').value;
+        useEffect(() => {
+            let code = q9_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
 
         // Question 10
         const q10_answer = document.getElementById('answer10').value.toLowerCase();
-        if (q10_answer === '**') {
+        if (q10_answer.includes('d')) {
             score++;
         }
 
         // Question 11
         const q11_answer = document.getElementById('answer11').value.toLowerCase();
-        if (q11_answer.includes('boolean')) {
+        if (q11_answer.includes('booleans')) {
             score++;
         }
 
         // Question 12
         const q12_answer = document.getElementById('answer12').value.toLowerCase();
-        const randomNum = Math.floor(Math.random() * 4) + 1;
-        if (parseInt(q12_answer) === randomNum) {
+        if (q12_answer.includes('random')) {
             score++;
         }
 
         // Question 13
-        const q13_answer = document.getElementById('answer13').value.toLowerCase();
-        if (q13_answer === '48 46 44 42 40') {
+        const q13_answer = document.getElementById('answer13').value;
+        if (q13_answer.includes('b')) {
             score++;
         }
 
         // Question 14
         const q14_answer = document.getElementById('answer14').value.toLowerCase();
-        if (q14_answer === '__num__') {
+        if (q14_answer === 'c') {
             score++;
         }
 
         // Question 15
-
+        const q15_answer = document.getElementById('answer15').value;
+        useEffect(() => {
+            let code = q15_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
 
         // Question 16
         const q16_answer = document.getElementById('answer16').value.toLowerCase();
-        if (q16_answer === '2') {
+        if (q16_answer.includes('c')) {
             score++;
         }
 
         // Question 17
-
+        const q17_answer = document.getElementById('answer17').value.toLowerCase();
+        if (q17_answer.includes('a')) {
+            score++;
+        }
 
         // Question 18
         const q18_answer = document.getElementById('answer18').value.toLowerCase();
-        if (q18_answer === 'print("The answer is " + str(10))') {
+        if (q18_answer.includes("d")) {
             score++;
         }
 
         // Question 19
-
+        const q19_answer = document.getElementById('answer19').value;
+        useEffect(() => {
+            let code = q19_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
 
         // Question 20
         const q20_answer = document.getElementById('answer20').value.toLowerCase();
@@ -105,7 +174,7 @@ function PreTest() {
 
         // Question 21
         const q21_answer = document.getElementById('answer21').value.toLowerCase();
-        if (q21_answer === '-hi-' || q21_answer === 'car1%' || q21_answer === '(age)') {
+        if (q21_answer.includes("a") && q21_answer.includes("b") && q21_answer.includes("c") && q21_answer.includes("d")) {
             score++;
         }
 
@@ -117,13 +186,21 @@ function PreTest() {
 
         // Question 23
         const q23_answer = document.getElementById('answer23').value.toLowerCase();
-        if (q23_answer === '20' || q23_answer === '21' || q23_answer === '22' || q23_answer === '23' || q23_answer === '24' || q23_answer === '25' || q23_answer === '26' || q23_answer === '27' || q23_answer === '28' || q23_answer === '29' || q23_answer === '30' || q23_answer === '31' || q23_answer === '32' || q23_answer === '33' || q23_answer === '34' || q23_answer === '35' || q23_answer === '36' || q23_answer === '37' || q23_answer === '38' || q23_answer === '39' || q23_answer === '40' || q23_answer === '41' || q23_answer === '42' || q23_answer === '43' || q23_answer === '44' || q23_answer === '45' || q23_answer === '46' || q23_answer === '47' || q23_answer === '48') {
-            score++;
+        if (q23_answer.includes("a")) {
+            score++
         }
 
         // Question 24
 
-
+const q24_answer = document.getElementById('answer19').value;
+        useEffect(() => {
+            let code = q24_answer;
+            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [x]);
         // Question 25
         const q25_answer = document.getElementById('answer25').value.toLowerCase();
         if (q25_answer === '==') {
@@ -137,7 +214,7 @@ function PreTest() {
                     console.error(error);
 
                 });
-        },);
+        },[x]);
     }
 
     return (
@@ -146,49 +223,50 @@ function PreTest() {
             <p>{username}</p>
             <form>
                 {/* Question 1 */}
-
+                <label htmlFor="answer1">1. Make a user input-based number guessing game that keeps looping until the
+                    user gets the right answer. </label>
+                <textarea id="answer1" style={{width: '200px', height: '100px'}}/>
                 <br/>
                 {/* Question 2 */}
                 <label htmlFor="answer2">2. What module would you use if you wanted to use the sqrt() function?</label>
                 <input type="text" id="answer2"/>
-
-                {/* <label htmlFor="answer3">
-                    3. Fill in the blank: num = int(input("Enter a number"))
-                    if num > 0 _ num < 100:
-                    print("Your number is between 0 and 100")
+                <br/><br/>
+                <label htmlFor="answer3">
+                    3. Fill in the blank.<br/> <br/>num = int(input("Enter a number"))<br/>
+                    if num &gt; 0 ____ num &lt; 100:<br/>
+                    &emsp;print("Your number is between 0 and 100")<br/>
                 </label>
                 <input type="text" id="answer3"/>
-                Question 3 */}
+                {/*Question 3 */}
                 <br/>
                 {/* Question 4 */}
                 <label htmlFor="answer4">4. Write a program that contains a function that simulates a pen being clicked
                     every time it is called, and call the function 3 times.</label>
-                <input type="text" id="answer4"/>
+                <br/> <textarea id="answer4" style={{width: '200px', height: '100px'}}/>
                 <br/>
                 {/* Question 5 */}
                 <label htmlFor="answer5">5. Write a function that allows variables to be cast as strings.</label>
-                <input type="text" id="answer5"/>
+                <br/> <textarea id="answer5" style={{width: '200px', height: '100px'}}/>
                 <br/>
                 {/* Question 6 */}
                 <label htmlFor="answer6">6. Write a program that has a number a user has to guess. The user will be
                     asked to enter a number between 0 and 10 (inclusive), and the computer will print, “Correct!”, if
                     correct or, “Nope, better luck next time”, if incorrect.</label>
-                <input type="text" id="answer6"/>
+                <textarea id="answer6" style={{width: '200px', height: '100px'}}/>
                 <br/>
                 {/* Question 7 */}
                 <label htmlFor="answer7">7. Write a program that has a variable that contains an integer, and a second
-                    variable that is the first variable casted to a float.</label>
-                <input type="text" id="answer7"/>
-                <br/>
+                    variable that is the first variable casted to a float.</label><br/>
+                <textarea id="answer1" style={{width: '200px', height: '100px'}}/> <br/>
                 {/* Question 8 */}
-                <label htmlFor="answer8">8. What does the append() function do?</label>
+                <label htmlFor="answer8">8. What does the append() function do?</label><br/>
                 <select id="answer8">
-                    <option value="adds_element">Adds an element to the end of a list</option>
-                    <option value="adds_number">Adds a number to the end of a variable</option>
-                    <option value="varies">Varies based on what is placed within it</option>
-                    <option value="adds_variable">Adds a variable to the start of a list</option>
+                    <option value="a">Adds an element to the end of a list</option>
+                    <option value="b">Adds a number to the end of a variable</option>
+                    <option value="c">Varies based on what is placed within it</option>
+                    <option value="d">Adds a variable to the start of a list</option>
                 </select>
-                <br/>
+                <br/><br/>
                 {/* Question 9 */}
                 <label htmlFor="answer9">9. Create a list that has floats, integers, and strings stored within
                     it.</label>
@@ -197,125 +275,159 @@ function PreTest() {
                 <br/>
                 {/* Question 10 */}
                 <label htmlFor="answer10">10. Which symbol has the highest precedence in mathematical
-                    operations?</label>
+                    operations?</label><br/>
                 <select id="answer10">
-                    <option value="double_slash">//</option>
-                    <option value="double_star">**</option>
-                    <option value="minus">-</option>
-                    <option value="parentheses">( )</option>
+                    <option value="a">//</option>
+                    <option value="b">**</option>
+                    <option value="c">-</option>
+                    <option value="d">( )</option>
                 </select>
-<br/>
+                <br/>
                 <br/>
                 {/* Question 11 */}
                 <label htmlFor="answer11">11. What kind of data type is most commonly associated with
-                    conditionals?</label>
-                <input type="text" id="answer11"/>
-<br/>
+                    conditionals?</label><br/>
+                <select id="answer11">
+                    <option value="a">Strings</option>
+                    <option value="b">Booleans</option>
+                    <option value="c">Lists</option>
+                    <option value="d">Floats</option>
+                </select>
+
+                <br/>
                 <br/>
                 {/* Question 12 */}
-                <label htmlFor="answer12">12. Write a program that randomly chooses between 4 numbers, then prints the
-                    chosen number.</label>
+                <label htmlFor="answer12">12. What module would you import to use the choice() function?</label>
                 <input type="text" id="answer12"/>
-<br/>
+                <br/>
                 <br/>
                 {/* Question 13 */}
                 <label htmlFor="answer13">13. What would the following code print? for _ in range(48, 38, -2): print(_,
-                    end=" ")</label>
-                <input type="text" id="answer13"/>
-<br/>
+                    end=" ")</label><br/>
+                <select id="answer13"><br/>
+                    <option value="a">46 44 42 40 38</option>
+                    <br/>
+                    <option value="b">48 46 44 42 40</option>
+                    <br/>
+                    <option value="c">46 44 42 40</option>
+                    <br/>
+                    <option value="d">48 46 44 42 40 38</option>
+                    <br/>
+                </select>
+                <br/>
                 <br/>
                 {/* Question 14 */}
-                <label htmlFor="answer14">14. Which variable name below is valid? 333number, –hi-, __Num__,
-                    (age)</label>
-                <input type="text" id="answer14"/>
-<br/>
+                <label htmlFor="answer14">14. Which variable name below is valid? </label><br/>
+                <select id="answer14"><br/>
+                    <option value="a">333number</option>
+                    <br/>
+                    <option value="b">–hi-</option>
+                    <br/>
+                    <option value="c">__Num__</option>
+                    <br/>
+                    <option value="d">(age)</option>
+                    <br/>
+                </select>
+                <br/>
                 <br/>
                 {/* Question 15 */}
                 <label htmlFor="answer15">15. Input the code that would allow the user to input a number, cast the input
                     as a float, and assign the value to the variable “num1”</label>
-                <input type="text" id="answer15"/>
-<br/>
+                <br/> <textarea id="answer15" style={{width: '200px', height: '100px'}}/>
+                <br/>
                 <br/>
                 {/* Question 16 */}
-                <label htmlFor="answer16">16. What will print(10//4) display on the terminal?</label>
-                <input type="text" id="answer16"/>
-<br/>
+                <label htmlFor="answer16">16. What will print(10//4) display on the terminal?</label><br/>
+                <select id="answer16">
+                    <option value="a">2.0</option>
+                    <option value="b">2.5</option>
+                    <option value="c">2</option>
+                    <option value="d">10//4</option>
+                </select>
+                <br/>
                 <br/>
                 {/* Question 17 */}
-                <label htmlFor="answer17">17. When to use = instead of ==?</label>
-                <input type="text" id="answer17"/>
-<br/>
+                <label htmlFor="answer17">17. When to use = instead of ==?</label><br/>
+                <select id="answer17">
+                    <option value="a">When you want to assign a value to a variable</option>
+                    <option value="b">When you want to make a logical statement that hinges on values being equal
+                        to each other
+                    </option>
+                    <option value="c">== is not present in Python</option>
+                    <option value="d">For mathematical equations</option>
+                </select>
+                <br/>
                 <br/>
                 {/* Question 18 */}
-                <label htmlFor="answer18">18. Which line of code will not return an error?
-                    <ol>
-                        <li>print(The answer is 10)</li>
-                        <li>print("The answer is" + 10)</li>
-                        <li>print("The answer is + str(10)")</li>
-                        <li>print("The answer is " + str(10))</li>
-                    </ol>
+                <label htmlFor="answer18">18. Which line of code will not return an error?<br/>
+                    <select id="answer18">
+                        <option value="a">print(The answer is 10)</option>
+                        <option value="b">print("The answer is" + 10)</option>
+                        <option value="c">print(The answer is + str(10))</option>
+                        <option value="d">print("The answer is " + str(10))</option>
+                    </select>
                 </label>
-                <input type="text" id="answer18"/>
-<br/>
+                <br/>
                 <br/>
                 {/* Question 19 */}
                 <label htmlFor="answer19">19. Write a program which has 2 variables, one of which equals 2 and the other
                     equals. There should be a while loop that only stops when...</label>
-                <input type="text" id="answer19"/>
-<br/>
+                <br/> <textarea id="answe19" style={{width: '200px', height: '100px'}}/>
+                <br/>
                 <br/>
                 {/* Question 20 */}
                 <label htmlFor="answer20">20. What type of loop would you use if you wanted to make it stop after
                     receiving a certain input?</label>
                 <input type="text" id="answer20"/>
-<br/>
+                <br/>
                 <br/>
                 {/* Question 21 */}
                 <label htmlFor="answer21">
                     21. Select all of the variable names that would not work in Python.
                     <ul>
-                        <li><input type="checkbox" id="option1" name="answer21" value="--Hi"/> <label
+                        <li><input type="checkbox" id="option1" name="answer21" value="a"/> <label
                             htmlFor="option1">--Hi</label></li>
-                        <li><input type="checkbox" id="option2" name="answer21" value="33number"/> <label
+                        <li><input type="checkbox" id="option2" name="answer21" value="b"/> <label
                             htmlFor="option2">33number</label></li>
-                        <li><input type="checkbox" id="option3" name="answer21" value="Car1%"/> <label
+                        <li><input type="checkbox" id="option3" name="answer21" value="c"/> <label
                             htmlFor="option3">Car1%</label></li>
-                        <li><input type="checkbox" id="option4" name="answer21" value="My age"/> <label
+                        <li><input type="checkbox" id="option4" name="answer21" value="d"/> <label
                             htmlFor="option4">My age</label></li>
                     </ul>
                 </label>
-<br/>
+                <br/>
                 <br/>
 
                 {/* Question 22 */}
                 <label htmlFor="answer22">22. What operator would you first use if you wanted to determine how many
                     quarters would fit inside an amount of money a user inputted?</label>
-                <input type="text" id="answer22"/>
-<br/>
+                <br/> <input type="text" id="answer22"/>
                 <br/>
-                {/* Question 23 */}
-                <label htmlFor="answer23">23. Select all values that could be picked by random.randint(20, 49)
-                    <ol>
-                        <li>49</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li>48</li>
-                    </ol>
+                <br/>
+                <label htmlFor="answer23">
+                    23. Select the value that could be picked by random.randint(20, 49).<br/>
+                    <select id="answer23" name="answer23">
+                        <option value="">Select an option</option>
+                        <option value="a">49</option>
+                        <option value="b">50</option>
+                        <option value="c">20.5</option>
+                        <option value="d">19.6</option>
+                    </select>
                 </label>
-                <input type="text" id="answer23"/>
-<br/>
+
+                <br/>
                 <br/>
                 {/* Question 24 */}
                 <label htmlFor="answer24">24. Write a program that has a list with 3 numbers within it. Use a function
                     to add 45 to the list.</label>
-                <input type="text" id="answer24"/>
-<br/>
+                <br/> <textarea id="answer24" style={{width: '200px', height: '100px'}}/>
+                <br/>
                 <br/>
                 {/* Question 25 */}
                 <label htmlFor="answer25">25. What comparison operator would be used if you wanted to make a logical
-                    statement that hinges on an expression being equal to a specific number?</label>
+                    statement that hinges on an expression being equal to a specific number?</label><br/>
                 <input type="text" id="answer25"/>
-<br/>
+                <br/>
                 <br/>
                 <button type="button" onClick={() => PreTestGrader()}>
                     Submit
