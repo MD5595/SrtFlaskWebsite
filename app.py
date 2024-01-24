@@ -2,7 +2,7 @@ from sqlite3 import IntegrityError
 
 from flask_cors import CORS
 
-from create_table import UserLocationTime, Students, Scores
+from create_table import UserLocationTime, Students, Scores, PreTest, PostTest
 from utils import load_flashcards
 import json
 from flask import Flask, render_template, request, jsonify, session, send_from_directory
@@ -100,9 +100,9 @@ def pretestProgram():
     code = data.get('code')
     username = data.get('username')
 
-    #answer = PreTest(username=username,code = code)
-    #db.session.add(answer)
-    #db.session.commit()
+    answer = PreTest(username=username,code = code)
+    db.session.add(answer)
+    db.session.commit()
 
 
 @app.route('/getUserScore', methods =['GET'])
@@ -139,9 +139,10 @@ def posttestProgram():
     code = data.get('code')
     username = data.get('username')
 
-    #answer = PostTest(username=username,code = code)
-    #db.session.add(answer)
-    #db.session.commit()
+    answer = PostTest(username=username,code = code)
+    db.session.add(answer)
+    db.session.commit()
+
 @app.route('/get_flashcards', methods=['POST'])
 def get_flashcards():
     unit = request.json['unit']

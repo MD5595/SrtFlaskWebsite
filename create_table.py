@@ -34,5 +34,5 @@ def init_db():
         db.create_all()
         print("Tables are Ready")
 
-if __name__ == "__main__":
-    init_db()
+
+init_db()
