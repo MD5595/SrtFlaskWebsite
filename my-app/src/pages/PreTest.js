@@ -1,110 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-
-function PreTestGrader() {
-    let score = 0;
-    const username = localStorage.getItem('username');
+import {Link, Redirect, Navigate, useNavigate, useLocation} from 'react-router-dom';
 
 
-    // Question 3
-    const q3_answer = document.getElementById('answer3').value.toLowerCase();
-    if (q3_answer.includes('and')) {
-        score++;
-    }
-
-    // Question 8
-    const q8_answer = document.getElementById('answer8').value;
-    if (q8_answer.includes('a')) {
-        score++;
-    }
-
-
-    // Question 10
-    const q10_answer = document.getElementById('answer10').value.toLowerCase();
-    if (q10_answer.includes('d')) {
-        score++;
-    }
-
-    // Question 11
-    const q11_answer = document.getElementById('answer11').value.toLowerCase();
-    if (q11_answer.includes('booleans')) {
-        score++;
-    }
-
-    // Question 12
-    const q12_answer = document.getElementById('answer12').value.toLowerCase();
-    if (q12_answer.includes('random')) {
-        score++;
-    }
-
-    // Question 13
-    const q13_answer = document.getElementById('answer13').value;
-    if (q13_answer.includes('b')) {
-        score++;
-    }
-
-    // Question 14
-    const q14_answer = document.getElementById('answer14').value.toLowerCase();
-    if (q14_answer === 'c') {
-        score++;
-    }
-
-
-    // Question 16
-    const q16_answer = document.getElementById('answer16').value.toLowerCase();
-    if (q16_answer.includes('c')) {
-        score++;
-    }
-
-    // Question 17
-    const q17_answer = document.getElementById('answer17').value.toLowerCase();
-    if (q17_answer.includes('a')) {
-        score++;
-    }
-
-    // Question 18
-    const q18_answer = document.getElementById('answer18').value.toLowerCase();
-    if (q18_answer.includes("d")) {
-        score++;
-    }
-
-
-    // Question 20
-    const q20_answer = document.getElementById('answer20').value.toLowerCase();
-    if (q20_answer.includes('while')) {
-        score++;
-    }
-
-    // Question 21
-    const q21_answer = document.getElementById('answer21').value.toLowerCase();
-    if (q21_answer.includes("a") && q21_answer.includes("b") && q21_answer.includes("c") && q21_answer.includes("d")) {
-        score++;
-    }
-
-    // Question 22
-    const q22_answer = document.getElementById('answer22').value;
-    if (q22_answer.includes('//') || q22_answer.includes('%')) {
-        score++;
-    }
-
-    // Question 23
-    const q23_answer = document.getElementById('answer23').value.toLowerCase();
-    if (q23_answer.includes("a")) {
-        score++
-    }
-
-    let num = 0;
-    // Question 25
-    const q25_answer = document.getElementById('answer25').value;
-    if (q25_answer.includes('==')) {
-        score++;
-        num += 1;
-    } else {
-        num += 1
-    }
-    return score
-
-}
 
 function PreTest() {
 
@@ -137,7 +35,9 @@ function PreTest() {
     const [q22Answer, setQ22Answer] = useState('');
     const [q23Answer, setQ23Answer] = useState('');
     const [q25Answer, setQ25Answer] = useState('');
+        var navigate = useNavigate();
 
+    let y = 0;
 
     // Question 1
 
@@ -229,7 +129,87 @@ function PreTest() {
                 console.error(error);
             });
     }, [x]);
+
+
+
+     useEffect(() => {
+        if (q2Answer.includes('math') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+
     useEffect(() => {
+        if (q3Answer.includes('and') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+    useEffect(() => {
+        if (q8Answer.includes('a') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+
+    useEffect(() => {
+        if (q10Answer.includes('d') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+useEffect(() => {
+        if (q12Answer.includes('random') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+
+useEffect(() => {
+        if (q13Answer.includes('math') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+useEffect(() => {
+        if (q14Answer.includes('c') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+
+useEffect(() => {
+        if (q16Answer.includes('c') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+useEffect(() => {
+        if (q17Answer.includes('a') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+useEffect(() => {
+        if (q18Answer.includes('d') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+useEffect(() => {
+        if (q20Answer.includes('while') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+useEffect(() => {
+        if (q22Answer.includes('//') || q22Answer.includes('%')  && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+
+useEffect(() => {
+        if (q23Answer.includes('a') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+
+useEffect(() => {
+        if (q25Answer.includes('==') && x==1) {
+            setScore((prevScore) => prevScore + 1);
+            y=100;
+        }
+    }, [x]);
+useEffect(() => {
         let test = "PreTest";
         axios.post('http://localhost:5000/postUserScore', {username, test, score}).then(response => {
         })
@@ -237,17 +217,7 @@ function PreTest() {
                 console.error(error);
 
             });
-    }, [score]);
-
-
-     useEffect(() => {
-        if (q2Answer.includes('math') && x==1) {
-            setScore((prevScore) => prevScore + 1);
-        }
-    }, [q2Answer]);
-
-
-
+    }, [y]);
     return (
         <div className="container">
             <h1> Pre-Test</h1>
@@ -481,8 +451,9 @@ function PreTest() {
                 <br/>
                 <br/>
                 <button type="button" onClick={() => {
-                    setScore(PreTestGrader())
                     setX( 1)
+                                    navigate("/HomePage");
+
                 }}>
                     Submit
                 </button>
