@@ -273,7 +273,8 @@ useEffect(() => {
                           onChange={(e) => setQ7Answer(e.target.value)}/> <br/>
                 {/* Question 8 */}
                 <label htmlFor="answer8">8. What does the append() function do?</label><br/>
-                <select id="answer8">
+                <select id="answer8"  value={q8Answer}
+                             onChange={(e) => setQ8Answer(e.target.value)}>
                     <option value="a">Adds an element to the end of a list</option>
                     <option value="b">Adds a number to the end of a variable</option>
                     <option value="c">Varies based on what is placed within it</option>
@@ -303,7 +304,8 @@ useEffect(() => {
                 {/* Question 11 */}
                 <label htmlFor="answer11">11. What kind of data type is most commonly associated with
                     conditionals?</label><br/>
-                <select id="answer11">
+                <select id="answer11"  value={q11Answer}
+                             onChange={(e) => setQ11Answer(e.target.value)}>
                     <option value="a">Strings</option>
                     <option value="b">Booleans</option>
                     <option value="c">Lists</option>
@@ -321,7 +323,8 @@ useEffect(() => {
                 {/* Question 13 */}
                 <label htmlFor="answer13">13. What would the following code print? for _ in range(48, 38, -2): print(_,
                     end=" ")</label><br/>
-                <select id="answer13"><br/>
+                <select id="answer13" value={q13Answer}
+                             onChange={(e) => setQ13Answer(e.target.value)}><br/>
                     <option value="a">46 44 42 40 38</option>
                     <br/>
                     <option value="b">48 46 44 42 40</option>
@@ -357,7 +360,8 @@ useEffect(() => {
                 <br/>
                 {/* Question 16 */}
                 <label htmlFor="answer16">16. What will print(10//4) display on the terminal?</label><br/>
-                <select id="answer16">
+                <select id="answer16" value={q16Answer}
+                             onChange={(e) => setQ16Answer(e.target.value)}>
                     <option value="a">2.0</option>
                     <option value="b">2.5</option>
                     <option value="c">2</option>
@@ -367,7 +371,8 @@ useEffect(() => {
                 <br/>
                 {/* Question 17 */}
                 <label htmlFor="answer17">17. When to use = instead of ==?</label><br/>
-                <select id="answer17">
+                <select id="answer17"  value={q17Answer}
+                             onChange={(e) => setQ17Answer(e.target.value)}>
                     <option value="a">When you want to assign a value to a variable</option>
                     <option value="b">When you want to make a logical statement that hinges on values being equal
                         to each other
@@ -379,7 +384,8 @@ useEffect(() => {
                 <br/>
                 {/* Question 18 */}
                 <label htmlFor="answer18">18. Which line of code will not return an error?<br/>
-                    <select id="answer18">
+                    <select id="answer18"  value={q18Answer}
+                             onChange={(e) => setQ18Answer(e.target.value)}>
                         <option value="a">print(The answer is 10)</option>
                         <option value="b">print("The answer is" + 10)</option>
                         <option value="c">print(The answer is + str(10))</option>
@@ -398,7 +404,8 @@ useEffect(() => {
                 {/* Question 20 */}
                 <label htmlFor="answer20">20. What type of loop would you use if you wanted to make it stop after
                     receiving a certain input?</label>
-                <input type="text" id="answer20"/>
+                <input type="text" id="answer20" value={q20Answer}
+                             onChange={(e) => setQ20Answer(e.target.value)}/>
                 <br/>
                 <br/>
                 {/* Question 21 */}
