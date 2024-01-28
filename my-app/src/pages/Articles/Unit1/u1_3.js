@@ -1,7 +1,17 @@
-import React from 'react';
+import {React, useRef} from 'react';
 import {Link} from "react-router-dom";
 
-function u13() {
+export default function Unit_1_3() {
+    const inputRef = useRef(null);
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        const cleaned = inputRef.current.value.replaceAll(' ', '');
+        if (/[a-zA-Z_]/.test(cleaned.charAt(0)) && cleaned.includes('="dog"')){
+                alert('Correct!');
+        } else {alert('Incorrect - try again!');}
+      }
+
   return (
     <div className="container">
       <head>
@@ -79,10 +89,18 @@ function u13() {
     </code></pre>
 
     <p>Making your variables descriptive is vital to creating readable code that is easily decipherable.</p>
-    </body><br/>
+    </body>
+    <div className="container-exercise">
+            <form onSubmit={handleSubmit}>
+                    <label>
+                        <h2>Practice Exercise:</h2>
+                        <p>Create a variable and assign it the value "dog"</p>
+                        <input ref={inputRef} type="text"/>
+                    </label>
+                    <button type="submit">Submit answer</button>
+            </form><br/></div>
+            <br/><br/>
     <Link to="/u1_2" className="btn btn-primary" >Back</Link>
-    &nbsp;<Link to="/u1_4" className="btn btn-primary" >Next</Link>    </div>
+    &nbsp;<Link to="/u1_4" className="btn btn-primary" >Next</Link></div>
   );
 }
-
-export default u13;

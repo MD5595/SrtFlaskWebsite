@@ -1,11 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import {React, useRef} from 'react';
+import {Link} from "react-router-dom"
 
-import {Link, useMatch, useResolvedPath} from "react-router-dom"
-import axios from "axios";
+export default function Unit_1_1() {
+    const inputRef = useRef(null);
 
-function u1_1() {
-
-
+    function handleSubmit(event) {
+        event.preventDefault();
+        if (inputRef.current.value.toLowerCase() == 'print'){
+            alert('Correct!');
+        } else {alert('Incorrect - try again!');}
+      }
+        
     return (
         <div className="container">
             <h1>1.1 Hello World</h1>
@@ -34,6 +39,21 @@ function u1_1() {
             <p>The comment on the first line is not read by the computer due to the `#`.
                 Comments are used when you want
                 to note a piece of information within your code.</p>
+            <br/>
+            <div className="container-exercise">
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        <h2>Practice Exercise:</h2>
+                        <p>Insert the missing part of the code below to output the users name:</p>
+                        
+                        <inter><code>
+                            name = input("Write your name") <br/>
+                            <input ref={inputRef} type="text" />(name)
+                        </code></inter>
+                        <br/>
+                    </label>
+                    <button type="submit">Submit answer</button>
+                </form><br/></div>
 
             <p>Now that you understand the basics of the “Hello World!” program, we will
                 go over how to properly set up Python programs.</p><br/>
@@ -43,4 +63,3 @@ function u1_1() {
     );
 }
 
-export default u1_1;

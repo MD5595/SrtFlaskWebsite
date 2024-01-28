@@ -1,7 +1,16 @@
-import React from 'react';
+import {React, useRef} from 'react';
 import {Link} from "react-router-dom";
 
-function u23() {
+export default function Unit_2_3() {
+    const inputRef = useRef(null);
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        const cleaned = inputRef.current.value.replaceAll(' ', '');
+        if (cleaned == 'print(math.sqrt(random.randint(0,20)))'){
+            alert('Correct!');
+        } else {alert('Incorrect - try again!');}
+      }
   return (
     <div className="container">
       <head>
@@ -51,12 +60,26 @@ function u23() {
     <p>It will be convenient for you to memorize these functions, but it is no problem if you forget the correct syntax.
         Consult the cheat sheet or Google to properly type out the functions/modules.</p>
 </body>
-        <br/>
-        <Link to="/quiz2" className="btn-quiz">Take an optional quiz for additional practice!</Link>
-<br/><br/><br/>
+<div className="container-exercise">
+    <form onSubmit={handleSubmit}>
+        <label>
+            <h2>Practice Exercise:</h2>
+            <p>Write code that will generate a random number between 0-20 and print out the sqrt of that number all in one line.</p>
+            <inter><code>
+                import math <br/>
+                import random <br/>
+                <input ref={inputRef} type="text" />
+                    </code></inter>
+                    </label>
+
+            <br/>
+
+        <button type="submit">Submit answer</button>
+    </form><br/></div>
+<br/><br/>
+<Link to="/quiz2" className="btn-quiz">Take an optional quiz for additional practice!</Link>
+<br/><br/>
 <Link to="/u2_2" className="btn btn-primary" >Back</Link>
 &nbsp;<Link to="/u3_1" className="btn btn-primary" >Next</Link></div>
   );
 }
-
-export default u23;
