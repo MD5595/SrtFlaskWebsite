@@ -142,6 +142,22 @@ code {
   font-family: "Courier New";
 }
 
+inter code {
+  background-color: #e4e2e2;
+  border: 1px solid #999;
+  display: block;
+  font-family: "Courier New";
+  padding: 10px;
+  width: fit-content;
+}
+
+.container-exercise {
+  border: 2px solid #1a49c1;
+  background-color: white;
+  padding: .5em 1em;
+
+}
+
 .btn-quiz {
   background-color: hsl(153, 52%, 55%);
   color: white;

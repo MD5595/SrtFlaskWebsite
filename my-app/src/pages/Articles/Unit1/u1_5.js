@@ -1,7 +1,15 @@
-import React from 'react';
+import {React, useRef} from 'react';
 import {Link} from "react-router-dom";
 
-function u15() {
+export default function Unit_1_5() {
+    const inputRef = useRef(null);
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        if (inputRef.current.value == 'int'){
+            alert('Correct!');
+        } else {alert('Incorrect - try again!');}
+      }
     return (
         <div className="container">
             <head>
@@ -67,11 +75,25 @@ function u15() {
                 variables of the same data type but booleans can’t. Also, you can only use the modulus operator with the
                 int and
                 float data types.</p> </body><br/>
+
+                <div className="container-exercise">
+            <form onSubmit={handleSubmit}>
+                    <label>
+                        <h2>Practice Exercise:</h2>
+                        <p>Given the code below, fill in the blank to cast the variable to be an integer.</p>
+                        <inter><code>
+                            num1 = "one" <br/>
+                            print(<input ref={inputRef} type="text" />(num1))
+                        </code></inter>
+                        <br/>
+                        
+                    </label>
+                    <button type="submit">Submit answer</button>
+            </form><br/></div>
+            <br/>
         <Link to="/quiz1" className="btn-quiz">Take an optional quiz for additional practice!</Link>
         <br/><br/><br/>
         <Link to="/u1_4" className="btn btn-primary" >Back</Link>
         &nbsp;<Link to="/u2_1" className="btn btn-primary" >Next</Link></div>
 );
 }
-
-export default u15;

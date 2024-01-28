@@ -1,7 +1,20 @@
-import React from 'react';
+import {React,useRef} from 'react';
 import {Link} from "react-router-dom";
 
-function u61() {
+export default function Unit_6_1() {
+    const funCall = useRef(null);
+    const funcParam = useRef(null);
+    const returnCall = useRef(null);
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log(funCall, funcParam, returnCall)
+        if(funCall.current.value.replaceAll(' ', '') == 'def' &&
+        funcParam.current.value.replaceAll(' ', '') == 'x' &&
+        (returnCall.current.value.replaceAll(' ', '') == 'x+2' || returnCall.current.value.replaceAll(' ', '') == '2+x')){
+            alert('Correct!');
+        } else {alert('Incorrect - try again!');}
+      }
   return (
     <div className="container">
       <head>
@@ -40,10 +53,23 @@ function u61() {
         name, the parameters (optional), a colon, the action the function performs, and the <code>return</code> keyword
         (optional and typically only present when there are parameters), in that order.</p>
 </body>
+<div className="container-exercise">
+            <h2>Practice Exercise:</h2>
+            <p>Write a function called "add_two" that takes a value x and returns x+2.</p><br/>
+            <form onSubmit={handleSubmit}>
+
+            <inter><code>
+            <label><input ref={funCall} type="text"/></label> add_two(<label><input ref={funcParam} type="text"/></label>):<br/>
+            return <label><input ref={returnCall} type="text"/></label><br/>
+            </code></inter>
+            <br/>
+            <button type="submit">Submit answer</button>
+            </form>
+
+            <br/></div>
+            <br/>
         <Link to="/u5_1" className="btn btn-primary" >Back</Link>
         &nbsp;<Link to="/u6_2" className="btn btn-primary" >Next</Link>
     </div>
   );
 }
-
-export default u61;

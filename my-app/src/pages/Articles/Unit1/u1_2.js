@@ -1,7 +1,17 @@
-import React from 'react';
+import {React, useRef} from 'react';
 import {Link} from "react-router-dom";
 
-function u12() {
+export default function Unit_1_2() {
+    const inputRef = useRef(null);
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        const cleaned = inputRef.current.value.replaceAll(' ', '');
+        if (cleaned == 'print("HelloJoe!")' || cleaned == "print('HelloJoe!')"){
+            alert('Correct!');
+        } else {alert('Incorrect - try again!');}
+      }
+
     return (
         <div className="container">
             <head>
@@ -34,6 +44,19 @@ function u12() {
             <p>Starting in Unit 3, cases where indentation is required will appear.</p>
 
             <p>Ensure you include the correct spelling, spacing, and indents within your code.</p>
+            <div className="container-exercise">
+            <form onSubmit={handleSubmit}>
+                    <label>
+                        <h2>Practice Exercise:</h2>
+                        <p>Fix the following line of code:</p>
+                        <inter><code>
+                            print(Hello Joe!)
+                        </code></inter>
+                        <br/>
+                        <input ref={inputRef} type="text" />
+                    </label>
+                    <button type="submit">Submit answer</button>
+            </form><br/></div>
             <br/>
             <Link to="/u1_1" className="btn btn-primary" >Back</Link>
             &nbsp;<Link to="/u1_3" className="btn btn-primary" >Next</Link>         
@@ -42,4 +65,3 @@ function u12() {
     );
 }
 
-export default u12;

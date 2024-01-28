@@ -1,7 +1,19 @@
-import React from 'react';
+import {React, useRef} from 'react';
 import {Link} from "react-router-dom";
 
-function u32() {
+export default function Unit_3_2() {
+    const firstIf = useRef(null);
+    const secondElif = useRef(null);
+    const thirdElse = useRef(null);
+    function handleSubmit(event) {
+        event.preventDefault();
+        if((firstIf.current.value.replaceAll(' ', '') == 'ifnum1%2==1andnum1<5:' || firstIf.current.value.replaceAll(' ', '') == 'ifnum1<5andnum1%2==1:') &&
+        (secondElif.current.value.replaceAll(' ', '') == 'elifnum1%2==1andnum1>=5:' || secondElif.current.value.replaceAll(' ', '') == 'elifnum1>=5andnum1%2==1:') &&
+        thirdElse.current.value.replaceAll(' ', '') == 'else:'){
+            alert('Correct!');
+        } else {alert('Incorrect - try again!');}
+      }
+
     return (
         <div className="container">
             <head>
@@ -34,13 +46,36 @@ function u32() {
             <p>Remember that you can place anything within if statements, including more if statements and
                 conditionals.</p>
             </body>
+            <div className="container-exercise">
+            <form onSubmit={handleSubmit}>
+                    <label>
+                        <h2>Practice Exercise:</h2>
+                        <p>Finish the following code given the following prompt:<br/>
+                            Write a program that asks the user to input a number that ranges from 0-10. <br/>
+                            If the number is odd and less than 5, print "This is a special number". <br/>
+                            Else if the number is odd and more than/equal to 5, print "This is also a special number." <br/>
+                            Otherwise print "Just a number". <br/>
+                            Note: To determine if a number is even or odd use the remainder operator.
+                        </p>
+                        <inter><code>
+                            num1 = int(input("Input a number between 0 and 10: "))<br/>
+                            <label><input ref={firstIf} type="text" /></label><br/>
+                            &emsp;print("This is a special number")<br/>
+                            <label><input ref={secondElif} type="text" /></label><br/>
+                            &emsp;print("This is also a special number")<br/>
+                            <label><input ref={thirdElse} type="text" /></label><br/>
+                            &emsp;print("Just a number")
+
+                        </code></inter>
+                        <br/>
+                    </label>
+                    <button type="submit">Submit answer</button>
+            </form><br/></div>
             <br/>
             <Link to="/quiz3" className="btn-quiz">Take an optional quiz for additional practice!</Link>
-<br/><br/><br/>
+            <br/><br/><br/>
              <Link to="/u3_1" className="btn btn-primary" >Back</Link>
              &nbsp;<Link to="/u4_1" className="btn btn-primary" >Next</Link>
         </div>
     );
 }
-
-export default u32;

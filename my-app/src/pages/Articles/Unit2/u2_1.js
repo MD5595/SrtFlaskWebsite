@@ -1,7 +1,17 @@
-import React from 'react';
+import {React, useRef} from 'react';
 import {Link} from "react-router-dom";
 
-function u21() {
+export default function Unit_2_1() {
+  const inputRef = useRef(null);
+
+  function handleSubmit(event) {
+      event.preventDefault();
+      const cleaned = inputRef.current.value.replaceAll(' ', '');
+      if (cleaned == '16%3'){
+          alert('Correct!');
+      } else {alert('Incorrect - try again!');}
+    }
+
   return (
     <div className="container">
       <head>
@@ -51,11 +61,20 @@ function u21() {
       7 <br/>
     </code></pre>
 </body>
+<div className="container-exercise">
+  <form onSubmit={handleSubmit}>
+    <label>
+      <h2>Practice Exercise:</h2>
+      <p>Complete the code below if you wanted to print the remainder of 16 after dividing by 3.</p>
+      <inter><code>
+        print(<input ref={inputRef} type="text" />)
+        </code></inter><br/>
+        
+        </label>
+        <button type="submit">Submit answer</button>
+        </form><br/></div>
         <br/>
-<Link to="/u1_5" className="btn btn-primary" >Back</Link>
-&nbsp;<Link to="/u2_2" className="btn btn-primary" >Next</Link> </div>
-
+    <Link to="/u1_5" className="btn btn-primary" >Back</Link>
+    &nbsp;<Link to="/u2_2" className="btn btn-primary" >Next</Link> </div>
   );
 }
-
-export default u21;

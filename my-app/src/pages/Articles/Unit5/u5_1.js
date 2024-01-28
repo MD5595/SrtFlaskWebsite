@@ -1,7 +1,23 @@
-import React from 'react';
+import {React,useRef} from 'react';
 import {Link} from "react-router-dom";
 
-function u51() {
+export default function Unit_5_1() {
+    const inputRef = useRef(null);
+
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        const cleaned = inputRef.current.value.replaceAll(' ', '')
+        console.log(cleaned)
+        if(cleaned == 'basket=["apples","oranges","bananas"]' ||
+        cleaned == 'basket=["apples","bananas","oranges"]' ||
+        cleaned == 'basket=["oranges","bananas","apples"]' ||
+        cleaned == 'basket=["oranges","apples","bananas"]' ||
+        cleaned == 'basket=["bananas","oranges","apples"]' ||
+        cleaned == 'basket=["bananas","apples","oranges"]'){
+            alert('Correct!');
+        } else {alert('Incorrect - try again!');}
+      }
   return (
     <div className="container">
       <head>
@@ -46,6 +62,15 @@ function u51() {
 
     <p>You simply type out the list name and place the element location within brackets.</p>
 </body>
+<div className="container-exercise">
+            <form onSubmit={handleSubmit}>
+                    <label>
+                        <h2>Practice Exercise:</h2>
+                        <p>Make a list called "basket" that contains "apples", "oranges", and "bananas".</p>
+                        <input ref={inputRef} type="text" />
+                    </label>
+                    <button type="submit">Submit answer</button>
+            </form><br/></div><br/><br/>
 <Link to="/quiz5" className="btn-quiz">Take an optional quiz for additional practice!</Link>
 <br/><br/><br/>
         <Link to="/u4_2" className="btn btn-primary" >Back</Link>
@@ -53,5 +78,3 @@ function u51() {
     </div>
   );
 }
-
-export default u51;

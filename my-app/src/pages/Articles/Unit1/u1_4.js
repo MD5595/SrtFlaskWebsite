@@ -1,7 +1,17 @@
-import React from 'react';
+import {React, useRef} from 'react';
 import {Link} from "react-router-dom";
 
-function u14() {
+export default function Unit_1_4() {
+    const inputRef = useRef(null);
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        const cleaned = inputRef.current.value.toLowerCase().replaceAll(' ', '');
+        if (cleaned == 'input("writeyourname")' || cleaned == "input('writeyourname')"){
+            alert('Correct!');
+        } else {alert('Incorrect - try again!');}
+      }
+
     return (
         <div className="container">
             <head>
@@ -84,9 +94,18 @@ function u14() {
                 You will be 27 in 10 years.
             </code></pre>
             </body><br/>
+
+            <div className="container-exercise">
+            <form onSubmit={handleSubmit}>
+                    <label>
+                        <h2>Practice Exercise:</h2>
+                        <p>Write an input statement that asks the user to "Write your name"</p>
+                        <input ref={inputRef} type="text" />
+                    </label>
+                    <button type="submit">Submit answer</button>
+            </form><br/></div><br/><br/>
     <Link to="/u1_3" className="btn btn-primary" >Back</Link>
-    &nbsp;<Link to="/u1_5" className="btn btn-primary" >Next</Link>       </div>
+    &nbsp;<Link to="/u1_5" className="btn btn-primary" >Next</Link>
+    </div>
     );
 }
-
-export default u14;

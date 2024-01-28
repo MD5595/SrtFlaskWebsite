@@ -1,7 +1,17 @@
-import React from 'react';
+import {React, useRef} from 'react';
 import {Link} from "react-router-dom";
 
-function u22() {
+export default function Unit_2_2() {
+    const inputRef = useRef(null);
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        const cleaned = inputRef.current.value.replaceAll(' ', '');
+        if (cleaned == 'print(((38*2.1)/12)/3**2)'){
+            alert('Correct!');
+        } else {alert('Incorrect - try again!');}
+      }
+
     return (
         <div className="container">
             <head>
@@ -42,10 +52,17 @@ function u22() {
 
             <p>Python does basic math in the same order you would do on paper.</p>
             </body>
-<br/>
+            <div className="container-exercise">
+            <form onSubmit={handleSubmit}>
+                    <label>
+                        <h2>Practice Exercise:</h2>
+                        <p>Write code that prints the product of 38 and 2.1, divided by 12, divided by 3 which is raised to the second power</p>
+                        <input ref={inputRef} type="text" />
+                    </label>
+                    <button type="submit">Submit answer</button>
+            </form><br/></div>
+            <br/><br/>
             <Link to="/u2_1" className="btn btn-primary" >Back</Link>
             &nbsp;<Link to="/u2_3" className="btn btn-primary" >Next</Link>        </div>
     );
 }
-
-export default u22;
