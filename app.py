@@ -15,6 +15,7 @@ import datetime
 
 app = Flask(__name__, static_url_path='', static_folder='my-app/src')
 cors = CORS(app, supports_credentials=True)
+CORS(app)
 
 api = Api(app)
 app.config['SECRET_KEY'] = 'Keeey'
@@ -127,11 +128,10 @@ def postUserScore():
     score= data.get('score')
 
     entry = Scores(username=username, test=test, score=score)
-    try:
-        db.session.add(entry)
-        db.session.commit()
-    except IntegrityError:
-        pass
+
+    db.session.add(entry)
+    db.session.commit()
+
 
 @app.route('/posttestProgram', methods=['POST'])
 def posttestProgram():

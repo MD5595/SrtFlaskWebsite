@@ -54,9 +54,12 @@ function App() {
         axios.post('http://localhost:5000/sendlocationTime', {path,username}).then(response => {
             console.log("SUCCESS", response);
             updatePage(path);
+            console.log(path)
         })
             .catch(error => {
                 console.error(error);
+                console.log(path);
+
             });
     },);
     return (

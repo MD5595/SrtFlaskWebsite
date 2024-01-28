@@ -37,8 +37,7 @@ function PreTest() {
     const [q25Answer, setQ25Answer] = useState('');
         var navigate = useNavigate();
 
-    let y = 0;
-
+const [y, sendScore] = useState(0);
     // Question 1
 
     useEffect(() => {
@@ -198,15 +197,20 @@ useEffect(() => {
     }, [x]);
 
 useEffect(() => {
-        if (q23Answer.includes('a') && x==1) {
+        if (q23Answer.includes('a') && x===1) {
             setScore((prevScore) => prevScore + 1);
         }
     }, [x]);
 
 useEffect(() => {
-        if (q25Answer.includes('==') && x==1) {
+                                        sendScore(100);
+
+        if (q25Answer.includes('==') && x===1) {
             setScore((prevScore) => prevScore + 1);
-            y=100;
+
+        }
+        else{
+
         }
     }, [x]);
 useEffect(() => {
@@ -277,7 +281,7 @@ useEffect(() => {
                              onChange={(e) => setQ8Answer(e.target.value)}>
                     <option value="a">Adds an element to the end of a list</option>
                     <option value="b">Adds a number to the end of a variable</option>
-                    <option value="c">Varies based on what is placed within it</option>
+                    <option value= "c">Varies based on what is placed within it</option>
                     <option value="d">Adds a variable to the start of a list</option>
                 </select>
                 <br/><br/>

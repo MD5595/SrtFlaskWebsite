@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 
 export default function Quiz3 (){
@@ -7,6 +8,7 @@ export default function Quiz3 (){
     const [score, setScore] = useState(0);
     const [answers, setAnswers] = useState([]);
     const [showScore, setShowScore] = useState(false);
+        const username = localStorage.getItem('username');
 
     const questions = [
         {
@@ -50,7 +52,14 @@ export default function Quiz3 (){
           setShowScore(true);
         }
       };
-
+ useEffect(() => {
+            const test = "Quiz3"
+            axios.post('http://localhost:5000/postUserScore', {username, test, score}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [showScore]);
       return (
         <div>
           {showScore ? (
