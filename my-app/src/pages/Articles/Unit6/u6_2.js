@@ -144,15 +144,13 @@ export default function Unit_6_2() {
             <br/></div>
 
       <br />
-      <Link to="/quiz6" className="btn-quiz">Take an optional quiz for additional practice!</Link>
+      <Link to="/quiz6" className="btn-quiz">Take an optional quiz for additional practice!</Link><br/><br/>
 
-      <Link to="/previous_unit_path" className="btn btn-primary">
+      <Link to="/u6_1" className="btn btn-primary">
         Back
       </Link>
       &nbsp;
-      <Link to="/next_unit_path" className="btn btn-primary">
-        Next
-      </Link>
+
     </div>
   );
 }

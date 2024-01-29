@@ -21,11 +21,11 @@ export default function Unit_6_1() {
   return (
     <div className="container">
       <head>
-    <title>Unit 5.1: Lists</title>
+    <title>Unit 6.1: Lists</title>
 </head>
 
 <body>
-    <h1>Unit 5.1: Lists</h1>
+    <h1>Unit 6.1: Lists</h1>
     <p>Lists store multiple values within one variable. Any data type can be stored within a list, and differing data
         types can be stored within the same list. Any value stored within a list is called an element.</p>
 
@@ -46,7 +46,7 @@ export default function Unit_6_1() {
         Value1 = Y.append(X)  # Adds an element to the end of a list <br/>
         Value2 = Y.count(X)  # Returns the number of elements that have the value X <br/>
         Value3 = Y.sort()     # Sorts the list <br/>
-        Value5 = random.choice(Y)  # Picks a random value within a list <br/>
+        Value4 = random.choice(Y)  # Picks a random value within a list <br/>
     </code></pre>
 
     <p>When going through the elements within a list, you start from 0 instead of one. The code below shows how to access
@@ -61,6 +61,29 @@ export default function Unit_6_1() {
     </code></pre>
 
     <p>You simply type out the list name and place the element location within brackets.</p>
+
+<p>The code below utilizes a for-loop to access every element in a list.
+<pre><code>for i in List1:<br/>
+    &emsp;print(i)</code></pre><br/>
+
+
+If you wish to access the elements of a list in reverse order (from right to left),
+    you can use negative numbers. For example, writing example_list[-1] would access
+    the last element in example_list.
+
+<br/>
+Note that strings can have their characters accessed in the same way.
+<pre><code>
+
+Word = “apple”<br/>
+print(Word[4])
+</code>
+</pre>
+Output:
+<pre><code>e
+</code></pre>
+</p>
+
 </body>
 <div className="container-exercise">
             <form onSubmit={handleSubmit}>
