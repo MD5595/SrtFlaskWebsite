@@ -33,6 +33,20 @@ export default function Unit_4_2() {
     <p>Range(start, stop, step) is the format the <code>range()</code> function follows, with only the stop parameter/argument being
         required. When the start argument is included, the for loop will start iterating at that value. For example, if
         range(5, 10) was used instead of range(10), an error message would appear on the terminal.</p>
+<br/>
+<p>Break is a keyword that can be used in both for and while loops. Break causes a loop to end. Break is typically used in if-statements to exit a loop based on a condition.
+</p>
+<pre><code>num = int(input(“Enter a number: From 1-20”))<br/>
+for i in range(10):<br/>
+&emsp;print(i)<br/>
+&emsp;if i==num:<br/>
+&emsp;&emsp;break<br/>
+&emsp;X += 1<br/>
+for i in range(9):<br/>
+&emsp;if i > 3:<br/>
+&emsp;&emsp;break<br/>
+&emsp;print(i)<br/>
+</code></pre>
 </body>
 <div className="container-exercise">
             <h2>Practice Exercise:</h2>
