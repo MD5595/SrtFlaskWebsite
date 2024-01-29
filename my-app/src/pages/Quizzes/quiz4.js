@@ -59,7 +59,7 @@ export default function Quiz4 (){
         }
       };
  useEffect(() => {
-            const test = "Quiz3"
+            const test = "Quiz4"
             axios.post('http://localhost:5000/postUserScore', {username, test, score}).then(response => {
             })
                 .catch(error => {
