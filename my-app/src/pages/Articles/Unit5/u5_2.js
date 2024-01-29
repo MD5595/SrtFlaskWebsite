@@ -94,7 +94,7 @@ export default function Unit_5_2() {
             <br/></div>
             <br/>
 <br/>
-<Link to="/quiz6" className="btn-quiz">Take an optional quiz for additional practice!</Link>
+<Link to="/quiz5" className="btn-quiz">Take an optional quiz for additional practice!</Link>
 <br/><br/><br/>
         <Link to="/u5_1" className="btn btn-primary" >Back</Link>
                 <Link to="/u6_1" className="btn btn-primary" >Next</Link>

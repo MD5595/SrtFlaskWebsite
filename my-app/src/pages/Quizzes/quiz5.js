@@ -8,35 +8,42 @@ export default function Quiz5 (){
     const [score, setScore] = useState(0);
     const [answers, setAnswers] = useState([]);
     const [showScore, setShowScore] = useState(false);
-    const username = localStorage.getItem('username');
+        const username = localStorage.getItem('username');
 
     const questions = [
         {
-          question: 'Which of the following is not a function available with lists?',
+          question: 'What is the keyword to define a function?',
           type: 'radio',
-          options: ['append', 'last', 'remove', 'pop'],
-          answer: 'last',
+          options: ['def', 'define', 'function', 'func'],
+          answer: 'def',
         },
         {
-          question: 'Given the following list a = [1, 2, 2, 3, 3, 4, 5], what does print(a.count(3)) return?',
+          question: 'True/False: Parameters are always required for a function.',
           type: 'radio',
-          options: ['6', '7', '3', '2'],
-          answer: '2',
+          options: ['True', 'False'],
+          answer: 'False',
         },
         {
-          question: 'True/False: This is a valid list assignment: a = [1, "two", 3, "Four", False]',
+          question: 'True/False: You must have the same number of parameters within the parenthesis as defined.',
           type: 'radio',
           options: ['True', 'False'],
           answer: 'True',
         },
         {
-            question: 'Given the following list a = [1, 2, 3, 4, 5, 6], what does print(a[4]) return?',
+            question: 'True/False: Functions must have a return statement.',
             type: 'radio',
-            options: ['4', '3', '5', '6'],
-            answer: '5'
+            options: ['True', 'False'],
+            answer: 'False'
         }
       ];
-
+ useEffect(() => {
+            const test = "Quiz5"
+            axios.post('http://localhost:5000/postUserScore', {username, test, score}).then(response => {
+            })
+                .catch(error => {
+                    console.error(error);
+                });
+        }, [showScore]);
       const handleAnswerSelection = (questionIndex, selectedAnswer) => {
         const updatedAnswers = [...answers];
         updatedAnswers[questionIndex] = selectedAnswer;
@@ -58,14 +65,7 @@ export default function Quiz5 (){
           setShowScore(true);
         }
       };
- useEffect(() => {
-            const test = "Quiz3"
-            axios.post('http://localhost:5000/postUserScore', {username, test, score}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [showScore]);
+
       return (
         <div>
           {showScore ? (
@@ -73,8 +73,6 @@ export default function Quiz5 (){
               <h2>Quiz Complete!</h2>
               <h3>Your Score: {score}</h3>
               <Link to="/Flashcards" className="btn-quiz">Get more practice with flashcards!</Link>
-                <br/><br/><br/>
-                <Link to="/u6_1" className="btn btn-primary" >Go to next unit</Link>
             </div>
           ) : (
             <div>
