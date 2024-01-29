@@ -15,7 +15,7 @@ function Syllabus() {
             By the end of this course you will be able to:
 
 <br/>
-            Develop critical thinking skills
+            Utilize your developed  critical thinking skills
            <br/> Create logical programs that utilize various programming components
            <br/> Read and edit pre-existing Python code
 
