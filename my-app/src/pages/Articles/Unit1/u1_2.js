@@ -1,16 +1,22 @@
-import {React, useRef} from 'react';
+import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
 
 export default function Unit_1_2() {
     const inputRef = useRef(null);
+    const [showAnswer, setShowAnswer] = useState(false);
+    const handleToggleAnswer = () => {
+        setShowAnswer(!showAnswer);
+    };
 
     function handleSubmit(event) {
         event.preventDefault();
         const cleaned = inputRef.current.value.replaceAll(' ', '');
-        if (cleaned == 'print("HelloJoe!")' || cleaned == "print('HelloJoe!')"){
+        if (cleaned == 'print("HelloJoe!")' || cleaned == "print('HelloJoe!')") {
             alert('Correct!');
-        } else {alert('Incorrect - try again!');}
-      }
+        } else {
+            alert('Incorrect - try again!');
+        }
+    }
 
     return (
         <div className="container">
@@ -27,8 +33,10 @@ export default function Unit_1_2() {
                 spell
                 something incorrectly your program will not function. Computers are good at following instructions but
                 mistakes
-                as minor as writing <pre><code>rint("Hello")</code></pre> instead of <pre><code>print("Hello")</code></pre> will trip up the
-                computer.</p>
+                as minor as writing <pre><code>rint("Hello")</code></pre> instead
+                of <pre><code>print("Hello")</code></pre> will trip up the
+                computer.
+            </p>
 
             <p>Indentation indicates a line/block of code is related to the non-indented code directly above it. The
                 following
@@ -45,7 +53,7 @@ export default function Unit_1_2() {
 
             <p>Ensure you include the correct spelling, spacing, and indents within your code.</p>
             <div className="container-exercise">
-            <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <label>
                         <h2>Practice Exercise:</h2>
                         <p>Fix the following line of code:</p>
@@ -53,14 +61,24 @@ export default function Unit_1_2() {
                             print(Hello Joe!)
                         </code></inter>
                         <br/>
-                        <input ref={inputRef} type="text" />
-                    </label>
+                        <input ref={inputRef} type="text"/>
+                    </label><br/>
                     <button type="submit">Submit answer</button>
-            </form><br/></div>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <button onClick={handleToggleAnswer} type="button">
+                        {showAnswer ? 'Hide answer' : 'Show answer'}
+                    </button>
+                    {showAnswer && (
+                        <div className="answer-box">
+                            <p>name = input("Write your name")<br/>
+                                <b>print</b>(name)</p>
+                        </div>
+                    )}</form>
+                <br/></div>
             <br/>
-            <Link to="/u1_1" className="btn btn-primary" >Back</Link>
-            &nbsp;<Link to="/u1_3" className="btn btn-primary" >Next</Link>         
-            </div>
+            <Link to="/u1_1" className="btn btn-primary">Back</Link>
+            &nbsp;<Link to="/u1_3" className="btn btn-primary">Next</Link>
+        </div>
 
     );
 }

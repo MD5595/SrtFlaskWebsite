@@ -1,39 +1,49 @@
-import {React, useRef} from 'react';
+import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
 
 export default function Unit_2_3() {
     const inputRef = useRef(null);
+    const [showAnswer, setShowAnswer] = useState(false);
+    const handleToggleAnswer = () => {
+        setShowAnswer(!showAnswer);
+    };
 
     function handleSubmit(event) {
         event.preventDefault();
         const cleaned = inputRef.current.value.replaceAll(' ', '');
-        if (cleaned == 'print(math.sqrt(random.randint(0,20)))'){
+        if (cleaned == 'print(math.sqrt(random.randint(0,20)))') {
             alert('Correct!');
-        } else {alert('Incorrect - try again!');}
-      }
-  return (
-    <div className="container">
-      <head>
-    <title>Unit 2.3: Modules</title>
-</head>
+        } else {
+            alert('Incorrect - try again!');
+        }
+    }
 
-<body>
-    <h1>Unit 2.3: Modules</h1>
-    <p>Modules are used to shorten programs by giving the user access to a group of functions. Generally, functions are
-        given a number/text and return a value.</p>
+    return (
+        <div className="container">
+            <head>
+                <title>Unit 2.3: Modules</title>
+            </head>
 
-    <p>The two modules this course will have you use will be the math and random modules. To use them, they first have
-        to be imported, then the specific function you want to use has to be called using dot notation. You call a
-        function from a module by saying <code>module.function</code>.</p>
+            <body>
+            <h1>Unit 2.3: Modules</h1>
+            <p>Modules are used to shorten programs by giving the user access to a group of functions. Generally,
+                functions are
+                given a number/text and return a value.</p>
 
-    <pre><code>
+            <p>The two modules this course will have you use will be the math and random modules. To use them, they
+                first have
+                to be imported, then the specific function you want to use has to be called using dot notation. You call
+                a
+                function from a module by saying <code>module.function</code>.</p>
+
+            <pre><code>
         import math <br/>
         import random <br/>
     </code></pre>
 
-    <p>Below are the math functions you will use.</p>
+            <p>Below are the math functions you will use.</p>
 
-    <pre><code>
+            <pre><code>
         import math <br/>
         X = 2.1 <br/>
         Y = 3 <br/>
@@ -47,9 +57,9 @@ export default function Unit_2_3() {
         Num7 = math.pi # Returns pi
     </code></pre>
 
-    <p>Below are the random functions you will use.</p>
+            <p>Below are the random functions you will use.</p>
 
-    <pre><code>
+            <pre><code>
         import random<br/>
         <br/>
         Num1 = random.random() # Generates a random number from 0-1 <br/>
@@ -57,29 +67,41 @@ export default function Unit_2_3() {
         Num3 = random.choice(["Red", "Orange", "Yellow"]) # Picks a random value within a list <br/>
     </code></pre>
 
-    <p>It will be convenient for you to memorize these functions, but it is no problem if you forget the correct syntax.
-        Consult the cheat sheet or Google to properly type out the functions/modules.</p>
-</body>
-<div className="container-exercise">
-    <form onSubmit={handleSubmit}>
-        <label>
-            <h2>Practice Exercise:</h2>
-            <p>Write code that will generate a random number between 0-20 and print out the sqrt of that number all in one line.</p>
-            <inter><code>
-                import math <br/>
-                import random <br/>
-                <input ref={inputRef} type="text" />
-                    </code></inter>
+            <p>It will be convenient for you to memorize these functions, but it is no problem if you forget the correct
+                syntax.
+                Consult the cheat sheet or Google to properly type out the functions/modules.</p>
+            </body>
+            <div className="container-exercise">
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        <h2>Practice Exercise:</h2>
+                        <p>Write code that will generate a random number between 0-20 and print out the sqrt of that
+                            number all in one line.</p>
+                        <inter><code>
+                            import math <br/>
+                            import random <br/>
+                            <input ref={inputRef} type="text"/>
+                        </code></inter>
                     </label>
 
-            <br/>
+                    <br/>
 
-        <button type="submit">Submit answer</button>
-    </form><br/></div>
-<br/><br/>
-<Link to="/quiz2" className="btn-quiz">Take an optional quiz for additional practice!</Link>
-<br/><br/>
-<Link to="/u2_2" className="btn btn-primary" >Back</Link>
-&nbsp;<Link to="/u3_1" className="btn btn-primary" >Next</Link></div>
-  );
+                    <button type="submit">Submit answer</button>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <button onClick={handleToggleAnswer} type="button">
+                        {showAnswer ? 'Hide answer' : 'Show answer'}
+                    </button>
+                    {showAnswer && (
+                        <div className="answer-box">
+                            <p>name = input("Write your name")<br/>
+                                <b>print</b>(name)</p>
+                        </div>
+                    )}</form>
+                <br/></div>
+            <br/><br/>
+            <Link to="/quiz2" className="btn-quiz">Take an optional quiz for additional practice!</Link>
+            <br/><br/>
+            <Link to="/u2_2" className="btn btn-primary">Back</Link>
+            &nbsp;<Link to="/u3_1" className="btn btn-primary">Next</Link></div>
+    );
 }
