@@ -1,16 +1,24 @@
-import {React, useRef} from 'react';
-import {Link} from "react-router-dom"
+import {React, useRef, useState} from 'react';
+import {Link} from 'react-router-dom';
 
 export default function Unit_1_1() {
     const inputRef = useRef(null);
+    const [showAnswer, setShowAnswer] = useState(false);
 
     function handleSubmit(event) {
         event.preventDefault();
-        if (inputRef.current.value.toLowerCase() == 'print'){
+        if (inputRef.current.value.toLowerCase() === 'print') {
             alert('Correct!');
-        } else {alert('Incorrect - try again!');}
-      }
-        
+        } else {
+            alert('Incorrect - try again!');
+        }
+    }
+
+    const handleToggleAnswer = () => {
+        setShowAnswer(!showAnswer);
+    };
+
+
     return (
         <div className="container">
             <h1>1.1 Hello World</h1>
@@ -19,7 +27,7 @@ export default function Unit_1_1() {
                 writing code in Python is often like writing in plain English. It is often recommended as the first
                 programming language for beginners. Many of Python's features are intuitive and straightforward to
                 implement.</p>
-      
+
             <p>Here is a simple program:</p>
             <pre><code>
             # Prints "Hello world"<br/>
@@ -40,27 +48,39 @@ export default function Unit_1_1() {
                 Comments are used when you want
                 to note a piece of information within your code.</p>
             <br/>
+            <p>Now that you understand the basics of the “Hello World!” program, we will
+                go over how to properly set up Python programs.</p><br/>
             <div className="container-exercise">
                 <form onSubmit={handleSubmit}>
                     <label>
                         <h2>Practice Exercise:</h2>
                         <p>Insert the missing part of the code below to output the users name:</p>
-                        
+
                         <inter><code>
                             name = input("Write your name") <br/>
-                            <input ref={inputRef} type="text" />(name)
+                            <input ref={inputRef} type="text"/>(name)
                         </code></inter>
                         <br/>
                     </label>
-                    <button type="submit">Submit answer</button>   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-<!-- <button onClick="myFunction()">Show answer/button> -->
-                </form><br/></div>
+                    <button type="submit">Submit answer</button>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <button onClick={handleToggleAnswer} type="button">
+                        {showAnswer ? 'Hide answer' : 'Show answer'}
+                    </button>
+                    {showAnswer && (
+                        <div className="answer-box">
+                            <p>name = input("Write your name")<br/>
+                            <b>print</b>(name)</p>
+                        </div>
+                    )}
+                </form>
+            </div>
 
-            <p>Now that you understand the basics of the “Hello World!” program, we will
-                go over how to properly set up Python programs.</p><br/>
-            <Link to="/u1_2" className="btn btn-primary" >Next</Link>
 
+            <br/>
+            <Link to="/u1_2" className="btn btn-primary">
+                Next
+            </Link>
         </div>
     );
 }
-
