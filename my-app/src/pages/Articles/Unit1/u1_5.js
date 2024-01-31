@@ -82,7 +82,7 @@ export default function Unit_1_5() {
                         <h2>Practice Exercise:</h2>
                         <p>Given the code below, fill in the blank to cast the variable to be an integer.</p>
                         <inter><code>
-                            num1 = "one" <br/>
+                            num1 = "1" <br/>
                             print(<input ref={inputRef} type="text" />(num1))
                         </code></inter>
                         <br/>

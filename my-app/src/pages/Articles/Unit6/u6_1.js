@@ -62,7 +62,7 @@ export default function Unit_6_1() {
 
     <p>You simply type out the list name and place the element location within brackets.</p>
 
-<p>The code below utilizes a for-loop to access every element in a list.
+<p>The code belo w utilizes a for-loop to access every element in a list.
 <pre><code>for i in List1:<br/>
     &emsp;print(i)</code></pre><br/>
 

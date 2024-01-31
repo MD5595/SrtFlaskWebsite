@@ -27,9 +27,9 @@ export default function Unit_1_1() {
             </code> </pre>
 
             <p>Python code like this can be created in an Integrated Development Environment (IDE) or a code editor. For
-                this course, the PyCharm IDE will be used.</p>
+                this course, a code editor integrated onto this website will be used.</p>
 
-            <p>In the program above, there are three components: the comment, the `print()` <b>function</b>, and the text
+            <p>In the program above, there are three components: the comment, the print() function, and the text
                 within it. By putting this code into a text editor and running it, the following code will be outputted
                 to the console:</p>
             <pre><code>
@@ -52,7 +52,8 @@ export default function Unit_1_1() {
                         </code></inter>
                         <br/>
                     </label>
-                    <button type="submit">Submit answer</button>
+                    <button type="submit">Submit answer</button>   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<!-- <button onClick="myFunction()">Show answer/button> -->
                 </form><br/></div>
 
             <p>Now that you understand the basics of the “Hello World!” program, we will

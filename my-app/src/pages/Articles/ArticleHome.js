@@ -35,7 +35,7 @@ function ArticleHome() {
         <Link to="/u4_2">4.2: For Loops</Link>
         <br />
         <p>Unit 5</p>
-        <Link to="/u5_1">5.1: Functions</Link>
+        <Link to="/u5_1">5.1: Functions</Link><br/>
                 <Link to="/u5_2">5.2: Parameters</Link>
 
         <br />
