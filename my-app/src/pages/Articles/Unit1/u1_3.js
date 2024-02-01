@@ -117,7 +117,7 @@ export default function Unit_1_3() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>name = "dog"<br/>
+                            <p>variable_name = "dog"<br/>
                                 <b>print</b>(name)</p>
                         </div>
                     )}</form>
