@@ -88,8 +88,7 @@ export default function Unit_2_1() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>name = input("Write your name")<br/>
-                                <b>print</b>(name)</p>
+                            <p>16%3<br/>
                         </div>
                     )}         </form>
                 <br/></div>
