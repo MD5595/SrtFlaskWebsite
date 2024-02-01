@@ -93,8 +93,7 @@ export default function Unit_2_3() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>name = input("Write your name")<br/>
-                                <b>print</b>(name)</p>
+                            <p>print(math.sqrt(random.randint(0,20)))<br/>
                         </div>
                     )}</form>
                 <br/></div>
