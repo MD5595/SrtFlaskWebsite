@@ -103,8 +103,7 @@ print(“Welcome, John.”)
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>name = input("Write your name")<br/>
-                                <b>print</b>(name)</p>
+                            <p>while num 1%10 != 0:<br/>
                         </div>
                     )}  </form>
                 <br/></div>
