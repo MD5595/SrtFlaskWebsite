@@ -80,8 +80,7 @@ for i in range(9):<br/>
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>name = input("Write your name")<br/>
-                                <b>print</b>(name)</p>
+                            <p>50,33,-2<br/>
                         </div>
                     )}</form>
 
