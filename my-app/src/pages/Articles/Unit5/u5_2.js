@@ -102,8 +102,20 @@ export default function Unit_5_2() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>name = input("Write your name")<br/>
-                                <b>print</b>(name)</p>
+                            <inter><code>
+                        x = int(input("Input a number: ")) <br/>
+                        y = int(input("Input a number: ")) <br/>
+                        z = int(input("Input a number: ")) <br/>
+                        def maximum(<b>a,b,c</b>): <br/>
+                        if a > b and a > c: <br/>
+                        &emsp;print(<b>a</b>) <br/>
+                        elif b > a and b > c: <br/>
+                        &emsp;print(<b>b</b>) <br/>
+                        elif c > a and c > b: <br/>
+                        &emsp;print(<b>c</b>) <br/>
+
+                        maximum(<b>x,y,z</b>) <br/>
+                    </code></inter>
                         </div>
                     )}</form>
 
