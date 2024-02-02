@@ -103,7 +103,12 @@ print(“Welcome, John.”)
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>while num 1%10 != 0:<br/>
+
+                            <p>
+                                 num1 = 1 <br/>
+                                <b>while num1 % 10 != 0:</b><br/>
+                            &emsp;print(num1)<br/>
+                            num1 += 1</p>
                         </div>
                     )}  </form>
                 <br/></div>

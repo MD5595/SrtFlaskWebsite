@@ -80,7 +80,7 @@ for i in range(9):<br/>
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>50,33,-2<br/>
+                            <p>50,33,-2<br/></p>
                         </div>
                     )}</form>
 
@@ -88,7 +88,7 @@ for i in range(9):<br/>
             <br/>
             <Link to="/quiz4" className="btn-quiz">Take an optional quiz for additional practice!</Link>
             <br/><br/><br/>
-            <Link to="/u4_2" className="btn btn-primary">Back</Link>
+            <Link to="/u4_1" className="btn btn-primary">Back</Link>
             &nbsp;<Link to="/u5_1" className="btn btn-primary">Next</Link>
         </div>
     );

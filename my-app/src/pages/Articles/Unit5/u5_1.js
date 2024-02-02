@@ -72,7 +72,7 @@ export default function Unit_5_1() {
                     <inter><code>
                         <label><input ref={funCall} type="text"/></label> add_two(<label><input ref={funcParam}
                                                                                                 type="text"/></label>):<br/>
-                        return <label><input ref={returnCall} type="text"/></label><br/>
+                          &emsp;&emsp;return <label><input ref={returnCall} type="text"/></label><br/>
                     </code></inter>
                     <br/>
                     <button type="submit">Submit answer</button>
@@ -82,8 +82,8 @@ export default function Unit_5_1() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>name = input("Write your name")<br/>
-                                <b>print</b>(name)</p>
+                            <p> <b>def</b> add_two(<b>x</b>): <br/>
+                                &emsp; return <b>x+2</b></p>
                         </div>
                     )}  </form>
 

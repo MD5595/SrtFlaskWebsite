@@ -89,7 +89,7 @@ export default function Unit_2_1() {
                     {showAnswer && (
                         <div className="answer-box">
                             <p>16%3<br/>
-                        </div>
+                       </p> </div>
                     )}         </form>
                 <br/></div>
             <br/>

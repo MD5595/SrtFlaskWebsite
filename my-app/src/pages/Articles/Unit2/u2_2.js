@@ -73,7 +73,7 @@ export default function Unit_2_2() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>print(((38*2.1)/12)/3**2)<br/>
+                            <p>print(((38*2.1)/12)/3**2)<br/></p>
                         </div>
                     )}</form>
                 <br/></div>

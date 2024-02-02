@@ -130,7 +130,8 @@ export default function Unit_6_2() {
             <div className="container-exercise">
                 <h2>Practice Exercise:</h2>
                 <p>Finish the following code given the following prompt:<br/>
-                    Make a program that that randomly choices 5 elements from a list and adds those value to a new list.
+                    Make a program that that randomly chooses 5 elements from a list
+                    and adds those value to a new list.
                     After this print the 5th element the new list.
                 </p>
                 <form onSubmit={handleSubmit}>
@@ -155,8 +156,18 @@ export default function Unit_6_2() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>name = input("Write your name")<br/>
-                                <b>print</b>(name)</p>
+                            <p><inter><code>
+                                import <b>random</b><br/>
+                        <br/>
+                        list1 = ["apple", 53, "dog", 1, 5,7,3,2] <br/>
+                        list2 = [] <br/>
+
+                        for i in range(5):<br/>
+                                &emsp;val = random.<b>choice</b>(list1) <br/>
+                        &emsp;list2.<label><b>append</b>(val) <br/>
+                                print(list2[<b>4</b>]) <br/></label>
+
+                    </code></inter></p>
                         </div>
                     )}</form>
 
