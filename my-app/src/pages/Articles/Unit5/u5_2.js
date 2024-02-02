@@ -102,7 +102,7 @@ export default function Unit_5_2() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <inter><code>
+                            <pre><code>
                         x = int(input("Input a number: ")) <br/>
                         y = int(input("Input a number: ")) <br/>
                         z = int(input("Input a number: ")) <br/>
@@ -115,7 +115,7 @@ export default function Unit_5_2() {
                         &emsp;print(<b>c</b>) <br/>
 
                         maximum(<b>x,y,z</b>) <br/>
-                    </code></inter>
+                    </code></pre>
                         </div>
                     )}</form>
 

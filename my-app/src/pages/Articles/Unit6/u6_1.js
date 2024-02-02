@@ -100,7 +100,7 @@ print(Word[4])
                         <h2>Practice Exercise:</h2>
                         <p>Make a list called "basket" that contains "apples", "oranges", and "bananas".</p>
                         <input ref={inputRef} type="text"/>
-                    </label>
+                    </label><br/>
                     <button type="submit">Submit answer</button>
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     <button onClick={handleToggleAnswer} type="button">
@@ -113,8 +113,7 @@ print(Word[4])
                     )}</form>
                 <br/></div>
             <br/><br/>
-            <Link to="/quiz5" className="btn-quiz">Take an optional quiz for additional practice!</Link>
-            <br/><br/><br/>
+
             <Link to="/u5_2" className="btn btn-primary">Back</Link>
             &nbsp;<Link to="/u6_2" className="btn btn-primary">Next</Link>
         </div>
