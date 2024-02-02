@@ -80,7 +80,7 @@ export default function Unit_2_3() {
                         <inter><code>
                             import math <br/>
                             import random <br/>
-                            <input ref={inputRef} type="text"/>
+                            <input ref={inputRef} type="text" style={{ width: '700px', height: '25px' }}/>
                         </code></inter>
                     </label>
 

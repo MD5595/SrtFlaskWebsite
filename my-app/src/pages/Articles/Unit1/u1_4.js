@@ -116,8 +116,8 @@ export default function Unit_1_4() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>name = input("Write your name")<br/>
-                                <b>print</b>(name)</p>
+                            <p><pre><code>name = input("Write your name!")<br/>
+                                </code></pre></p>
                         </div>
                     )} </form>
                 <br/></div>

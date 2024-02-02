@@ -88,7 +88,7 @@ export default function Unit_2_1() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>16%3<br/>
+                            <p><pre><code>print(<b>16%3</b>)</code></pre><br/>
                        </p> </div>
                     )}         </form>
                 <br/></div>

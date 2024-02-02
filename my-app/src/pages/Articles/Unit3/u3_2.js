@@ -84,8 +84,18 @@ export default function Unit_3_2() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>name = input("Write your name")<br/>
-                                <b>print</b>(name)</p>
+                            <p>
+                                <pre><code>
+                            num1 = int(input("Input a number between 0 and 10: "))<br/>
+                                    <b>if num1 % 2 == 1 and num1 &lt; 5:</b><br/>
+                            &emsp;print("This is a special number")<br/>
+                                    <b>elif num1 % 2 == 1 and num1 >= 5 :</b><br/>
+                            &emsp;print("This is also a special number")<br/>
+                                    <b>else:</b><br/>
+                            &emsp;print("Just a number")
+
+                        </code></pre>
+                            </p>
                         </div>
                     )}   </form>
                 <br/></div>

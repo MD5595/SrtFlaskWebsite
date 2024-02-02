@@ -103,17 +103,17 @@ export default function Unit_3_1() {
                         y = math.floor(x) <br/><br/>
                         <label><input ref={firstIf} type="text"/></label><br/>
 
-                        print("Good job!") <br/><br/>
+                        &emsp;&emsp;print("Good job!") <br/>
                         <label><input ref={firstElse} type="text"/></label><br/>
 
-                        &emsp;print("Try one more time.") <br/>
-                        &emsp;num1 = int(input(" Input a number: ")) <br/>
-                        &emsp;x = math.sqrt(num1) <br/>
-                        &emsp;y = math.floor(x) <br/><br/>
+                        &emsp;&emsp;print("Try one more time.") <br/>
+                        &emsp;&emsp;num1 = int(input(" Input a number: ")) <br/>
+                        &emsp;&emsp;x = math.sqrt(num1) <br/>
+                        &emsp;&emsp;y = math.floor(x) <br/><br/>
                         <label><input ref={secondIf} type="text"/></label><br/>
 
 
-                        &emsp;&emsp; print("Good job!")<br/><br/>
+                        &emsp;&emsp; print("Good job!")<br/>
                         <label><input ref={secondElse} type="text"/></label><br/>
 
                         &emsp;&emsp; print("Maybe next time!")<br/><br/>
@@ -126,8 +126,27 @@ export default function Unit_3_1() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>name = input("Write your name")<br/>
-                                <b>print</b>(name)</p>
+                            <p> <pre><code>
+                        import math <br/>
+                        num1 = int(input("Input a number: ")) <br/>
+                        x = math.sqrt(num1) <br/>
+                        y = math.floor(x) <br/><br/>
+                                <b>if x == y:</b><br/>
+
+                        &emsp;&emsp;print("Good job!") <br/>
+                        <b>else:</b><br/>
+
+                        &emsp;&emsp;print("Try one more time.") <br/>
+                        &emsp;&emsp;num1 = int(input(" Input a number: ")) <br/>
+                        &emsp;&emsp;x = math.sqrt(num1) <br/>
+                        &emsp;&emsp;y = math.floor(x) <br/><br/>
+                       <b>if x == y:</b><br/>
+
+
+                        &emsp;&emsp; print("Good job!")<br/>
+                                <b>else:</b><br/>
+
+                        &emsp;&emsp; print("Maybe next time!")<br/><br/></code></pre></p>
                         </div>
                     )}  </form>
 

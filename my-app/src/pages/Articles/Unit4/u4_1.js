@@ -91,7 +91,7 @@ print(“Welcome, John.”)
                             num1 = 1 <br/>
                             <label><input ref={inputRef} type="text"/></label><br/>
                             &emsp;print(num1)<br/>
-                            num1 += 1
+                            &emsp;num1 += 1
 
                         </code></inter>
                         <br/>
@@ -105,10 +105,10 @@ print(“Welcome, John.”)
                         <div className="answer-box">
 
                             <p>
-                                 num1 = 1 <br/>
+                                 <pre><code>num1 = 1 <br/>
                                 <b>while num1 % 10 != 0:</b><br/>
                             &emsp;print(num1)<br/>
-                            num1 += 1</p>
+                            &emsp;num1 += 1</code></pre></p>
                         </div>
                     )}  </form>
                 <br/></div>

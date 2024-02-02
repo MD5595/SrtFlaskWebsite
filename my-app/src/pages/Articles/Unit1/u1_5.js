@@ -103,7 +103,10 @@ export default function Unit_1_5() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>int<br/>
+                            <p><pre><code>
+                            num1 = "1" <br/>
+                                print(<b>int</b>(num1))
+                        </code></pre>
                                 </p>
                         </div>
                     )}  </form>
