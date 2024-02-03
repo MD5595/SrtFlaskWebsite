@@ -108,7 +108,7 @@ print(Word[4])
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>basket=["apples","oranges","bananas"]</p>
+                            <p><pre><code>basket=["apples","oranges","bananas"]</code></pre></p>
                         </div>
                     )}</form>
                 <br/></div>

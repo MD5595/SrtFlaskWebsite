@@ -82,8 +82,8 @@ export default function Unit_5_1() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p> <b>def</b> add_two(<b>x</b>): <br/>
-                                &emsp; return <b>x+2</b></p>
+                            <p> <pre><code><b>def</b> add_two(<b>x</b>): <br/>
+                                &emsp; return <b>x+2</b></code></pre></p>
                         </div>
                     )}  </form>
 
