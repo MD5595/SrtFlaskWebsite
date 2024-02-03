@@ -117,10 +117,10 @@ export default function Unit_1_3() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>variable_name = "dog"<br/></p>
+                            <p><pre><code><b>variable_name = "dog"</b></code></pre></p>
                         </div>
                     )}</form>
-                <br/></div>
+                </div>
             <br/><br/>
             <Link to="/u1_2" className="btn btn-primary">Back</Link>
             &nbsp;<Link to="/u1_4" className="btn btn-primary">Next</Link></div>

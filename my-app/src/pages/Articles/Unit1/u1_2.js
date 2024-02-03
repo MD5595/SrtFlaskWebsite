@@ -70,11 +70,11 @@ export default function Unit_1_2() {
                     </button>
                     {showAnswer && (
                         <div className="answer-box">
-                            <p>print("Hello Joe")<br/>
+                            <p><pre><code><b>print("Hello Joe")</b></code></pre>
                                 </p>
                         </div>
                     )}</form>
-                <br/></div>
+                </div>
             <br/>
             <Link to="/u1_1" className="btn btn-primary">Back</Link>
             &nbsp;<Link to="/u1_3" className="btn btn-primary">Next</Link>
