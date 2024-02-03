@@ -11,6 +11,13 @@ function Syllabus() {
                 basic Python knowledge and proficiency. Students will
                 learn Python syntax and conventions, model programs,
                 use functions, conditionals, lists, modules, and complete benchmarks. </p>
+            <p><b>Goals</b></p>
+            By the end of this course you will be able to:
+
+<br/>
+            Utilize your developed  critical thinking skills
+           <br/> Create logical programs that utilize various programming components
+           <br/> Read and edit pre-existing Python code
 
             <p><b>Topics</b></p>
             <p>Unit 1: Introduction <br/>
@@ -18,21 +25,25 @@ function Syllabus() {
                 1.2: Syntax and naming/formatting conventions<br/>
                 1.3: Variables<br/>
                 1.4: Printing and inputs<br/>
-                1.5: Data types<br/>
+                1.5: Data types<br/><br/>
                 Unit 2: Math<br/>
                 2.1: Basic symbols<br/>
                 2.2: Order of operations<br/>
-                2.3: Modules<br/>
+                2.3: Modules<br/><br/>
                 Unit 3: Conditionals<br/>
                 3.1: If-else<br/>
-                3.2: Else-If <br/>
-                3.3: Nested statements<br/>
+                3.2: Else-If <br/><br/>
                 Unit 4: Loops<br/>
                 4.1: While loop<br/>
-                4.2: For-loop<br/>
-                Unit 5: Lists </p>
-
-            <p><b>Grading</b></p>
+                4.2: For-loop<br/><br/>
+                Unit 5: Functions<br/>
+                5.1: Function Declartion<br/>
+                5.2: Parameter/Returning<br/><br/>
+                Unit 6: Lists<br/>
+                6.1: Lists<br/>
+                6.2: List Functions<br/><br/>
+</p>
+            <p><b>Timeline</b></p>
             <p></p>
             <p>This course will be completed within a 2-week time period.
                 Students will first complete a pre-test, then start progressing

@@ -23,6 +23,7 @@ import Unit32 from "./pages/Articles/Unit3/u3_2";
 import Unit41 from "./pages/Articles/Unit4/u4_1";
 import Unit42 from "./pages/Articles/Unit4/u4_2";
 import Unit51 from "./pages/Articles/Unit5/u5_1";
+import Unit52 from "./pages/Articles/Unit5/u5_2";
 import Unit61 from "./pages/Articles/Unit6/u6_1";
 import Unit62 from "./pages/Articles/Unit6/u6_2";
 import Quiz1 from "./pages/Quizzes/quiz1";
@@ -83,6 +84,7 @@ function App() {
                 <Route index path="/u4_1" element={<Unit41/>}/>
                 <Route index path="/u4_2" element={<Unit42/>}/>
                 <Route index path="/u5_1" element={<Unit51/>}/>
+                <Route index path="/u5_2" element={<Unit52/>}/>
                 <Route index path="/u6_1" element={<Unit61/>}/>
                 <Route index path="/u6_2" element={<Unit62/>}/>
                 <Route index path="/quiz1" element={<Quiz1/>}/>
