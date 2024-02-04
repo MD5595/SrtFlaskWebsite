@@ -18,3 +18,15 @@ CREATE TABLE scores(
 	test TEXT,
 	score REAL
 );
+
+drop TABLE IF EXISTS preTest;
+CREATE TABLE preTest(
+	username TEXT,
+	code TEXT
+);
+
+drop TABLE IF EXISTS postTest;
+CREATE TABLE postTest(
+	username TEXT,
+	code TEXT
+);
