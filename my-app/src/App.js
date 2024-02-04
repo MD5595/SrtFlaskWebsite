@@ -33,11 +33,13 @@ import Quiz4 from "./pages/Quizzes/quiz4";
 import Quiz5 from "./pages/Quizzes/quiz5";
 import Quiz6 from "./pages/Quizzes/quiz6";
 import KeyPage from "./pages/KeyPage";
+import PracticeCoding from "./pages/PracticeCoding";
 
 
 import DataPage from "./pages/DataPage";
 import PostTest from "./pages/PostTest";
 import PreTest from "./pages/PreTest";
+
 import Timer from "./components/Timer";
 function App() {
     return (
@@ -75,6 +77,7 @@ function App() {
                 <Route index path="/PreTest" element={<PreTest/>}/>
                 <Route index path="/PostTest" element={<PostTest/>}/>
                 <Route index path="/KeyPage" element={<KeyPage/>}/>
+                <Route index path="/PracticeCoding" element={<PracticeCoding/>}/>
 
             </Routes>
         </BrowserRouter>
