@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_5_1() {
     const funCall = useRef(null);
@@ -21,14 +22,11 @@ export default function Unit_5_1() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit5_1', loggedInUser);
     return (
         <div className="container">
-            <head>
-                <title>Unit 6.1: Functions</title>
-            </head>
 
-            <body>
             <h1>Unit 6.1: Functions</h1>
             <p>Python comes preloaded with many functions, and more can be used by importing modules. You have the
                 ability to
@@ -63,7 +61,6 @@ export default function Unit_5_1() {
                 name, the parameters (optional), a colon, the action the function performs, and
                 the <code>return</code> keyword
                 (optional and typically only present when there are parameters), in that order.</p>
-            </body>
             <div className="container-exercise">
                 <h2>Practice Exercise:</h2>
                 <p>Write a function called "add_two" that takes a value x and returns x+2.</p><br/>
@@ -75,9 +72,7 @@ export default function Unit_5_1() {
                           &emsp;&emsp;return <label><input ref={returnCall} type="text"/></label><br/>
                     </code></inter>
                     <br/>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (

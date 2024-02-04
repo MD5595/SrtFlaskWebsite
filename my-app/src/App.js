@@ -40,35 +40,12 @@ import PostTest from "./pages/PostTest";
 import PreTest from "./pages/PreTest";
 import Timer from "./components/Timer";
 function App() {
-    var [getMessage, setGetMessage] = useState({})
-    var [page, updatePage] = useState();
-    useEffect(() => {
-        axios.get('http://localhost:5000/flask/hello').then(response => {
-            console.log("SUCCESS", response)
-            setGetMessage(response)
-        }).catch(error => {
-            console.log(error)
-        })
-    }, [])
-    useEffect(() => {
-        let path = window.location.pathname.substring(1);
-        axios.post('http://localhost:5000/sendlocationTime', {path,username}).then(response => {
-            console.log("SUCCESS", response);
-            updatePage(path);
-            console.log(path)
-        })
-            .catch(error => {
-                console.error(error);
-                console.log(path);
-
-            });
-    },);
     return (
         <BrowserRouter>
             <NavBar/>
             <Routes>
                 <Route index path="/" element={<LandingPage/>}/>
-                <Route index path="/Home" element={<Home/>}/>
+                <Route index path="/HomePage" element={<Home/>}/>
                 <Route index path="/Syllabus" element={<Syllabus/>}/>
                 <Route index path="/ArticleHome" element={<ArticleHome/>}/>
                 <Route index path="/u1_1" element={<Unit11/>}/>

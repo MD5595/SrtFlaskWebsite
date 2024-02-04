@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_2_3() {
     const inputRef = useRef(null);
@@ -17,14 +18,11 @@ export default function Unit_2_3() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit2_3', loggedInUser);
     return (
         <div className="container">
-            <head>
-                <title>Unit 2.3: Modules</title>
-            </head>
 
-            <body>
             <h1>Unit 2.3: Modules</h1>
             <p>Modules are used to shorten programs by giving the user access to a group of functions. Generally,
                 functions are
@@ -70,25 +68,22 @@ export default function Unit_2_3() {
             <p>It will be convenient for you to memorize these functions, but it is no problem if you forget the correct
                 syntax.
                 Consult the cheat sheet or Google to properly type out the functions/modules.</p>
-            </body>
             <div className="container-exercise">
                 <form onSubmit={handleSubmit}>
                     <label>
                         <h2>Practice Exercise:</h2>
                         <p>Write code that will generate a random number between 0-20 and print out the sqrt of that
                             number all in one line.</p>
-                        <inter><code>
+                        <pre><code>
                             import math <br/>
                             import random <br/>
                             <input ref={inputRef} type="text" style={{ width: '700px', height: '25px' }}/>
-                        </code></inter>
+                        </code></pre>
                     </label>
 
                     <br/>
 
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (

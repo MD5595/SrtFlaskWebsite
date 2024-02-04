@@ -1,99 +1,47 @@
-from sqlite3 import IntegrityError
 
 from flask_cors import CORS
 
-from create_table import UserLocationTime, Students, Scores, PreTest, PostTest
-from utils import load_flashcards
+from utils.utils import load_flashcards
 import json
-from flask import Flask, render_template, request, jsonify, session, send_from_directory
-from flask_restful import Api, Resource, reqparse
-from flask_sqlalchemy import SQLAlchemy
-import sqlite3
-import datetime
-
+from flask import Flask, request, jsonify
+import sqlite3 as sql
+import utils.db as db
+from datetime import datetime
 
 
 app = Flask(__name__, static_url_path='', static_folder='my-app/src')
 cors = CORS(app, supports_credentials=True)
 CORS(app)
 
-api = Api(app)
-app.config['SECRET_KEY'] = 'Keeey'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-db = SQLAlchemy(app)
-app_name = 'myapp'
-
-
-
-@app.route("/totalTime", methods=["POST"])
-def totalTime():
-    data = request.get_json()
-    username = request.json['username']
-
-    time = request.json["time"]
-
-    student = Students.query.filter_by(username=username).first()
-    student.time += time
-    db.session.commit()
-
-@app.route("/signup", methods=["POST"])
-def signup():
-    username = request.json["username"]
-    existing_user = Students.query.filter_by(username=username).first()
-
-    if existing_user is not None:
-        session['user_id'] = existing_user.id
-        return render_template('home.html')
-    else:
-        new_user = Students(username=username, totalTime=0)
-        db.session.add(new_user)
-        db.session.commit()
-        session['user_id'] = new_user.id
-
-        return render_template('home.html')
-
-      
-
-
-@app.route('/Students', methods=['GET'])
-def get_students():
-    students = Students.query.all()
-    return jsonify({'Students': [{'username': Students.username} for student in Students]})
-
   
 @app.route('/students', methods=['POST'])
 def add_student():
-    data = request.get_json()
-    new_username = data.get('username')
-    isChecked = data.get('isChecked')
-
-    if new_username and isChecked:
-        new_student1 =UserLocationTime(username=new_username)
-        db.session.add(new_student1)
-        db.session.commit()
-
-
-        new_student = Students(username=new_username)
-        db.session.add(new_student)
-        db.session.commit()
+    username = request.json['username']
+    newStudent = request.json['isChecked']
+    conn = db.connect_db()
+    if newStudent:
+        query = f'''INSERT INTO students (username, total_time) VALUES (?, ?)'''
+        conn.cursor().execute(query, (username, 0))
+        conn.commit()
         return jsonify({'message': 'Student added successfully'}), 201
     else:
-        return jsonify({'message': 'Invalid data provided'}), 400
+        return jsonify({'message': 'Not new user'})
 
 
-@app.route('/sendlocationTime', methods=['POST'])
-def sendlocationTime():
-    data = request.get_json()
-    page = data.get('page')
-    username = data.get('username')
+@app.route('/sendLocationTime', methods=['POST'])
+def sendLocationTime():
+    page = request.json['page']
+    username = request.json['username']
+    now = datetime.now().strftime("%d/%m/%Y %H:%M:%S").split(' ')
+    conn = db.connect_db()
+    query = f'''INSERT INTO UserLocationTime (username, page, date, time) VALUES (?, ?, ?, ?)'''
+    conn.cursor().execute(query, (username, page, now[0], now[1]))
+    conn.commit()
+    return jsonify({'message': 'Time added'}), 201
 
-    dateAndTime = datetime.datetime.now()
-    time1 = dateAndTime.strftime('%X')
-    date1 = dateAndTime.strftime('%x')
 
-    entry = UserLocationTime(username = username, time=time1, date = date1, page= page)
-    db.session.add(entry)
-    db.session.commit()
+
+
 
 @app.route('/pretestProgram', methods=['POST'])
 def pretestProgram():
@@ -153,8 +101,6 @@ def get_flashcards():
     res = json.dumps({'results': results})
     print(res)
     return res
-
-
 
 @app.route('/get_units')
 def get_units():

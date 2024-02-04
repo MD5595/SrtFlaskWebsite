@@ -2,8 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import FlashcardList from '../components/FlashcardList';
 import '../App.css'
 import axios from 'axios'
+import { send_time } from '../components/AxiosCalls';
 
 function FlashcardPage() {
+  const loggedInUser = localStorage.getItem('username');
+  send_time('flashcards', loggedInUser);
+
   const [flashcards, setFlashcards] = useState([])
   const [categories, setCategories] = useState([])
 

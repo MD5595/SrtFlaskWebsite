@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_4_1() {
     const inputRef = useRef(null);
@@ -17,13 +18,10 @@ export default function Unit_4_1() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit4_1', loggedInUser);
     return (
         <div className="container">
-            <head>
-                <title>Unit 4.1: While Loops</title>
-            </head>
-            <body>
             <h1>Unit 4.1: While Loops</h1>
 
             <p>Like conditionals, loops check a statement and perform an action depending on if the statement is true or
@@ -87,18 +85,16 @@ print(“Welcome, John.”)
                             10. <br/>
                             Note: Use the remainder operator to check if the number is divisible by 10.<br/>
                         </p>
-                        <inter><code>
+                        <pre><code>
                             num1 = 1 <br/>
                             <label><input ref={inputRef} type="text"/></label><br/>
                             &emsp;print(num1)<br/>
                             &emsp;num1 += 1
 
-                        </code></inter>
+                        </code></pre>
                         <br/>
                     </label>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (
@@ -112,7 +108,6 @@ print(“Welcome, John.”)
                         </div>
                     )}  </form>
                 <br/></div>
-            </body>
             <br/>
             <Link to="/u3_2" className="btn btn-primary">Back</Link>
             &nbsp;<Link to="/u4_2" className="btn btn-primary">Next</Link>

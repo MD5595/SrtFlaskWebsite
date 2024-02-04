@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_2_2() {
     const inputRef = useRef(null);
@@ -17,14 +18,10 @@ export default function Unit_2_2() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit2_2', loggedInUser);
     return (
         <div className="container">
-            <head>
-                <title>Unit 2.2: The Order of Operations</title>
-            </head>
-
-            <body>
             <h1>Unit 2.2: The Order of Operations</h1>
             <p>Whenever a Python program has multiple operators in one line, different parts of the equation will be
                 solved in
@@ -57,7 +54,6 @@ export default function Unit_2_2() {
             <p>First (6 / 2), then 2 ** 2, 3 * 6, 3 * 3, 18 + 9, and finally 27 + 4 to get 31.</p>
 
             <p>Python does basic math in the same order you would do on paper.</p>
-            </body>
             <div className="container-exercise">
                 <form onSubmit={handleSubmit}>
                     <label>
@@ -66,9 +62,7 @@ export default function Unit_2_2() {
                             to the second power</p>
                         <input ref={inputRef} type="text"/>
                     </label><br/>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (

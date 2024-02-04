@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_3_2() {
     const firstIf = useRef(null);
@@ -20,14 +21,11 @@ export default function Unit_3_2() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit3_2', loggedInUser);
     return (
         <div className="container">
-            <head>
-                <title>Unit 3.2: Else-if</title>
-            </head>
 
-            <body>
             <h1>Unit 3.2: Else-if</h1>
             <p>The more complicated version of if else statements are else-if statements, which have 2 or more
                 statements. Below is
@@ -52,7 +50,6 @@ export default function Unit_3_2() {
 
             <p>Remember that you can place anything within if statements, including more if statements and
                 conditionals.</p>
-            </body>
             <div className="container-exercise">
                 <form onSubmit={handleSubmit}>
                     <label>
@@ -77,9 +74,7 @@ export default function Unit_3_2() {
                         </code></inter>
                         <br/>
                     </label>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (

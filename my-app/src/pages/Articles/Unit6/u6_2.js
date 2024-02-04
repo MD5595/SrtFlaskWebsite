@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_6_2() {
 
@@ -23,14 +24,11 @@ export default function Unit_6_2() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit6_2', loggedInUser);
     return (
         <div className="container">
-            <head>
-                <title>Unit 6.2: List Functions</title>
-            </head>
 
-            <body>
             <h1>Unit 6.2: List Functions</h1>
             <p>
                 Just like any other variable, lists can be manipulated by
@@ -125,7 +123,6 @@ export default function Unit_6_2() {
             print(l)<br/>
           </code>
         </pre>
-            </body>
 
             <div className="container-exercise">
                 <h2>Practice Exercise:</h2>
@@ -149,9 +146,7 @@ export default function Unit_6_2() {
 
                     </code></inter>
                     <br/>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (

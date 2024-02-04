@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_4_2() {
     const firstVal = useRef(null);
@@ -18,15 +19,10 @@ export default function Unit_4_2() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit4_2', loggedInUser);
     return (
         <div className="container">
-
-            <head>
-                <title>Unit 4.2: For Loops</title>
-            </head>
-
-            <body>
             <h1>Unit 4.2: For Loops</h1>
             <p>For loops are used when you know how many iterations your bit of code will have. The for loop below uses
                 the range()
@@ -58,24 +54,21 @@ for i in range(9):<br/>
                 &emsp;&emsp;break<br/>
                 &emsp;print(i)<br/>
 </code></pre>
-            </body>
             <div className="container-exercise">
                 <h2>Practice Exercise:</h2>
                 <p>Fill in the blank for the range function that starts at 50, ends at 33, and decreases by 2 every loop.<br/>
                 </p>
                 <form onSubmit={handleSubmit}>
 
-                    <inter><code>
+                    <pre><code>
                         range(
                         <label><input ref={firstVal} type="text"/></label><br/>,<label><input ref={secondVal}
                                                                                               type="text"/></label><br/>,
                         <label><input ref={thirdVal} type="text"/></label><br/>)
 
-                    </code></inter>
+                    </code></pre>
                     <br/>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (

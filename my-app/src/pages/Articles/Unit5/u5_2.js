@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_5_2() {
     const funParams = useRef(null);
@@ -24,14 +25,11 @@ export default function Unit_5_2() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit5_2', loggedInUser);
     return (
         <div className="container">
-            <head>
-                <title>Unit 6.2: Parameters/Returning</title>
-            </head>
 
-            <body>
             <h1>Unit 6.2: Parameters/Returning</h1>
             <p>Parameters allow your functions to receive values and then return a new value.</p>
 
@@ -72,7 +70,6 @@ export default function Unit_5_2() {
     </code></pre>
 
             <p>By returning the value the function produces, the product can be printed or used in operations.</p>
-            </body>
             <div className="container-exercise">
                 <h2>Practice Exercise:</h2>
                 <p>Finish the following code given the following prompt:<br/>
@@ -95,9 +92,7 @@ export default function Unit_5_2() {
                         maximum(<label><input ref={inputRef} type="text"/></label>) <br/>
                     </code></inter>
                     <br/>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (
