@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from 'react-router-dom';
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_1_1() {
     const inputRef = useRef(null);
@@ -18,6 +19,8 @@ export default function Unit_1_1() {
         setShowAnswer(!showAnswer);
     };
 
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit1_1', loggedInUser);
 
     return (
         <div className="container">
@@ -56,15 +59,13 @@ export default function Unit_1_1() {
                         <h2>Practice Exercise:</h2>
                         <p>Insert the missing part of the code below to output the users name:</p>
 
-                        <inter><code>
+                        <pre><code>
                             name = input("Write your name") <br/>
                             <input ref={inputRef} type="text"/>(name)
-                        </code></inter>
+                        </code></pre>
                         <br/>
                     </label>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (

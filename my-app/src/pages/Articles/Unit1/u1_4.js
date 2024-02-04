@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_1_4() {
     const inputRef = useRef(null);
@@ -17,14 +18,10 @@ export default function Unit_1_4() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit1_4', loggedInUser);
     return (
         <div className="container">
-            <head>
-                <title>Unit 1.4: Printing and Inputting</title>
-            </head>
-
-            <body>
             <h1>Unit 1.4: Printing and Inputting</h1>
             <p>As Unit 1.1 showed, code you write can be displayed on the console by
                 utilizing the print() function.</p>
@@ -99,7 +96,6 @@ export default function Unit_1_4() {
             <pre><code>
                 You will be 27 in 10 years.
             </code></pre>
-            </body>
             <br/>
 
             <div className="container-exercise">
@@ -109,9 +105,7 @@ export default function Unit_1_4() {
                         <p>Write an input statement that asks the user to "Write your name"</p>
                         <input ref={inputRef} type="text"/>
                     </label><br/>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (

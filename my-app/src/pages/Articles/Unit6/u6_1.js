@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_6_1() {
     const inputRef = useRef(null);
@@ -24,14 +25,10 @@ export default function Unit_6_1() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit6_1', loggedInUser);
     return (
         <div className="container">
-            <head>
-                <title>Unit 6.1: Lists</title>
-            </head>
-
-            <body>
             <h1>Unit 6.1: Lists</h1>
             <p>Lists store multiple values within one variable. Any data type can be stored within a list, and differing
                 data
@@ -93,7 +90,6 @@ print(Word[4])
 </code></pre>
             </p>
 
-            </body>
             <div className="container-exercise">
                 <form onSubmit={handleSubmit}>
                     <label>
@@ -101,9 +97,7 @@ print(Word[4])
                         <p>Make a list called "basket" that contains "apples", "oranges", and "bananas".</p>
                         <input ref={inputRef} type="text"/>
                     </label><br/>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (

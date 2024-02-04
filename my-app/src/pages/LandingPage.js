@@ -7,31 +7,25 @@ let username = '';
 
 function LandingPage() {
     var navigate = useNavigate();
+    var headers = {
+        'Content-Type': 'application/json',
+      }
+
     let [isChecked, updateCheckbox] = useState(false)
     const [localUsername, setLocalUsername] = useState('');
-    const handleClick = async (e) => {
-        e.preventDefault();
-        try {
-            localStorage.setItem('username', localUsername);
-            setLocalUsername(localUsername);
-            var checkbox = document.getElementById("checkAcc");
-            isChecked = checkbox.checked;
-
-            axios.post('http://localhost:5000/students', {isChecked, username}).then(response => {
-                console.log("SUCCESS", response);
-                updateCheckbox(isChecked);
-                navigate("/HomePage");
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-
-            navigate("/HomePage");
-        } catch (error) {
-            console.error('Error submitting username:', error);
-        }
-    };
-
+        function handleSubmit(e) {
+        console.log(isChecked, localUsername);
+        e.preventDefault()
+        axios
+        .post('http://127.0.0.1:5000/students', {
+            isChecked: isChecked,
+            username: localUsername,
+            },
+        headers=headers);
+        console.log("SUCCESS");
+        updateCheckbox(isChecked);
+        localStorage.setItem('username', localUsername)
+      }
 
     const CheckboxChange = (e) => {
         var checkbox = document.getElementById("checkAcc");
@@ -41,7 +35,7 @@ function LandingPage() {
 
     return (
         <div className="container">
-            <form onSubmit={handleClick}>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Username:</label><br/>
                 <input type="text" id="name" name="name" value={localUsername}
                        onChange={(e) => setLocalUsername(e.target.value)}/><br/>

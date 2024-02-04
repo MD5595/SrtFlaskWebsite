@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_2_1() {
     const inputRef = useRef(null);
@@ -17,14 +18,10 @@ export default function Unit_2_1() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit2_1', loggedInUser);
     return (
         <div className="container">
-            <head>
-                <title>Unit 2.1: Basic Symbols</title>
-            </head>
-
-            <body>
             <h1>Unit 2.1: Basic Symbols</h1>
             <p>Mathematical symbols, which are operators, are used in Python equations.</p>
 
@@ -69,21 +66,17 @@ export default function Unit_2_1() {
       0 <br/>
       7 <br/>
     </code></pre>
-            </body>
             <div className="container-exercise">
                 <form onSubmit={handleSubmit}>
                     <label>
                         <h2>Practice Exercise:</h2>
                         <p>Complete the code below if you wanted to print the remainder of 16 after dividing by 3.</p>
-                        <inter><code>
+                        <pre><code>
                             print(<input ref={inputRef} type="text"/>)
-                        </code></inter>
+                        </code></pre>
                         <br/>
-
-                    </label><br/>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    </label>
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (

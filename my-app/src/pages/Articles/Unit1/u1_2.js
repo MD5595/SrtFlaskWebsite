@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_1_2() {
     const inputRef = useRef(null);
@@ -17,12 +18,13 @@ export default function Unit_1_2() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit1_2', loggedInUser);
     return (
         <div className="container">
-            <head>
+            <h1>
                 <title>1.2 Python Syntax and Formatting Conventions</title>
-            </head>
+            </h1>
 
 
             <h1>1.2 Python Syntax and Formatting Conventions</h1>
@@ -57,15 +59,12 @@ export default function Unit_1_2() {
                     <label>
                         <h2>Practice Exercise:</h2>
                         <p>Fix the following line of code:</p>
-                        <inter><code>
+                        <pre><code>
                             print(Hello Joe!)
-                        </code></inter>
-                        <br/>
+                        </code></pre>
                         <input ref={inputRef} type="text"/>
                     </label><br/>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (

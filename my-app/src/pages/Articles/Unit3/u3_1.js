@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_3_1() {
     const firstIf = useRef(null);
@@ -22,14 +23,10 @@ export default function Unit_3_1() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit3_1', loggedInUser);
     return (
         <div className="container">
-            <head>
-                <title>Unit 3.1: If-Else Statements</title>
-            </head>
-
-            <body>
             <h1>Unit 3.1: If-Else Statements</h1>
             <p>Conditional statements determine if one or multiple conditions have been met, then, depending on whether
                 the
@@ -87,7 +84,6 @@ export default function Unit_3_1() {
     </code></pre>
 
             <p>Note how you can include multiple actions under one condition.</p>
-            </body>
             <div className="container-exercise">
                 <h2>Practice Exercise:</h2>
                 <p>Finish the following code given the following prompt:<br/>
@@ -96,7 +92,7 @@ export default function Unit_3_1() {
                     If the user succeeds on the second try it prints "Good Job!", otherwise "Maybe next time!".</p>
                 <form onSubmit={handleSubmit}>
 
-                    <inter><code>
+                    <pre><code>
                         import math <br/>
                         num1 = int(input("Input a number: ")) <br/>
                         x = math.sqrt(num1) <br/>
@@ -117,11 +113,9 @@ export default function Unit_3_1() {
                         <label><input ref={secondElse} type="text"/></label><br/>
 
                         &emsp;&emsp; print("Maybe next time!")<br/><br/>
-                    </code></inter>
+                    </code></pre>
                     <br/>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (

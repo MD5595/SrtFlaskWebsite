@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
 import axios from "axios";
-
+import {send_time} from '../../components/AxiosCalls';
 
 export default function Quiz6 (){
+  const loggedInUser = localStorage.getItem('username');
+  send_time('quiz6', loggedInUser);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
     const [answers, setAnswers] = useState([]);

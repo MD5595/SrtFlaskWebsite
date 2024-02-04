@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_1_3() {
     const inputRef = useRef(null);
@@ -17,14 +18,10 @@ export default function Unit_1_3() {
             alert('Incorrect - try again!');
         }
     }
-
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit1_3', loggedInUser);
     return (
         <div className="container">
-            <head>
-                <title>1.3 Variables</title>
-            </head>
-
-            <body>
             <h1>1.3 Variables</h1>
             <p>Variables are values or characters that are stored within a phrase. Some of the data types that variables
                 can store
@@ -102,7 +99,6 @@ export default function Unit_1_3() {
     </code></pre>
 
             <p>Making your variables descriptive is vital to creating readable code that is easily decipherable.</p>
-            </body>
             <div className="container-exercise">
                 <form onSubmit={handleSubmit}>
                     <label>
@@ -110,9 +106,7 @@ export default function Unit_1_3() {
                         <p>Create a variable and assign it the value "dog"</p>
                         <input ref={inputRef} type="text"/>
                     </label><br/>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (

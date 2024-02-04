@@ -1,5 +1,6 @@
 import {React, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
 
 export default function Unit_1_5() {
     const inputRef = useRef(null);
@@ -16,14 +17,11 @@ export default function Unit_1_5() {
             alert('Incorrect - try again!');
         }
     }
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit1_5', loggedInUser);
 
     return (
         <div className="container">
-            <head>
-                <title>Unit 1.5: Data Types</title>
-            </head>
-
-            <body>
             <h1>Unit 1.5: Data Types</h1>
             <p>In Unit 1.3 you briefly got introduced to data types, which dictate what operations/actions can be
                 performed on a
@@ -81,7 +79,7 @@ export default function Unit_1_5() {
                 be added to
                 variables of the same data type but booleans can’t. Also, you can only use the modulus operator with the
                 int and
-                float data types.</p></body>
+                float data types.</p>
             <br/>
 
             <div className="container-exercise">
@@ -89,16 +87,14 @@ export default function Unit_1_5() {
                     <label>
                         <h2>Practice Exercise:</h2>
                         <p>Given the code below, fill in the blank to cast the variable to be an integer.</p>
-                        <inter><code>
+                        <pre><code>
                             num1 = "1" <br/>
                             print(<input ref={inputRef} type="text"/>(num1))
-                        </code></inter>
+                        </code></pre>
                         <br/>
 
-                    </label><br/>
-                    <button type="submit">Submit answer</button>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <button onClick={handleToggleAnswer} type="button">
+                    </label>
+                    <button type="submit">Submit answer</button> <button onClick={handleToggleAnswer} type="button">
                         {showAnswer ? 'Hide answer' : 'Show answer'}
                     </button>
                     {showAnswer && (
