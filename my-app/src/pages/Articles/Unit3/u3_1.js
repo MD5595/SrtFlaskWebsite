@@ -1,5 +1,7 @@
 import {React,useRef} from 'react';
 import {Link} from "react-router-dom";
+import {send_time} from '../../../components/AxiosCalls';
+
 
 export default function Unit_3_1() {
     const firstIf = useRef(null);
@@ -16,7 +18,8 @@ export default function Unit_3_1() {
             alert('Correct!');
         } else {alert('Incorrect - try again!');}
       }
-
+      const loggedInUser = localStorage.getItem('username');
+      send_time('unit3_1', loggedInUser);
     return (
         <div className="container">
             <head>

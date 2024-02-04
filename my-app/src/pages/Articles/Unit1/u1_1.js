@@ -1,6 +1,6 @@
 import {React, useRef} from 'react';
 import {Link} from "react-router-dom"
-
+import { send_time } from '../../../components/AxiosCalls';
 export default function Unit_1_1() {
     const inputRef = useRef(null);
 
@@ -10,7 +10,10 @@ export default function Unit_1_1() {
             alert('Correct!');
         } else {alert('Incorrect - try again!');}
       }
-        
+    
+    const loggedInUser = localStorage.getItem('username');
+    send_time('unit1_1', loggedInUser);
+    
     return (
         <div className="container">
             <h1>1.1 Hello World</h1>
@@ -46,10 +49,10 @@ export default function Unit_1_1() {
                         <h2>Practice Exercise:</h2>
                         <p>Insert the missing part of the code below to output the users name:</p>
                         
-                        <inter><code>
+                        <pre><code>
                             name = input("Write your name") <br/>
                             <input ref={inputRef} type="text" />(name)
-                        </code></inter>
+                        </code></pre>
                         <br/>
                     </label>
                     <button type="submit">Submit answer</button>
