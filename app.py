@@ -13,7 +13,7 @@ app = Flask(__name__, static_url_path='', static_folder='my-app/src')
 cors = CORS(app, supports_credentials=True)
 CORS(app)
 
-  
+
 @app.route('/students', methods=['POST'])
 def add_student():
     username = request.json['username']
@@ -39,19 +39,17 @@ def sendLocationTime():
     conn.commit()
     return jsonify({'message': 'Time added'}), 201
 
-
-
-
-
 @app.route('/pretestProgram', methods=['POST'])
 def pretestProgram():
     data = request.get_json()
     code = data.get('code')
     username = data.get('username')
+    conn = db.connect_db()
 
-    answer = PreTest(username=username,code = code)
-    db.session.add(answer)
-    db.session.commit()
+    query = f'''INSERT INTO PreTest (username, code) VALUES (?, ?)'''
+
+    conn.cursor().execute(query, (username,code))
+    conn.commit()
 
 
 @app.route('/getUserScore', methods =['GET'])
@@ -75,10 +73,11 @@ def postUserScore():
     test = data.get('test')
     score= data.get('score')
 
-    entry = Scores(username=username, test=test, score=score)
-
-    db.session.add(entry)
-    db.session.commit()
+    conn = db.connect_db()
+    query = f'''INSERT INTO Scores (username, test, score) VALUES (?, ?, ?)'''
+    conn.cursor().execute(query, (username, test, score))
+    conn.commit()
+    return jsonify({'message': 'Score added'}), 201
 
 
 @app.route('/posttestProgram', methods=['POST'])
@@ -86,10 +85,12 @@ def posttestProgram():
     data = request.get_json()
     code = data.get('code')
     username = data.get('username')
+    conn = db.connect_db()
 
-    answer = PostTest(username=username,code = code)
-    db.session.add(answer)
-    db.session.commit()
+    query = f'''INSERT INTO Posttest (username, code) VALUES (?, ?)'''
+
+    conn.cursor().execute(query, (username, code))
+    conn.commit()
 
 @app.route('/get_flashcards', methods=['POST'])
 def get_flashcards():
