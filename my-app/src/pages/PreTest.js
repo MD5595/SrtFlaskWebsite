@@ -11,12 +11,10 @@ function PreTest() {
     function PreTestGrader() {
         let score = 0;
         setX(x + 1);
-        var code={};
+        var code = {};
         // Question 1
-        const q1_answer = document.getElementById('answer1').value.toLowerCase();
+        code["q1"] = document.getElementById('answer1').value.toLowerCase();
 
-
-            code.q1=q1_answer;
 
         // Question 2
         const q2_answer = document.getElementById('answer2').value.toLowerCase();
@@ -31,49 +29,17 @@ function PreTest() {
         }
 
         // Question 4
-        const q4_answer = document.getElementById('answer4').value;
-        useEffect(() => {
-            let code = q4_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
-                console.log("SUCCESS", response);
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
+        code["q4"] = document.getElementById('answer4').value;
+
         // Question 5
-        const q5_answer = document.getElementById('answer5').value;
-        useEffect(() => {
-            let code = q5_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
-                console.log("SUCCESS", response);
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
+        code["q5"] = document.getElementById('answer5').value;
+
         // Question 6
-        const q6_answer = document.getElementById('answer6').value;
-        useEffect(() => {
-            let code = q6_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
-                console.log("SUCCESS", response);
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
+        code["q6"] = document.getElementById('answer6').value;
+
         // Question 7
-        const q7_answer = document.getElementById('answer7').value;
-        useEffect(() => {
-            let code = q7_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
-                console.log("SUCCESS", response);
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
+        code["q7"] = document.getElementById('answer7').value;
+
         // Question 8
         const q8_answer = document.getElementById('answer8').value;
         if (q8_answer.includes('a')) {
@@ -81,15 +47,8 @@ function PreTest() {
         }
 
         // Question 9
-        const q9_answer = document.getElementById('answer9').value;
-        useEffect(() => {
-            let code = q9_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
+        code["q9"] = document.getElementById('answer9').value;
+
 
         // Question 10
         const q10_answer = document.getElementById('answer10').value.toLowerCase();
@@ -122,15 +81,8 @@ function PreTest() {
         }
 
         // Question 15
-        const q15_answer = document.getElementById('answer15').value;
-        useEffect(() => {
-            let code = q15_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
+        code["q15"] = document.getElementById('answer15').value;
+
 
         // Question 16
         const q16_answer = document.getElementById('answer16').value.toLowerCase();
@@ -151,15 +103,8 @@ function PreTest() {
         }
 
         // Question 19
-        const q19_answer = document.getElementById('answer19').value;
-        useEffect(() => {
-            let code = q19_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
+        code["q19"] = document.getElementById('answer19').value;
+
 
         // Question 20
         const q20_answer = document.getElementById('answer20').value.toLowerCase();
@@ -187,15 +132,8 @@ function PreTest() {
 
         // Question 24
 
-const q24_answer = document.getElementById('answer19').value;
-        useEffect(() => {
-            let code = q24_answer;
-            axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
+        code["q24"] = document.getElementById('answer19').value;
+
         // Question 25
         const q25_answer = document.getElementById('answer25').value.toLowerCase();
         if (q25_answer === '==') {
@@ -209,7 +147,7 @@ const q24_answer = document.getElementById('answer19').value;
                     console.error(error);
 
                 });
-        },[x]);
+        }, [x]);
     }
 
     return (
