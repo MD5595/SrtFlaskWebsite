@@ -67,7 +67,7 @@ export default function Unit_2_3() {
 
             <p>It will be convenient for you to memorize these functions, but it is no problem if you forget the correct
                 syntax.
-                Consult the cheat sheet or Google to properly type out the functions/modules.</p>
+                Google to properly type out the functions/modules.</p>
             <div className="container-exercise">
                 <form onSubmit={handleSubmit}>
                     <label>
