@@ -4,7 +4,7 @@ import '../App.css'
 import axios from 'axios'
 import { send_time } from '../components/AxiosCalls';
 
-function FlashcardPage() {
+export default function FlashcardPage() {
   const loggedInUser = localStorage.getItem('username');
   send_time('flashcards', loggedInUser);
 
@@ -67,5 +67,3 @@ function FlashcardPage() {
     </>
   );
 }
-
-export default FlashcardPage;
