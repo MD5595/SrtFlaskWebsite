@@ -25,7 +25,14 @@ export default function Flashcard({ flashcard }) {
       style={{ height: height }}
       onClick={() => setFlip(!flip)}
     >
-      <div className="front" ref={frontEl}>
+       <style>
+        {`
+          .hidden {
+            display: none;
+          }
+        `}
+      </style>
+      <div className={`front ${flip ? 'hidden' : ''}`} ref={frontEl}>
         {flashcard.question}
       </div>
       <div className="back" ref={backEl}>{flashcard.answer}</div>
