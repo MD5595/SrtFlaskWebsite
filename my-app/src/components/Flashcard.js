@@ -32,7 +32,7 @@ export default function Flashcard({ flashcard }) {
           }
         `}
       </style>
-      <div className={"front ${flip ? 'hidden' : ''}" ref={frontEl}>
+      <div className={`front ${flip ? 'hidden' : ''}`} ref={frontEl}>
         {flashcard.question}
       </div>
       <div className="back" ref={backEl}>{flashcard.answer}</div>

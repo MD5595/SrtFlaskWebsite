@@ -3,6 +3,7 @@ import FlashcardList from '../components/FlashcardList';
 import '../App.css'
 import axios from 'axios'
 import { send_time } from '../components/AxiosCalls';
+import {baseURL} from "../config.js"
 
 export default function FlashcardPage() {
   const loggedInUser = localStorage.getItem('username');
@@ -22,7 +23,7 @@ export default function FlashcardPage() {
   
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:5000/get_units',headers=headers)
+      .get(baseURL + '/get_units',headers=headers)
       .then(res => {
         setCategories(res.data.units)
       })
@@ -31,7 +32,7 @@ export default function FlashcardPage() {
   function handleSubmit(e) {
     e.preventDefault()
     axios
-    .post('http://127.0.0.1:5000/get_flashcards', {unit: unit.current.value},
+    .post(baseURL + '/get_flashcards', {unit: unit.current.value},
     headers=headers)
     .then(res => {
       setFlashcards(res.data.results.map((questionItem, index) => {
