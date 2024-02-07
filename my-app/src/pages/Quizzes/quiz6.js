@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
 import axios from "axios";
 import {send_time} from '../../components/AxiosCalls';
+import {baseURL} from '../../config';
+
 
 export default function Quiz6 (){
   const loggedInUser = localStorage.getItem('username');
@@ -62,7 +64,7 @@ export default function Quiz6 (){
       };
  useEffect(() => {
             const test = "Quiz6"
-            axios.post('http://localhost:5000/postUserScore', {username, test, score}).then(response => {
+            axios.post(baseURL + '/postUserScore', {username, test, score}).then(response => {
             })
                 .catch(error => {
                     console.error(error);

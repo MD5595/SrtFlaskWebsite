@@ -1,10 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Link, Redirect, Navigate, useNavigate, useLocation} from 'react-router-dom';
-
+import {baseURL} from "../config.js"
 
 
 function PreTest() {
+
+    var headers = {
+        'Content-Type': 'application/json',
+      }
 
     const username = localStorage.getItem('username');
     const [x, setX] = useState(0);
@@ -42,7 +46,7 @@ const [y, sendScore] = useState(0);
 
     useEffect(() => {
         let code = q1Answer;
-        axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
             console.log("SUCCESS", response);
         })
             .catch(error => {
@@ -53,7 +57,7 @@ const [y, sendScore] = useState(0);
     // Question 4
     useEffect(() => {
         let code = q4Answer;
-        axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
             console.log("SUCCESS", response);
         })
             .catch(error => {
@@ -63,7 +67,7 @@ const [y, sendScore] = useState(0);
     // Question 5
     useEffect(() => {
         let code = q5Answer;
-        axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
             console.log("SUCCESS", response);
         })
             .catch(error => {
@@ -73,7 +77,7 @@ const [y, sendScore] = useState(0);
     // Question 6
     useEffect(() => {
         let code = q6Answer;
-        axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
             console.log("SUCCESS", response);
         })
             .catch(error => {
@@ -83,7 +87,7 @@ const [y, sendScore] = useState(0);
     // Question 7
     useEffect(() => {
         let code = q7Answer;
-        axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
             console.log("SUCCESS", response);
         })
             .catch(error => {
@@ -94,7 +98,7 @@ const [y, sendScore] = useState(0);
     // Question 9
     useEffect(() => {
         let code = q9Answer;
-        axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
         })
             .catch(error => {
                 console.error(error);
@@ -103,7 +107,7 @@ const [y, sendScore] = useState(0);
     // Question 15
     useEffect(() => {
         let code = q15Answer;
-        axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
         })
             .catch(error => {
                 console.error(error);
@@ -112,7 +116,7 @@ const [y, sendScore] = useState(0);
     // Question 19
     useEffect(() => {
         let code = q19Answer;
-        axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
         })
             .catch(error => {
                 console.error(error);
@@ -122,7 +126,7 @@ const [y, sendScore] = useState(0);
 
     useEffect(() => {
         let code = q24Answer;
-        axios.post('http://localhost:5000/pretestProgram', {username, code}).then(response => {
+        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
         })
             .catch(error => {
                 console.error(error);
@@ -215,7 +219,7 @@ useEffect(() => {
     }, [x]);
 useEffect(() => {
         let test = "PreTest";
-        axios.post('http://localhost:5000/postUserScore', {username, test, score}).then(response => {
+        axios.post(baseURL + '/postUserScore', {username, test, score}, headers=headers).then(response => {
         })
             .catch(error => {
                 console.error(error);
