@@ -46,10 +46,12 @@ def pretestProgram():
     username = data.get('username')
     conn = db.connect_db()
 
-    query = f'''INSERT INTO PreTest (username, code) VALUES (?, ?)'''
+    query = f'''INSERT INTO preTest (username, code) VALUES (?, ?)'''
 
     conn.cursor().execute(query, (username,code))
     conn.commit()
+    return jsonify({'message': 'Code added'})
+
 
 
 @app.route('/getUserScore', methods =['GET'])
@@ -87,7 +89,7 @@ def posttestProgram():
     username = data.get('username')
     conn = db.connect_db()
 
-    query = f'''INSERT INTO Posttest (username, code) VALUES (?, ?)'''
+    query = f'''INSERT INTO postTest (username, code) VALUES (?, ?)'''
 
     conn.cursor().execute(query, (username, code))
     conn.commit()

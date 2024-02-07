@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link, Redirect, Navigate, useNavigate, useLocation} from 'react-router-dom';
 import axios from 'axios';
+import {baseURL} from "../config.js"
 
 let username = '';
 
@@ -17,7 +18,7 @@ function LandingPage() {
         console.log(isChecked, localUsername);
         e.preventDefault()
         axios
-        .post('http://127.0.0.1:5000/students', {
+        .post(baseURL + '/students', {
             isChecked: isChecked,
             username: localUsername,
             },
