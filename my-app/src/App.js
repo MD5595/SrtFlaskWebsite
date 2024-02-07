@@ -75,7 +75,7 @@ function App() {
                 <Route index path="/Flashcards" element={<FlashcardPage/>}/>
                 <Route index path="/DataPage" element={<DataPage/>}/>
                 <Route index path="/PreTest" element={<PreTest/>}/>
-                <Route index path="/PostTest" element={<PostTest/>}/>
+                <Route index path="/ABCDEFG" element={<PostTest/>}/>
                 <Route index path="/KeyPage" element={<KeyPage/>}/>
                 <Route index path="/PracticeCoding" element={<PracticeCoding/>}/>
 

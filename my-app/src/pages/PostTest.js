@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Link, Redirect, Navigate, useNavigate, useLocation} from 'react-router-dom';
-import {baseURL} from "../config.js"
+import {baseURL} from "../config.js";
 
 
 function PostTest() {
