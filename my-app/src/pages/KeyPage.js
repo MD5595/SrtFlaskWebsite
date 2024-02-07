@@ -7,7 +7,7 @@ const KeyPage = () => {
 
     const handleClick = () => {
         if (inputValue.toLowerCase() === 'blank') {
-            navigate("/PostTest");
+            navigate("/ABCDEFG");
         } else {
             navigate("/KeyPage");
         }

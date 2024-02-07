@@ -68,6 +68,7 @@ def getUserScore():
         score_list.append(score_data)
     return jsonify({'scores': score_list})
 
+
 @app.route('/postUserScore', methods=['POST'])
 def postUserScore():
     data = request.get_json()
@@ -76,7 +77,7 @@ def postUserScore():
     score= data.get('score')
 
     conn = db.connect_db()
-    query = f'''INSERT INTO Scores (username, test, score) VALUES (?, ?, ?)'''
+    query = f'''INSERT INTO scores (username, test, score) VALUES (?, ?, ?)'''
     conn.cursor().execute(query, (username, test, score))
     conn.commit()
     return jsonify({'message': 'Score added'}), 201
