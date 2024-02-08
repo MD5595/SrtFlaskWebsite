@@ -8,7 +8,7 @@ function PreTest() {
 
     var headers = {
         'Content-Type': 'application/json',
-      }
+    }
 
     const username = localStorage.getItem('username');
     const [x, setX] = useState(0);
@@ -39,193 +39,127 @@ function PreTest() {
     const [q22Answer, setQ22Answer] = useState('');
     const [q23Answer, setQ23Answer] = useState('');
     const [q25Answer, setQ25Answer] = useState('');
-        var navigate = useNavigate();
-
-const [y, sendScore] = useState(0);
+    var navigate = useNavigate();
+    var code = {}
+    const [y, sendScore] = useState(0);
     // Question 1
 
-    useEffect(() => {
-        let code = q1Answer;
-        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
-            console.log("SUCCESS", response);
-        })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [x]);
+    code["q1"] = q1Answer;
+    code["q4"] = q4Answer;
+    code["q5"] = q5Answer;
+    code["q6"] = q6Answer;
+    code["q7"] = q7Answer;
+    code["q9"] = q9Answer;
+    code["q15"] = q15Answer;
+    code["q19"] = q19Answer;
+    code["q24"] = q24Answer
 
-    // Question 4
-    useEffect(() => {
-        let code = q4Answer;
-        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
-            console.log("SUCCESS", response);
-        })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [x]);
-    // Question 5
-    useEffect(() => {
-        let code = q5Answer;
-        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
-            console.log("SUCCESS", response);
-        })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [x]);
-    // Question 6
-    useEffect(() => {
-        let code = q6Answer;
-        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
-            console.log("SUCCESS", response);
-        })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [x]);
-    // Question 7
-    useEffect(() => {
-        let code = q7Answer;
-        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
-            console.log("SUCCESS", response);
-        })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [x]);
-
-    // Question 9
-    useEffect(() => {
-        let code = q9Answer;
-        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
-        })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [x]);
-    // Question 15
-    useEffect(() => {
-        let code = q15Answer;
-        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
-        })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [x]);
-    // Question 19
-    useEffect(() => {
-        let code = q19Answer;
-        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
-        })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [x]);
-    // Question 24
-
-    useEffect(() => {
-        let code = q24Answer;
-        axios.post(baseURL + '/pretestProgram', {username, code}, headers=headers).then(response => {
-        })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [x]);
+const handleSubmission = () => {
+        setX(1);
+        navigate("/HomePage");
+    };
 
 
-
-     useEffect(() => {
-        if (q2Answer.includes('math') && x==1) {
+    useEffect(() => {
+        if (q2Answer.includes('math') && x == 1) {
             setScore((prevScore) => prevScore + 1);
         }
     }, [x]);
 
     useEffect(() => {
-        if (q3Answer.includes('and') && x==1) {
+        if (q3Answer.includes('and') && x == 1) {
             setScore((prevScore) => prevScore + 1);
         }
     }, [x]);
     useEffect(() => {
-        if (q8Answer.includes('a') && x==1) {
+        if (q8Answer.includes('a') && x == 1) {
             setScore((prevScore) => prevScore + 1);
         }
     }, [x]);
 
     useEffect(() => {
-        if (q10Answer.includes('d') && x==1) {
+        if (q10Answer.includes('d') && x == 1) {
             setScore((prevScore) => prevScore + 1);
         }
     }, [x]);
-useEffect(() => {
-        if (q12Answer.includes('random') && x==1) {
-            setScore((prevScore) => prevScore + 1);
-        }
-    }, [x]);
-
-useEffect(() => {
-        if (q13Answer.includes('math') && x==1) {
-            setScore((prevScore) => prevScore + 1);
-        }
-    }, [x]);
-useEffect(() => {
-        if (q14Answer.includes('c') && x==1) {
+    useEffect(() => {
+        if (q12Answer.includes('random') && x == 1) {
             setScore((prevScore) => prevScore + 1);
         }
     }, [x]);
 
-useEffect(() => {
-        if (q16Answer.includes('c') && x==1) {
+    useEffect(() => {
+        if (q13Answer.includes('math') && x == 1) {
             setScore((prevScore) => prevScore + 1);
         }
     }, [x]);
-useEffect(() => {
-        if (q17Answer.includes('a') && x==1) {
-            setScore((prevScore) => prevScore + 1);
-        }
-    }, [x]);
-useEffect(() => {
-        if (q18Answer.includes('d') && x==1) {
-            setScore((prevScore) => prevScore + 1);
-        }
-    }, [x]);
-useEffect(() => {
-        if (q20Answer.includes('while') && x==1) {
-            setScore((prevScore) => prevScore + 1);
-        }
-    }, [x]);
-useEffect(() => {
-        if (q22Answer.includes('//') || q22Answer.includes('%')  && x==1) {
+    useEffect(() => {
+        if (q14Answer.includes('c') && x == 1) {
             setScore((prevScore) => prevScore + 1);
         }
     }, [x]);
 
-useEffect(() => {
-        if (q23Answer.includes('a') && x===1) {
+    useEffect(() => {
+        if (q16Answer.includes('c') && x == 1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+    useEffect(() => {
+        if (q17Answer.includes('a') && x == 1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+    useEffect(() => {
+        if (q18Answer.includes('d') && x == 1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+    useEffect(() => {
+        if (q20Answer.includes('while') && x == 1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
+    useEffect(() => {
+        if (q22Answer.includes('//') || q22Answer.includes('%') && x == 1) {
             setScore((prevScore) => prevScore + 1);
         }
     }, [x]);
 
-useEffect(() => {
-                                        sendScore(100);
+    useEffect(() => {
+        if (q23Answer.includes('a') && x === 1) {
+            setScore((prevScore) => prevScore + 1);
+        }
+    }, [x]);
 
-        if (q25Answer.includes('==') && x===1) {
+    useEffect(() => {
+        sendScore(100);
+
+        if (q25Answer.includes('==') && x === 1) {
             setScore((prevScore) => prevScore + 1);
 
-        }
-        else{
+        } else {
 
         }
     }, [x]);
-useEffect(() => {
+
+    useEffect(() => {
         let test = "PreTest";
-        axios.post(baseURL + '/postUserScore', {username, test, score}, headers=headers).then(response => {
+        axios.post(baseURL + '/postUserScore', {username, test, score}, headers = headers).then(response => {
         })
             .catch(error => {
                 console.error(error);
 
             });
     }, [y]);
+
+    useEffect(() => {
+        axios.post(baseURL + '/pretestProgram', {username, code}, headers = headers).then(response => {
+        })
+            .catch(error => {
+                console.error(error);
+            });
+    }, [y]);
+
     return (
         <div className="container">
             <h1> Pre-Test</h1>
@@ -281,11 +215,11 @@ useEffect(() => {
                           onChange={(e) => setQ7Answer(e.target.value)}/> <br/>
                 {/* Question 8 */}
                 <label htmlFor="answer8">8. What does the append() function do?</label><br/>
-                <select id="answer8"  value={q8Answer}
-                             onChange={(e) => setQ8Answer(e.target.value)}>
+                <select id="answer8" value={q8Answer}
+                        onChange={(e) => setQ8Answer(e.target.value)}>
                     <option value="a">Adds an element to the end of a list</option>
                     <option value="b">Adds a number to the end of a variable</option>
-                    <option value= "c">Varies based on what is placed within it</option>
+                    <option value="c">Varies based on what is placed within it</option>
                     <option value="d">Adds a variable to the start of a list</option>
                 </select>
                 <br/><br/>
@@ -312,8 +246,8 @@ useEffect(() => {
                 {/* Question 11 */}
                 <label htmlFor="answer11">11. What kind of data type is most commonly associated with
                     conditionals?</label><br/>
-                <select id="answer11"  value={q11Answer}
-                             onChange={(e) => setQ11Answer(e.target.value)}>
+                <select id="answer11" value={q11Answer}
+                        onChange={(e) => setQ11Answer(e.target.value)}>
                     <option value="a">Strings</option>
                     <option value="b">Booleans</option>
                     <option value="c">Lists</option>
@@ -332,7 +266,7 @@ useEffect(() => {
                 <label htmlFor="answer13">13. What would the following code print? for _ in range(48, 38, -2): print(_,
                     end=" ")</label><br/>
                 <select id="answer13" value={q13Answer}
-                             onChange={(e) => setQ13Answer(e.target.value)}><br/>
+                        onChange={(e) => setQ13Answer(e.target.value)}><br/>
                     <option value="a">46 44 42 40 38</option>
                     <br/>
                     <option value="b">48 46 44 42 40</option>
@@ -369,7 +303,7 @@ useEffect(() => {
                 {/* Question 16 */}
                 <label htmlFor="answer16">16. What will print(10//4) display on the terminal?</label><br/>
                 <select id="answer16" value={q16Answer}
-                             onChange={(e) => setQ16Answer(e.target.value)}>
+                        onChange={(e) => setQ16Answer(e.target.value)}>
                     <option value="a">2.0</option>
                     <option value="b">2.5</option>
                     <option value="c">2</option>
@@ -379,8 +313,8 @@ useEffect(() => {
                 <br/>
                 {/* Question 17 */}
                 <label htmlFor="answer17">17. When to use = instead of ==?</label><br/>
-                <select id="answer17"  value={q17Answer}
-                             onChange={(e) => setQ17Answer(e.target.value)}>
+                <select id="answer17" value={q17Answer}
+                        onChange={(e) => setQ17Answer(e.target.value)}>
                     <option value="a">When you want to assign a value to a variable</option>
                     <option value="b">When you want to make a logical statement that hinges on values being equal
                         to each other
@@ -392,8 +326,8 @@ useEffect(() => {
                 <br/>
                 {/* Question 18 */}
                 <label htmlFor="answer18">18. Which line of code will not return an error?<br/>
-                    <select id="answer18"  value={q18Answer}
-                             onChange={(e) => setQ18Answer(e.target.value)}>
+                    <select id="answer18" value={q18Answer}
+                            onChange={(e) => setQ18Answer(e.target.value)}>
                         <option value="a">print(The answer is 10)</option>
                         <option value="b">print("The answer is" + 10)</option>
                         <option value="c">print(The answer is + str(10))</option>
@@ -413,7 +347,7 @@ useEffect(() => {
                 <label htmlFor="answer20">20. What type of loop would you use if you wanted to make it stop after
                     receiving a certain input?</label>
                 <input type="text" id="answer20" value={q20Answer}
-                             onChange={(e) => setQ20Answer(e.target.value)}/>
+                       onChange={(e) => setQ20Answer(e.target.value)}/>
                 <br/>
                 <br/>
                 {/* Question 21 */}
@@ -465,11 +399,7 @@ useEffect(() => {
                        onChange={(e) => setQ25Answer(e.target.value)}/>
                 <br/>
                 <br/>
-                <button type="button" onClick={() => {
-                    setX( 1)
-                                    navigate("/HomePage");
-
-                }}>
+                <button type="button" onClick={handleSubmission}>
                     Submit
                 </button>
 
