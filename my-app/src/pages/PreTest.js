@@ -106,26 +106,23 @@ function PreTest() {
             code["q15"] = q15Answer;
             code["q19"] = q19Answer;
             code["q24"] = q24Answer;
-    }, [scoreTest]);
 
-
-    useEffect(() => {
-        let test = "PreTest";
+            let test = "PreTest";
         axios.post(baseURL + '/postUserScore', {username, test, score}, headers = headers).then(response => {
         })
             .catch(error => {
                 console.error(error);
 
             });
-    }, [scoreTest]);
 
-    useEffect(() => {
         axios.post(baseURL + '/pretestProgram', {username, code}, headers = headers).then(response => {
         })
             .catch(error => {
                 console.error(error);
             });
     }, [scoreTest]);
+
+
 
     return (
         <div className="container">
