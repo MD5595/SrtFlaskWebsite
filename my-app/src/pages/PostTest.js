@@ -9,6 +9,7 @@ function PostTest() {
     var navigate = useNavigate();
     var code = {}
     const [score, setScore] = useState(0);
+    const [scoreTest, triggerScoreTest] = useState(false);
 
     const [q1Answer, setQ1Answer] = useState('');
     const [q4Answer, setQ4Answer] = useState('');
@@ -36,22 +37,13 @@ function PostTest() {
     const [q22Answer, setQ22Answer] = useState('');
     const [q23Answer, setQ23Answer] = useState('');
     const [q25Answer, setQ25Answer] = useState('');
-    const [x, setX] = useState(0);
 
     function PostTestGrader() {
-        setX(100)
         navigate("/HomePage");
-
+        triggerScoreTest(true)
     }
 
-    code["q1"] = q1Answer;
-    code["q3"] = q3Answer;
-    code["q8"] = q8Answer;
-    code["q16"] = q16Answer;
-    code["q19"] = q19Answer;
-    code["q20"] = q20Answer;
-    code["q23"] = q23Answer;
-    code["q25"] = q25Answer;
+
 
     useEffect(() => {
         if (q2Answer.includes("module")) {
@@ -128,8 +120,15 @@ function PostTest() {
         if (q24Answer.includes("a") && q24Answer.includes("c") && q24Answer.includes("d") && !q24Answer.includes("b")) {
             setScore(num => num + 1);
         }
-
-    }, [x]);
+ code["q1"] = q1Answer;
+    code["q3"] = q3Answer;
+    code["q8"] = q8Answer;
+    code["q16"] = q16Answer;
+    code["q19"] = q19Answer;
+    code["q20"] = q20Answer;
+    code["q23"] = q23Answer;
+    code["q25"] = q25Answer;
+    }, [scoreTest]);
 
     useEffect(() => {
 
@@ -138,7 +137,7 @@ function PostTest() {
             .catch(error => {
                 console.error(error);
             });
-    }, [x]);
+    }, [scoreTest]);
 
 
     useEffect(() => {
@@ -148,7 +147,7 @@ function PostTest() {
             .catch(error => {
                 console.error(error);
             });
-    }, [x]);
+    }, [scoreTest]);
 
 
     return (

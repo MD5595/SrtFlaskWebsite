@@ -86,7 +86,7 @@ def postUserScore():
 @app.route('/posttestProgram', methods=['POST'])
 def posttestProgram():
     data = request.get_json()
-    code = data.get('code')
+    code = data.get('code',{})
     username = data.get('username')
     conn = db.connect_db()
 

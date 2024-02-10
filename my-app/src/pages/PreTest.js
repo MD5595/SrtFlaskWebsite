@@ -11,7 +11,8 @@ function PreTest() {
     }
 
     const username = localStorage.getItem('username');
-    const [x, setX] = useState(0);
+    const [scoreTest, triggerScoreTest] = useState(false);
+
     const [q1Answer, setQ1Answer] = useState('');
     const [q4Answer, setQ4Answer] = useState('');
     const [q5Answer, setQ5Answer] = useState('');
@@ -41,106 +42,72 @@ function PreTest() {
     const [q25Answer, setQ25Answer] = useState('');
     var navigate = useNavigate();
     var code = {}
-    const [y, sendScore] = useState(0);
-    // Question 1
 
-    code["q1"] = q1Answer;
-    code["q4"] = q4Answer;
-    code["q5"] = q5Answer;
-    code["q6"] = q6Answer;
-    code["q7"] = q7Answer;
-    code["q9"] = q9Answer;
-    code["q15"] = q15Answer;
-    code["q19"] = q19Answer;
-    code["q24"] = q24Answer
 
-const handleSubmission = () => {
-        setX(1);
+    function PreTestGrader() {
         navigate("/HomePage");
-    };
-
-
-    useEffect(() => {
-        if (q2Answer.includes('math') && x == 1) {
-            setScore((prevScore) => prevScore + 1);
-        }
-    }, [x]);
+        triggerScoreTest(true)
+        console.log(code)
+    }
 
     useEffect(() => {
-        if (q3Answer.includes('and') && x == 1) {
+        if (q2Answer.includes('math')) {
             setScore((prevScore) => prevScore + 1);
         }
-    }, [x]);
-    useEffect(() => {
-        if (q8Answer.includes('a') && x == 1) {
+        if (q3Answer.includes('and')) {
             setScore((prevScore) => prevScore + 1);
         }
-    }, [x]);
-
-    useEffect(() => {
-        if (q10Answer.includes('d') && x == 1) {
+        if (q8Answer.includes('a')) {
             setScore((prevScore) => prevScore + 1);
         }
-    }, [x]);
-    useEffect(() => {
-        if (q12Answer.includes('random') && x == 1) {
+        if (q10Answer.includes('d')) {
             setScore((prevScore) => prevScore + 1);
         }
-    }, [x]);
-
-    useEffect(() => {
-        if (q13Answer.includes('math') && x == 1) {
+        if (q12Answer.includes('random')) {
             setScore((prevScore) => prevScore + 1);
         }
-    }, [x]);
-    useEffect(() => {
-        if (q14Answer.includes('c') && x == 1) {
+        if (q13Answer.includes('math')) {
             setScore((prevScore) => prevScore + 1);
         }
-    }, [x]);
-
-    useEffect(() => {
-        if (q16Answer.includes('c') && x == 1) {
+        if (q14Answer.includes('c')) {
             setScore((prevScore) => prevScore + 1);
         }
-    }, [x]);
-    useEffect(() => {
-        if (q17Answer.includes('a') && x == 1) {
+        if (q14Answer.includes('c')) {
             setScore((prevScore) => prevScore + 1);
         }
-    }, [x]);
-    useEffect(() => {
-        if (q18Answer.includes('d') && x == 1) {
+        if (q16Answer.includes('c')) {
             setScore((prevScore) => prevScore + 1);
         }
-    }, [x]);
-    useEffect(() => {
-        if (q20Answer.includes('while') && x == 1) {
+        if (q17Answer.includes('a')) {
             setScore((prevScore) => prevScore + 1);
         }
-    }, [x]);
-    useEffect(() => {
-        if (q22Answer.includes('//') || q22Answer.includes('%') && x == 1) {
+        if (q18Answer.includes('d')) {
             setScore((prevScore) => prevScore + 1);
         }
-    }, [x]);
-
-    useEffect(() => {
-        if (q23Answer.includes('a') && x === 1) {
+        if (q20Answer.includes('while')) {
             setScore((prevScore) => prevScore + 1);
         }
-    }, [x]);
-
-    useEffect(() => {
-        sendScore(100);
-
-        if (q25Answer.includes('==') && x === 1) {
+        if (q22Answer.includes('//') || q22Answer.includes('%')) {
+            setScore((prevScore) => prevScore + 1);
+        }
+        if (q23Answer.includes('a')) {
+            setScore((prevScore) => prevScore + 1);
+        }
+        if (q25Answer.includes('==')) {
             setScore((prevScore) => prevScore + 1);
 
-        } else {
-
         }
-    }, [x]);
+        code["q1"] = q1Answer;
+            code["q4"] = q4Answer;
+            code["q5"] = q5Answer;
+            code["q6"] = q6Answer;
+            code["q7"] = q7Answer;
+            code["q9"] = q9Answer;
+            code["q15"] = q15Answer;
+            code["q19"] = q19Answer;
+            code["q24"] = q24Answer;
+    }, [scoreTest]);
+
 
     useEffect(() => {
         let test = "PreTest";
@@ -150,7 +117,7 @@ const handleSubmission = () => {
                 console.error(error);
 
             });
-    }, [y]);
+    }, [scoreTest]);
 
     useEffect(() => {
         axios.post(baseURL + '/pretestProgram', {username, code}, headers = headers).then(response => {
@@ -158,7 +125,7 @@ const handleSubmission = () => {
             .catch(error => {
                 console.error(error);
             });
-    }, [y]);
+    }, [scoreTest]);
 
     return (
         <div className="container">
@@ -353,7 +320,7 @@ const handleSubmission = () => {
                 {/* Question 21 */}
                 <label htmlFor="answer21">
                     21. What line of code will make the variable `str` hold the string "here, T"?<br/>
-                    <select id="answer18" value={q18Answer} onChange={(e) => setQ18Answer(e.target.value)}>
+                    <select id="answer21" value={q21Answer} onChange={(e) => setQ18Answer(e.target.value)}>
                         <option value="a">str[::2]</option>
                         <option value="b">str[1:7]</option>
                         <option value="c">str[6:1:-1]</option>
@@ -399,7 +366,7 @@ const handleSubmission = () => {
                        onChange={(e) => setQ25Answer(e.target.value)}/>
                 <br/>
                 <br/>
-                <button type="button" onClick={handleSubmission}>
+                <button type="button" onClick={PreTestGrader}>
                     Submit
                 </button>
 
