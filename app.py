@@ -71,10 +71,9 @@ def getUserScore():
 
 @app.route('/postUserScore', methods=['POST'])
 def postUserScore():
-    data = request.get_json()
-    username = data.get('username')
-    test = data.get('test')
-    score= data.get('score')
+    test = request.json['test']
+    username = request.json['username']
+    score = request.json['score']
 
     conn = db.connect_db()
     query = f'''INSERT INTO scores (username, test, score) VALUES (?, ?, ?)'''

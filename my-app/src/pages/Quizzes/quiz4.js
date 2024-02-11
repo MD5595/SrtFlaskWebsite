@@ -62,14 +62,16 @@ export default function Quiz4 (){
           setShowScore(true);
         }
       };
- useEffect(() => {
-            const test = "Quiz4"
-            axios.post(baseURL + '/postUserScore', {username, test, score}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [showScore]);
+     useEffect(() => {
+    if (showScore) {
+      const test = "Quiz4";
+      axios.post(baseURL + '/postUserScore', { username, test, score })
+        .then(response => {})
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }, [showScore, score]);
       return (
         <div>
           {showScore ? (

@@ -41,13 +41,22 @@ function PreTest() {
     const [q23Answer, setQ23Answer] = useState('');
     const [q25Answer, setQ25Answer] = useState('');
     var navigate = useNavigate();
-    var code = {}
+const [code, setCode] = useState({
+        q1: '',
+        q4: '',
+        q5: '',
+        q6: '',
+        q7: '',
+        q9: '',
+        q15: '',
+        q19: '',
+        q24: ''
+    });
 
 
     function PreTestGrader() {
         navigate("/HomePage");
         triggerScoreTest(true)
-        console.log(code)
     }
 
     useEffect(() => {
@@ -97,32 +106,32 @@ function PreTest() {
             setScore((prevScore) => prevScore + 1);
 
         }
-        code["q1"] = q1Answer;
-            code["q4"] = q4Answer;
-            code["q5"] = q5Answer;
-            code["q6"] = q6Answer;
-            code["q7"] = q7Answer;
-            code["q9"] = q9Answer;
-            code["q15"] = q15Answer;
-            code["q19"] = q19Answer;
-            code["q24"] = q24Answer;
 
-            let test = "PreTest";
+
+
+    }, [scoreTest]);
+
+useEffect(() => {
+    if (scoreTest) {
+      axios.post(baseURL + '/pretestProgram', {username, code}, headers = headers).then(response => {
+        })
+            .catch(error => {
+                console.error(error);
+            });
+    }
+  }, [scoreTest, score]);
+
+useEffect(() => {
+    if (scoreTest) {
+       let test = "PreTest";
         axios.post(baseURL + '/postUserScore', {username, test, score}, headers = headers).then(response => {
         })
             .catch(error => {
                 console.error(error);
 
             });
-
-        axios.post(baseURL + '/pretestProgram', {username, code}, headers = headers).then(response => {
-        })
-            .catch(error => {
-                console.error(error);
-            });
-    }, [scoreTest]);
-
-
+    }
+  }, [scoreTest, score]);
 
     return (
         <div className="container">
@@ -134,7 +143,8 @@ function PreTest() {
                     user gets the right answer. </label>
                 <textarea id="answer1" style={{width: '200px', height: '100px'}}
                           value={q1Answer}
-                          onChange={(e) => setQ1Answer(e.target.value)}/>
+                          onChange={(e) => { setQ1Answer(e.target.value)
+                                code["q1"] = e.target.value;}}/>
                 <br/>
                 {/* Question 2 */}
                 <label htmlFor="answer2">2. What module would you use if you wanted to use the sqrt() function?</label>
@@ -155,28 +165,29 @@ function PreTest() {
                     every time it is called, and call the function 3 times.</label>
                 <br/> <textarea id="answer4" style={{width: '200px', height: '100px'}}
                                 value={q4Answer}
-                                onChange={(e) => setQ4Answer(e.target.value)}/>
+                                onChange={(e) => { setQ4Answer(e.target.value)
+                                code["q4"] = e.target.value;}}/>
                 <br/>
                 {/* Question 5 */}
                 <label htmlFor="answer5">5. Write a function that allows variables to be cast as strings.</label>
                 <br/> <textarea id="answer5" style={{width: '200px', height: '100px'}}
                                 value={q5Answer}
-                                onChange={(e) => setQ5Answer(e.target.value)}/>
-                <br/>
+onChange={(e) => { setQ5Answer(e.target.value)
+                                code["q5"] = e.target.value;}}/>                <br/>
                 {/* Question 6 */}
                 <label htmlFor="answer6">6. Write a program that has a number a user has to guess. The user will be
                     asked to enter a number between 0 and 10 (inclusive), and the computer will print, “Correct!”, if
                     correct or, “Nope, better luck next time”, if incorrect.</label>
-                <textarea id="answer6" style={{width: '200px', height: '100px'}}
-                          value={q6Answer}
-                          onChange={(e) => setQ6Answer(e.target.value)}/>
+                <textarea id="answer6" style={{width: '200px', height: '100px'}} value={q6Answer}
+                          onChange={(e) => { setQ6Answer(e.target.value)
+                                code["q6"] = e.target.value;}}/>
                 <br/>
                 {/* Question 7 */}
                 <label htmlFor="answer7">7. Write a program that has a variable that contains an integer, and a second
                     variable that is the first variable casted to a float.</label><br/>
-                <textarea id="answer7" style={{width: '200px', height: '100px'}}
-                          value={q7Answer}
-                          onChange={(e) => setQ7Answer(e.target.value)}/> <br/>
+                <textarea id="answer7" style={{width: '200px', height: '100px'}}  value={q7Answer}
+                          onChange={(e) => { setQ7Answer(e.target.value)
+                                code["q7"] = e.target.value;}}/> <br/>
                 {/* Question 8 */}
                 <label htmlFor="answer8">8. What does the append() function do?</label><br/>
                 <select id="answer8" value={q8Answer}
@@ -192,7 +203,8 @@ function PreTest() {
                     it.</label>
                 <textarea id="answer9" style={{width: '200px', height: '100px'}}
                           value={q9Answer}
-                          onChange={(e) => setQ9Answer(e.target.value)}/> <br/>
+                          onChange={(e) => { setQ9Answer(e.target.value)
+                                code["q9"] = e.target.value;}}/> <br/>
                 <br/>
                 <br/>
                 {/* Question 10 */}
@@ -261,7 +273,8 @@ function PreTest() {
                 <label htmlFor="answer15">15. Input the code that would allow the user to input a number, cast the input
                     as a float, and assign the value to the variable “num1”</label>
                 <br/> <textarea id="answer15" style={{width: '200px', height: '100px'}} value={q15Answer}
-                                onChange={(e) => setQ15Answer(e.target.value)}/>
+                                onChange={(e) => { setQ15Answer(e.target.value)
+                                code["q15"] = e.target.value;}}/>
                 <br/>
                 <br/>
                 {/* Question 16 */}
@@ -304,7 +317,8 @@ function PreTest() {
                 <label htmlFor="answer19">19. Write a program which has 2 variables, one of which equals 2 and the other
                     equals. There should be a while loop that only stops when...</label>
                 <br/> <textarea id="answe19" style={{width: '200px', height: '100px'}} value={q19Answer}
-                                onChange={(e) => setQ19Answer(e.target.value)}/>
+                                onChange={(e) => { setQ19Answer(e.target.value)
+                                code["q19"] = e.target.value;}}/>
                 <br/>
                 <br/>
                 {/* Question 20 */}
@@ -353,14 +367,16 @@ function PreTest() {
                 <label htmlFor="answer24">24. Write a program that has a list with 3 numbers within it. Use a function
                     to add 45 to the list.</label>
                 <br/> <textarea id="answer24" style={{width: '200px', height: '100px'}} value={q24Answer}
-                                onChange={(e) => setQ24Answer(e.target.value)}/>
+                                onChange={(e) =>{ setQ24Answer(e.target.value)
+                                code["q24"] = e.target.value;}}/>
                 <br/>
                 <br/>
                 {/* Question 25 */}
                 <label htmlFor="answer25">25. What comparison operator would be used if you wanted to make a logical
                     statement that hinges on an expression being equal to a specific number?</label><br/>
                 <input type="text" id="answer25" value={q25Answer}
-                       onChange={(e) => setQ25Answer(e.target.value)}/>
+                       onChange={(e) => setQ25Answer(e.target.value)
+                    }/>
                 <br/>
                 <br/>
                 <button type="button" onClick={PreTestGrader}>
