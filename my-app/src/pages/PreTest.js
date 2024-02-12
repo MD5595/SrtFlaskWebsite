@@ -63,37 +63,37 @@ function checkboxChange(){
 
 
     useEffect(() => {
-        if (q2Answer.includes('math')) {
+        if (q2Answer=='math') {
             setScore((prevScore) => prevScore + 1);
         }
-        if (q3Answer.includes('and')) {
+        if (q3Answer=='and') {
             setScore((prevScore) => prevScore + 1);
         }
-        if (q8Answer.includes('a')) {
+        if (q8Answer=='a') {
             setScore((prevScore) => prevScore + 1);
         }
-        if (q10Answer.includes('d')) {
+        if (q10Answer==='d') {
             setScore((prevScore) => prevScore + 1);
         }
-        if (q12Answer.includes('random')) {
+        if (q11Answer==='b') {
             setScore((prevScore) => prevScore + 1);
         }
-        if (q13Answer.includes('math')) {
+        if (q12Answer==='random') {
             setScore((prevScore) => prevScore + 1);
         }
-        if (q14Answer.includes('c')) {
+        if (q13Answer=='b') {
             setScore((prevScore) => prevScore + 1);
         }
-        if (q14Answer.includes('c')) {
+        if (q14Answer==='c') {
             setScore((prevScore) => prevScore + 1);
         }
-        if (q16Answer.includes('c')) {
+        if (q16Answer=='c') {
             setScore((prevScore) => prevScore + 1);
         }
-        if (q17Answer.includes('a')) {
+        if (q17Answer=='a') {
             setScore((prevScore) => prevScore + 1);
         }
-        if (q18Answer.includes('d')) {
+        if (q18Answer=='d') {
             setScore((prevScore) => prevScore + 1);
         }
         if (q20Answer.includes('while')) {
@@ -194,6 +194,7 @@ onChange={(e) => { setQ5Answer(e.target.value)
                 <label htmlFor="answer8">8. What does the append() function do?</label><br/>
                 <select id="answer8" value={q8Answer}
                         onChange={(e) => setQ8Answer(e.target.value)}>
+                    <option value="x">Select an answer</option>
                     <option value="a">Adds an element to the end of a list</option>
                     <option value="b">Adds a number to the end of a variable</option>
                     <option value="c">Varies based on what is placed within it</option>
@@ -214,6 +215,7 @@ onChange={(e) => { setQ5Answer(e.target.value)
                     operations?</label><br/>
                 <select id="answer10" value={q10Answer}
                         onChange={(e) => setQ10Answer(e.target.value)}>
+                    <option value="x">Select an answer</option>
                     <option value="a">//</option>
                     <option value="b">**</option>
                     <option value="c">-</option>
@@ -226,6 +228,7 @@ onChange={(e) => { setQ5Answer(e.target.value)
                     conditionals?</label><br/>
                 <select id="answer11" value={q11Answer}
                         onChange={(e) => setQ11Answer(e.target.value)}>
+                    <option value="x">Select an answer</option>
                     <option value="a">Strings</option>
                     <option value="b">Booleans</option>
                     <option value="c">Lists</option>
@@ -245,12 +248,10 @@ onChange={(e) => { setQ5Answer(e.target.value)
                     end=" ")</label><br/>
                 <select id="answer13" value={q13Answer}
                         onChange={(e) => setQ13Answer(e.target.value)}><br/>
+                    <option value="x">Select an answer</option>
                     <option value="a">46 44 42 40 38</option>
-                    <br/>
                     <option value="b">48 46 44 42 40</option>
-                    <br/>
                     <option value="c">46 44 42 40</option>
-                    <br/>
                     <option value="d">48 46 44 42 40 38</option>
                     <br/>
                 </select>
@@ -260,6 +261,7 @@ onChange={(e) => { setQ5Answer(e.target.value)
                 <label htmlFor="answer14">14. Which variable name below is valid? </label><br/>
                 <select id="answer14" value={q14Answer}
                         onChange={(e) => setQ14Answer(e.target.value)}><br/>
+                    <option value="x">Select an answer</option>
                     <option value="a">333number</option>
                     <br/>
                     <option value="b">–hi-</option>
@@ -283,6 +285,7 @@ onChange={(e) => { setQ5Answer(e.target.value)
                 <label htmlFor="answer16">16. What will print(10//4) display on the terminal?</label><br/>
                 <select id="answer16" value={q16Answer}
                         onChange={(e) => setQ16Answer(e.target.value)}>
+                    <option value="x">Select an answer</option>
                     <option value="a">2.0</option>
                     <option value="b">2.5</option>
                     <option value="c">2</option>
@@ -294,6 +297,7 @@ onChange={(e) => { setQ5Answer(e.target.value)
                 <label htmlFor="answer17">17. When to use = instead of ==?</label><br/>
                 <select id="answer17" value={q17Answer}
                         onChange={(e) => setQ17Answer(e.target.value)}>
+                    <option value="x">Select an answer</option>
                     <option value="a">When you want to assign a value to a variable</option>
                     <option value="b">When you want to make a logical statement that hinges on values being equal
                         to each other
@@ -307,6 +311,7 @@ onChange={(e) => { setQ5Answer(e.target.value)
                 <label htmlFor="answer18">18. Which line of code will not return an error?<br/>
                     <select id="answer18" value={q18Answer}
                             onChange={(e) => setQ18Answer(e.target.value)}>
+                        <option value="x">Select an answer</option>
                         <option value="a">print(The answer is 10)</option>
                         <option value="b">print("The answer is" + 10)</option>
                         <option value="c">print(The answer is + str(10))</option>
@@ -334,6 +339,7 @@ onChange={(e) => { setQ5Answer(e.target.value)
                 <label htmlFor="answer21">
                     21. Select all of the variable names that would not work in Python<br/>
                     <select id="answer21" value={q21Answer} onChange={(e) => setQ21Answer(e.target.value)}>
+                        <option value="x">Select an answer</option>
                         <option value="a">--Hi</option>
                         <option value="b">33number</option>
                         <option value="c">Car1%</option>
@@ -356,7 +362,7 @@ onChange={(e) => { setQ5Answer(e.target.value)
                     23. Select the value that could be picked by random.randint(20, 49).<br/>
                     <select id="answer23" value={q23Answer}
                             onChange={(e) => setQ23Answer(e.target.value)}>
-                        <option value="">Select an option</option>
+                        <option value=" ">Select an option</option>
                         <option value="a">49</option>
                         <option value="b">50</option>
                         <option value="c">20.5</option>
