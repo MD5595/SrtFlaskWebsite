@@ -10,6 +10,7 @@ export default function Quiz1 (){
   send_time('quiz1', loggedInUser);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
+
     const [answers, setAnswers] = useState([]);
     const [showScore, setShowScore] = useState(false);
     const username = localStorage.getItem('username');
@@ -54,13 +55,15 @@ export default function Quiz1 (){
           },
       ];
     useEffect(() => {
-            const test = "Quiz1"
-            axios.post(baseURL + '/postUserScore', {username, test, score}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [showScore]);
+    if (showScore) {
+      const test = "Quiz1";
+      axios.post(baseURL + '/postUserScore', { username, test, score })
+        .then(response => {})
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }, [showScore, score]);
 
       const handleAnswerSelection = (questionIndex, selectedAnswer) => {
         const updatedAnswers = [...answers];

@@ -75,6 +75,16 @@ export default function Quiz2 (){
           setShowScore(true);
         }
       };
+          useEffect(() => {
+    if (showScore) {
+      const test = "Quiz2";
+      axios.post(baseURL + '/postUserScore', { username, test, score })
+        .then(response => {})
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }, [showScore, score]);
 
       return (
         <div>

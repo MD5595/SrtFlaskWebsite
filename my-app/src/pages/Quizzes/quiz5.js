@@ -40,14 +40,16 @@ export default function Quiz5 (){
             answer: 'False'
         }
       ];
- useEffect(() => {
-            const test = "Quiz5"
-            axios.post(baseURL + '/postUserScore', {username, test, score}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [showScore]);
+     useEffect(() => {
+    if (showScore) {
+      const test = "Quiz5";
+      axios.post(baseURL + '/postUserScore', { username, test, score })
+        .then(response => {})
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }, [showScore, score]);
       const handleAnswerSelection = (questionIndex, selectedAnswer) => {
         const updatedAnswers = [...answers];
         updatedAnswers[questionIndex] = selectedAnswer;

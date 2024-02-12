@@ -56,14 +56,16 @@ export default function Quiz3 (){
           setShowScore(true);
         }
       };
- useEffect(() => {
-            const test = "Quiz3"
-            axios.post(baseURL + '/postUserScore', {username, test, score}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [showScore]);
+    useEffect(() => {
+    if (showScore) {
+      const test = "Quiz3";
+      axios.post(baseURL + '/postUserScore', { username, test, score })
+        .then(response => {})
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }, [showScore, score]);
       return (
         <div>
           {showScore ? (
