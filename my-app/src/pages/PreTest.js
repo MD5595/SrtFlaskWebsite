@@ -123,6 +123,7 @@ useEffect(() => {
   }, [scoreTest]);
 
 useEffect(() => {
+        console.log(score)
        let test = "PreTest";
         axios.post(baseURL + '/postUserScore', {username, test, score}, headers = headers).then(response => {
         })
@@ -147,7 +148,7 @@ useEffect(() => {
                 <br/> <br/>
                 {/* Question 2 */}
                 <label htmlFor="answer2">2. What module would you use if you wanted to use the sqrt() function?</label>
-                <input type="text" id="answer2" value={q2Answer}
+                 <br/><input type="text" id="answer2" value={q2Answer}
                        onChange={(e) => setQ2Answer(e.target.value)}/>
                 <br/><br/>
                 {/*Question 3 */}
@@ -330,11 +331,12 @@ onChange={(e) => { setQ5Answer(e.target.value)
                 {/* Question 21 */}
                 <label htmlFor="answer21">
                     21. Select all of the variable names that would not work in Python<br/>
-                    <select id="answer21" value={q21Answer} onChange={(e) => setQ18Answer(e.target.value)}>
+                    <select id="answer21" value={q21Answer} onChange={(e) => setQ21Answer(e.target.value)}>
                         <option value="a">--Hi</option>
                         <option value="b">33number</option>
                         <option value="c">Car1%</option>
                         <option value="d">My age</option>
+                        <option value="e">None of the answers above</option>
                     </select>
                 </label>
                 <br/>
@@ -378,6 +380,8 @@ onChange={(e) => { setQ5Answer(e.target.value)
                     }/>
                 <br/>
                 <br/>
+                <label htmlFor="checkAcc">Check this box when you are finished the test, then click the submit butto</label>
+            <input type="checkbox" id="checkAcc" name="checkAcc" value="False" onChange={CheckboxChange}
                 <button type="button" onClick={PreTestGrader}>
                     Submit
                 </button>
