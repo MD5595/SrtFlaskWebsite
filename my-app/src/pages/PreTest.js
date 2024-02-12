@@ -54,11 +54,13 @@ const [code, setCode] = useState({
         q24: ''
     });
 
-
-    function PreTestGrader() {
-        navigate("/HomePage");
+function checkboxChange(){
         triggerScoreTest(true)
     }
+    function PreTestGrader() {
+        navigate("/HomePage");
+    }
+
 
     useEffect(() => {
         if (q2Answer.includes('math')) {
@@ -381,7 +383,7 @@ onChange={(e) => { setQ5Answer(e.target.value)
                 <br/>
                 <br/>
                 <label htmlFor="checkAcc">Check this box when you are finished the test, then click the submit butto</label>
-            <input type="checkbox" id="checkAcc" name="checkAcc" value="False" onChange={CheckboxChange}
+            <input type="checkbox" id="checkFinish" name="checkFinish" value="False" onChange={checkboxChange}/>
                 <button type="button" onClick={PreTestGrader}>
                     Submit
                 </button>
