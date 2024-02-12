@@ -104,25 +104,21 @@ const [code, setCode] = useState({
         }
         if (q25Answer.includes('==')) {
             setScore((prevScore) => prevScore + 1);
-
         }
-
-
 
     }, [scoreTest]);
 
 useEffect(() => {
-    if (scoreTest) {
+
       axios.post(baseURL + '/pretestProgram', {username, code}, headers = headers).then(response => {
         })
             .catch(error => {
                 console.error(error);
             });
-    }
-  }, [scoreTest, score]);
+
+  }, [scoreTest]);
 
 useEffect(() => {
-    if (scoreTest) {
        let test = "PreTest";
         axios.post(baseURL + '/postUserScore', {username, test, score}, headers = headers).then(response => {
         })
@@ -130,8 +126,7 @@ useEffect(() => {
                 console.error(error);
 
             });
-    }
-  }, [scoreTest, score]);
+  }, [scoreTest]);
 
     return (
         <div className="container">
