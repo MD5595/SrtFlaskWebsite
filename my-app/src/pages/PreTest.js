@@ -36,11 +36,12 @@ function PreTest() {
     const [q17Answer, setQ17Answer] = useState('');
     const [q18Answer, setQ18Answer] = useState('');
     const [q20Answer, setQ20Answer] = useState('');
-    const [q21Answer, setQ21Answer] = useState('');
+    const [q21Answer, setQ21Answer] = useState('none');
     const [q22Answer, setQ22Answer] = useState('');
     const [q23Answer, setQ23Answer] = useState('');
     const [q25Answer, setQ25Answer] = useState('');
     var navigate = useNavigate();
+
 const [code, setCode] = useState({
         q1: '',
         q4: '',
@@ -96,6 +97,9 @@ const [code, setCode] = useState({
         if (q20Answer.includes('while')) {
             setScore((prevScore) => prevScore + 1);
         }
+        if (q21Answer == 'none') {
+            setScore((prevScore) => prevScore + 1);
+        }
         if (q22Answer.includes('//') || q22Answer.includes('%')) {
             setScore((prevScore) => prevScore + 1);
         }
@@ -140,7 +144,7 @@ useEffect(() => {
                           value={q1Answer}
                           onChange={(e) => { setQ1Answer(e.target.value)
                                 code["q1"] = e.target.value;}}/>
-                <br/>
+                <br/> <br/>
                 {/* Question 2 */}
                 <label htmlFor="answer2">2. What module would you use if you wanted to use the sqrt() function?</label>
                 <input type="text" id="answer2" value={q2Answer}
@@ -154,7 +158,7 @@ useEffect(() => {
                 </label>
                 <input type="text" id="answer3" value={q3Answer}
                        onChange={(e) => setQ3Answer(e.target.value)}/>
-                <br/>
+                <br/> <br/>
                 {/* Question 4 */}
                 <label htmlFor="answer4">4. Write a program that contains a function that simulates a pen being clicked
                     every time it is called, and call the function 3 times.</label>
@@ -162,13 +166,13 @@ useEffect(() => {
                                 value={q4Answer}
                                 onChange={(e) => { setQ4Answer(e.target.value)
                                 code["q4"] = e.target.value;}}/>
-                <br/>
+                <br/> <br/>
                 {/* Question 5 */}
                 <label htmlFor="answer5">5. Write a function that allows variables to be cast as strings.</label>
                 <br/> <textarea id="answer5" style={{width: '200px', height: '100px'}}
                                 value={q5Answer}
 onChange={(e) => { setQ5Answer(e.target.value)
-                                code["q5"] = e.target.value;}}/>                <br/>
+                                code["q5"] = e.target.value;}}/>                <br/> <br/>
                 {/* Question 6 */}
                 <label htmlFor="answer6">6. Write a program that has a number a user has to guess. The user will be
                     asked to enter a number between 0 and 10 (inclusive), and the computer will print, “Correct!”, if
@@ -176,13 +180,13 @@ onChange={(e) => { setQ5Answer(e.target.value)
                 <textarea id="answer6" style={{width: '200px', height: '100px'}} value={q6Answer}
                           onChange={(e) => { setQ6Answer(e.target.value)
                                 code["q6"] = e.target.value;}}/>
-                <br/>
+                <br/> <br/>
                 {/* Question 7 */}
                 <label htmlFor="answer7">7. Write a program that has a variable that contains an integer, and a second
                     variable that is the first variable casted to a float.</label><br/>
                 <textarea id="answer7" style={{width: '200px', height: '100px'}}  value={q7Answer}
                           onChange={(e) => { setQ7Answer(e.target.value)
-                                code["q7"] = e.target.value;}}/> <br/>
+                                code["q7"] = e.target.value;}}/> <br/> <br/>
                 {/* Question 8 */}
                 <label htmlFor="answer8">8. What does the append() function do?</label><br/>
                 <select id="answer8" value={q8Answer}
@@ -195,7 +199,7 @@ onChange={(e) => { setQ5Answer(e.target.value)
                 <br/><br/>
                 {/* Question 9 */}
                 <label htmlFor="answer9">9. Create a list that has floats, integers, and strings stored within
-                    it.</label>
+                    it.</label> <br/>
                 <textarea id="answer9" style={{width: '200px', height: '100px'}}
                           value={q9Answer}
                           onChange={(e) => { setQ9Answer(e.target.value)
@@ -229,7 +233,7 @@ onChange={(e) => { setQ5Answer(e.target.value)
                 <br/>
                 {/* Question 12 */}
                 <label htmlFor="answer12">12. What module would you import to use the choice() function?</label>
-                <input type="text" id="answer12" value={q12Answer}
+                <br/> <input type="text" id="answer12" value={q12Answer}
                        onChange={(e) => setQ12Answer(e.target.value)}/>
                 <br/>
                 <br/>
@@ -319,18 +323,18 @@ onChange={(e) => { setQ5Answer(e.target.value)
                 {/* Question 20 */}
                 <label htmlFor="answer20">20. What type of loop would you use if you wanted to make it stop after
                     receiving a certain input?</label>
-                <input type="text" id="answer20" value={q20Answer}
+                 <br/><input type="text" id="answer20" value={q20Answer}
                        onChange={(e) => setQ20Answer(e.target.value)}/>
                 <br/>
                 <br/>
                 {/* Question 21 */}
                 <label htmlFor="answer21">
-                    21. What line of code will make the variable `str` hold the string "here, T"?<br/>
+                    21. Select all of the variable names that would not work in Python<br/>
                     <select id="answer21" value={q21Answer} onChange={(e) => setQ18Answer(e.target.value)}>
-                        <option value="a">str[::2]</option>
-                        <option value="b">str[1:7]</option>
-                        <option value="c">str[6:1:-1]</option>
-                        <option value="d">str[:7]</option>
+                        <option value="a">--Hi</option>
+                        <option value="b">33number</option>
+                        <option value="c">Car1%</option>
+                        <option value="d">My age</option>
                     </select>
                 </label>
                 <br/>
