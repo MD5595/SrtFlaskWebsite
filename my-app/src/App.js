@@ -77,7 +77,6 @@ function App() {
                 <Route index path="/PreTest" element={<PreTest/>}/>
                 <Route index path="/ABCDEFG" element={<PostTest/>}/>
                 <Route index path="/KeyPage" element={<KeyPage/>}/>
-                <Route index path="/PracticeCoding" element={<PracticeCoding/>}/>
 
             </Routes>
         </BrowserRouter>
