@@ -129,7 +129,7 @@ export default function Unit_6_2() {
                 <p>Finish the following code given the following prompt:<br/>
                     Make a program that randomly chooses 5 elements from a list
                     and adds those value to a new list.
-                    After this print the 5th element the new list.
+                    After this print the 5th element in the new list.
                 </p>
                 <form onSubmit={handleSubmit}>
 
