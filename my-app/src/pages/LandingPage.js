@@ -15,6 +15,7 @@ function LandingPage() {
     let [isChecked, updateCheckbox] = useState(false)
     const [localUsername, setLocalUsername] = useState('');
         function handleSubmit(e) {
+        navigate('/HomePage');
         console.log(isChecked, localUsername);
         e.preventDefault()
         axios
