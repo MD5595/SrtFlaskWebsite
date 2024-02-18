@@ -59,15 +59,18 @@ function PreTest() {
 
                             }}/>
                 <br/><br/>
-                {/*Question 3 */}
-                <label htmlFor="answer3">
-                    3. Fill in the blank.<br/> <br/>num = int(input("Enter a number"))<br/>
+
+
+                {/* Question 3 */}
+                <label htmlFor="answer3"> 3. Fill in the blank.<br/> <br/>num = int(input("Enter a number"))<br/>
                     if num &gt; 0 ____ num &lt; 100:<br/>
-                    &emsp;print("Your number is between 0 and 100")<br/>
-                </label>
-                onChange={(e) => {
-                code["q3"] = e.target.value;
-            }}/>
+                    &emsp;print("Your number is between 0 and 100")<br/></label>
+                <input type="text" id="answer3"
+                            onChange={(e) => {
+
+                                code["q3"] = e.target.value;
+
+                            }}/>
                 <br/> <br/>
                 {/* Question 4 */}
                 <label htmlFor="answer4">4. Write a program that contains a function that simulates a pen being clicked
