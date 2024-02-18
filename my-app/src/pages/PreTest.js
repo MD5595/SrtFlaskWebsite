@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import {Link, Redirect, Navigate, useNavigate, useLocation} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import {baseURL} from "../config.js"
 
 
@@ -14,46 +14,24 @@ function PreTest() {
     const [sendTest, triggerSendTest] = useState(false);
 
     var navigate = useNavigate();
-
     const [code, setCode] = useState({
-        q1: 'hello',
-        q2: '',
-        q3: '',
-        q4: '',
-        q5: '',
-        q6: '',
-        q7: '',
-        q8: '',
-        q9: '',
-        q10: '',
-        q11: '',
-        q12: '',
-        q13: '',
-        q14: '',
-        q15: '',
-        q16: '',
-        q17: '',
-        q18: '',
-        q19: '',
-        q20: '',
-        q21: '',
-        q22: '',
-        q23: '',
-        q24: '',
+        q1: '', q2: '', q3: '', q4: '', q5: '', q6: '',
+        q7: '', q8: '', q9: '', q10: '', q11: '', q12: '',
+        q13: '', q14: '', q15: '', q16: '', q17: '', q18: '',
+        q19: '', q20: '', q21: '', q22: '', q23: '', q24: '',
         q25: ''
     });
 
-
     useEffect(() => {
-
-
-        console.log("Sending data:");
-        axios.post(baseURL + '/pretestProgram', {username, code}, {headers: headers}).then(response => {
-        })
-            .catch(error => {
-                console.error(error);
-            });
-
+ if(sendTest== true) {
+     navigate('/HomePage');
+     console.log("Sending data:");
+     axios.post(baseURL + '/pretestProgram', {username, code}, {headers: headers}).then(response => {
+     })
+         .catch(error => {
+             console.error(error);
+         });
+ }
     }, [sendTest]);
 
 
@@ -89,7 +67,6 @@ function PreTest() {
                 </label>
                 onChange={(e) => {
                 code["q3"] = e.target.value;
-
             }}/>
                 <br/> <br/>
                 {/* Question 4 */}
@@ -333,7 +310,6 @@ function PreTest() {
             </form>
             <button type="button" onClick={() => {
                 triggerSendTest(true);
-
             }}>
                 Submit
             </button>
