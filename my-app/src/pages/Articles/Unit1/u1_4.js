@@ -97,7 +97,15 @@ export default function Unit_1_4() {
                 You will be 27 in 10 years.
             </code></pre>
             <br/>
+    <p> If you want an alternate way of writing strings, or if you don’t want to worry about casting characters,
+        you can use the format below. They are called f-strings.
+    </p>
+            <p>f”Word1 word2 &#123;variable/functions/non-strings&#125; word3”</p>
 
+            <p>Below is an example of this format being used</p>
+          <p>  <pre><code>Var1 = 50<br/>
+print(f”The number &#123;var1&#125; is my favorite number”)
+</code></pre></p>
             <div className="container-exercise">
                 <form onSubmit={handleSubmit}>
                     <label>
