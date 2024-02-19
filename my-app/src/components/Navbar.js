@@ -14,7 +14,8 @@ export default function Navigation() {
         <CustomLink to="/DataPage">DataPage</CustomLink>
         <CustomLink to="/PreTest">PreTest</CustomLink>
         <CustomLink to="/KeyPage">PostTest</CustomLink>
-        <a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">Practice coding</a>
+        <CustomLink to="/PracticeCoding">Practice Coding</CustomLink>
+
 
       </ul>
     </nav>
