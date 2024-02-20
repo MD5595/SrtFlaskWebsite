@@ -4,7 +4,6 @@ def load_flashcards(flashcards_file):
     rows = f.readlines()
     for row in rows[1:]:
         vals = row.split('~')
-        print(vals)
         if vals[0] in flashcards:
             flashcards[vals[0]].append((vals[1],vals[2].strip('\n')))
         else:
