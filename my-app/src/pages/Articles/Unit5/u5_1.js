@@ -27,7 +27,7 @@ export default function Unit_5_1() {
     return (
         <div className="container">
 
-            <h1>Unit 6.1: Functions</h1>
+            <h1>Unit 5.1: Functions</h1>
             <p>Python comes preloaded with many functions, and more can be used by importing modules. You have the
                 ability to
                 create your own functions.</p>

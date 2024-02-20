@@ -30,7 +30,7 @@ export default function Unit_5_2() {
     return (
         <div className="container">
 
-            <h1>Unit 6.2: Parameters/Returning</h1>
+            <h1>Unit 5.2: Parameters/Returning</h1>
             <p>Parameters allow your functions to receive values and then return a new value.</p>
 
             <p>To set the parameters within your function, you place variables separated by commas within the function's
