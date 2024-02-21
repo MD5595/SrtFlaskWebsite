@@ -48,6 +48,9 @@ function PracticeCoding() {
             3) Write a function that replaces the 4th index of a list with a random value between 0 and 50.<br/>
             4) Write a function that reverses the order of a list's contents.<br/>
             5) Write a function that lowercases the first and last strings in a list. <br/>
+            6 Create an empty list, then make a for loop that adds 10 random numbers to the list that are between 1 and 200. Include an if else statement at the end of the program that prints "Nice!" if the remainder 
+            of the first two values is greater the reminder of the 
+            if more than 39, and "Not nice!" in any other situtation. <br/>
         </p>
 
     </div>
