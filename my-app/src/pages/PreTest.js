@@ -238,8 +238,9 @@ function PreTest() {
                 <br/>
                 <br/>
                 {/* Question 19 */}
-                <label htmlFor="answer19">19. Write a program which has 2 variables, one of which equals 2 and the other
-                    equals. There should be a while loop that only stops when...</label>
+                <label htmlFor="answer19">19. Write a program which has 2 variables, one of which equaling 2 and the other containing a list that has 6 different numbers. Include a while
+                                loop that reverses the order of the characters in the list. At the end of the program use a 
+                                    function to add the variable containing 2 to the end of the reversed list.  </label>
                 <br/> <textarea id="answer19" style={{width: '200px', height: '100px'}}
                                 onChange={(e) =>
                                     code["q19"] = e.target.value}
