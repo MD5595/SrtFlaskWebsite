@@ -23,20 +23,24 @@ function PracticeCoding() {
             2) Assign -4.25 to a variable, and use an imported function to make the variable's value -4. Use
             another function to make the variable's value 4.
             <br/>
-            3)
+            3) Write a Python program to convert radians to degrees. <br/>
         </p>
         <p><b>Unit 3: Conditional</b>
             <br/>
 1) Make a program that asks the user for their age. If they are 15, have the program "You are allowed to enter" If the user inputs a number other than 15,
             have the program print "You are not allowed to enter".<br/>
-            2) Make an else if statment that
+            2) Make a program that first asks the user to input their name and grade. Next write an else if statement that prints, "Welcome, {the inputted username}"
+          if the name is not John or Sam, and "You are not welcome" if the inputted grade is greater than or equal to 10.   
             3)
         </p>
         <p><b>Unit 4: Loops </b><br/>
 
         </p>
         <p><b>Unit 5: Functions</b><br/>
-1) Create a function that has 2 parameters. If the
+1) Create a function that has 2 parameters. If the remainder <br/>
+          2) Create a program that allows the user to input 4 numbers. Include a function named largest_abs_val with 4 parameters that 
+          returns the number with the largest absolute value. Call the function the function and have the 4 inputted values be used in the function
+            1) Create a function that has one parameter, and 
         </p>
         <p><b>.Unit 6: Lists</b><br/>
 1) Create a list that contains one value of each datatype.<br/>
