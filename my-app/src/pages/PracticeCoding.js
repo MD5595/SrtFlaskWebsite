@@ -25,23 +25,24 @@ function PracticeCoding() {
             2) Assign -4.25 to a variable, and use an imported function to make the variable's value -4. Use
             another function to make the variable's value 4.
             <br className="small-break"/>
-            3) Write a Python program to convert radians to degrees. <br/>
+            3) Write a Python program to convert radians to degrees (1 radian = 180 π)<br/>
         </p>
         <p><b>Unit 3: Conditional</b>
             <br/>
 1) Make a program that asks the user for their age. If they are 15, have the program "You are allowed to enter" If the user inputs a number other than 15,
             have the program print "You are not allowed to enter".<br className="small-break"/>
             2) Make a program that first asks the user to input their name and grade. Next write an else if statement that prints, "Welcome, &#123;the inputted username&#125;"
-          if the name is not John or Sam, and "You are not welcome" if the inputted grade is greater than or equal to 10.<br className="small-break"/>
+          if the name is not John or Sam, and "You are not welcome" if the inputted grade
+            is greater than or equal to 10. Have any other input make the else if statement print, "Sorry, please come again tommorrow"<br className="small-break"/>
         </p>
         <p><b>Unit 4: Loops </b><br className="small-break"/>
-1)Create a program that prints out the output (in the same format) below using a while or for loop.<br/>
+1)Create a program that prints out the output (in the same format) below using a for loop.<br/>
 <pre><code>1<br/>
 22<br/>
 333<br/>
 4444<br/>
 55555<br/></code></pre>
-
+2) Create a for loop that prints out it
             <br className="small-break"/>
         </p>
         <p><b>Unit 5: Functions</b><br/>

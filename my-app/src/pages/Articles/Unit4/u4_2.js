@@ -56,7 +56,8 @@ for i in range(9):<br/>
 </code></pre>
             <div className="container-exercise">
                 <h2>Practice Exercise:</h2>
-                <p>Fill in the blank for the range function that starts at 50, ends at 33, and decreases by 2 every loop.<br/>
+                <p>Fill in the blank for the range function that starts at
+                    50, ends at 33, and decreases by 2 every loop.<br/>
                 </p>
                 <form onSubmit={handleSubmit}>
 
