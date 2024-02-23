@@ -19,20 +19,24 @@ Unit 2,What does this symbol mean //?, floor division - removes decimals from di
 Unit 2,Is () or // done first?,()
 Unit 2,Is / or % done first?,same precendence - solved left to right
 Unit 2,What are modules?,a module is a section of code that covers functions for repeatability
-Unit 2, What does the trunc function do?, it removes the decimal portion of the inputted number
+Unit 2,What does the trunc function do?, it removes the decimal portion of the inputted number
 Unit 2,Is the randint function inclusive or exclusive?, inclusive
 Unit 2,What function returns the absolute value of a number?, fabs
+Unit 2,What function would you use if you wanted to round up a number?, ceiling
 Unit 3,What is an if/else statement?,executes a block of code if a specified condition is true. if false another block of code is executed
-Unit 3,What is "and" an example of?,logical operator
+Unit 3,What is and an example of?,logical operator
 Unit 3,What is an else/if statement?,similar to if/else but has 2 or more statements
 Unit 3,Does an else/if always have to have an else statement?,no
 Unit 3,What is a if statment that has an if statment within it called?, A nested if statement
 Unit 3,What is the difference between = and ==?, = assigns a value to a varible while == returns a boolean value based on whether a value is equal to another value
 Unit 3,What data type is the most important when making if statements?,booleans
+Unit 3,T/F: The == operator can onlt be used on numbers.,false. It can be used on ints, floats, strings, list elements,and booleans
 Unit 4,How does one exit a while loop?,the condition must be met to exit
+Unit 4,What does the //= assignment operator do?, Assigns the value of what's on the right on the /= after it has divided the variable's original value to the variable on the left of the /=
 Unit 4,When are while loops used?,when you don't know how many iterations your statement will have
 Unit 4,When do you use a for loop?,when you know how many iterations are needed
 Unit 4,What are the three parameters in a range statement?,start|stop|step
+Unit 4,What is the name of the variable that changes in every loop and controls the loop's iterating
 Unit 5,What is a function?,a block of code made to decrease the amount of repetitive code you have to write
 Unit 5,Functions perform a ____ task.,predefined
 Unit 5,What keyword allows you to define a function?,def
