@@ -46,5 +46,6 @@ Unit 5,T/F: A function can be called within another function, T
 Unit 5, What modules can you import to call predefined functions?, Math and Random
 Unit 6,What is a list?,data type that stores multiple values in one variable
 Unit 6,What index does a list start on?,0
-Unit 6, What two data types can have the append function used on them?, Strings and lists
-Unit 6, How would you print "apple" from the list "bag = ["brush", "pencil", "apple"]" in one line?, print(bag[2]) or print(bag[-1])
+Unit 6,T/F:Only lists can have their individual values/elements in the following format: Variable[0], False, strings can have their indivdual characters accessed in the same way
+Unit 6,What two data types can have the append function used on them?, Strings and lists
+Unit 6,How would you print apple from the list "bag = ["brush", "pencil", "apple"]" in one line?, print(bag[2]) or print(bag[-1])
