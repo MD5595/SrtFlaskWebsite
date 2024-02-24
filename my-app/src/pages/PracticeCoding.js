@@ -33,7 +33,7 @@ function PracticeCoding() {
             have the program print "You are not allowed to enter".<br className="small-break"/>
             2) Make a program that first asks the user to input their name and grade. Next write an else if statement that prints, "Welcome, &#123;the inputted username&#125;"
           if the name is not John or Sam, and "You are not welcome" if the inputted grade
-            is greater than or equal to 10. Have any other input make the else if statement print, "Sorry, please come again tommorrow"<br className="small-break"/>
+            is greater than or equal to 10. Have any other input make the else if statement print, "Sorry, please come again tomorrow"<br className="small-break"/>
         </p>
         <p><b>Unit 4: Loops </b><br className="small-break"/>
 1)Create a program that prints out the output (in the same format) below using a for loop.<br/>

@@ -27,8 +27,8 @@ Unit 3,What is an if/else statement?,executes a block of code if a specified con
 Unit 3,What is and an example of?,logical operator
 Unit 3,What is an else/if statement?,similar to if/else but has 2 or more statements
 Unit 3,Does an else/if always have to have an else statement?,no
-Unit 3,What is a if statment that has an if statment within it called?, A nested if statement
-Unit 3,What is the difference between = and ==?, = assigns a value to a varible while == returns a boolean value based on whether a value is equal to another value
+Unit 3,What is a if statement that has an if statement within it called?, A nested if statement
+Unit 3,What is the difference between = and ==?, = assigns a value to a variable while == returns a boolean value based on whether a value is equal to another value
 Unit 3,What data type is the most important when making if statements?,booleans
 Unit 3,T/F: The == operator can onlt be used on numbers.,false. It can be used on ints, floats, strings, list elements,and booleans
 Unit 4,How does one exit a while loop?,the condition must be met to exit
