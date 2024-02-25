@@ -53,6 +53,20 @@ def pretestProgram():
     return jsonify({'message': 'Code added'})
 
 
+@app.route('/posttestProgram', methods=['POST'])
+def posttestProgram():
+    data = request.get_json()
+    answers = json.dumps(data.get('answers'))
+    username = data.get('username')
+    conn = db.connect_db()
+
+    query = f'''INSERT INTO postTest (username, code) VALUES (?, ?)'''
+
+    conn.cursor().execute(query, (username, answers))
+    conn.commit()
+    return jsonify({'message': 'Code added'})
+
+
 
 @app.route('/getUserScore', methods =['GET'])
 def getUserScore():
@@ -82,18 +96,6 @@ def postUserScore():
     conn.commit()
     return jsonify({'message': 'Score added'}), 201
 
-
-@app.route('/posttestProgram', methods=['POST'])
-def posttestProgram():
-    data = request.get_json()
-    code = data.get('code')
-    username = data.get('username')
-    conn = db.connect_db()
-
-    query = f'''INSERT INTO postTest (username, code) VALUES (?, ?)'''
-
-    conn.cursor().execute(query, (username, code))
-    conn.commit()
 
 @app.route('/get_flashcards', methods=['POST'])
 def get_flashcards():

@@ -6,213 +6,56 @@ import {baseURL} from "../config.js";
 
 function PostTest() {
     const username = localStorage.getItem('username');
-    const [x, setX] = useState(0);
-    var navigate = useNavigate();
+    var headers = {
+        'Content-Type': 'application/json',
+      }
+      function handleSubmit(e) {
+        e.preventDefault()
+        var answers = new Object();
+        const form = e.target;
 
-    function PostTestGrader() {
-        let score = 0;
+        answers.q1 = form.answer1.value
+        answers.q2 = form.answer2.value
+        answers.q3 = form.answer3.value
+        answers.q4 = form.answer4.value
+        answers.q5 = form.answer5.value
+        answers.q6 = form.answer6.value
+        answers.q7 = form.answer7.value
+        answers.q8 = form.answer8.value
+        answers.q9 = form.answer9.value
+        answers.q10 = form.answer10.value
+        answers.q11 = form.answer11.value
+        answers.q12 = form.answer12.value
+        answers.q13 = form.answer13.value
+        answers.q14 = form.answer14.value
+        answers.q15 = form.answer15.value
+        answers.q16 = form.answer16.value        
+        answers.q17 = form.answer17.value
+        answers.q18 = form.answer18.value
+        answers.q19 = form.answer19.value
+        answers.q20 = form.answer20.value
+        answers.q21 = form.answer21.value
+        answers.q22 = form.answer22.value
+        answers.q23 = form.answer23.value
+        answers.q24 = form.answer24.value
+        answers.q25 = form.answer25.value
 
-        // Question 1
-        const q1_answer = document.getElementById('answer1').value.toLowerCase();
+        axios.post(baseURL + '/posttestProgram', {username, answers}, headers=headers).then(response => {
+            console.log("SUCCESS", response);
 
-        useEffect(() => {
-            let code = q1_answer;
-            axios.post(baseURL + '/posttestProgram', {username, code}).then(response => {
-                console.log("SUCCESS", response);
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
-        // Question 2
-        const q2_answer = document.getElementById('answer2').value.toLowerCase();
-        if (q2_answer.includes("module")) {
-            score++;
-        }
+        }).catch(error => {
+                console.error(error);
 
-        // Question 3
-        const q3_answer = document.getElementById('answer3').value;
-        useEffect(() => {
-            let code = q3_answer;
-            axios.post(baseURL + '/posttestProgram', {username, code}).then(response => {
-                console.log("SUCCESS", response);
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
-
-        const q4_answer = document.getElementById('answer4').value.toLowerCase();
-        if (q4_answer.includes("parameter")) {
-            score++;
-        }
-
-// Question 5
-        const q5_answer = document.getElementById('answer5').value.toLowerCase();
-        if (q5_answer.includes("inclusive")) {
-            score++;
-        }
-// Question 6
-        const q6_answer = document.getElementById('answer6').value.toLowerCase();
-        if (q6_answer.includes("math")) {
-            score++;
-        }
-
-// Question 7
-        const q7_answer = document.getElementById('answer7').value.toLowerCase();
-        if (q7_answer.includes("48 46 44 42 40")) {
-            score++;
-        }
-
-// Question 8
-        const q8_answer = document.getElementById('answer8').value;
-        useEffect(() => {
-            let code = q8_answer;
-            axios.post(baseURL + '/posttestProgram', {username, code}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
-
-// Question 9
-        const q9_answer = document.getElementById('answer9').value.toLowerCase();
-        if (q9_answer.includes("a")) {
-            score++;
-        }
-
-// Question 10
-        const q10_answer = document.getElementById('answer10').value.toLowerCase();
-        if (q10_answer.includes("#")) {
-            score++;
-        }
-
-// Question 11
-        const q11_answer = document.getElementById('answer11').value.toLowerCase();
-
-        if (q11_answer.includes("a")) {
-            score++;
-        }
-
-// Question 12
-        const q12_answer = document.getElementById('answer12').value.toLowerCase();
-
-        if (q12_answer.includes("5**3") || q12_answer.includes("pow(5,3)") || q12_answer.includes("math.pow(5,3)")) {
-            score++;
-        }
-
-// Question 13
-        const q13_answer = document.getElementById('answer13').value.toLowerCase();
-        if (q13_answer.includes("35")) {
-            score++;
-        }
-
-// Question 14
-        const q14_answer = document.getElementById('answer14').value.toLowerCase();
-
-        if (q14_answer.includes("b ")) {
-            score++;
-        }
-
-// Question 15
-        const q15_answer = document.getElementById('answer15').value.toLowerCase();
-        if (q15_answer.includes("3")) {
-            score++;
-        }
-// Question 16
-        const q16_answer = document.getElementById('answer16').value.toLowerCase();
-        useEffect(() => {
-            let code = q16_answer;
-            axios.post(baseURL + '/posttestProgram', {username, code}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
-// Question 17
-        const q17_answer = document.getElementById('answer17').value.toLowerCase();
-        if (q17_answer.includes("b")) {
-            score++;
-        }
-// Question 18
-        const q18_answer = document.getElementById('answer18').value.toLowerCase();
-        if (q18_answer.includes("c")) {
-            score++;
-        }
-// Question 19
-        const q19_answer = document.getElementById('answer19').value;
-        useEffect(() => {
-            let code = q19_answer;
-            axios.post(baseURL + '/posttestProgram', {username, code}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
-
-// Question 20
-        const q20_answer = document.getElementById('answer20').value;
-        useEffect(() => {
-            let code = q20_answer;
-            axios.post(baseURL + '/posttestProgram', {username, code}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
-        // Question 21
-        const q21_answer = document.getElementById('answer21').value.toLowerCase();
-        if (q21_answer.includes("while")) {
-            score++;
-        }
-        // Question 22
-        const q22_answer = document.getElementById('answer22').value.toLowerCase();
-        if (!q22_answer.includes("a") && q22_answer.includes("b") && q22_answer.includes("c") && q22_answer.includes("d")) {
-            score++;
-        }
-        // Question 23
-        const q23_answer = document.getElementById('answer23').value;
-        useEffect(() => {
-            let code = q23_answer;
-            axios.post(baseURL + '/posttestProgram', {username, code}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
-//Question 24
-        const q24_answer = document.getElementById('answer24').value;
-        if (q24_answer.includes("a") && q24_answer.includes("c") && q24_answer.includes("d") && !q24_answer.includes("b")) {
-            score++
-        }
-        // Question 25
-        const q25_answer = document.getElementById('answer25').value;
-        useEffect(() => {
-            let code = q25_answer;
-            axios.post(baseURL + '/posttestProgram', {username, code}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
-        navigate("/HomePage");
-
-
-        useEffect(() => {
-            const test = "Post-Test"
-            axios.post(baseURL + '/postUserScore', {username, test, score}).then(response => {
-            })
-                .catch(error => {
-                    console.error(error);
-                });
-        }, [x]);
-
+            });
     }
+
 
     return (
         <div className="container">
-            {/* Question 1 */}
             <h1>PostTest</h1>
+
+            <form onSubmit={handleSubmit}>
+            {/* Question 1 */}
             <label htmlFor="answer1">1. Make a user input-based number guessing game that keeps looping until the
                 user gets the right answer. If the user gets the answer wrong 5 times, make the game stop and print,
                 “Better luck next time.”</label><br/>
@@ -223,7 +66,7 @@ function PostTest() {
             <input type="text" id="answer2"/>
             <br/><br/>
             {/* Question 3 */}
-            <label htmlFor="answer1">3. Write a program that asks the user to input a number, then prints, "Your
+            <label htmlFor="answer3">3. Write a program that asks the user to input a number, then prints, "Your
                 number is between 0 and 100" if the number is between 0 and 100 (inclusive).</label><br/>
             <textarea id="answer3" style={{width: '200px', height: '100px'}}/>
             <br/><br/>
@@ -331,7 +174,7 @@ function PostTest() {
             <input type="text" id="answer15"/>
             <br/><br/>
             {/* Question 16 */}
-            <label htmlFor="answer1">16. Write a program that simulates a coin flipping 100 times. The program
+            <label htmlFor="answer16">16. Write a program that simulates a coin flipping 100 times. The program
                 should print the average amount of times heads and tails land.</label><br/>
             <textarea id="answer16" style={{width: '200px', height: '100px'}}/>
 
@@ -353,7 +196,7 @@ function PostTest() {
 
                 <br/>
 
-                <select id="answer14">
+                <select id="answer17">
                     <option value="a">120</option>
                     <option value="b">126</option>
                     <option value="c">132</option>
@@ -374,14 +217,14 @@ function PostTest() {
             </label>
             <br/><br/>
             {/* Question 19 */}
-            <label htmlFor="answer1">19. Write code that receives 3 numbers (label your variables a, b, and c) and
+            <label htmlFor="answer19">19. Write code that receives 3 numbers (label your variables a, b, and c) and
                 determines if a triangle can exist with the side lengths inputted. Use the formula a^2 + b^2 =
                 c^2</label><br/>
             <textarea id="answer19" style={{width: '200px', height: '100px'}}/>
 
             <br/><br/>
             {/* Question 20 */}
-            <label htmlFor="answer1">20. Create a function that has 3 parameters and prints, “All good!”, if all
+            <label htmlFor="answer20">20. Create a function that has 3 parameters and prints, “All good!”, if all
                 parameters have an even square root, and “Not all good.” if they don't all have even square
                 roots.</label><br/>
             <textarea id="answer20" style={{width: '200px', height: '100px'}}/>
@@ -396,20 +239,20 @@ function PostTest() {
             <label htmlFor="answer22">22. Select all invalid variable names.
                 <br/>
                 <input type="checkbox" id="a" name="answer22" value="a"/>
-                <label htmlFor="a">a) _</label>
+                <label htmlFor="a"> _</label>
                 <br/>
                 <input type="checkbox" id="b" name="answer22" value="b"/>
-                <label htmlFor="b">b) 33number</label>
+                <label htmlFor="b"> 33number</label>
                 <br/>
                 <input type="checkbox" id="c" name="answer22" value="c"/>
-                <label htmlFor="c">c) Car1%</label>
+                <label htmlFor="c"> Car1%</label>
                 <br/>
                 <input type="checkbox" id="d" name="answer22" value="d"/>
-                <label htmlFor="d">d) My age</label>
+                <label htmlFor="d"> My age</label>
             </label>
             <br/><br/>
             {/* Question 23 */}
-            <label htmlFor="answer1">23. Write a program that receives an amount of cents ranging from 1 to 100 from a
+            <label htmlFor="answer23">23. Write a program that receives an amount of cents ranging from 1 to 100 from a
                 user,
                 then prints out the number of quarters, dimes, nickels, and pennies that would make up this value in the
                 least amount of coins. </label><br/>
@@ -432,14 +275,14 @@ function PostTest() {
             </label>
             <br/><br/>
             {/* Question 25 */}
-            <label htmlFor="answer1">25. Write a program that has a while loop that stops once the user inputs a
+            <label htmlFor="answer25">25. Write a program that has a while loop that stops once the user inputs a
                 number that is divisible not by 2 and has a remainder of 3 when divided by 4.</label><br/>
             <textarea id="answer25" style={{width: '200px', height: '100px'}}/>
             <br/><br/>
 
-            <button type="button" onClick={() => PostTestGrader()}>
-                Submit
-            </button>
+            <input type="submit" id="submitButton" value="Submit"/>
+
+            </form>
         </div>
     );
 }
