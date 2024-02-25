@@ -69,7 +69,40 @@ export default function Unit_5_2() {
         Unclicked
     </code></pre>
 
-            <p>By returning the value the function produces, the product can be printed or used in operations.</p>
+            <p>By returning the value the function produces, the product can be printed or used
+                in operations. <br/>
+
+            <br/>
+                Below is a function that simulates a pen being clicked, with the pen originally being unclicked.
+                <br/>
+                <pre><code>def leap_year(x):<br/>
+    &emsp;if (x % 4 == 0 and x % 100 != 0) or (x % 400 == 0):<br/>
+         &emsp;&emsp;return 1<br/>
+    &emsp;else:<br/>
+                  &emsp;&emsp;return 0<br/>
+<br/>
+def number_of_days(m, y):<br/>
+    &emsp;if m == 1 or m == 3 or m==5 or m==7 or m==8 or m == 10 or m == 12:<br/>
+         &emsp;&emsp;return 31<br/>
+    &emsp;elif m == 2:<br/>
+         &emsp;&emsp;if leap_year(y) == 1:<br/>
+              &emsp;&emsp;&emsp;return 29<br/>
+         &emsp;&emsp;else:<br/>
+              &emsp;&emsp;&emsp;return 28<br/>
+    &emsp;elif m == 4 or m == 6 or m == 9 or m == 11:<br/>
+         &emsp;&emsp;return 30<br/>
+<br/>
+
+month = int(input(“Enter a month”)<br/>
+year = int(input(“Enter a year”)<br/><br/>
+print(number_of_days(month, year)<br/>
+
+</code></pre>
+            </p>
+
+
+
+
             <div className="container-exercise">
                 <h2>Practice Exercise:</h2>
                 <p>Finish the following code given the following prompt:<br/>
