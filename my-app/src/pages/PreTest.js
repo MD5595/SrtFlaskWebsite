@@ -41,8 +41,6 @@ function PreTest() {
         answers.q24 = form.answer24.value
         answers.q25 = form.answer25.value
 
-
-
         axios.post(baseURL + '/pretestProgram', {username, answers}, headers=headers).then(response => {
             console.log("SUCCESS", response);
 
@@ -59,16 +57,16 @@ function PreTest() {
             
             <form onSubmit={handleSubmit}>
                 {/* Question 1 */}
-                <label for="answer1">1. Make a user input-based number guessing game that keeps looping until the
+                <label htmlFor="answer1">1. Make a user input-based number guessing game that keeps looping until the
                     user gets the right answer. </label>
                 <textarea id="answer1" style={{width: '200px', height: '100px'}}/>
                 <br/>
                 {/* Question 2 */}
-                <label for="answer2">2. What module would you use if you wanted to use the sqrt() function?</label>
+                <label htmlFor="answer2">2. What module would you use if you wanted to use the sqrt() function?</label>
                 <input type="text" id="answer2"/>
                 <br/><br/>
                 {/*Question 3 */}
-                <label for="answer3">
+                <label htmlFor="answer3">
                     3. Fill in the blank.<br/>num = int(input("Enter a number"))<br/>
                     if num &gt; 0 ____ num &lt; 100:<br/>
                     &emsp;print("Your number is between 0 and 100")<br/><br/>
@@ -76,26 +74,26 @@ function PreTest() {
                 <input type="text" id="answer3" />
                 <br/><br/>
                 {/* Question 4 */}
-                <label for="answer4">4. Write a program that contains a function that simulates a pen being clicked
+                <label htmlFor="answer4">4. Write a program that contains a function that simulates a pen being clicked
                     every time it is called, and call the function 3 times.</label>
                 <br/> <textarea id="answer4" style={{width: '200px', height: '100px'}}/>
                 <br/><br/>
                 {/* Question 5 */}
-                <label for="answer5">5. Write a function that allows variables to be cast as strings.</label>
+                <label htmlFor="answer5">5. Write a function that allows variables to be cast as strings.</label>
                 <br/> <textarea id="answer5" style={{width: '200px', height: '100px'}}/>
                 <br/><br/>
                 {/* Question 6 */}
-                <label for="answer6">6. Write a program that has a number a user has to guess. The user will be
+                <label htmlFor="answer6">6. Write a program that has a number a user has to guess. The user will be
                     asked to enter a number between 0 and 10 (inclusive), and the computer will print, “Correct!”, if
                     correct or, “Nope, better luck next time”, if incorrect.</label>
                 <textarea id="answer6" style={{width: '200px', height: '100px'}}/>
                 <br/><br/>
                 {/* Question 7 */}
-                <label for="answer7">7. Write a program that has a variable that contains an integer, and a second
+                <label htmlFor="answer7">7. Write a program that has a variable that contains an integer, and a second
                     variable that is the first variable casted to a float.</label><br/>
                 <textarea id="answer7" style={{width: '200px', height: '100px'}}/> <br/><br/>
                 {/* Question 8 */}
-                <label for="answer8">8. What does the append() function do?</label><br/>
+                <label htmlFor="answer8">8. What does the append() function do?</label><br/>
                 <select id="answer8">
                     <option value="a">Adds an element to the end of a list</option>
                     <option value="b">Adds a number to the end of a variable</option>
@@ -104,13 +102,13 @@ function PreTest() {
                 </select>
                 <br/><br/>
                 {/* Question 9 */}
-                <label for="answer9">9. Create a list that has floats, integers, and strings stored within
+                <label htmlFor="answer9">9. Create a list that has floats, integers, and strings stored within
                     it.</label><br/>
                 <textarea id="answer9" style={{width: '200px', height: '100px'}}/> <br/>
                 <br/>
                 <br/>
                 {/* Question 10 */}
-                <label for="answer10">10. Which symbol has the highest precedence in mathematical
+                <label htmlFor="answer10">10. Which symbol has the highest precedence in mathematical
                     operations?</label><br/>
                 <select id="answer10">
                     <option value="a">//</option>
@@ -121,7 +119,7 @@ function PreTest() {
                 <br/>
                 <br/>
                 {/* Question 11 */}
-                <label for="answer11">11. What kind of data type is most commonly associated with
+                <label htmlFor="answer11">11. What kind of data type is most commonly associated with
                     conditionals?</label><br/>
                 <select id="answer11">
                     <option value="a">Strings</option>
@@ -133,12 +131,12 @@ function PreTest() {
                 <br/>
                 <br/>
                 {/* Question 12 */}
-                <label for="answer12">12. What module would you import to use the choice() function?</label>
+                <label htmlFor="answer12">12. What module would you import to use the choice() function?</label>
                 <br/><input type="text" id="answer12"/>
                 <br/>
                 <br/>
                 {/* Question 13 */}
-                <label for="answer13">13. What would the following code print?<br/>
+                <label htmlFor="answer13">13. What would the following code print?<br/>
                 for _ in range(48, 38, -2):<br/>
                 print(_, end=" ")</label><br/>
                 <select id="answer13"><br/>
@@ -154,7 +152,7 @@ function PreTest() {
                 <br/>
                 <br/>
                 {/* Question 14 */}
-                <label for="answer14">14. Which variable name below is valid? </label><br/>
+                <label htmlFor="answer14">14. Which variable name below is valid? </label><br/>
                 <select id="answer14"><br/>
                     <option value="a">333number</option>
                     <br/>
@@ -168,13 +166,13 @@ function PreTest() {
                 <br/>
                 <br/>
                 {/* Question 15 */}
-                <label for="answer15">15. Input the code that would allow the user to input a number, cast the input
+                <label htmlFor="answer15">15. Input the code that would allow the user to input a number, cast the input
                     as a float, and assign the value to the variable “num1”</label>
                 <br/> <textarea id="answer15" style={{width: '200px', height: '100px'}}/>
                 <br/>
                 <br/>
                 {/* Question 16 */}
-                <label for="answer16">16. What will print(10//4) display on the terminal?</label><br/>
+                <label htmlFor="answer16">16. What will print(10//4) display on the terminal?</label><br/>
                 <select id="answer16">
                     <option value="a">2.0</option>
                     <option value="b">2.5</option>
@@ -184,7 +182,7 @@ function PreTest() {
                 <br/>
                 <br/>
                 {/* Question 17 */}
-                <label for="answer17">17. When to use = instead of ==?</label><br/>
+                <label htmlFor="answer17">17. When to use = instead of ==?</label><br/>
                 <select id="answer17">
                     <option value="a">When you want to assign a value to a variable</option>
                     <option value="b">When you want to make a logical statement that hinges on values being equal
@@ -196,7 +194,7 @@ function PreTest() {
                 <br/>
                 <br/>
                 {/* Question 18 */}
-                <label for="answer18">18. Which line of code will not return an error?<br/>
+                <label htmlFor="answer18">18. Which line of code will not return an error?<br/>
                     <select id="answer18">
                         <option value="a">print(The answer is 10)</option>
                         <option value="b">print("The answer is" + 10)</option>
@@ -207,19 +205,19 @@ function PreTest() {
                 <br/>
                 <br/>
                 {/* Question 19 */}
-                <label for="answer19">19. Write a program which has 2 variables, one of which equals 2 and the other
+                <label htmlFor="answer19">19. Write a program which has 2 variables, one of which equals 2 and the other
                     equals. There should be a while loop that only stops when...</label>
                 <br/> <textarea id="answer19" style={{width: '200px', height: '100px'}}/>
                 <br/>
                 <br/>
                 {/* Question 20 */}
-                <label for="answer20">20. What type of loop would you use if you wanted to make it stop after
+                <label htmlFor="answer20">20. What type of loop would you use if you wanted to make it stop after
                     receiving a certain input?</label>
                     <br/><input type="text" id="answer20"/>
                 <br/>
                 <br/>
                 {/* Question 21 */}
-                <label for="answer21">
+                <label htmlFor="answer21">
                     21. What line of code will make the variable `str` hold the string "here, T"?<br/>
                     <select id="answer21">
                         <option value="a">str[::2]</option>
@@ -232,13 +230,13 @@ function PreTest() {
                 <br/>
 
                 {/* Question 22 */}
-                <label for="answer22">22. What operator would be the best choice if you wanted to determine how many
+                <label htmlFor="answer22">22. What operator would be the best choice if you wanted to determine how many
                     quarters would fit inside an amount of money a user inputted?(There are two possible answers. Input
                     the symbol to answer.)</label>
                 <br/> <input type="text" id="answer22"/>
                 <br/>
                 <br/>
-                <label for="answer23">
+                <label htmlFor="answer23">
                     23. Select the value that could be picked by random.randint(20, 49).<br/>
                     <select id="answer23">
                         <option value="">Select an option</option>
@@ -252,13 +250,13 @@ function PreTest() {
                 <br/>
                 <br/>
                 {/* Question 24 */}
-                <label for="answer24">24. Write a program that has a list with 3 numbers within it. Use a function
+                <label htmlFor="answer24">24. Write a program that has a list with 3 numbers within it. Use a function
                     to add 45 to the list.</label>
                 <br/> <textarea id="answer24" style={{width: '200px', height: '100px'}}/>
                 <br/>
                 <br/>
                 {/* Question 25 */}
-                <label for="answer25">25. What comparison operator would be used if you wanted to make a logical
+                <label htmlFor="answer25">25. What comparison operator would be used if you wanted to make a logical
                     statement that hinges on an expression being equal to a specific number?</label><br/>
                 <input type="text" id="answer25"/>
                 <br/>
