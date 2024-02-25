@@ -42,13 +42,13 @@ def sendLocationTime():
 @app.route('/pretestProgram', methods=['POST'])
 def pretestProgram():
     data = request.get_json()
-    code = data.get('code',{})
+    answers = json.dumps(data.get('answers'))
     username = data.get('username')
     conn = db.connect_db()
 
     query = f'''INSERT INTO preTest (username, code) VALUES (?, ?)'''
 
-    conn.cursor().execute(query, (username,code))
+    conn.cursor().execute(query, (username,answers))
     conn.commit()
     return jsonify({'message': 'Code added'})
 
