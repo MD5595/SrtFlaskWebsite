@@ -82,7 +82,16 @@ def postUserScore():
     conn.commit()
     return jsonify({'message': 'Score added'}), 201
 
+@app.route('/postUserTime', methods=['POST'])
+def postUserScore():
+    data = request.get_json()
+    total_time = data.get('time')
 
+    conn = db.connect_db()
+    query = f'''INSERT INTO students (username, total_time) VALUES (?, ?, ?)'''
+    conn.cursor().execute(query, (username, total_time))
+    conn.commit()
+    return jsonify({'message': 'time added'}), 201
 @app.route('/posttestProgram', methods=['POST'])
 def posttestProgram():
     data = request.get_json()
