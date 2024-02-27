@@ -3,22 +3,23 @@ import axios from 'axios';
 import {baseURL} from "../config.js"
 
 function Timer() {
-    const [seconds, setSeconds] = useState(0);
-    const [sendTime, changeSendTime] = useState(false)
+    const [time, setTime] = useState(0);
+    const [sendTime, setSendTime] = useState(false)
     if(seconds>=20){
-
+        setSendTime((sendTime) => !sendTime);
+        setSeconds(0)
     }
     const timer = setInterval(() => {
-        setSeconds((prevSeconds) => prevSeconds + 1);
+        setTime((prevTime) => prevTime + 1);
     }, 1000);
 
     useEffect(() => {
-        axios.post(baseURL + '/postUserTime', {},
+        axios.post(baseURL + '/postUserTime', {username:username ,time: time},
             headers = headers);
 
 
         return () => clearInterval(timer);
-    }, []);
+    }, [sendTime]);
 
 
 }
