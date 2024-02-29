@@ -48,6 +48,8 @@ function PracticeCoding() {
             and "FizzBuzz" if the current count variable is divisble by 3 and 5.
             <br className="small-break"/>
         </p>
+        3) Create a number guessing game. Have the correct number be a value from 1 to 100, and a while loo that prints out that your guess is wrong, as well as if the
+        guess is too high or low if the guess is wrong, and "Correct!" if the guess is right. If the number is guessed correctly within the first 5 guesses have "Congrats, you are the best!" be printed instead.
         <p><b>Unit 5: Functions</b><br/>
 1) Create a function that has 2 parameters. If the remainder <br className="small-break"/>
           2) Create a program that allows the user to input 4 numbers. Include a function named largest_abs_val with 4 parameters that 
