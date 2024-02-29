@@ -27,8 +27,7 @@ function Timer() {
         axios.post(baseURL + '/postUserTime', {username:username ,time:time},
             headers = headers);
 
-        return () => clearInterval(timer);
-    }, [sendTime]);
+     }, [sendTime]);
 
 
 }
