@@ -88,8 +88,10 @@ def postUserScore():
     total_time = data.get('time')
 
     conn = db.connect_db()
-    query = f'''INSERT INTO students (username, total_time) VALUES (?, ?, ?)'''
-    conn.cursor().execute(query, (username, total_time))
+    update_query = '''UPDATE students SET total_time = ? WHERE username = ?'''
+    conn.cursor().execute(update_query, (username, total_time))
+
+
     conn.commit()
     return jsonify({'message': 'time added'}), 201
 @app.route('/posttestProgram', methods=['POST'])
@@ -119,7 +121,7 @@ def get_flashcards():
 def get_units():
     units = ['Unit 1', 'Unit 2', 'Unit 3', 'Unit 4', 'Unit 5', 'Unit 6']
     response = []
-    count = 1
+    count =1
     for u in units:
         response.append({'id': count, 'name': u})
         count += 1
