@@ -63,7 +63,7 @@ function PreTest() {
                 <br/>
                 {/* Question 2 */}
                 <label htmlFor="answer2">2. What module would you use if you wanted to use the sqrt() function?</label>
-                <input type="text" id="answer2"/>
+                <br/><input type="text" id="answer2"/>
                 <br/><br/>
                 {/*Question 3 */}
                 <label htmlFor="answer3">
@@ -218,12 +218,12 @@ function PreTest() {
                 <br/>
                 {/* Question 21 */}
                 <label htmlFor="answer21">
-                    21. What line of code will make the variable `str` hold the string "here, T"?<br/>
+                    21. Select the variable name that would not work in Python<br/>
                     <select id="answer21">
-                        <option value="a">str[::2]</option>
-                        <option value="b">str[1:7]</option>
-                        <option value="c">str[6:1:-1]</option>
-                        <option value="d">str[:7]</option>
+                        <option value="a">__Hi</option>
+                        <option value="b">33number</option>
+                        <option value="c">Car1</option>
+                        <option value="d">MyAge</option>
                     </select>
                 </label>
                 <br/>
@@ -239,7 +239,7 @@ function PreTest() {
                 <label htmlFor="answer23">
                     23. Select the value that could be picked by random.randint(20, 49).<br/>
                     <select id="answer23">
-                        <option value="">Select an option</option>
+
                         <option value="a">49</option>
                         <option value="b">50</option>
                         <option value="c">20.5</option>
