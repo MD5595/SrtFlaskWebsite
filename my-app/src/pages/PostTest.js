@@ -6,6 +6,7 @@ import {baseURL} from "../config.js";
 
 function PostTest() {
     const username = localStorage.getItem('username');
+    var navigate = useNavigate();
     var headers = {
         'Content-Type': 'application/json',
       }
@@ -42,7 +43,7 @@ function PostTest() {
 
         axios.post(baseURL + '/posttestProgram', {username, answers}, headers=headers).then(response => {
             console.log("SUCCESS", response);
-
+        navigate('/HomePage');
         }).catch(error => {
                 console.error(error);
 
@@ -62,7 +63,7 @@ function PostTest() {
             <textarea id="answer1" style={{width: '200px', height: '100px'}}/>
             <br/><br/>
             {/* Question 2 */}
-            <label htmlFor="answer2">2. What are Math and Random?</label>
+            <label htmlFor="answer2">2. What are Math and Random?</label><br/>
             <input type="text" id="answer2"/>
             <br/><br/>
             {/* Question 3 */}
@@ -71,15 +72,15 @@ function PostTest() {
             <textarea id="answer3" style={{width: '200px', height: '100px'}}/>
             <br/><br/>
             {/* Question 4 */}
-            <label htmlFor="answer4">4. What are the placeholder variables within a function called?</label>
+            <label htmlFor="answer4">4. What are the placeholder variables within a function called?</label><br/>
             <input type="text" id="answer4"/>
             <br/><br/>
             {/* Question 5 */}
-            <label htmlFor="answer5">5. Is random.randint inclusive or exclusive?</label>
+            <label htmlFor="answer5">5. Is random.randint inclusive or exclusive?</label><br/>
             <input type="text" id="answer5"/>
             <br/><br/>
             {/* Question 6 */}
-            <label htmlFor="answer6">6. Which module is .fabs stored in?</label>
+            <label htmlFor="answer6">6. Which module is .fabs stored in?</label><br/>
             <input type="text" id="answer6"/>
             <br/><br/>
             {/* Question 7 */}
@@ -123,7 +124,7 @@ function PostTest() {
             <br/><br/>
             {/* Question 10 */}
             <label htmlFor="answer10">10. What symbol do you use when you want your program to ignore a
-                line?</label>
+                line?</label><br/>
             <input type="text" id="answer10"/>
             <br/><br/>
             {/* Question 11 */}
@@ -232,7 +233,7 @@ function PostTest() {
             <br/><br/>
             {/* Question 21 */}
             <label htmlFor="answer21">21. What type of loop would you use if you wanted to make it stop after
-                receiving a certain input?</label>
+                receiving a certain input?</label><br/>
             <input type="text" id="answer21"/>
             <br/><br/>
             {/* Question 22 */}
