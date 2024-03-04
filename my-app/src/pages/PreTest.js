@@ -223,7 +223,7 @@ function PreTest() {
                         <option value="a">__Hi</option>
                         <option value="b">33number</option>
                         <option value="c">Car1</option>
-                        <option value="d">MyAge</option>
+                        <option value="d">MyAge-</option>
                     </select>
                 </label>
                 <br/>
