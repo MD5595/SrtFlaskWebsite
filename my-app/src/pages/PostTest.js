@@ -38,8 +38,10 @@ function PostTest() {
         answers.q21 = form.answer21.value
         answers.q22 = form.answer22.value
         answers.q23 = form.answer23.value
-        answers.q24 = form.answer24.value
-        answers.q25 = form.answer25.value
+        answers.q24a = form.answer24a.value
+        answers.q24b = form.answer24b.value
+        answers.q24c = form.answer24c.value
+        answers.q24d = form.answer24d.value
 
         axios.post(baseURL + '/posttestProgram', {username, answers}, headers=headers).then(response => {
             console.log("SUCCESS", response);
@@ -49,7 +51,9 @@ function PostTest() {
 
             });
     }
-
+function checkboxValue(checkbox, val){
+        checkbox.value = checkbox.checked ? val : '';
+}
 
     return (
         <div className="container">
@@ -267,16 +271,16 @@ function PostTest() {
             {/* Question 24 */}
             <label htmlFor="answer24">24. Select all values that could be picked by random.randint(20,49)
                 <br/>
-                <input type="checkbox" id="a" name="answer24a" value="a"/>
+                <input type="checkbox" id="a" name="answer24a" value="" onchange="checkboxValue(this, 'a')"/>
                 <label htmlFor="a">49</label>
                 <br/>
-                <input type="checkbox" id="b" name="answer24b" value="b"/>
+                <input type="checkbox" id="b" name="answer24b" value="" onchange="checkboxValue(this, 'b')"/>
                 <label htmlFor="b">19</label>
                 <br/>
-                <input type="checkbox" id="c" name="answer24c" value="c"/>
+                <input type="checkbox" id="c" name="answer24c" value="" onchange="checkboxValue(this, 'c')"/>
                 <label htmlFor="c">20</label>
                 <br/>
-                <input type="checkbox" id="d" name="answer24d" value="d"/>
+                <input type="checkbox" id="d" name="answer24d" value="" onchange="checkboxValue(this, 'd')"/>
                 <label htmlFor="d">48</label>
             </label>
             <br/><br/>
