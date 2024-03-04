@@ -86,10 +86,15 @@ function PostTest() {
             {/* Question 7 */}
             <label htmlFor="answer7">7. What would the following code print: <br/>for _ in range(48,38,-2): <br/>print(_,
                 end=" ")</label><br/>
-            <input type="text" id="answer7"/>
+            <select id="answer7">
+                <option value='a'>46 44 42 40 38</option>
+                <option value="b">48 46 44 42 40</option>
+                <option value="c"></option>
+                <option value="d"></option>
+            </select>
             <br/><br/>
             {/* Question 8 */}
-            <label htmlFor="answer1">8. Write a program that randomly chooses a number from a list and prints the
+            <label htmlFor="answer8">8. Write a program that randomly chooses a number from a list and prints the
                 chosen number.</label><br/>
             <textarea id="answer8" style={{width: '200px', height: '100px'}}/>
             <br/><br/>
@@ -262,16 +267,16 @@ function PostTest() {
             {/* Question 24 */}
             <label htmlFor="answer24">24. Select all values that could be picked by random.randint(20,49)
                 <br/>
-                <input type="checkbox" id="a" name="answer24" value="a"/>
+                <input type="checkbox" id="a" name="answer24a" value="a"/>
                 <label htmlFor="a">49</label>
                 <br/>
-                <input type="checkbox" id="b" name="answer24" value="b"/>
+                <input type="checkbox" id="b" name="answer24b" value="b"/>
                 <label htmlFor="b">19</label>
                 <br/>
-                <input type="checkbox" id="c" name="answer24" value="c"/>
+                <input type="checkbox" id="c" name="answer24c" value="c"/>
                 <label htmlFor="c">20</label>
                 <br/>
-                <input type="checkbox" id="d" name="answer24" value="d"/>
+                <input type="checkbox" id="d" name="answer24d" value="d"/>
                 <label htmlFor="d">48</label>
             </label>
             <br/><br/>
