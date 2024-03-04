@@ -25,7 +25,7 @@ function PracticeCoding() {
             2) Assign -4.25 to a variable, and use an imported function to make the variable's value -4. Use
             another function to make the variable's value 4.
             <br className="small-break"/>
-            3) Write a Python program to convert radians to degrees (1 radian = 180 π)<br/>
+            3) Write a Python program that converts radians to degrees (1 radian = 180 π).<br/>
         </p>
         <p><b>Unit 3: Conditional</b>
             <br/>
@@ -37,19 +37,24 @@ function PracticeCoding() {
         </p>
         <p><b>Unit 4: Loops </b><br className="small-break"/>
 1)Create a program that prints out the output (in the same format) below using a for loop.<br/>
-<pre><code>1<br/>
-22<br/>
-333<br/>
-4444<br/>
-55555<br/></code></pre>
-2) Create a for loop that prints out it
+<pre><code>
+    &emsp;&emsp;&emsp;&emsp;&emsp;*<br/>
+&emsp;&emsp;&emsp;&emsp;**<br/>
+&emsp;&emsp;&emsp;***<br/>
+&emsp;&emsp;****<br/>
+&emsp;*****<br/></code></pre>
+2) Create a for loop that has a range of 1 to 30. Have it print "Fizz" if the
+            current count variable is divisble by 3, "Buzz" if the current count variable is divisble by 5,
+            and "FizzBuzz" if the current count variable is divisble by 3 and 5.
             <br className="small-break"/>
         </p>
+        3) Create a number guessing game. Have the correct number be a value from 1 to 100, and a while loop that prints out that your guess is wrong as well as if the
+        guess is too high or low if the guess is wrong, and "Correct!" if the guess is right. If the number is guessed correctly within the first 5 guesses have "Congrats, you are the best!" be printed instead.
         <p><b>Unit 5: Functions</b><br/>
 1) Create a function that has 2 parameters. If the remainder <br className="small-break"/>
           2) Create a program that allows the user to input 4 numbers. Include a function named largest_abs_val with 4 parameters that 
           returns the number with the largest absolute value. Call the function the function and have the 4 inputted values be used in the function. <br className="small-break"/>
-            3) Create a function that has one parameter, and  <br className="small-break"/>
+            <br className="small-break"/>
         </p>
         <p><b>Unit 6: Lists</b><br/>
 1) Create a list that contains one value of each datatype. After this use a preexisting function to add 4 to the list.<br className="small-break"/>
