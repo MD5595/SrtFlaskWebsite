@@ -52,6 +52,10 @@ function PostTest() {
             });
     }
 function checkboxValue(checkbox, val){
+        if (val.toLowerCase() =="a"){
+            form.checkbox.value = "a"
+        }
+        else if()
         checkbox.value = checkbox.checked ? val : '';
 }
 
@@ -271,16 +275,16 @@ function checkboxValue(checkbox, val){
             {/* Question 24 */}
             <label htmlFor="answer24">24. Select all values that could be picked by random.randint(20,49)
                 <br/>
-                <input type="checkbox" id="a" name="answer24a" value="" onchange="checkboxValue(this, 'a')"/>
+                <input type="checkbox" id="a" name="answer24a" value="" onchange={(e) => checkboxValue(this, 'a')}/>
                 <label htmlFor="a">49</label>
                 <br/>
-                <input type="checkbox" id="b" name="answer24b" value="" onchange="checkboxValue(this, 'b')"/>
+                <input type="checkbox" id="b" name="answer24b" value="" onchange={(e) => checkboxValue(this, 'b')}/>
                 <label htmlFor="b">19</label>
                 <br/>
-                <input type="checkbox" id="c" name="answer24c" value="" onchange="checkboxValue(this, 'c')"/>
+                <input type="checkbox" id="c" name="answer24c" value="" onchange={(e) => checkboxValue(this, 'c')}/>
                 <label htmlFor="c">20</label>
                 <br/>
-                <input type="checkbox" id="d" name="answer24d" value="" onchange="checkboxValue(this, 'd')"/>
+                <input type="checkbox" id="d" name="answer24d" value="" onchange={(e) => checkboxValue(this, 'd')}/>
                 <label htmlFor="d">48</label>
             </label>
             <br/><br/>
