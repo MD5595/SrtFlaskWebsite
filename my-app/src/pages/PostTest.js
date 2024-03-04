@@ -52,13 +52,22 @@ function PostTest() {
             });
     }
 function checkboxValue(checkbox, val){
-        if (val.toLowerCase() =="a"){
-            form.checkbox.value = "a"
+        if (checkbox.checked && val.toLowerCase() =="a"){
+            checkbox.value = "a";
         }
-        else if(val.toLowerCase()=="b"){
-            form.checkbox.value ="b"
+        else if(checkbox.checked && val.toLowerCase()=="b"){
+            checkbox.value ="b";
         }
-        checkbox.value = checkbox.checked ? val : '';
+        else if(checkbox.checked && val.toLowerCase()=="c"){
+            checkbox.value ="c";
+        }
+        else if(checkbox.checked && val.toLowerCase()=="d"){
+            checkbox.value ="d";
+        }
+        else if(!(checkbox.checked)){
+            checkbox.value =" "
+        }
+
 }
 
     return (
