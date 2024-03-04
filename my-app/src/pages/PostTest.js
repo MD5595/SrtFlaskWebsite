@@ -55,14 +55,16 @@ function checkboxValue(checkbox, val){
         if (val.toLowerCase() =="a"){
             form.checkbox.value = "a"
         }
-        else if()
+        else if(val.toLowerCase()=="b"){
+            form.checkbox.value ="b"
+        }
         checkbox.value = checkbox.checked ? val : '';
 }
 
     return (
         <div className="container">
             <h1>PostTest</h1>
-
+<p>You can expand the boxes of the free response coding questions.</p><br/>
             <form onSubmit={handleSubmit}>
             {/* Question 1 */}
             <label htmlFor="answer1">1. Make a user input-based number guessing game that keeps looping until the
@@ -97,8 +99,8 @@ function checkboxValue(checkbox, val){
             <select id="answer7">
                 <option value='a'>46 44 42 40 38</option>
                 <option value="b">48 46 44 42 40</option>
-                <option value="c"></option>
-                <option value="d"></option>
+                <option value="c">46 44 42 40</option>
+                <option value="d">48 46 44 42 40 38</option>
             </select>
             <br/><br/>
             {/* Question 8 */}
@@ -163,8 +165,8 @@ function checkboxValue(checkbox, val){
                 <br/>c = 1
                 <br/>sum = 0
                 <br/>while (c &lt; 10):
-                <br/>c = c + 2
-                <br/>sum = sum + c
+                <br/>&emps;c = c + 2
+                <br/>&emsp;sum = sum + c
                 <br/>print(sum)</label><br/>
             <input type="text" id="answer13"/>
             <br/><br/>
@@ -206,7 +208,7 @@ function checkboxValue(checkbox, val){
                 for i in range (start, stop, x):<br/>
                 &emsp;list.append(x)<br/>
                 &emsp;x+=i<br/>
-                print(list[5])<br/>
+                print(list[6])<br/>
 
                 <br/>
 
