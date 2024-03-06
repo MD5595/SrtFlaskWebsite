@@ -6,7 +6,7 @@ import {baseURL} from "../config.js"
 
 function PreTest() {
     const username = localStorage.getItem('username');
-
+    var navigate = useNavigate();
     var headers = {
         'Content-Type': 'application/json',
       }
@@ -43,7 +43,7 @@ function PreTest() {
 
         axios.post(baseURL + '/pretestProgram', {username, answers}, headers=headers).then(response => {
             console.log("SUCCESS", response);
-
+        navigate('/HomePage');
         }).catch(error => {
                 console.error(error);
 

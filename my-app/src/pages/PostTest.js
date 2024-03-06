@@ -5,7 +5,8 @@ import {baseURL} from "../config.js";
 
 
 function PostTest() {
-    const username = localStorage.getItem('username');
+    const username =localStorage.getItem('username');
+    var navigate = useNavigate();
     var headers = {
         'Content-Type': 'application/json',
       }
@@ -37,23 +38,27 @@ function PostTest() {
         answers.q21 = form.answer21.value
         answers.q22 = form.answer22.value
         answers.q23 = form.answer23.value
-        answers.q24 = form.answer24.value
         answers.q25 = form.answer25.value
 
         axios.post(baseURL + '/posttestProgram', {username, answers}, headers=headers).then(response => {
             console.log("SUCCESS", response);
-
+        navigate('/HomePage');
         }).catch(error => {
                 console.error(error);
 
             });
     }
-
-
+function checkboxValue(event, val) {
+    if (event.target.checked){
+          event.target.value = val;
+      } else {
+     event.target.value = '';  }
+  }
+ 
     return (
         <div className="container">
             <h1>PostTest</h1>
-
+<p>You can expand the boxes of the free response coding questions.</p><br/>
             <form onSubmit={handleSubmit}>
             {/* Question 1 */}
             <label htmlFor="answer1">1. Make a user input-based number guessing game that keeps looping until the
@@ -62,7 +67,7 @@ function PostTest() {
             <textarea id="answer1" style={{width: '200px', height: '100px'}}/>
             <br/><br/>
             {/* Question 2 */}
-            <label htmlFor="answer2">2. What are Math and Random?</label>
+            <label htmlFor="answer2">2. What are Math and Random?</label><br/>
             <input type="text" id="answer2"/>
             <br/><br/>
             {/* Question 3 */}
@@ -71,24 +76,29 @@ function PostTest() {
             <textarea id="answer3" style={{width: '200px', height: '100px'}}/>
             <br/><br/>
             {/* Question 4 */}
-            <label htmlFor="answer4">4. What are the placeholder variables within a function called?</label>
+            <label htmlFor="answer4">4. What are the placeholder variables within a function called?</label><br/>
             <input type="text" id="answer4"/>
             <br/><br/>
             {/* Question 5 */}
-            <label htmlFor="answer5">5. Is random.randint inclusive or exclusive?</label>
+            <label htmlFor="answer5">5. Is random.randint inclusive or exclusive?</label><br/>
             <input type="text" id="answer5"/>
             <br/><br/>
             {/* Question 6 */}
-            <label htmlFor="answer6">6. Which module is .fabs stored in?</label>
+            <label htmlFor="answer6">6. Which module is .fabs stored in?</label><br/>
             <input type="text" id="answer6"/>
             <br/><br/>
             {/* Question 7 */}
             <label htmlFor="answer7">7. What would the following code print: <br/>for _ in range(48,38,-2): <br/>print(_,
                 end=" ")</label><br/>
-            <input type="text" id="answer7"/>
+            <select id="answer7">
+                <option value='a'>46 44 42 40 38</option>
+                <option value="b">48 46 44 42 40</option>
+                <option value="c">46 44 42 40</option>
+                <option value="d">48 46 44 42 40 38</option>
+            </select>
             <br/><br/>
             {/* Question 8 */}
-            <label htmlFor="answer1">8. Write a program that randomly chooses a number from a list and prints the
+            <label htmlFor="answer8">8. Write a program that randomly chooses a number from a list and prints the
                 chosen number.</label><br/>
             <textarea id="answer8" style={{width: '200px', height: '100px'}}/>
             <br/><br/>
@@ -123,7 +133,7 @@ function PostTest() {
             <br/><br/>
             {/* Question 10 */}
             <label htmlFor="answer10">10. What symbol do you use when you want your program to ignore a
-                line?</label>
+                line?</label><br/>
             <input type="text" id="answer10"/>
             <br/><br/>
             {/* Question 11 */}
@@ -149,8 +159,8 @@ function PostTest() {
                 <br/>c = 1
                 <br/>sum = 0
                 <br/>while (c &lt; 10):
-                <br/>c = c + 2
-                <br/>sum = sum + c
+                <br/>&emps;c = c + 2
+                <br/>&emsp;sum = sum + c
                 <br/>print(sum)</label><br/>
             <input type="text" id="answer13"/>
             <br/><br/>
@@ -192,7 +202,7 @@ function PostTest() {
                 for i in range (start, stop, x):<br/>
                 &emsp;list.append(x)<br/>
                 &emsp;x+=i<br/>
-                print(list[5])<br/>
+                print(list[6])<br/>
 
                 <br/>
 
@@ -232,7 +242,7 @@ function PostTest() {
             <br/><br/>
             {/* Question 21 */}
             <label htmlFor="answer21">21. What type of loop would you use if you wanted to make it stop after
-                receiving a certain input?</label>
+                receiving a certain input?</label><br/>
             <input type="text" id="answer21"/>
             <br/><br/>
             {/* Question 22 */}
@@ -261,16 +271,16 @@ function PostTest() {
             {/* Question 24 */}
             <label htmlFor="answer24">24. Select all values that could be picked by random.randint(20,49)
                 <br/>
-                <input type="checkbox" id="a" name="answer24" value="a"/>
+                <input type="checkbox" id="a" name="answer24a" value="" onchange={(e) => checkboxValue(e, 'a')}/>
                 <label htmlFor="a">49</label>
                 <br/>
-                <input type="checkbox" id="b" name="answer24" value="b"/>
+                <input type="checkbox" id="b" name="answer24b" value="" onchange={(e) => checkboxValue(e, 'b')}/>
                 <label htmlFor="b">19</label>
                 <br/>
-                <input type="checkbox" id="c" name="answer24" value="c"/>
+                <input type="checkbox" id="c" name="answer24c" value="" onchange={(e) => checkboxValue(e, 'c')}/>
                 <label htmlFor="c">20</label>
                 <br/>
-                <input type="checkbox" id="d" name="answer24" value="d"/>
+                <input type="checkbox" id="d" name="answer24d" value="" onchange={(e) => checkboxValue(e, 'd')}/>
                 <label htmlFor="d">48</label>
             </label>
             <br/><br/>
