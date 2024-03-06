@@ -5,7 +5,7 @@ import {baseURL} from "../config.js";
 
 
 function PostTest() {
-    const username = localStorage.getItem('username');
+    const username =localStorage.getItem('username');
     var navigate = useNavigate();
     var headers = {
         'Content-Type': 'application/json',
