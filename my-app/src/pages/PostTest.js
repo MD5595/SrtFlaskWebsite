@@ -30,7 +30,7 @@ function PostTest() {
         answers.q13 = form.answer13.value
         answers.q14 = form.answer14.value
         answers.q15 = form.answer15.value
-        answers.q16 = form.answer16.value        
+        answers.q16 = form.answer16.value
         answers.q17 = form.answer17.value
         answers.q18 = form.answer18.value
         answers.q19 = form.answer19.value
@@ -54,7 +54,7 @@ function checkboxValue(event, val) {
       } else {
      event.target.value = '';  }
   }
- 
+
     return (
         <div className="container">
             <h1>PostTest</h1>
