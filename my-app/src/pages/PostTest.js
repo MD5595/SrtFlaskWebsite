@@ -5,7 +5,7 @@ import {baseURL} from "../config.js";
 
 
 function PostTest() {
-    const username = localStorage.getItem('username');
+    const username =localStorage.getItem('username');
     var navigate = useNavigate();
     var headers = {
         'Content-Type': 'application/json',
@@ -38,10 +38,7 @@ function PostTest() {
         answers.q21 = form.answer21.value
         answers.q22 = form.answer22.value
         answers.q23 = form.answer23.value
-        answers.q24a = form.answer24a.value
-        answers.q24b = form.answer24b.value
-        answers.q24c = form.answer24c.value
-        answers.q24d = form.answer24d.value
+        answers.q25 = form.answer25.value
 
         axios.post(baseURL + '/posttestProgram', {username, answers}, headers=headers).then(response => {
             console.log("SUCCESS", response);
@@ -51,25 +48,13 @@ function PostTest() {
 
             });
     }
-function checkboxValue(checkbox, val){
-        if (checkbox.checked && val.toLowerCase() =="a"){
-            checkbox.value = "a";
-        }
-        else if(checkbox.checked && val.toLowerCase()=="b"){
-            checkbox.value ="b";
-        }
-        else if(checkbox.checked && val.toLowerCase()=="c"){
-            checkbox.value ="c";
-        }
-        else if(checkbox.checked && val.toLowerCase()=="d"){
-            checkbox.value ="d";
-        }
-        else if(!(checkbox.checked)){
-            checkbox.value =" "
-        }
-
-}
-
+function checkboxValue(event, val) {
+    if (event.target.checked){
+          event.target.value = val;
+      } else {
+     event.target.value = '';  }
+  }
+ 
     return (
         <div className="container">
             <h1>PostTest</h1>
@@ -286,16 +271,16 @@ function checkboxValue(checkbox, val){
             {/* Question 24 */}
             <label htmlFor="answer24">24. Select all values that could be picked by random.randint(20,49)
                 <br/>
-                <input type="checkbox" id="a" name="answer24a" value="" onchange={(e) => checkboxValue(this, 'a')}/>
+                <input type="checkbox" id="a" name="answer24a" value="" onchange={(e) => checkboxValue(e, 'a')}/>
                 <label htmlFor="a">49</label>
                 <br/>
-                <input type="checkbox" id="b" name="answer24b" value="" onchange={(e) => checkboxValue(this, 'b')}/>
+                <input type="checkbox" id="b" name="answer24b" value="" onchange={(e) => checkboxValue(e, 'b')}/>
                 <label htmlFor="b">19</label>
                 <br/>
-                <input type="checkbox" id="c" name="answer24c" value="" onchange={(e) => checkboxValue(this, 'c')}/>
+                <input type="checkbox" id="c" name="answer24c" value="" onchange={(e) => checkboxValue(e, 'c')}/>
                 <label htmlFor="c">20</label>
                 <br/>
-                <input type="checkbox" id="d" name="answer24d" value="" onchange={(e) => checkboxValue(this, 'd')}/>
+                <input type="checkbox" id="d" name="answer24d" value="" onchange={(e) => checkboxValue(e, 'd')}/>
                 <label htmlFor="d">48</label>
             </label>
             <br/><br/>
