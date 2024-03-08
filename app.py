@@ -67,6 +67,22 @@ def posttestProgram():
     return jsonify({'message': 'Code added'})
 
 
+@app.route('/getQuizScores', methods=['GET'])
+def getQuizScores():
+    username = request.args.get('username')
+    conn = db.connect_db()
+    query = f'''select test, max(score) from scores where username = ? group by test'''
+    record = conn.cursor().execute(query, (username,)).fetchall()
+    score_list = []
+    for score in record:
+        score_data = {
+            'tes': score[0],
+            'score': score[1]
+        }
+        score_list.append(score_data)
+    return score_list
+
+
 
 @app.route('/getUserScore', methods =['GET'])
 def getUserScore():
@@ -80,7 +96,7 @@ def getUserScore():
             'test_score': score.test_score
         }
         score_list.append(score_data)
-    return jsonify({'scores': score_list})
+    return score_list
 
 
 @app.route('/postUserScore', methods=['POST'])
