@@ -69,6 +69,7 @@ def posttestProgram():
 
 @app.route('/getQuizScores', methods=['GET'])
 def getQuizScores():
+    quiz_total={'Quiz1': 5, 'Quiz2': 4, 'Quiz3': 3, 'Quiz4': 4, 'Quiz5': 4, 'Quiz6': 4}
     username = request.args.get('username')
     conn = db.connect_db()
     query = f'''select test, max(score) from scores where username = ? group by test'''
@@ -76,8 +77,8 @@ def getQuizScores():
     score_list = []
     for score in record:
         score_data = {
-            'tes': score[0],
-            'score': score[1]
+            'test': score[0],
+            'score': int(score[1])/quiz_total[score[0]]*100
         }
         score_list.append(score_data)
     return score_list
