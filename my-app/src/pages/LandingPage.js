@@ -45,6 +45,12 @@ function LandingPage() {
             </form>
             <label htmlFor="checkAcc">Create New Account</label>
             <input type="checkbox" id="checkAcc" name="checkAcc" value="False" onChange={CheckboxChange}/>
+            <p>
+                The first time you enter this website, ensure that you follow the format below when making your username and to check the checkbox.<br/>
+                Username: FirstnameLastInitial<br/>
+                If your name was John Doe, your username would be JohnD.<br/>
+
+            </p>
         </div>
     );
 }
