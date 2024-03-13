@@ -1,6 +1,9 @@
 import React from 'react';
-
+import {send_time} from '../../src/components/AxiosCalls';
 function PracticeCoding() {
+        const username =localStorage.getItem('username');
+
+    send_time('PracticeCoding', username);
   return (
     <div className="container">
       <h1><a href="https://www.programiz.com/python-programming/online-compiler/"
@@ -8,7 +11,7 @@ function PracticeCoding() {
 </h1>
         <p>At the top of this page is a link to an online code complier,
             where you can practice coding. Below are numerous practice problems that you can solve. You can utilize them,
-            or just play around with the complier .</p>
+            or just play around with the compiler .</p>
         <p><b>Unit 1: Introduction </b><br/>
         1) Make a program that contains 4 variables. There should be a int, float, and string.
             <br className="small-break"/>
