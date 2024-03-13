@@ -6,24 +6,22 @@ export default function Navigation() {
     var navigate = useNavigate();
     const username =localStorage.getItem('username');
 
-    function sendPost(){
 
+    function send_time() {
 
-    }
-    function handleSubmit(e) {
-
-        console.log(isChecked, username);
-        e.preventDefault()
-        axios
-        .post(baseURL + '/sendUserLocation', {
-            isChecked: isChecked,
-            username: localUsername,
-            },
-        headers=headers);
-        console.log("SUCCESS");
-        updateCheckbox(isChecked);
-        localStorage.setItem('username', localUsername)
+        var page= "Log out"
+    var headers = {
+        'Content-Type': 'application/json',
       }
+
+  const response =  axios.post(baseURL + '/sendLocationTime',
+        {page: page, username: username },headers=headers);
+    console.log("SUCCESS", response);
+    navigate('/HomePage');
+}
+
+
+
   return (
     <nav className="nav">
       <Link to="/" className="site-title">
@@ -38,14 +36,14 @@ export default function Navigation() {
         <CustomLink to="/PreTest">PreTest</CustomLink>
         <CustomLink to="/KeyPage">PostTest</CustomLink>
         <CustomLink to="/PracticeCoding">Practice Coding</CustomLink>
-          <button onclick="sendPost()">Send POST Request</button>
+    <button onclick="send_time()">Log out</button>
 
       </ul>
     </nav>
   )
 }
 
-function CustomLink({ to, children, ...props }) {
+function CustomLink({to, children, ...props }) {
   const resolvedPath = useResolvedPath(to)
   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
 
