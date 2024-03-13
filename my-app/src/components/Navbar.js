@@ -36,7 +36,7 @@ export default function Navigation() {
         <CustomLink to="/PreTest">PreTest</CustomLink>
         <CustomLink to="/KeyPage">PostTest</CustomLink>
         <CustomLink to="/PracticeCoding">Practice Coding</CustomLink>
-    <button onclick="send_time()">Log out</button>
+        <button onClick={send_time}>Log out</button>
 
       </ul>
     </nav>
