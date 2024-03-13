@@ -1,6 +1,29 @@
-import { Link, useMatch, useResolvedPath } from "react-router-dom"
+import { Link, useMatch, useResolvedPath,useNavigate } from "react-router-dom"
+import axios from "axios";
+import {baseURL} from "../config";
 
 export default function Navigation() {
+    var navigate = useNavigate();
+    const username =localStorage.getItem('username');
+
+    function sendPost(){
+
+
+    }
+    function handleSubmit(e) {
+
+        console.log(isChecked, username);
+        e.preventDefault()
+        axios
+        .post(baseURL + '/sendUserLocation', {
+            isChecked: isChecked,
+            username: localUsername,
+            },
+        headers=headers);
+        console.log("SUCCESS");
+        updateCheckbox(isChecked);
+        localStorage.setItem('username', localUsername)
+      }
   return (
     <nav className="nav">
       <Link to="/" className="site-title">
@@ -15,7 +38,7 @@ export default function Navigation() {
         <CustomLink to="/PreTest">PreTest</CustomLink>
         <CustomLink to="/KeyPage">PostTest</CustomLink>
         <CustomLink to="/PracticeCoding">Practice Coding</CustomLink>
-
+          <button onclick="sendPost()">Send POST Request</button>
 
       </ul>
     </nav>
