@@ -18,6 +18,7 @@ export default function Navigation() {
         {page: page, username: username },headers=headers);
     console.log("SUCCESS", response);
     navigate('/HomePage');
+    alert('You have logged off');
 }
 
 
