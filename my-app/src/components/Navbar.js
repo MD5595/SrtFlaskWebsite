@@ -18,6 +18,7 @@ export default function Navigation() {
         {page: page, username: username },headers=headers);
     console.log("SUCCESS", response);
     navigate('/HomePage');
+    alert('You have logged off');
 }
 
 
@@ -28,17 +29,17 @@ export default function Navigation() {
         SRT 4
       </Link>
         <p> </p>
-      <ul>
-        <CustomLink to="/Syllabus">Syllabus</CustomLink>
-        <CustomLink to="/ArticleHome">Articles</CustomLink>
-        <CustomLink to="/Flashcards">Flashcards</CustomLink>
-        <CustomLink to="/DataPage">DataPage</CustomLink>
-        <CustomLink to="/PreTest">PreTest</CustomLink>
-        <CustomLink to="/KeyPage">PostTest</CustomLink>
-        <CustomLink to="/PracticeCoding">Practice Coding</CustomLink>
-        <button onClick={send_time}>Log out</button>
-
-      </ul>
+        <ul>
+            <CustomLink to="/Syllabus">Syllabus</CustomLink>
+            <CustomLink to="/ArticleHome">Articles</CustomLink>
+            <CustomLink to="/Flashcards">Flashcards</CustomLink>
+            <CustomLink to="/DataPage">DataPage</CustomLink>
+            <CustomLink to="/PreTest">PreTest</CustomLink>
+            <CustomLink to="/KeyPage">PostTest</CustomLink>
+            <CustomLink to="/PracticeCoding">Practice Coding</CustomLink>
+            <button onClick={send_time}>Log out</button>
+            <div className="circle">{username} </div>
+        </ul>
     </nav>
   )
 }
