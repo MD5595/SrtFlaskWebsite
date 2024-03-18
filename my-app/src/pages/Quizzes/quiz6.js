@@ -38,6 +38,12 @@ export default function Quiz6 (){
             type: 'radio',
             options: ['4', '3', '5', '6'],
             answer: '5'
+        },
+        {
+            question: 'Given the list b = [8,"app", 5,"bpp"], what would b.sort() return?',
+            type: 'radio',
+            options: ['"app", "bpp", 5, 8', 'error', '5, 8, "app", "bpp"', '5, "app", 8, "bpp"'],
+            answer: 'error'
         }
       ];
 
