@@ -20,12 +20,14 @@ export default function Quiz1 (){
           type: 'radio',
           options: ['?', '//', '#', '~'],
           answer: '#',
+          unit:"1.1"
         },
         {
           question: 'What is the result of running the following piece of code: prnt("Hello!")',
           type: 'radio',
           options: ['Hello!', 'Error', 'Hello', '"Hello"'],
           answer: 'Error',
+          unit:"1.2"
         },
         {
           question: 'Which of the following is not true about variables?',
@@ -35,12 +37,14 @@ export default function Quiz1 (){
                     'Variables can not have the same name as keywords',
                     'Must start with a letter, number, or underscore',],
           answer: 'Must start with a letter, number, or underscore',
+        unit:"1.3"
         },
         {
             question: 'True/False: Inputs are automatically seen as strings.',
             type: 'radio',
             options: ['True', 'False'],
             answer: 'True',
+            unit:"1.4"
         },
         {
             question: 'Which of the following is not a valid statements?',
@@ -51,6 +55,7 @@ export default function Quiz1 (){
                       'print(Hello World)',
                     ],
             answer: 'print(Hello World)',
+            unit:"1.5: Data types"
           },
       ];
     useEffect(() => {
@@ -93,6 +98,7 @@ export default function Quiz1 (){
             <div>
               <h2>Quiz Complete!</h2>
               <h3>Your Score: {score}</h3>
+                <p>You should </p>
               <Link to="/Flashcards" className="btn-quiz">Get more practice with flashcards!</Link>
                 <br/><br/><br/>
                 <Link to="/u2_1" className="btn btn-primary" >Go to next unit</Link>
