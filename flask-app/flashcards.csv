@@ -4,15 +4,18 @@ Unit 1~1.1: What does IDE stand for?~Integrated Development Environment
 Unit 1~1.1: What character is used to add a comment to the code?~#
 Unit 1~1.2: What is the most common error faced?~syntax errors
 Unit 1~1.2: What will be the result of this line of code: prnit('Hello')~an error
+Unit 1~1.2: The formatting of code does not matter~ false, unnecessary spaces, indents, and spelling can cause your program to produce errors
 Unit 1~1.3: What is a variable?~values or characters stored in a phrase
 Unit 1~1.3: What are examples of data types?~strings integers float list boolean
 Unit 1~1.3: What is wrong with this variable declaration: 333number = 21~variables cannot start with a number
 Unit 1~1.4: What does the input() function do?~allows a user to input a value
-Unit 1~1.4: What is a boolean?~true or false value
-Unit 1~1.4: What is a list?~a group of values stored in one variable
-Unit 1~1.4: What is an integer?~any whole number
-Unit 1~1.4: What is a float?~numbers with decimals
-Unit 1~1.4: What is a string?~any text
+Unit 1~1.4: What is casting?~using a function (such as int() or str()) to change a value from datatype to another
+Unit 1~1.4: What are f-strings, and why are they used?~ An alternate way of writing printable strings. By using them you forgo the need to cast non-strings.
+Unit 1~1.5: What is a boolean?~true or false value
+Unit 1~1.5: What is a list?~a group of values stored in one variable
+Unit 1~1.5: What is an integer?~any whole number
+Unit 1~1.5: What is a float?~numbers with decimals
+Unit 1~1.5: What is a string?~any text
 Unit 2~2.1: What does this symbol mean %?~remainder - number left after division
 Unit 2~2.1: What does this symbol mean **?~exponents - base is on the left and power is on the right
 Unit 2~2.1: What does this symbol mean //?~ floor division - removes decimals from division
