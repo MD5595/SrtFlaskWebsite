@@ -20,12 +20,16 @@ export default function Quiz2 (){
           type: 'radio',
           options: ['8', '6', '4', '9'],
           answer: '8',
+            unit: "2.1",
+            section: "Basic symbols"
         },
         {
           question: 'What is the result of the following: 3*2+1*(8/2)+3**2',
           type: 'radio',
           options: ['37', '45', '31', '19'],
           answer: '19',
+            unit:'2.2',
+            section: 'Order of operations'
         },
         {
           question: 'What does the math.fabs(x) function do?',
@@ -35,6 +39,9 @@ export default function Quiz2 (){
                     'Returns x rounded down',
                     'Returns x with the decimal part removed'],
           answer: 'Returns the absolute value of x',
+            unit:'2.3',
+            section:'Modules'
+
         },
         {
             question: 'What does the random.randint(x,y) do?',
@@ -44,6 +51,8 @@ export default function Quiz2 (){
                       'Returns a random number from 0-100',
                       'Returns a set of random numbers'],
             answer: 'Returns a random number from x to y',
+            unit:'2.3',
+            section:'Modules'
         },
       ];
  useEffect(() => {

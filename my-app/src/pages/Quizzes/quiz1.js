@@ -55,7 +55,7 @@ export default function Quiz1 (){
                       'print(Hello World)',
                     ],
             answer: 'print(Hello World)',
-            unit:"1.5: Data types"
+            unit:"1.5"
           },
       ];
     useEffect(() => {

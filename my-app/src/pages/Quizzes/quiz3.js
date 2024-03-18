@@ -20,18 +20,24 @@ export default function Quiz3 (){
           type: 'radio',
           options: ['Nothing', 'Hello', 'Syntax Error'],
           answer: 'Hello',
+            unit:'3.1',
+            section:'If-else statements'
         },
         {
           question: 'True/False: An else-if and if statement must always have an else statement.',
           type: 'radio',
           options: ['True', 'False'],
-          answer: 'True',
+          answer: 'False',
+            unit:'',
+            section:''
         },
         {
           question: 'Which of the following is not a comparison operator?',
           type: 'radio',
           options: ['>=', '!=', '==', '%'],
           answer: '%',
+            unit:'3.1',
+            section:'If-else statements'
         },
       ];
 

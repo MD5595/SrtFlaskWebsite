@@ -20,24 +20,40 @@ export default function Quiz4 (){
           type: 'radio',
           options: ['4 is greater than 5', '"4 is greater than 5" then "5 is greater than 5"', 'It infinitely loops'],
           answer: 'It infinitely loops',
+            unit:'4.1',
+            section:'While loops'
         },
         {
           question: 'Which of the following is not an assignment operator?',
           type: 'radio',
           options: ['+=', '==', '%=', '*='],
           answer: '==',
+            unit:'4.1',
+            section:'While loops'
         },
         {
           question: 'What is the correct format for Range?',
           type: 'radio',
           options: ['Range(start, stop, step)', 'Range(step, start, stop)', 'Range(start, step, stop)', 'Range(stop, start, step)'],
           answer: 'Range(start, stop, step)',
+            unit:'4.2',
+            section:'For loops'
         },
         {
             question: 'What is the result of the following: for in range(,10,2): print(i)',
             type: 'radio',
             options: ['0, 2, 4, 6, 8, 10', '0, 2, 4, 6, 8', '0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10', 'Syntax Error'],
-            answer: 'Syntax Error'
+            answer: 'Syntax Error',
+            unit:'4.2',
+            section:'For loops'
+        },
+        {
+            question: 'What is the result of the following: for in range(,10,2): print(i)',
+            type: 'radio',
+            options: ['0, 2, 4, 6, 8, 10', '0, 2, 4, 6, 8', '0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10', 'Syntax Error'],
+            answer: 'Syntax Error',
+            unit:'4.2',
+            section:'For loops'
         }
       ];
 
