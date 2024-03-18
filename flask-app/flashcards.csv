@@ -29,21 +29,25 @@ Unit 3~3.1: What is a if statement that has an if statement within it called?~ A
 Unit 3~3.1: What is the difference between = and ==?~ = assigns a value to a variable while == returns a boolean value based on whether a value is equal to another value
 Unit 3~3.1: What data type is the most important when making if statements?~booleans
 Unit 3~3.1: What is and an example of?~logical operator
+Unit 3~3.1: What does the not operator do?~ it reverses the boolean value of a statement
 Unit 3~3.2: What is an else/if statement?~similar to if/else but has 2 or more statements
 Unit 3~3.2: Does an else/if always have to have an else statement?~no
-Unit 3~T/F: The == operator can only be used on numbers.false. ~It can be used on ints, floats, strings, list elements and booleans
+Unit 3~3.1: T/F: The == operator can only be used on numbers.~ false. It can be used on ints, floats, strings, list elements and booleans
 Unit 4~4.1: How does one exit a while loop?~the condition must be met to exit
 Unit 4~4.1: When are while loops used?~when you don't know how many iterations your statement will have
+Unit 4~4.1: What is the name of the variable that changes in every loop and controls the loop's iterating~the counter variable
+Unit 4~4.1: What does **= do?~ **= assigns the current value of the variable to the power of the number to the right of the sign to the variable
+Unit 4~4.1: What type of loop would you use to make a user-input based guessing game, and why?~ a while loop. By using a comparison operator you would be able to break the loop whenever you user made a correct guess.
 Unit 4~4.2: When do you use a for loop?~when you know how many iterations are needed
 Unit 4~4.2: What are the three parameters in a range statement?~start|stop|step
-Unit 4~4.2: What is the name of the variable that changes in every loop and controls the loop's iterating~the counter variable
 Unit 5~5.1: What is a function?~a block of code made to decrease the amount of repetitive code you have to write
 Unit 5~5.1: Functions perform a ____ task.~predefined
 Unit 5~5.1: What keyword allows you to define a function?~def
-Unit 5~5.1: T/F: A function can be called within another function~ T
 Unit 5~5.1: What modules can you import to call predefined functions?~ Math and Random
+Unit 5~5.2: T/F: A function can be called within another function~ T
 Unit 5~5.2: What are parameters?~values passed into a function
-Unit 5~5.2: T/F: When you call a function you don't need the same number of parameters within the parentheses.~False
+Unit 5~5.2: T/F: When you call a function you don't need to input the same number of parameters within the parentheses.~False
+Unit 5~5.2: What does the "return" keyword do?~ It allows a function to output value
 Unit 5~5.2: T/F: A function can be called within another function~ T
 Unit 6~6.1: What is a list?~data type that stores multiple values in one variable
 Unit 6~6.1: What index does a list start on?~0
