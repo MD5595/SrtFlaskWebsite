@@ -5,19 +5,19 @@ Unit 1~1.1: What character is used to add a comment to the code?~#
 Unit 1~1.2: What is the most common error faced?~syntax errors
 Unit 1~1.2: What will be the result of this line of code: prnit('Hello')~an error
 Unit 1~1.3: What is a variable?~values or characters stored in a phrase
-Unit 1~1.3: What are examples of data types?~strings integars float list boolean
+Unit 1~1.3: What are examples of data types?~strings integers float list boolean
 Unit 1~1.3: What is wrong with this variable declaration: 333number = 21~variables cannot start with a number
 Unit 1~1.4: What does the input() function do?~allows a user to input a value
 Unit 1~1.4: What is a boolean?~true or false value
 Unit 1~1.4: What is a list?~a group of values stored in one variable
-Unit 1~1.4: What is an integar?~any whole number
+Unit 1~1.4: What is an integer?~any whole number
 Unit 1~1.4: What is a float?~numbers with decimals
 Unit 1~1.4: What is a string?~any text
 Unit 2~2.1: What does this symbol mean %?~remainder - number left after division
 Unit 2~2.1: What does this symbol mean **?~exponents - base is on the left and power is on the right
 Unit 2~2.1: What does this symbol mean //?~ floor division - removes decimals from division
 Unit 2~2.2: Is () or // done first?~()
-Unit 2~2.2: Is / or % done first?~same precendence - solved left to right
+Unit 2~2.2: Is / or % done first?~same precedence - solved left to right
 Unit 2~2.3: What are modules?~a module is a section of code that covers functions for repeatability
 Unit 2~2.3: What does the trunc function do?~ it removes the decimal portion of the inputted number
 Unit 2~2.3: Is the randint function inclusive or exclusive?~ inclusive
@@ -47,6 +47,8 @@ Unit 5~5.2: T/F: When you call a function you don't need the same number of para
 Unit 5~5.2: T/F: A function can be called within another function~ T
 Unit 6~6.1: What is a list?~data type that stores multiple values in one variable
 Unit 6~6.1: What index does a list start on?~0
+Unit 6~6.1: T/F: Both strings and lists can have their characters accessed~ T
 Unit 6~6.2: What two data types can have the append function used on them?~Strings and lists
 Unit 6~6.2: How would you print "apple" from the list "bag = ["brush", "pencil", "apple"]" in one line?~print(bag[2]) or print(bag[-1])
 Unit 6~6:2: T/F:Only lists can have their individual values/elements in the following format: Variable[0]~ False, strings can have their individual characters accessed in the same way
+Unit 6~6:2: What does the .pop(4) function do?~ Removes the element that is at the 4th index in a list
