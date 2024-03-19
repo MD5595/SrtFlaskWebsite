@@ -20,24 +20,31 @@ export default function Quiz5 (){
           type: 'radio',
           options: ['def', 'define', 'function', 'func'],
           answer: 'def',
+            unit: '5.1',
+            section: 'Functions'
         },
         {
           question: 'True/False: Parameters are always required for a function.',
           type: 'radio',
           options: ['True', 'False'],
           answer: 'False',
+             unit: '5.2',
+            section: 'Parameters/returning'
         },
         {
           question: 'True/False: You must have the same number of parameters within the parenthesis as defined.',
           type: 'radio',
           options: ['True', 'False'],
           answer: 'True',
+
         },
         {
             question: 'True/False: Functions must have a return statement.',
             type: 'radio',
             options: ['True', 'False'],
-            answer: 'False'
+            answer: 'False',
+             unit: '5.2',
+            section: 'Parameters/returning'
         }
       ];
  useEffect(() => {

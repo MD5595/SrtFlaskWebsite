@@ -47,11 +47,12 @@ export default function Quiz4 (){
             unit:'4.2',
             section:'For loops'
         },
-        {
-            question: 'What is the result of the following: for in range(,10,2): print(i)',
+
+            ,{
+            question: 'How many times will "b" be printed: for i in range(0,10,2): print("b") if i%6==0: break',
             type: 'radio',
-            options: ['0, 2, 4, 6, 8, 10', '0, 2, 4, 6, 8', '0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10', 'Syntax Error'],
-            answer: 'Syntax Error',
+            options: ['0', '1','7', '10'],
+            answer: '1',
             unit:'4.2',
             section:'For loops'
         }
