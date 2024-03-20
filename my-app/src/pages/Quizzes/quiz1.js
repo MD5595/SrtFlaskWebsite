@@ -15,6 +15,7 @@ export default function Quiz1 (){
     const username = localStorage.getItem('username');
     const [recUnits, setRecUnits] = useState([]);
     const [recSections, setRecSections] = useState([]);
+    const [showRec,setShowRec]=useState(false)
     const questions = [
         {
           question: 'What symbol is used to indicate a comment?',
@@ -72,10 +73,18 @@ export default function Quiz1 (){
                     console.error(error);
                 });
         }, [showScore]);
-const reccommend = (list,currentQuestion)=> {
-
-
-    if (answers[currentQuestion].answer !== questions[currentQuestion].answer && !(list.includes(questions[currentQuestion].unit))  ){
+const reccommend = (currentQuestion)=> {
+    if (answers[currentQuestion].answer !== questions[currentQuestion].answer && !(recUnits.includes(questions[currentQuestion].unit))  ){
+    setRecSections[currentQuestion]=questions[currentQuestion].section;
+        setRecUnits[currentQuestion]=questions[currentQuestion].unit;
+    }
+}
+const formatRec=()=>{
+    const list = recUnits
+    if (list.length<=1){
+        return list[0]
+    }
+    else if(){
 
     }
 }
@@ -87,6 +96,7 @@ const reccommend = (list,currentQuestion)=> {
       };
 
       const handleNextQuestion = () => {
+          reccommend()
         if (
           answers[currentQuestion] === questions[currentQuestion].answer ||
           JSON.stringify(answers[currentQuestion]) ===
@@ -99,10 +109,12 @@ const reccommend = (list,currentQuestion)=> {
           setCurrentQuestion(currentQuestion + 1);
         } else {
           setShowScore(true);
-
+            if(score <questions.length){
+                setShowRec(true)
+            }
         }
 
-
+// Based on your score you should review units function()
       };
 
       return (
@@ -111,7 +123,7 @@ const reccommend = (list,currentQuestion)=> {
             <div>
               <h2>Quiz Complete!</h2>
               <h3>Your Score: {score}</h3>
-                <p>You should </p>
+
               <Link to="/Flashcards" className="btn-quiz">Get more practice with flashcards!</Link>
                 <br/><br/><br/>
                 <Link to="/u2_1" className="btn btn-primary" >Go to next unit</Link>
