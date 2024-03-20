@@ -81,14 +81,14 @@ const reccommend = (currentQuestion)=> {
 }
 const formatRec=()=>{
     const list = recUnits
-    if (list.length<=1){
-        return list[0]
+     if (list.length===1){
+        return "Based on your score you should review unit "+ list[0]+"."
     }
     else if(list.length===2){
-        return list[0]+" and "+ list[1]
+        return "Based on your score you should review units "+list[0]+" and "+ list[1]+"."
     }
     else if(list.length>2){
-    return list.slice(0, -1).join(", ") + ", and " + list.slice(-1)}
+    return "Based on your score you should review units "+list.slice(0, -1).join(", ") + ", and " + list.slice(-1)+"."}
 }
 
       const handleAnswerSelection = (questionIndex, selectedAnswer) => {
@@ -116,7 +116,7 @@ const formatRec=()=>{
             }
         }
 
-// Based on your score you should review units function()
+
       };
 
       return (
@@ -125,7 +125,7 @@ const formatRec=()=>{
             <div>
               <h2>Quiz Complete!</h2>
               <h3>Your Score: {score}</h3>
-
+<h4>{formatRec()}</h4>
               <Link to="/Flashcards" className="btn-quiz">Get more practice with flashcards!</Link>
                 <br/><br/><br/>
                 <Link to="/u2_1" className="btn btn-primary" >Go to next unit</Link>
