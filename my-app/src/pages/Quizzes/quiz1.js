@@ -13,21 +13,24 @@ export default function Quiz1 (){
     const [answers, setAnswers] = useState([]);
     const [showScore, setShowScore] = useState(false);
     const username = localStorage.getItem('username');
-
+    const [recUnits, setRecUnits] = useState([]);
+    const [recSections, setRecSections] = useState([]);
     const questions = [
         {
           question: 'What symbol is used to indicate a comment?',
           type: 'radio',
           options: ['?', '//', '#', '~'],
           answer: '#',
-          unit:"1.1"
+          unit:"1.1",
+            section:"Hello world"
         },
         {
           question: 'What is the result of running the following piece of code: prnt("Hello!")',
           type: 'radio',
           options: ['Hello!', 'Error', 'Hello', '"Hello"'],
           answer: 'Error',
-          unit:"1.2"
+          unit:"1.2",
+            section:"Syntax and formatting conventions"
         },
         {
           question: 'Which of the following is not true about variables?',
@@ -37,14 +40,16 @@ export default function Quiz1 (){
                     'Variables can not have the same name as keywords',
                     'Must start with a letter, number, or underscore',],
           answer: 'Must start with a letter, number, or underscore',
-        unit:"1.3"
+        unit:"1.3",
+            section:"Variables and naming conventions"
         },
         {
             question: 'True/False: Inputs are automatically seen as strings.',
             type: 'radio',
             options: ['True', 'False'],
             answer: 'True',
-            unit:"1.4"
+            unit:"1.4",
+            section:"Printing and input"
         },
         {
             question: 'Which of the following is not a valid statements?',
@@ -55,7 +60,8 @@ export default function Quiz1 (){
                       'print(Hello World)',
                     ],
             answer: 'print(Hello World)',
-            unit:"1.5"
+            unit:"1.5",
+            section:"Datatypes"
           },
       ];
     useEffect(() => {
@@ -66,6 +72,13 @@ export default function Quiz1 (){
                     console.error(error);
                 });
         }, [showScore]);
+const reccommend = (list,currentQuestion)=> {
+
+
+    if (answers[currentQuestion].answer !== questions[currentQuestion].answer && !(list.includes(questions[currentQuestion].unit))  ){
+
+    }
+}
 
       const handleAnswerSelection = (questionIndex, selectedAnswer) => {
         const updatedAnswers = [...answers];
