@@ -84,9 +84,11 @@ const formatRec=()=>{
     if (list.length<=1){
         return list[0]
     }
-    else if(){
-
+    else if(list.length===2){
+        return list[0]+" and "+ list[1]
     }
+    else if(list.length>2){
+    return list.slice(0, -1).join(", ") + ", and " + list.slice(-1)}
 }
 
       const handleAnswerSelection = (questionIndex, selectedAnswer) => {
