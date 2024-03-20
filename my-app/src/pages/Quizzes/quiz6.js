@@ -20,30 +20,40 @@ export default function Quiz6 (){
           type: 'radio',
           options: ['append', 'last', 'remove', 'pop'],
           answer: 'last',
+            unit: '6.2',
+            section:'List functions'
         },
         {
           question: 'Given the following list a = [1, 2, 2, 3, 3, 4, 5], what does print(a.count(3)) return?',
           type: 'radio',
           options: ['6', '7', '3', '2'],
           answer: '2',
+            unit: '6.2',
+            section:'List functions'
         },
         {
           question: 'True/False: This is a valid list assignment: a = [1, "two", 3, "Four", False]',
           type: 'radio',
           options: ['True', 'False'],
           answer: 'True',
+            unit: '6.2',
+            section:'List functions'
         },
         {
             question: 'Given the following list a = [1, 2, 3, 4, 5, 6], what does print(a[4]) return?',
             type: 'radio',
             options: ['4', '3', '5', '6'],
-            answer: '5'
+            answer: '5',
+            unit: '6.1',
+            section:'Lists'
         },
         {
             question: 'Given the list b = [8,"app", 5,"bpp"], what would b.sort() return?',
             type: 'radio',
             options: ['"app", "bpp", 5, 8', 'error', '5, 8, "app", "bpp"', '5, "app", 8, "bpp"'],
-            answer: 'error'
+            answer: 'error',
+            unit: '6.2',
+            section:'List functions'
         }
       ];
 
