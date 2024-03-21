@@ -73,8 +73,8 @@ export default function Quiz1 (){
                     console.error(error);
                 });
         }, [showScore]);
-const reccommend = (currentQuestion)=> {
-    if (answers[currentQuestion].answer !== questions[currentQuestion].answer && !(recUnits.includes(questions[currentQuestion].unit))  ){
+const recommend = (currentQuestion)=> {
+    if (answers[currentQuestion] !== questions[currentQuestion].answer && !(recUnits.includes(questions[currentQuestion].unit))  ){
     setRecSections[currentQuestion]=questions[currentQuestion].section;
         setRecUnits[currentQuestion]=questions[currentQuestion].unit;
     }
@@ -98,7 +98,7 @@ const formatRec=()=>{
       };
 
       const handleNextQuestion = () => {
-          reccommend()
+          recommend()
         if (
           answers[currentQuestion] === questions[currentQuestion].answer ||
           JSON.stringify(answers[currentQuestion]) ===
