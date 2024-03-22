@@ -73,22 +73,21 @@ export default function Quiz1 (){
                     console.error(error);
                 });
         }, [showScore]);
-const recommend = (currentQuestion)=> {
+const storeRec = ()=> {
     if (answers[currentQuestion] !== questions[currentQuestion].answer && !(recUnits.includes(questions[currentQuestion].unit))  ){
-    setRecSections[currentQuestion]=questions[currentQuestion].section;
-        setRecUnits[currentQuestion]=questions[currentQuestion].unit;
+    setRecSections([...recSections, questions[currentQuestion].section]);
+        setRecUnits([...recUnits, questions[currentQuestion].unit]);
     }
 }
 const formatRec=()=>{
-    const list = recUnits
-     if (list.length===1){
-        return "Based on your score you should review unit "+ list[0]+"."
+      if (recUnits.length===1){
+        return "Based on your score you should review unit "+ recUnits[0]+"."
     }
-    else if(list.length===2){
-        return "Based on your score you should review units "+list[0]+" and "+ list[1]+"."
+    else if(recUnits.length===2){
+        return "Based on your score you should review units "+recUnits[0]+" and "+ recUnits[1]+"."
     }
-    else if(list.length>2){
-    return "Based on your score you should review units "+list.slice(0, -1).join(", ") + ", and " + list.slice(-1)+"."}
+    else if(recUnits.length>2){
+    return "Based on your score you should review units "+recUnits.slice(0, -1).join(", ") + ", and " + recUnits.slice(-1)+"."}
 }
 
       const handleAnswerSelection = (questionIndex, selectedAnswer) => {
@@ -98,7 +97,7 @@ const formatRec=()=>{
       };
 
       const handleNextQuestion = () => {
-          recommend()
+          storeRec()
         if (
           answers[currentQuestion] === questions[currentQuestion].answer ||
           JSON.stringify(answers[currentQuestion]) ===
