@@ -80,7 +80,10 @@ const storeRec = ()=> {
     }
 }
 const formatRec=()=>{
-      if (recUnits.length===1){
+    if (recUnits.length===0){
+        return null
+    }
+      else if (recUnits.length===1){
         return "Based on your score you should review unit "+ recUnits[0]+"."
     }
     else if(recUnits.length===2){
@@ -94,10 +97,11 @@ const formatRec=()=>{
         const updatedAnswers = [...answers];
         updatedAnswers[questionIndex] = selectedAnswer;
         setAnswers(updatedAnswers);
+        storeRec()
       };
 
       const handleNextQuestion = () => {
-          storeRec()
+
         if (
           answers[currentQuestion] === questions[currentQuestion].answer ||
           JSON.stringify(answers[currentQuestion]) ===
