@@ -37,7 +37,7 @@ def sendLocationTime():
     query = f'''INSERT INTO UserLocationTime (username, page, date, time) VALUES (?, ?, ?, ?)'''
     conn.cursor().execute(query, (username, page, now[0], now[1]))
     conn.commit()
-    return jsonify({'message': 'Time added'}), 201
+    return jsonify({'message': 'Time added'})
 
 @app.route('/pretestProgram', methods=['POST'])
 def pretestProgram():
@@ -127,7 +127,10 @@ def get_flashcards():
 
 @app.route('/get_units')
 def get_units():
-    units = ['Unit 1', 'Unit 2', 'Unit 3', 'Unit 4', 'Unit 5', 'Unit 6']
+    units = ['Unit 1', 'Unit 1.1', 'Unit 1.2', 'Unit 1.3', 'Unit 1.4',
+    'Unit 2', 'Unit 2.1', 'Unit 2.2', 'Unit 2.3', 'Unit 3', 'Unit 3.1',
+    'Unit 3.2', 'Unit 4', 'Unit 4.1', 'Unit 4.2', 'Unit 5', 'Unit 5.1',
+    'Unit 5.2', 'Unit 6', 'Unit 6.1', 'Unit 6.2']
     response = []
     count = 1
     for u in units:
