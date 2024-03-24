@@ -92,7 +92,9 @@ export default function Unit_6_2() {
             y.append(x)           # Adds an element to the end of a list<br/>
             y.count(x)            # Returns the number of elements that have the value x<br/>
             y.sort()              # Sorts the list in ascending order (can’t mix strings and numbers)<br/>
-            var1 = random.choice(y)  # Picks a random value within a list
+            y.pop(x) #Removes the element at the inputted index. If the () are empty the last element will be removed<br/>
+            var1 = random.choice(y)  # Picks a random value within a list <br/>
+
           </code>
         </pre>
 
