@@ -12,8 +12,15 @@ export default function Quiz2 (){
     const [score, setScore] = useState(0);
     const [answers, setAnswers] = useState([]);
     const [showScore, setShowScore] = useState(false);
-        const username = localStorage.getItem('username');
+    const username = localStorage.getItem('username');
+    const [wrong, setWrong] = useState([]);
 
+    const units = new Map();
+    units.set(0, 'Unit 2.1')
+    units.set(1, 'Unit 2.2')
+    units.set(2, 'Unit 2.3')
+    units.set(3, 'Unit 2.3')
+    
     const questions = [
         {
           question: 'What is the result of the following operation: 2**3',
@@ -67,8 +74,11 @@ export default function Quiz2 (){
             JSON.stringify(questions[currentQuestion].answer)
         ) {
           setScore(score + 1);
-
         }
+        else {
+          var wrongUnit = units.get(currentQuestion);
+          wrong.indexOf(wrongUnit) === -1 ? setWrong(oldArray => [...oldArray, wrongUnit]) : console.log("This item already exists")
+      }
         if (currentQuestion + 1 < questions.length) {
           setCurrentQuestion(currentQuestion + 1);
         } else {
@@ -82,6 +92,8 @@ export default function Quiz2 (){
             <div>
               <h2>Quiz Complete!</h2>
               <h3>Your Score: {score}</h3>
+              <h4> Units to review: {wrong.toString()}</h4>
+
               <Link to="/Flashcards" className="btn-quiz">Get more practice with flashcards!</Link>
                 <br/><br/><br/>
                 <Link to="/u3_1" className="btn btn-primary" >Go to next unit</Link>
