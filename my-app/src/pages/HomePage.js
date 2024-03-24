@@ -9,7 +9,7 @@ function Home() {
             Afterwards, go though the website. You can read the articles, take the practice quizzes, practice programming, and more
             during the the 2 week learning period.<br/><br/>
             The study ends on April 17th. On this day you will be emailed the key to the posttest.
-            It is vital that you complete the posttest on this day.</p>
+            It is vital that you complete the posttest on the last day of the study.</p>
     </div>
   );
 }
