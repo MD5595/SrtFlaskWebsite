@@ -70,6 +70,14 @@ export default function Quiz1 (){
                     console.error(error);
                 });
         }, [showScore]);
+    useEffect(() => {
+        var feedback = wrong;
+    axios.get(baseURL +'/postFeedback', {params: {username: username, feedback:feedback}}).then(response => {
+      console.log("SUCCESS", response);
+      setScore(response.data);
+    }).catch(error => {
+      console.log(error);
+    })}, [showScore])
 
       const handleAnswerSelection = (questionIndex, selectedAnswer) => {
         const updatedAnswers = [...answers];
