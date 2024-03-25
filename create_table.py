@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///srt.db'
 db = SQLAlchemy(app)
 
 class Students(db.Model):
@@ -29,10 +29,7 @@ class PostTest(db.Model):
     username = db.Column(db.String, primary_key=True)
     code = db.Column(db.String)
 
-class Recommendation(db.Model):
-    __tablename__ = 'Recommendation'
-    username = db.Column(db.String, primary_key=True)
-    recommendation = db.Column(db.String)
+
 
 def init_db():
     with app.app_context():

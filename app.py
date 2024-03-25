@@ -113,16 +113,16 @@ def postUserScore():
     conn.commit()
     return jsonify({'message': 'Score added'}), 201
 
-@app.route('/postReccommendation', methods=['POST'])
-def postReccommendation():
+@app.route('/postFeedback', methods=['POST'])
+def postFeedback():
     data = request.get_json()
     username = data.get('username')
-    recommendation = data.get('recommendation')
+    feedback = data.get('feedback')
 
 
     conn = db.connect_db()
-    query = f'''INSERT INTO Recommendation (username, recommendation) VALUES (?, ?)'''
-    conn.cursor().execute(query, (username, recommendation))
+    query = f'''INSERT INTO Recommendation (username, feedback) VALUES (?, ?)'''
+    conn.cursor().execute(query, (username, feedback))
     conn.commit()
     return jsonify({'message': 'Recommendation added'}), 201
 
