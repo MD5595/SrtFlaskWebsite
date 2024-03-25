@@ -113,6 +113,19 @@ def postUserScore():
     conn.commit()
     return jsonify({'message': 'Score added'}), 201
 
+@app.route('/postReccommendation', methods=['POST'])
+def postReccommendation():
+    data = request.get_json()
+    username = data.get('username')
+    recommendation = data.get('recommendation')
+
+
+    conn = db.connect_db()
+    query = f'''INSERT INTO Recommendation (username, recommendation) VALUES (?, ?)'''
+    conn.cursor().execute(query, (username, recommendation))
+    conn.commit()
+    return jsonify({'message': 'Recommendation added'}), 201
+
 
 @app.route('/get_flashcards', methods=['POST'])
 def get_flashcards():

@@ -29,6 +29,11 @@ class PostTest(db.Model):
     username = db.Column(db.String, primary_key=True)
     code = db.Column(db.String)
 
+class Recommendation(db.Model):
+    __tablename__ = 'Recommendation'
+    username = db.Column(db.String, primary_key=True)
+    recommendation = db.Column(db.String)
+
 def init_db():
     with app.app_context():
         db.create_all()
