@@ -65,17 +65,19 @@ export default function Quiz1 (){
     useEffect(() => {
             const test = "Quiz1"
             axios.post(baseURL + '/postUserScore', {username, test, score}).then(response => {
+                  console.log("SUCCESS", response);
+
             })
                 .catch(error => {
                     console.error(error);
                 });
         }, [showScore]);
+
     useEffect(() => {
         var feedback = wrong;
-    axios.post(baseURL +'/postFeedback', {params: {username: username, feedback:feedback}}).then(response => {
+    axios.post(baseURL +'/postFeedback',  {username: username, feedback:feedback}).then(response => {
       console.log("SUCCESS", response);
-      setScore(response.data);
-    }).catch(error => {
+     }).catch(error => {
       console.log(error);
     })}, [showScore])
 
