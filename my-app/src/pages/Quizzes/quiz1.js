@@ -72,7 +72,7 @@ export default function Quiz1 (){
         }, [showScore]);
     useEffect(() => {
         var feedback = wrong;
-    axios.get(baseURL +'/postFeedback', {params: {username: username, feedback:feedback}}).then(response => {
+    axios.post(baseURL +'/postFeedback', {params: {username: username, feedback:feedback}}).then(response => {
       console.log("SUCCESS", response);
       setScore(response.data);
     }).catch(error => {

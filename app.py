@@ -121,10 +121,10 @@ def postFeedback():
 
 
     conn = db.connect_db()
-    query = f'''INSERT INTO Recommendation (username, feedback) VALUES (?, ?)'''
+    query = f'''INSERT INTO feedback (username, feedback) VALUES (?, ?)'''
     conn.cursor().execute(query, (username, feedback))
     conn.commit()
-    return jsonify({'message': 'Recommendation added'}), 201
+    return jsonify({'message': 'Feedback added'}), 201
 
 
 @app.route('/get_flashcards', methods=['POST'])
