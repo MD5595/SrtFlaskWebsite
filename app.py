@@ -130,16 +130,14 @@ def postFeedback():
 @app.route('getFeedback', methods =['GET'])
 def getFeedback():
     username = request.args.get('username')
-    scores = Scores.query.filter_by(username=username).all()
+    feedback1 = feedback.query.filter_by(username=username).all()
 
-    score_list = []
-    for score in scores:
-        score_data = {
-            'test_name': score.test_name,
-            'test_score': score.test_score
-        }
-        score_list.append(score_data)
-    return score_list
+    feedback_list = []
+    for _ in feedback1:
+        feedback_data = feedback.feedback;
+
+        feedback_list.append(feedback_data)
+    return feedback_list
 
 
 @app.route('/get_flashcards', methods=['POST'])
