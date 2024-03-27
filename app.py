@@ -127,6 +127,21 @@ def postFeedback():
     return jsonify({'message': 'Feedback added'}), 201
 
 
+@app.route('getFeedback', methods =['GET'])
+def getFeedback():
+    username = request.args.get('username')
+    scores = Scores.query.filter_by(username=username).all()
+
+    score_list = []
+    for score in scores:
+        score_data = {
+            'test_name': score.test_name,
+            'test_score': score.test_score
+        }
+        score_list.append(score_data)
+    return score_list
+
+
 @app.route('/get_flashcards', methods=['POST'])
 def get_flashcards():
     unit = request.json['unit']
