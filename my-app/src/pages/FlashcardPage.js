@@ -11,7 +11,7 @@ export default function FlashcardPage() {
 
   const [flashcards, setFlashcards] = useState([])
   const [categories, setCategories] = useState([])
-
+  const [feedbackData, setFeedbackData] = useState([]);
   const unit = useRef()
 
   var headers = {
@@ -27,6 +27,14 @@ export default function FlashcardPage() {
       .then(res => {
         setCategories(res.data.units)
       })
+  }, [])
+
+  useEffect(() => {
+    axios
+      .get(baseURL + '/getFeedback',headers=headers)
+      .then(res => {
+        setFeedbackData(res.data);
+       })
   }, [])
 
   function handleSubmit(e) {
@@ -60,6 +68,14 @@ export default function FlashcardPage() {
 
         <div className="form-group">
           <button className="btn">Generate</button>
+           </form>
+      <div className="container">
+        <h2>Feedback Data</h2>
+        <ul>
+          {feedbackData.map((feedback, index) => (
+            <li key={index}>{feedback}</li>
+          ))}
+        </ul>
         </div>
       </form>
       <div className="container">
