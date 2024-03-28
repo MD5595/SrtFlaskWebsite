@@ -54,33 +54,37 @@ export default function FlashcardPage() {
     })
   }
 
-  return (
+ return (
     <>
-      <form className="header" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="category">Unit</label>
-          <select id="unit" ref={unit}>
-            {categories.map(category => {
-              return <option value={category.name} key={category.id}>{category.name}</option>
-            })}
-          </select>
-        </div>
+        <form className="header" onSubmit={handleSubmit}>
+            <div className="form-group">
+                <label htmlFor="feedback">Feedback</label>
+                <select id="feedback" ref={feedback}>
+                    {feedbackData.map((feedback, index) => (
+                        <option key={index}>{feedbackData}</option>
+                    ))}
+                </select>
+            </div>
+            <div className="form-group">
+                <label htmlFor="category">Unit</label>
+                <select id="unit" ref={unit}>
+                    {categories.map(category => {
+                        return <option value={category.name} key={category.id}>{category.name}</option>;
+                    })}
+                </select>
+            </div>
 
-        <div className="form-group">
-          <button className="btn">Generate</button>
-           </form>
-      <div className="container">
-        <h2>Feedback Data</h2>
-        <ul>
-          {feedbackData.map((feedback, index) => (
-            <li key={index}>{feedback}</li>
-          ))}
-        </ul>
+            <div className="form-group">
+                <button className="btn">Generate</button>
+            </div>
+        </form>
+        <div className="container">
+
+
         </div>
-      </form>
-      <div className="container">
-        <FlashcardList flashcards={flashcards} />
-      </div>
+        <div className="container">
+            <FlashcardList flashcards={flashcards}/>
+        </div>
     </>
-  );
+ );
 }
