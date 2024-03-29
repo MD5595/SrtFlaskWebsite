@@ -60,8 +60,8 @@ export default function FlashcardPage() {
             <div className="form-group">
                 <label htmlFor="feedback">Feedback</label>
                 <select id="feedback" ref={feedback}>
-                    {feedbackData.map((feedback, index) => (
-                        <option key={index}>{feedbackData}</option>
+                    {feedbackData.map((feedbackItem) => (
+                        <option key={feedbackItem}>{feedbackItem}</option>
                     ))}
                 </select>
             </div>
