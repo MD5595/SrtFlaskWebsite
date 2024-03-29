@@ -127,17 +127,18 @@ def postFeedback():
     return jsonify({'message': 'Feedback added'}), 201
 
 
-@app.route('getFeedback', methods =['GET'])
+@app.route('/getFeedback', methods=['GET'])
 def getFeedback():
     username = request.args.get('username')
-    feedback1 = feedback.query.filter_by(username=username).all()
-
+    conn = db.connect_db()
+    query = f'''select feedback from feedback where username = ? group by feedback'''
+    record = conn.cursor().execute(query, (username,)).fetchall()
     feedback_list = []
-    for _ in feedback1:
-        feedback_data = feedback.feedback;
+    for feedback1 in record:
 
-        feedback_list.append(feedback_data)
+        feedback_list.append(feedback1)
     return feedback_list
+
 
 
 @app.route('/get_flashcards', methods=['POST'])
