@@ -30,3 +30,9 @@ CREATE TABLE postTest(
 	username TEXT,
 	code TEXT
 );
+
+drop TABLE IF EXISTS userFeedback;
+CREATE TABLE userfeedback(
+	username TEXT,
+	feedback TEXT
+);
