@@ -121,7 +121,7 @@ def postFeedback():
 
 
     conn = db.connect_db()
-    query = f'''INSERT INTO feedback (username, feedback) VALUES (?, ?)'''
+    query = f'''INSERT INTO userFeedback (username, feedback) VALUES (?, ?)'''
     conn.cursor().execute(query, (username, feedback))
     conn.commit()
     return jsonify({'message': 'Feedback added'}), 201
@@ -131,7 +131,7 @@ def postFeedback():
 def getFeedback():
     username = request.args.get('username')
     conn = db.connect_db()
-    query = f'''select feedback from feedback where username = ? group by feedback'''
+    query = f'''select feedback from userfeedback where username = ? group by feedback'''
     record = conn.cursor().execute(query, (username,)).fetchall()
     feedback_list = []
     for feedback1 in record:
