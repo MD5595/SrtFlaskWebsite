@@ -117,7 +117,7 @@ def postUserScore():
 def postFeedback():
     data = request.get_json()
     username = data.get('username')
-    feedback = json.dumps(data.get('feedback'))
+    feedback = data.get('feedback')
 
 
     conn = db.connect_db()

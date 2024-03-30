@@ -74,7 +74,7 @@ export default function Quiz1 (){
         }, [showScore]);
 
     useEffect(() => {
-        var feedback = wrong;
+        const feedback = wrong.join(', ');
     axios.post(baseURL +'/postFeedback',  {username: username, feedback:feedback}).then(response => {
       console.log("SUCCESS", response);
      }).catch(error => {
