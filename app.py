@@ -131,6 +131,7 @@ def postFeedback():
 def getFeedback():
     username = request.args.get('username')
     conn = db.connect_db()
+
     query = f'''select feedback from userfeedback where username = ? group by feedback'''
     record = conn.cursor().execute(query, (username,)).fetchall()
     feedback_list = []
