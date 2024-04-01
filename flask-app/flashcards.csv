@@ -1,10 +1,12 @@
-﻿Unit~Question~Answer
+﻿﻿Unit~Question~Answer
 Unit 1~1.1: What is the result of running the following piece of code: print('Hello World!')~ Hello World!
 Unit 1~1.1: What does IDE stand for?~Integrated Development Environment
 Unit 1~1.1: What character is used to add a comment to the code?~#
+Unit 1~1.1: T/F: The following line of code will produce an error: #fimffifimmgmirim~
 Unit 1~1.2: What is the most common error faced?~syntax errors
+Unit 1~1.2: T/F: When minor spelling errors are made, your computer will autocorrect them~ falsegit
 Unit 1~1.2: What will be the result of this line of code: prnit('Hello')~an error
-Unit 1~1.2: The formatting of code does not matter~ false, unnecessary spaces, indents, and spelling can cause your program to produce errors
+Unit 1~1.2: T/F: The formatting of code does not matter~ false, unnecessary spaces, indents, and spelling can cause your program to produce errors
 Unit 1~1.3: What is a variable?~values or characters stored in a phrase
 Unit 1~1.3: What are examples of data types?~strings integers float list boolean
 Unit 1~1.3: What is wrong with this variable declaration: 333number = 21~variables cannot start with a number
@@ -21,6 +23,7 @@ Unit 2~2.1: What does this symbol mean **?~exponents - base is on the left and p
 Unit 2~2.1: What does this symbol mean //?~ floor division - removes decimals from division
 Unit 2~2.2: Is () or // done first?~()
 Unit 2~2.2: Is / or % done first?~same precedence - solved left to right
+Unit 2~2.2: What would you type if you wanted to raise 5 to the 3rd power using operators?~5**3
 Unit 2~2.3: What are modules?~a module is a section of code that covers functions for repeatability
 Unit 2~2.3: What does the trunc function do?~ it removes the decimal portion of the inputted number
 Unit 2~2.3: Is the randint function inclusive or exclusive?~ inclusive
@@ -28,7 +31,6 @@ Unit 2~2.3: What function returns the absolute value of a number?~ fabs
 Unit 2~2.3: What function would you use if you wanted to round up a number?~ceil
 Unit 3~3.1: What is an if/else statement?~executes a block of code if a specified condition is true. if false another block of code is executed
 Unit 3~3.1: What is "and" an example of?~logical operator
-Unit 3~3.1: What is a if statement that has an if statement within it called?~ A nested if statement
 Unit 3~3.1: What is the difference between = and ==?~ = assigns a value to a variable while == returns a boolean value based on whether a value is equal to another value
 Unit 3~3.1: What data type is the most important when making if statements?~booleans
 Unit 3~3.1: What is and an example of?~logical operator
@@ -36,6 +38,9 @@ Unit 3~3.1: What does the not operator do?~ it reverses the boolean value of a s
 Unit 3~3.1: T/F: The == operator can only be used on numbers.~ false. It can be used on ints, floats, strings, list elements and booleans
 Unit 3~3.2: What is an else/if statement?~similar to if/else but has 2 or more statements
 Unit 3~3.2: Does an else/if always have to have an else statement?~no
+Unit 3~3.2: What is a if statement that has an if statement within it called?~ A nested if statement
+Unit 3~3.2: T/F: There is a limit to the number of conditions an if statement can have~F
+Unit 3~3.2: No comparison operators work on strings~F
 Unit 4~4.1: How does one exit a while loop?~the condition must be met to exit
 Unit 4~4.1: When are while loops used?~when you don't know how many iterations your statement will have
 Unit 4~4.1: What is the name of the variable that changes in every loop and controls the loop's iterating~the counter variable
@@ -43,18 +48,21 @@ Unit 4~4.1: What does **= do?~ **= assigns the current value of the variable to 
 Unit 4~4.1: What type of loop would you use to make a user-input based guessing game, and why?~ a while loop. By using a comparison operator you would be able to break the loop whenever you user made a correct guess.
 Unit 4~4.2: When do you use a for loop?~when you know how many iterations are needed
 Unit 4~4.2: What are the three parameters in a range statement?~start|stop|step
+Unit 4~4.2: What key word is used to force a loop to end?~break
+Unit 4~4.2: T/F: Negative numbers can be used in the third parameter place~T
 Unit 5~5.1: What is a function?~a block of code made to decrease the amount of repetitive code you have to write
 Unit 5~5.1: Functions perform a ____ task.~predefined
 Unit 5~5.1: What keyword allows you to define a function?~def
 Unit 5~5.1: What modules can you import to call predefined functions?~ Math and Random
 Unit 5~5.2: T/F: A function can be called within another function~ T
 Unit 5~5.2: What are parameters?~values passed into a function
-Unit 5~5.2: T/F: When you call a function you don't need to input the same number of parameters within the parentheses.~False
+Unit 5~5.2: T/F: When you call a function you don't need to input the same number of parameters within the parentheses.~F
 Unit 5~5.2: What does the "return" keyword do?~ It allows a function to output value
 Unit 5~5.2: T/F: A function can be called within another function~ T
 Unit 6~6.1: What is a list?~data type that stores multiple values in one variable
 Unit 6~6.1: What index does a list start on?~0
-Unit 6~6.1: T/F: Both strings and lists can have their characters accessed~ T
+Unit 6~6.1: T/F: Lists can have any datatype, including more lists, inside of them~ T
+Unit 6~6.1: T/F: Both strings and lists can have their characters accessed individually~ T
 Unit 6~6.2: What two data types can have the append function used on them?~Strings and lists
 Unit 6~6.2: How would you print "apple" from the list "bag = ["brush", "pencil", "apple"]" in one line?~print(bag[2]) or print(bag[-1])
 Unit 6~6:2: T/F:Only lists can have their individual values/elements in the following format: Variable[0]~ False, strings can have their individual characters accessed in the same way
