@@ -7,7 +7,6 @@ import {baseURL} from '../../config';
 
 export default function Quiz1 (){
   const loggedInUser = localStorage.getItem('username');
-  send_time('quiz1', loggedInUser);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
     const [wrong, setWrong] = useState([]);
