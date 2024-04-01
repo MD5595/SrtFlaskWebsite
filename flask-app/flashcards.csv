@@ -23,6 +23,7 @@ Unit 2~2.1: What does this symbol mean **?~exponents - base is on the left and p
 Unit 2~2.1: What does this symbol mean //?~ floor division - removes decimals from division
 Unit 2~2.2: Is () or // done first?~()
 Unit 2~2.2: Is / or % done first?~same precedence - solved left to right
+Unit 2~2.2: What would you type if you wanted to raise 5 to the 3rd power using operators?~5**3
 Unit 2~2.3: What are modules?~a module is a section of code that covers functions for repeatability
 Unit 2~2.3: What does the trunc function do?~ it removes the decimal portion of the inputted number
 Unit 2~2.3: Is the randint function inclusive or exclusive?~ inclusive
@@ -47,6 +48,8 @@ Unit 4~4.1: What does **= do?~ **= assigns the current value of the variable to 
 Unit 4~4.1: What type of loop would you use to make a user-input based guessing game, and why?~ a while loop. By using a comparison operator you would be able to break the loop whenever you user made a correct guess.
 Unit 4~4.2: When do you use a for loop?~when you know how many iterations are needed
 Unit 4~4.2: What are the three parameters in a range statement?~start|stop|step
+Unit 4~4.2: What key word is used to force a loop to end?~break
+Unit 4~4.2: T/F: Negative numbers can be used in the third parameter place~T
 Unit 5~5.1: What is a function?~a block of code made to decrease the amount of repetitive code you have to write
 Unit 5~5.1: Functions perform a ____ task.~predefined
 Unit 5~5.1: What keyword allows you to define a function?~def
@@ -58,7 +61,8 @@ Unit 5~5.2: What does the "return" keyword do?~ It allows a function to output v
 Unit 5~5.2: T/F: A function can be called within another function~ T
 Unit 6~6.1: What is a list?~data type that stores multiple values in one variable
 Unit 6~6.1: What index does a list start on?~0
-Unit 6~6.1: T/F: Both strings and lists can have their characters accessed~ T
+Unit 6~6.1: T/F: Lists can have any datatype, including more lists, inside of them~ T
+Unit 6~6.1: T/F: Both strings and lists can have their characters accessed individually~ T
 Unit 6~6.2: What two data types can have the append function used on them?~Strings and lists
 Unit 6~6.2: How would you print "apple" from the list "bag = ["brush", "pencil", "apple"]" in one line?~print(bag[2]) or print(bag[-1])
 Unit 6~6:2: T/F:Only lists can have their individual values/elements in the following format: Variable[0]~ False, strings can have their individual characters accessed in the same way
