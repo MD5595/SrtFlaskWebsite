@@ -37,7 +37,7 @@ function Syllabus() {
                 4.1: While loop<br/>
                 4.2: For-loop<br/><br/>
                 Unit 5: Functions<br/>
-                5.1: Function Declartion<br/>
+                5.1: Function Declaration<br/>
                 5.2: Parameter/Returning<br/><br/>
                 Unit 6: Lists<br/>
                 6.1: Lists<br/>
