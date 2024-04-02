@@ -37,7 +37,7 @@ function Syllabus() {
                 4.1: While loop<br/>
                 4.2: For-loop<br/><br/>
                 Unit 5: Functions<br/>
-                5.1: Function Declartion<br/>
+                5.1: Function Declaration<br/>
                 5.2: Parameter/Returning<br/><br/>
                 Unit 6: Lists<br/>
                 6.1: Lists<br/>
@@ -50,8 +50,7 @@ function Syllabus() {
                 through the websites articles, practice problems, and tests.
                 Students are encouraged to take note of the suggestions they
                 receive and spend time using the studying tools housed in the website.
-                After finishing every unit, students will take a post-test and an end-
-                of-study survey, marking the end of the course.
+                After finishing every unit, students will take a post-test and an end- of-study survey, marking the end of the course.
             </p>
         </div>
     );

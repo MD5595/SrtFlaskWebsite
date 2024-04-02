@@ -53,7 +53,7 @@ function PreTest() {
     return (
         <div className="container">
             <h1> Pre-Test</h1>
-            <p>{username}</p>
+            <p>You can expand the boxes of the free response coding questions. If you have no clue on how to asnwer a question, feel free to guess.</p>
             
             <form onSubmit={handleSubmit}>
                 {/* Question 1 */}
@@ -138,7 +138,7 @@ function PreTest() {
                 {/* Question 13 */}
                 <label htmlFor="answer13">13. What would the following code print?<br/>
                 for _ in range(48, 38, -2):<br/>
-                print(_, end=" ")</label><br/>
+                &emsp;print(_, end=" ")</label><br/>
                 <select id="answer13"><br/>
                     <option value="a">46 44 42 40 38</option>
                     <br/>
@@ -223,7 +223,7 @@ function PreTest() {
                         <option value="a">__Hi</option>
                         <option value="b">33number</option>
                         <option value="c">Car1</option>
-                        <option value="d">MyAge-</option>
+                        <option value="d">MyAge</option>
                     </select>
                 </label>
                 <br/>
