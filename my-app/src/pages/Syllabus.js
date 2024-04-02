@@ -50,8 +50,7 @@ function Syllabus() {
                 through the websites articles, practice problems, and tests.
                 Students are encouraged to take note of the suggestions they
                 receive and spend time using the studying tools housed in the website.
-                After finishing every unit, students will take a post-test and an end-
-                of-study survey, marking the end of the course.
+                After finishing every unit, students will take a post-test and an end- of-study survey, marking the end of the course.
             </p>
         </div>
     );
