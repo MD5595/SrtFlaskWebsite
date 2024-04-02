@@ -4,7 +4,7 @@ function Home() {
   return (
     <div className="container">
       <h1>Welcome! </h1>
-        <p>This website will be open from 4/3-4/17 from 4pm-8pm. First, take the pretest.<br/><br/>
+        <p>This website will be open from 4/3-4/17 from 4pm-8pm, every weekday. First, take the pretest.<br/><br/>
 
             Afterwards, go though the website. You can read the articles, take the practice quizzes, practice programming, and more
             during the the 2-week learning period.<br/><br/>
