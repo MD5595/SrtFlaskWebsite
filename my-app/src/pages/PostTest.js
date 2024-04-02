@@ -38,6 +38,7 @@ function PostTest() {
         answers.q21 = form.answer21.value
         answers.q22 = form.answer22.value
         answers.q23 = form.answer23.value
+          answers.q24 = form.answer24.value
         answers.q25 = form.answer25.value
 
         axios.post(baseURL + '/posttestProgram', {username, answers}, headers=headers).then(response => {
